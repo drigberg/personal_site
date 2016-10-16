@@ -4,8 +4,7 @@
   "description": "my personal website",
   "main": "app.js",
   "directories": {
-    "test": "test",
-    "start": "node app.js"
+    "test": "test"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
@@ -21,7 +20,8 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
