@@ -68,12 +68,17 @@ body {
 
 #main {
 	width: 100%
-	padding: 0%;
+	padding: 100px;
 	margin: 0, 0, 50px, 0;
+}
+
+#soundcloud-div {
+	padding: 0 100px;
 }
 
 ul {
 	list-style: none;
+	padding: 0;
 }
 /*#leaderboard {
 	margin: 0 auto;
@@ -153,7 +158,7 @@ hr:last-of-type {
 }
 
 li {
-	margin: 10px 0;
+	margin: 10px 10px;
 }
 
 h1 {
