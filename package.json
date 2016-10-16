@@ -1,0 +1,36 @@
+{
+  "name": "personal_site",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "main": "app.js",
+  "directories": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.1",
+    "mongodb": "^2.1.16",
+    "method-override": "^2.3.5",
+    "express": "^4.13.4",
+    "requirejs": "^2.2.0",
+    "sinon": "^1.17.3",
+    "mongoose": "^4.4.12"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drigberg/personal_site.git"
+  },
+  "author": "Daniel Rigberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drigberg/personal_site/issues"
+  },
+  "homepage": "https://github.com/drigberg/personal_site#readme"
+}
