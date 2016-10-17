@@ -14,8 +14,16 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+app.get("/coding", function (req, res){
+    res.render("coding");
+});
+
 app.get("/music", function (req, res){
     res.render("music");
+});
+
+app.get("/travel", function (req, res){
+    res.render("travel");
 });
 
 //safety net redirect

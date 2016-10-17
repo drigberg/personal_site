@@ -62,6 +62,10 @@ hr:last-of-type {
 	position: absolute;
 }
 
+.content {
+	margin-top : 90px;
+}
+
 
 /*INDEX*/
 
@@ -78,6 +82,7 @@ hr:last-of-type {
 	width: 200px;
 	z-index: -1;
 	margin: 0 auto 0 auto;
+	border-radius: 0 0 20px 0;
 }
 
 #cover-right {
@@ -92,10 +97,17 @@ hr:last-of-type {
 	width: 200px;
 	z-index: -1;
 	margin: 0 auto 0 auto;
+	border-radius: 0 0 0 20px;
 }
 
 /*MUSIC*/
 
 #soundcloud-div {
 	padding: 0 100px;
+}
+
+/*TRAVEL*/
+
+#world-img {
+	width: 100%;
 }
