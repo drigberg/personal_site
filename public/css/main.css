@@ -100,6 +100,11 @@ hr:last-of-type {
 	border-radius: 0 0 0 20px;
 }
 
+/*CODING*/
+
+.github-widget {
+	margin: 20px auto;
+}
 /*MUSIC*/
 
 #soundcloud-div {
