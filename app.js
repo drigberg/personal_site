@@ -26,6 +26,10 @@ app.get("/travel", function (req, res){
     res.render("travel");
 });
 
+app.get("/sandbox", function (req, res){
+    res.render("sandbox");
+});
+
 //safety net redirect
 app.get("*", function (req, res){
     res.redirect("/");

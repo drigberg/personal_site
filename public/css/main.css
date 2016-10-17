@@ -69,6 +69,10 @@ hr:last-of-type {
 
 /*INDEX*/
 
+#container {
+	position: absolute;
+	z-index = -2;
+}
 
 #cover-left {
 	position: absolute;
