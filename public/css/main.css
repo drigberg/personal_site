@@ -64,16 +64,34 @@ hr:last-of-type {
 
 
 /*INDEX*/
-#cover-photo {
-	position: relative;
+
+
+#cover-left {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	background-image: url("/assets/glacier-cover.jpg");
+	background-repeat: no-repeat;
+	background-position: 66% 100%;
+	background-size: cover;
+	height: 600px;
+	width: 200px;
+	z-index: -1;
+	margin: 0 auto 0 auto;
+}
+
+#cover-right {
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	background-size: cover;
 	background-image: url("/assets/scuba-cover.jpg");
 	background-repeat: no-repeat;
 	background-position: 53% 60%;
 	height: 600px;
 	width: 200px;
 	z-index: -1;
-	margin: 0 0 0 auto;
-	border-radius: 0 0 0 20px;
+	margin: 0 auto 0 auto;
 }
 
 /*MUSIC*/
