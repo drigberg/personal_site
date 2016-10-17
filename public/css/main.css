@@ -14,8 +14,14 @@ body {
 		text-shadow: 0 0 2px red;
 }
 
+.nav {
+	float: right;
+}
+
 .navbar {
 	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
 }
 
 #link {
