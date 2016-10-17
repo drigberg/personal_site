@@ -1,17 +1,7 @@
-body {
-	/*background-image: url("sky_faded.jpg");*/
-	background-color: #4da6ff;
-	background-size: 1000px;
-	transition: 4s;
-}
-
-#error-message {
-		display: block;
-		color: white;
-		margin: 5px 20px 20px 20px;
-		text-align: center;
-		font-size: 20px;
-		text-shadow: 0 0 2px red;
+/*HEADER*/
+#brand {
+		margin-top: 15px;
+		letter-spacing: 1.5px;
 }
 
 .nav {
@@ -24,118 +14,22 @@ body {
 	border-radius: 0;
 }
 
-#link {
-	margin: 20px auto 0 auto;
-	display: block;
-	width: 200px;
-}
-#newPage-link {
-	margin: 10px auto;
-	display: block;
-	width: 200px;
-	width: 30%;
-}
-
-#generate {
-	display: block;
-	width: 30%;
-	margin: 0px auto;
-}
-#header {
-	background-color: rgba(0,0,0,0.2);
-	padding: 20px 10px 20px 10px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.2);
-	width: 100%;
-	margin: 0 auto 30px auto;
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-}
-
-#input {
-	background-color: rgba(0,0,0,0.2);
-	display: block;
-	padding: 20px 10px 20px 10px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.2);
-	width: 90%;
-	margin: 20px auto 20px auto;
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-}
-
-.form-control {
-	display: block;
-	padding:10px;
-	margin:10px auto;
-	border:1px solid #ccc;
-	padding-left:40px;
-	font-size:16px;
-	width: 50%;
-}
-
-#main {
-	width: 100%
-	padding: 100px;
-	margin: 0, 0, 50px, 0;
-}
-
-#soundcloud-div {
-	padding: 0 100px;
+/*GLOBAL STYLING*/
+body {
+	background-color: #eeeeee;
+	background-size: 1000px;
+	transition: 4s;
 }
 
 ul {
 	list-style: none;
 	padding: 0;
 }
-/*#leaderboard {
-	margin: 0 auto;
-	width: 70%;
-	background-color: white;
-	padding: 40px 10px 40px 10px;
-	box-shadow: 0 0 1em white;
-}*/
-
-#content-box {
-	width: 100%;
-	margin: 0;
-}
-
-#content {
-	margin: 10px 0px;
-}
-
-#leaderboard {
-	background-color: rgba(0,0,0,0.2);
-	padding: 40px 10px 40px 10px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.2);
-	width: 70%;
-	color: white;
-	margin: 0 auto;
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-}
-
 
 .heading {
 	text-align: center;
 	color: white;
 	letter-spacing: 1.5;
-}
-
-.list-icon {
-	width: 36px;
-	height: 36px;
-	vertical-align: middle;
-	display: inline-block;
-}
-
-ul li:nth-child(n+11) {
-    display:none;
-}
-
-.list-item-date {
-	margin: 0;
-	text-align: right;
-	font-style: italic;
 }
 
 hr {
@@ -156,149 +50,34 @@ hr:last-of-type {
 	display: none;
 }
 
-.list-text {
-	display: inline-block;
-	font-weight: 200;
-	width: 85%;
-	vertical-align: middle;
-}
-
-li {
-	margin: 10px 10px;
-}
-
-h1 {
-	font-size: 60px;
-  text-shadow: 0 0 4px white;
-}
-
-h3 {
-	font-size: 36px;
-  text-shadow: 0 0 2px white;
-}
-
-#showMore {
-	display: block;
-	margin: 10px auto;
+#header {
+	background-color: rgba(0,0,0,0.2);
+	/*padding: 20px 10px 20px 10px;*/
+	box-shadow: 0 0 1em rgba(0,0,0,0.2);
+	width: 100%;
+	margin: 0 auto 30px auto;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+	z-index: 1;
+	position: absolute;
 }
 
 
-
-#close {
-	position:absolute;
-	left: -10px;
-	cursor:pointer;
-	color: white;
-	display: block;
-	padding: 10px;
-	border-radius: 20px;
-	background-color: #d9534f;
-	opacity: 0.85;
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+/*INDEX*/
+#cover-photo {
+	position: relative;
+	background-image: url("/assets/scuba-cover.jpg");
+	background-repeat: no-repeat;
+	background-position: 53% 60%;
+	height: 600px;
+	width: 200px;
+	z-index: -1;
+	margin: 0 0 0 auto;
+	border-radius: 0 0 0 20px;
 }
 
+/*MUSIC*/
 
-#userInfo {
-	max-width:400px;
-	min-width:250px;
-	padding:0px 50px 50px 50px;
-    border-radius:10px;
-	border:2px solid gray;
-	background-color:#fff;
-	opacity: 1.0;
-}
-
-p {
-	margin-top:30px
-}
-
-h2 {
-	background-image: url("sky_faded.jpg");
-    border-radius:8px 8px 0 0;
-	background-size: cover;
-	padding:20px 35px;
-	color: white;
-	margin:0px -50px -10px -50px;
-	text-align:center;
-    text-shadow: 0 0 4px white;
-}
-
-#name {
-	background-image:url(../images/name.jpg);
-	background-repeat:no-repeat;
-	background-position:5px 7px;
-	margin: 0 auto;
-	display: block;
-}
-
-#email {
-	background-image:url(../images/email.png);
-	background-repeat:no-repeat;
-	background-position:5px 7px
-}
-
-textarea {
-	background-image:url(../images/msg.png);
-	background-repeat:no-repeat;
-	background-position:5px 7px;
-	width:82%;
-	height:95px;
-	padding:10px;
-	resize:none;
-	margin-top:30px;
-	border:1px solid #ccc;
-	padding-left:40px;
-	font-size:16px;
-	margin-bottom:30px
-}
-
-#submit {
-	display: block;
-	margin: 5px auto;
-	max-width: 80%;
-}
-
-@media screen and (max-width: 657px) {
-
-	#input {
-		width: 100%;
-		margin-bottom: 0;
-	}
-
-	#leaderboard {
-		width: 100%;
-	}
-	#main {
-		width: 100%;
-		padding: 0%;
-	}
-
-	#header {
-		width: 100%;
-	}
-}
-@media screen and (max-width: 486px) {
-	#input {
-		width: 100%;
-		margin-bottom: 0;
-	}
-
-	#leaderboard {
-		width: 100%;
-	}
-	#main {
-		width: 100%;
-		padding: 0%;
-	}
-	#container {
-		width: 100%;
-	}
-
-	#header {
-		width: 100%;
-	}
-
-	.list-text {
-		font-size: 10px;
-	}
+#soundcloud-div {
+	padding: 0 100px;
 }
