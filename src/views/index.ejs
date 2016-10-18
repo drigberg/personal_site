@@ -33,6 +33,7 @@
         init: function( x, y, radius ) {
 
             this.alive = true;
+            this.feedline = false;
             this.x = x || 0;
             this.y = y || 0;
             this.origin = [600, 350];
@@ -46,7 +47,10 @@
             this.ytheta = 0;
 
             this.drag = 3;
-            this.color = '#000000';
+            this.red = 0;
+            this.green = 0;
+            this.blue = 0;
+            this.opacity = 1;
 
             this.vx = 8 / this.r * (this.r_y);
             this.vy = 8 / this.r * (this.r_x);
@@ -101,7 +105,7 @@
 
             ctx.beginPath();
             ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
-            ctx.fillStyle = '#000000';
+            ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.blue.toString() + ', ' + this.green.toString() + ', ' + this.opacity.toString() + ')';
             ctx.fill();
         }
     };
@@ -125,7 +129,7 @@
         // Set off some initial particles.
         var i, x, y;
 
-        for ( i = 0; i < 100; i++ ) {
+        for ( i = 0; i < 40; i++ ) {
             // x = ( random(demo.width));
             // y = ( random(demo.height));
             x = random(300,900);
@@ -146,7 +150,11 @@
 
         // particle.wander = random( 0.5, 2.0 );
         particle.wander = random( 0.5, 1.0 );
-        particle.color = random( COLOURS );
+        // particle.color = random( COLOURS );
+        particle.red = 0;
+        particle.green = 0;
+        particle.blue = 0;
+        particle.opacity = 1;
         particle.drag = random( 0.9, 0.99 );
 
         xtheta = random( TWO_PI );
@@ -167,22 +175,42 @@
             else pool.push( particles.splice( i, 1 )[0] );
         }
 
-        var particle, theta, force, touch, max, i, j, n;
+        var j, k, touch;
 
-        for ( i = 0, n = demo.touches.length; i < n; i++ ) {
-            touch = demo.touches[i];
+        for ( j = 0, n = demo.touches.length; j < n; j++ ) {
+            touch = demo.touches[j];
             // demo.spawn( touch.x, touch.y );
-            for ( var k = particles.length - 1; k >= 0; k-- ) {
-                if (sqrt((particles[k].x - touch.x) * (particles[k].x - touch.x) + (particles[k].y - touch.y) * (particles[k].y - touch.y)) < 200) {
-                    if (particles[k].radius < 10) {
+            for ( k = particles.length - 1; k >= 0; k-- ) {
+                if (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2) < 200) {
+                    if (particles[k].radius < 5) {
                         if (mouseover) {
-                            particles[k].radius += 0.2
+                            particles[k].feedline = true;
+                            particles[k].radius += 0.2;
+                            if (particles[k].red < 250) {
+                                particles[k].red += 10;
+                            }
+                            if (particles[k].blue > 10) {
+                                particles[k].blue -= 10;
+                            }
+                            if (particles[k].green > 10) {
+                                particles[k].green -= 10;
+                            }
                         };
                     };
                 } else {
+                    particles[k].feedline = false;
                     if (particles[k].radius > 2) {
                         particles[k].radius -= 0.2
                     };
+                    if (particles[k].red > 10) {
+                        particles[k].red -= 10;
+                    }
+                    if (particles[k].blue < 250) {
+                        particles[k].blue += 10;
+                    }
+                    if (particles[k].green < 250) {
+                        particles[k].green += 10;
+                    }
                 };
             }
         }
@@ -192,7 +220,20 @@
         // demo.globalCompositeOperation  = 'lighter';
         for ( var i = particles.length - 1; i >= 0; i-- ) {
             particles[i].draw( demo );
+            if (particles[i].feedline) {
+                var touch;
+                for ( j = 0, n = demo.touches.length; j < n; j++ ) {
+                        touch = demo.touches[j];
+                        demo.beginPath();
+                        demo.moveTo( particles[i].x, particles[i].y );
+                        demo.lineTo( touch.x, touch.y );
+                        demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].blue.toString() + ', ' + particles[i].green.toString() + ', ' + (particles[i].opacity * 0.4).toString() + ')';
+                        demo.stroke();
+                }
+            }
         }
+
+
     };
 
 
