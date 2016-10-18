@@ -15,7 +15,7 @@
     </div>
     <!-- <div class="cover-photo" id="cover-left"></div>
     <div class="cover-photo" id="cover-right"></div> -->
-    <div class="content">
+    <!-- <div class="content"> -->
       <div id="container"></div>
 
       <script src="../js/sketch.js"></script>
@@ -34,43 +34,67 @@
           init: function( x, y, radius ) {
 
               this.alive = true;
+              this.x = x || 0;
+              this.y = y || 0;
+              this.origin = [600, 350];
+              this.r_x = (this.x - 600);
+              this.r_y = (this.y - 250);
+              this.r = sqrt((this.r_x * this.r_x) + (this.r_y * this.r_y));
 
-              this.radius = radius || 10;
+              this.radius = radius || 2;
               this.wander = 0.15;
-              this.xtheta = random( TWO_PI );
-              this.ytheta = random( TWO_PI );
+              this.xtheta = 0;
+              this.ytheta = 0;
 
-              this.drag = 5;
+              this.drag = 3;
               this.color = '#fff';
 
-              this.x = x || 0.0;
-              this.y = y || 0.0;
+              this.vx = 8 / this.r * (this.r_y);
+              this.vy = 8 / this.r * (this.r_x);
 
-              this.vx = 0.0;
-              this.vy = 0.0;
+
+              // this.vx = (sin((this.x - 600) / (this.y - 250) * TWO_PI )) * 5;
+              // this.vy = (cos((this.x - 600) / (this.y - 250) * TWO_PI)) * 5;
+              //
+              //
+              // this.vx = 0;
+              // this.vy = 0;
+              // this.vx = 1;
+              // this.vy = 1;
+
           },
 
           move: function() {
+              this.r_x = (this.x - this.origin[0]);
+              this.r_y = (this.y - this.origin[1]);
+              this.r = sqrt((this.r_x * this.r_x) + (this.r_y * this.r_y));
 
+              if (this.r < 30 ) this.r = 30;
+
+
+              this.xtheta = -(this.r_x / (this.r * this.r)) * 50;
+              this.ytheta = -(this.r_y / (this.r * this.r)) * 50;
+              this.vx += this.xtheta;
+              this.vy += this.ytheta;
               this.x += this.vx;
               this.y += this.vy;
 
-              this.vx *= this.drag;
-
+              // this.radius *= 0.97;
+              // this.alive = this.radius > 0.5;
+              // this.vx *= this.drag;
+              //
               // this.vy *= this.drag;
 
-              if ( this.x < 600 ) this.xtheta = 1;
-              else this.xtheta = -1;
-              if ( this.y < 250 ) this.ytheta = 1;
-              else this.ytheta = -1;
+              // if ( this.x < origin[0] ) this.xtheta = 10/(r^2);
+              // else this.xtheta = -10/(r^2);
+              // if ( this.y < origin[1] ) this.ytheta = 10/(r^2);
+              // else this.ytheta = -10/(r^2);
+              // this.xtheta = 10/(r^2) * cos(TWO_PI * r_x / r_y);
+              // this.ytheta = 10/(r^2) * sin(TWO_PI * r_x / r_y);
 
-              // this.theta += random( -5, 0 ) * this.wander;
-              //
-              this.vx += this.xtheta;
-              this.vy += this.ytheta;
 
-              this.radius *= 0.97;
-              this.alive = this.radius > 0.5;
+              // this.xtheta += random( -1, 1 ) * this.wander;
+              // this.ytheta += random( -1, 1 ) * this.wander;
           },
 
           draw: function( ctx ) {
@@ -101,9 +125,11 @@
           // Set off some initial particles.
           var i, x, y;
 
-          for ( i = 0; i < 20; i++ ) {
-              x = ( demo.width * 0.5 ) + random( -100, 100 );
-              y = ( demo.height * 0.5 ) + random( -100, 100 );
+          for ( i = 0; i < 100; i++ ) {
+              // x = ( random(demo.width));
+              // y = ( random(demo.height));
+              x = random(300,900);
+              y = random(100,400);
               demo.spawn( x, y );
           }
       };
@@ -116,7 +142,7 @@
               pool.push( particles.shift() );
 
           particle = pool.length ? pool.pop() : new Particle();
-          particle.init( x, y, random( 5, 40 ) );
+          particle.init( x, y, 2 );
 
           particle.wander = random( 0.5, 2.0 );
           particle.color = random( COLOURS );
@@ -125,10 +151,10 @@
           xtheta = random( TWO_PI );
           ytheta = random( TWO_PI );
           force = random( 2, 8 );
-          if ( particle.x < 600 ) particle.vx = 1;
-          else particle.vx = -1;
-          particle.vy = cos( ytheta ) * force;
-
+          // if ( particle.x < 600 ) particle.vx = 1;
+          // else particle.vx = -1;
+          // if ( particle.y < 250 ) particle.vy = 1;
+          // else particle.vy = -1;
           particles.push( particle );
       };
 
@@ -143,6 +169,25 @@
               if ( particle.alive ) particle.move();
               else pool.push( particles.splice( i, 1 )[0] );
           }
+
+          var particle, theta, force, touch, max, i, j, n;
+
+          for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+              touch = demo.touches[i];
+              // demo.spawn( touch.x, touch.y );
+              for ( var k = particles.length - 1; k >= 0; k-- ) {
+                  if (sqrt((particles[k].x - touch.x) * (particles[k].x - touch.x) + (particles[k].y - touch.y) * (particles[k].y - touch.y)) < 100) {
+                      if (particles[k].radius < 20) {
+                          particles[k].radius += 1
+                      };
+                  } else {
+                      if (particles[k].radius > 2) {
+                          particles[k].radius -= 1
+                      };
+                  };
+                  // if (touch.x < 600) particles[k].radius -= 1;
+              }
+          }
       };
 
       demo.draw = function() {
@@ -154,28 +199,65 @@
           }
       };
 
-      demo.mousemove = function() {
 
-          var particle, xtheta, ytheta, force, touch, max, i, j, n;
-          var start_points = [
-            [100,50],
-            [100,250],
-            [100,450],
-            [1100,50],
-            [1100,250],
-            [1100,450]
-          ];
+      // demo.mousemove = function() {
+      //
+      //     var particle, theta, force, touch, max, i, j, n;
+      //
+      //     for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+      //         touch = demo.touches[i];
+      //         for ( var i = particles.length - 1; i >= 0; i-- ) {
+      //             // if (sqrt((particles[i].x - touch.x) * (particles[i].x - touch.x) + (particles[i].y - touch.y) * (particles[i].y - touch.y)) < 30) particles[i].radius -= 1;
+      //             if (touch.x < 600) particles[i].radius -= 1;
+      //             else particles[i].radius += 1;
+      //         }
+      //     }
+      // };
 
-          for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+      // demo.mousemove = function() {
+      //
+      //     var particle, theta, force, touch, max, i, j, n;
+      //
+      //     for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+      //         touch = demo.touches[i];
+      //         // demo.spawn( touch.x, touch.y );
+      //         for ( var k = particles.length - 1; k >= 0; k-- ) {
+      //             if (sqrt((particles[k].x - touch.x) * (particles[k].x - touch.x) + (particles[k].y - touch.y) * (particles[k].y - touch.y)) < 100) {
+      //                 if (particles[k].radius < 20) {
+      //                     particles[k].radius += 1
+      //                 };
+      //             } else {
+      //                 if (particles[k].radius > 2) {
+      //                     particles[k].radius -= 1
+      //                 };
+      //             };
+      //             // if (touch.x < 600) particles[k].radius -= 1;
+      //         }
+      //     }
+      // };
 
-              touch = demo.touches[i], max = random( 1, 4 );
-              for ( j = 0; j < max; j++ ) {
-                  demo.spawn( random(start_points)[0], random(start_points)[1] );
-              }
 
-          }
-      };
+      // demo.mousemove = function() {
+      //
+      //     var particle, xtheta, ytheta, force, touch, max, i, j, n;
+      //     var start_points = [
+      //       [300,250],
+      //       [900,250],
+      //       [300,100],
+      //       [900,400]
+      //     ];
+      //
+      //     for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+      //
+      //         touch = demo.touches[i], max = random( 1, 4 );
+      //         for ( j = 0; j < max; j++ ) {
+      //             var spawn_point = random(start_points)
+      //             demo.spawn( spawn_point[0], spawn_point[1] );
+      //         }
+      //
+      //     }
+      // };
 
       </script>
-    </div>
+    <!-- </div> -->
 <% include ./partials/footer %>
