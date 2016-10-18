@@ -11,7 +11,7 @@
     </div><!-- /.container-fluid -->
     </nav>
     <div id="header">
-        <h1 class="heading"><strong>Welcome!</strong></h1>
+        <h2 class="heading"><strong>Welcome!</strong></h2>
     </div>
     <div id="container"></div>
 
@@ -52,8 +52,8 @@
             this.blue = 100;
             this.opacity = 0.4;
 
-            this.vx = 8 / this.r * (this.r_y);
-            this.vy = 8 / this.r * (this.r_x);
+            this.vx = 3 / this.r * (this.r_y);
+            this.vy = 3 / this.r * (this.r_x);
         },
 
         move: function() {
@@ -77,8 +77,6 @@
 
             this.xtheta = (-(this.r_x / (this.r * this.r)) * attraction) * (1 / (abs(this.vx) + 1));
             this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction) * (1 / (abs(this.vy) + 1));
-            // this.xtheta += random( -1, 1 ) * this.wander;
-            // this.ytheta += random( -1, 1 ) * this.wander;
             this.vx += this.xtheta;
             this.vy += this.ytheta;
             this.x += this.vx;
@@ -102,11 +100,13 @@
         },
 
         draw: function( ctx ) {
+            for ( i = 0, n = 10; i < n; i++ ) {
+                ctx.beginPath();
+                ctx.arc( this.x - (i * this.vx / 4), this.y - (i * this.vy / 4), this.radius * (1 - i/10), 0, TWO_PI );
+                ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + ((1 - i/10) * this.opacity).toString() + ')';
+                ctx.fill();
+            }
 
-            ctx.beginPath();
-            ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
-            ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + this.opacity.toString() + ')';
-            ctx.fill();
         }
     };
 
@@ -129,11 +129,11 @@
         // Set off some initial particles.
         var i, x, y;
 
-        for ( i = 0; i < 400; i++ ) {
+        for ( i = 0; i < 40; i++ ) {
             // x = ( random(demo.width));
             // y = ( random(demo.height));
-            x = random(300,900);
-            y = random(100,400);
+            x = random(500,700);
+            y = random(250,450);
             demo.spawn( x, y );
         }
     };
@@ -173,7 +173,7 @@
             touch = demo.touches[j];
             // demo.spawn( touch.x, touch.y );
             for ( k = particles.length - 1; k >= 0; k-- ) {
-                if (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2) < 200) {
+                if (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2) < 175) {
                     if (particles[k].radius < 20) {
                         if (mouseover) {
                             particles[k].feedlineOpacity = 1 - (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2)) / 200;
@@ -213,13 +213,15 @@
             particles[i].draw( demo );
             if (particles[i].feedlineOpacity > 0) {
                 var touch;
-                for ( j = 0, n = demo.touches.length; j < n; j++ ) {
-                        touch = demo.touches[j];
-                        demo.beginPath();
-                        demo.moveTo( particles[i].x, particles[i].y );
-                        demo.lineTo( touch.x, touch.y );
-                        demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
-                        demo.stroke();
+                if (mouseover) {
+                    for ( j = 0, n = demo.touches.length; j < n; j++ ) {
+                            touch = demo.touches[j];
+                            demo.beginPath();
+                            demo.moveTo( particles[i].x, particles[i].y );
+                            demo.lineTo( touch.x, touch.y );
+                            demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
+                            demo.stroke();
+                    }
                 }
             }
         }
@@ -243,6 +245,12 @@
     demo.mouseout = function() {
         mouseover = false;
     }
+
+    // demo.keydown = function() {
+    //     if (this.keys.SPACE) {
+    //         attraction = 0;
+    //     };
+    // }
 
     </script>
 <% include ./partials/footer %>
