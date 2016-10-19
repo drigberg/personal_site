@@ -74,7 +74,6 @@
 
             if (this.r < 30 ) this.r = 30;
 
-
             this.xtheta = (-(this.r_x / (this.r * this.r)) * attraction) * (1 / (abs(this.vx) + 1));
             this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction) * (1 / (abs(this.vy) + 1));
             this.vx += this.xtheta;
@@ -100,13 +99,10 @@
         },
 
         draw: function( ctx ) {
-            for ( i = 0, n = 10; i < n; i++ ) {
-                ctx.beginPath();
-                ctx.arc( this.x - (i * this.vx / 4), this.y - (i * this.vy / 4), this.radius * (1 - i/10), 0, TWO_PI );
-                ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + ((1 - i/10) * this.opacity).toString() + ')';
-                ctx.fill();
-            }
-
+            ctx.beginPath();
+            ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
+            ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + this.opacity.toString() + ')';
+            ctx.fill();
         }
     };
 
@@ -225,8 +221,6 @@
                 }
             }
         }
-
-
     };
 
 
