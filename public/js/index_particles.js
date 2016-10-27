@@ -1,12 +1,26 @@
-// ----------------------------------------
-// Particle
-// ----------------------------------------
+var default_attraction = 200;
+var attraction = default_attraction;
+var mouseover = false;
+var slow_factor = 0.25;
+var max_line_distance = 175;
+var default_particle_width = 2;
+var planet_radius_range = [200, 2000];
+var particles = [];
+var planets = [];
+var particle_pool = [];
+var planet_pool = [];
+
+var demo = Sketch.create({
+    container: document.getElementById( 'container' )
+});
 
 function Particle( x, y, radius ) {
     this.init( x, y, radius );
 }
-var attraction = 100;
-var mouseover = false;
+
+function Planet( x, y, radius ) {
+    this.init( x, y, radius );
+}
 
 Particle.prototype = {
 
@@ -32,8 +46,25 @@ Particle.prototype = {
         this.blue = 100;
         this.opacity = 0.4;
 
-        this.vx = 3 / this.r * (this.r_y);
-        this.vy = 3 / this.r * (this.r_x);
+        //Coordinated orbits
+
+        if (this.r_x > 0){
+            if (this.r_y > 0) {
+                this.vx = (-5 / this.r) * (this.r_y)
+                this.vy = (5 / this.r) * (this.r_x)
+            } else {
+                this.vx = (-5 / this.r) * (this.r_y)
+                this.vy = (5 / this.r) * (this.r_x)
+            }
+        } else {
+          if (this.r_y > 0) {
+              this.vx = 5 / this.r * (this.r_y)
+              this.vy = 5 / this.r * (this.r_x)
+          } else {
+              this.vx = (5 / this.r) * (this.r_y)
+              this.vy = (5 / this.r) * (this.r_x)
+          }
+        };
     },
 
     move: function() {
@@ -54,8 +85,8 @@ Particle.prototype = {
 
         if (this.r < 30 ) this.r = 30;
 
-        this.xtheta = (-(this.r_x / (this.r * this.r)) * attraction) * (1 / (abs(this.vx) + 1));
-        this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction) * (1 / (abs(this.vy) + 1));
+        this.xtheta = (-(this.r_x / (this.r * this.r)) * attraction * slow_factor);
+        this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction * slow_factor);
         this.vx += this.xtheta;
         this.vy += this.ytheta;
         this.x += this.vx;
@@ -86,19 +117,55 @@ Particle.prototype = {
     }
 };
 
-// ----------------------------------------
-// Example
-// ----------------------------------------
+Planet.prototype = {
 
-var MAX_PARTICLES = 1000;
-var COLOURS = [ '#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423' ];
+    init: function( x, y, radius ) {
+        this.alive = true;
+        this.x = x || 0;
+        this.y = y || 0;
+        if (this.x < demo.width / 2) {
+            this.vx = random(0,2);
+        } else {
+            this.vx = random(-2,0);
+        }
+        if (this.y < demo.height / 2) {
+            this.vy = random(0,2);
+        } else {
+            this.vy = random(-2,0);
+        }
 
-var particles = [];
-var pool = [];
+        this.radius = radius || 2000;
+        this.diameter = this.radius * 2;
+        this.red = 0;
+        this.green = random(0,255);
+        this.blue = random(0,255);
+        this.opacity = 0.05;
+    },
 
-var demo = Sketch.create({
-    container: document.getElementById( 'container' )
-});
+    move: function() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x - this.diameter > demo.width) {
+            this.alive = false
+        } else if (this.x + this.diameter < 0){
+          this.alive = false
+        };
+
+        if (this.y - this.diameter > demo.height) {
+          this.alive = false
+        } else if (this.y + this.diameter < 0){
+          this.alive = false
+        };
+    },
+
+    draw: function( ctx ) {
+        ctx.beginPath();
+        ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
+        ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + this.opacity.toString() + ')';
+        ctx.fill();
+    }
+};
 
 demo.setup = function() {
 
@@ -106,41 +173,49 @@ demo.setup = function() {
     var i, x, y;
 
     for ( i = 0; i < 40; i++ ) {
-        // x = ( random(demo.width));
-        // y = ( random(demo.height));
-        x = random(500,700);
+        x = random(300,900);
         y = random(250,450);
-        demo.spawn( x, y );
+        demo.spawn_particle( x, y );
+    }
+
+    for (i = 0; i < 3; i++) {
+        demo.spawn_planet();
     }
 };
 
-demo.spawn = function( x, y ) {
+demo.spawn_particle = function( x, y ) {
 
-    var particle, xtheta, ytheta, force;
-
-    if ( particles.length >= MAX_PARTICLES )
-        pool.push( particles.shift() );
-
-    particle = pool.length ? pool.pop() : new Particle();
-    particle.init( x, y, 2 );
-
-    // particle.wander = random( 0.5, 2.0 );
-    particle.wander = random( 0.5, 1.0 );
-    xtheta = random( TWO_PI );
-    ytheta = random( TWO_PI );
+    var particle;
+    particle = particle_pool.length ? particle_pool.pop() : new Particle();
+    particle.init( x, y, default_particle_width);
     particles.push( particle );
+};
+
+demo.spawn_planet = function() {
+    var planet, radius;
+    planet = planet_pool.length ? planet_pool.pop() : new Planet();
+    radius = random(planet_radius_range[0], planet_radius_range[1]);
+    var x = 0
+    var y = 0
+    while (x + radius > 0 && x - radius < demo.width && y + radius > 0 && y - radius < demo.height) {
+        x = random(-1 * radius - 200, demo.width + radius + 200);
+        y = random(-1 * radius - 200, demo.height + radius + 200);
+    }
+    planet.init( x, y, radius );
+    planets.push( planet );
 };
 
 demo.update = function() {
 
-    var i, particle;
+    var i, particle, planet;
 
+    //particles
     for ( i = particles.length - 1; i >= 0; i-- ) {
 
         particle = particles[i];
 
         if ( particle.alive ) particle.move();
-        else pool.push( particles.splice( i, 1 )[0] );
+        else particle_pool.push( particles.splice( i, 1 )[0] );
     }
 
     var j, k, touch;
@@ -149,21 +224,19 @@ demo.update = function() {
         touch = demo.touches[j];
         // demo.spawn( touch.x, touch.y );
         for ( k = particles.length - 1; k >= 0; k-- ) {
-            if (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2) < 175) {
-                if (particles[k].radius < 20) {
-                    if (mouseover) {
-                        particles[k].feedlineOpacity = 1 - (sqrt((particles[k].x - touch.x) ** 2 + (particles[k].y - touch.y) ** 2)) / 200;
-                        particles[k].radius += 0.2;
-                        if (particles[k].red < 250) {
-                            particles[k].red += 10;
-                        }
-                        if (particles[k].blue > 100) {
-                            particles[k].blue -= 10;
-                        }
-                        if (particles[k].opacity < 1) {
-                            particles[k].opacity += 0.1
-                        }
-                    };
+            if (find_distance(particles[k], touch) < max_line_distance) {
+                if (particles[k].radius < 20 && mouseover) {
+                    particles[k].feedlineOpacity = 1 - (find_distance(particles[k], touch)) / 200;
+                    particles[k].radius += 0.2;
+                    if (particles[k].red < 250) {
+                        particles[k].red += 10;
+                    }
+                    if (particles[k].blue > 100) {
+                        particles[k].blue -= 10;
+                    }
+                    if (particles[k].opacity < 1) {
+                        particles[k].opacity += 0.1
+                    }
                 };
             } else {
                 particles[k].feedlineOpacity = 0;
@@ -182,34 +255,61 @@ demo.update = function() {
             };
         }
     }
+
+    //planets
+    for ( i = planets.length - 1; i >= 0; i-- ) {
+        planet = planets[i];
+        if ( planet.alive ) {
+            planet.move()
+        } else {
+            planet_pool.push( planets.splice( i, 1 )[0] );
+            radius = random(planet_radius_range)
+            demo.spawn_planet( radius );
+        };
+    }
 };
 
 demo.draw = function() {
     for ( var i = particles.length - 1; i >= 0; i-- ) {
         particles[i].draw( demo );
-        if (particles[i].feedlineOpacity > 0) {
-            var touch;
-            if (mouseover) {
-                for ( j = 0, n = demo.touches.length; j < n; j++ ) {
-                        touch = demo.touches[j];
-                        demo.beginPath();
-                        demo.moveTo( particles[i].x, particles[i].y );
-                        demo.lineTo( touch.x, touch.y );
-                        demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
-                        demo.stroke();
-                }
+        for ( var j = particles.length - 1; j >= 0; j-- ) {
+            if (i != j && find_distance(particles[i], particles[j]) < max_line_distance) {
+                demo.beginPath();
+                demo.moveTo( particles[i].x, particles[i].y );
+                demo.lineTo( particles[j].x, particles[j].y );
+                average_colors = {
+                    "red" : (particles[i].red + particles[j].red)/2,
+                    "green" : (particles[i].green + particles[j].green)/2,
+                    "blue" :(particles[i].blue + particles[j].blue)/2
+                };
+                // demo.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + (find_distance(particles[i], particles[j]) / 175).toString() + ')';
+                demo.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + ((find_distance(particles[i], particles[j]) / 175) * 0.2).toString() + ')';
+                demo.stroke();
             }
         }
+        if (particles[i].feedlineOpacity > 0 && mouseover) {
+            for ( var k = 0, n = demo.touches.length; k < n; k++ ) {
+                var touch = demo.touches[k];
+                demo.beginPath();
+                demo.moveTo( particles[i].x, particles[i].y );
+                demo.lineTo( touch.x, touch.y );
+                demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
+                demo.stroke();
+            }
+        }
+    }
+    for ( var i = planets.length - 1; i >= 0; i-- ) {
+        planets[i].draw( demo );
     }
 };
 
 
 demo.mousedown = function() {
-    attraction = 400;
+    attraction = default_attraction * 2;
 }
 
 demo.mouseup = function() {
-    attraction = 100;
+    attraction = default_attraction;
 }
 
 demo.mouseover = function() {
@@ -218,6 +318,10 @@ demo.mouseover = function() {
 
 demo.mouseout = function() {
     mouseover = false;
+}
+
+find_distance = function(object_1, object_2) {
+    return sqrt((object_1.x - object_2.x) ** 2 + (object_1.y - object_2.y) ** 2)
 }
 
 // demo.keydown = function() {
