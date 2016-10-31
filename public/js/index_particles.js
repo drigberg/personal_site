@@ -9,6 +9,9 @@ var particles = [];
 var planets = [];
 var particle_pool = [];
 var planet_pool = [];
+var GridNode_pool = [];
+var GridNodes = [];
+var G = 1000;
 
 var demo = Sketch.create({
     container: document.getElementById( 'container' )
@@ -22,11 +25,16 @@ function Planet( x, y, radius ) {
     this.init( x, y, radius );
 }
 
+function GridNode( x, y, n ) {
+    this.init( x, y, n );
+}
+
 Particle.prototype = {
 
     init: function( x, y, radius ) {
 
         this.alive = true;
+        this.mass = 10;
         this.feedlineOpacity = 0;
         this.x = x || 0;
         this.y = y || 0;
@@ -167,6 +175,43 @@ Planet.prototype = {
     }
 };
 
+GridNode.prototype = {
+
+    init: function( x, y, n_x, n_y ) {
+        this.base_x = x || 0;
+        this.base_y = y || 0;
+        this.warped_x = x || 0;
+        this.warped_y = y || 0;
+        this.n_x = n_x || 0;
+        this.n_y = n_y || 1;
+    },
+
+    move: function() {
+        var d_x = 0;
+        var d_y = 0;
+        var local_attraction = 0;
+        var distance = 0;
+        for ( i = particles.length - 1; i >= 0; i-- ) {
+            distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
+            local_attraction =  G * particles[i].mass / (distance ** 2);
+            x_vector = local_attraction * ((this.base_x - particles[i].x) / distance);
+            y_vector = local_attraction * ((this.base_y - particles[i].y) / distance);
+            d_x -= x_vector;
+            d_y -= y_vector;
+        }
+
+        this.warped_x = this.base_x + d_x;
+        this.warped_y = this.base_y + d_y;
+    },
+
+    draw: function( ctx ) {
+        ctx.beginPath();
+        ctx.arc( this.warped_x, this.warped_y, 5, 0, TWO_PI );
+        ctx.fillStyle = 'rgba(0, 0, 255, 1)';
+        ctx.fill();
+    }
+};
+
 demo.setup = function() {
 
     // Set off some initial particles.
@@ -181,10 +226,28 @@ demo.setup = function() {
     for (i = 0; i < 3; i++) {
         demo.spawn_planet();
     }
+
+
+    var n_x = 0;
+    var n_y = 0;
+    var gridInterval = demo.width / 12;
+    var yCounter = gridInterval * -1;
+    var xCounter = gridInterval * -1;
+
+    while (yCounter < demo.height + gridInterval) {
+        while (xCounter < demo.width + gridInterval) {
+            demo.spawn_GridNode(xCounter, yCounter, n_x, n_y);
+            xCounter += gridInterval;
+            n_x += 1;
+        };
+        yCounter += gridInterval;
+        n_y += 1;
+        xCounter = 0;
+        n_x = 0;
+    };
 };
 
 demo.spawn_particle = function( x, y ) {
-
     var particle;
     particle = particle_pool.length ? particle_pool.pop() : new Particle();
     particle.init( x, y, default_particle_width);
@@ -203,6 +266,13 @@ demo.spawn_planet = function() {
     }
     planet.init( x, y, radius );
     planets.push( planet );
+};
+
+demo.spawn_GridNode = function( x, y, n_x, n_y) {
+  var gridNode;
+  gridNode = new GridNode();
+  gridNode.init( x, y, n_x, n_y);
+  GridNodes.push( gridNode );
 };
 
 demo.update = function() {
@@ -267,6 +337,10 @@ demo.update = function() {
             demo.spawn_planet( radius );
         };
     }
+
+    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
+        GridNodes[i].move();
+    }
 };
 
 demo.draw = function() {
@@ -282,7 +356,6 @@ demo.draw = function() {
                     "green" : (particles[i].green + particles[j].green)/2,
                     "blue" :(particles[i].blue + particles[j].blue)/2
                 };
-                // demo.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + (find_distance(particles[i], particles[j]) / 175).toString() + ')';
                 demo.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + ((find_distance(particles[i], particles[j]) / 175) * 0.2).toString() + ')';
                 demo.stroke();
             }
@@ -299,7 +372,11 @@ demo.draw = function() {
         }
     }
     for ( var i = planets.length - 1; i >= 0; i-- ) {
-        planets[i].draw( demo );
+        // planets[i].draw( demo );
+    }
+
+    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
+        GridNodes[i].draw( demo );
     }
 };
 
@@ -322,6 +399,10 @@ demo.mouseout = function() {
 
 find_distance = function(object_1, object_2) {
     return sqrt((object_1.x - object_2.x) ** 2 + (object_1.y - object_2.y) ** 2)
+}
+
+degrees_to_radians = function(degrees) {
+    return degrees / 180 * PI;
 }
 
 // demo.keydown = function() {
