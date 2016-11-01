@@ -11,7 +11,7 @@ var particle_pool = [];
 var planet_pool = [];
 var GridNode_pool = [];
 var GridNodes = [];
-var G = 1000;
+var G = 500;
 
 var demo = Sketch.create({
     container: document.getElementById( 'container' )
@@ -184,30 +184,42 @@ GridNode.prototype = {
         this.warped_y = y || 0;
         this.n_x = n_x || 0;
         this.n_y = n_y || 1;
+        this.radius = 0;
     },
 
     move: function() {
-        var d_x = 0;
-        var d_y = 0;
-        var local_attraction = 0;
+        // var d_x = 0;
+        // var d_y = 0;
+        // var local_attraction = 0;
+        // var distance = 0;
+        // for ( i = particles.length - 1; i >= 0; i-- ) {
+        //     distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
+        //     local_attraction =  G * particles[i].mass / (distance ** 2);
+        //     x_vector = local_attraction * ((this.base_x - particles[i].x) / distance);
+        //     y_vector = local_attraction * ((this.base_y - particles[i].y) / distance);
+        //     d_x -= x_vector;
+        //     d_y -= y_vector;
+        // }
+        //
+        // this.warped_x = this.base_x + d_x;
+        // this.warped_y = this.base_y + d_y;
+        this.radius = 10;
+        var local_gravity_well = 0;
         var distance = 0;
         for ( i = particles.length - 1; i >= 0; i-- ) {
             distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
-            local_attraction =  G * particles[i].mass / (distance ** 2);
-            x_vector = local_attraction * ((this.base_x - particles[i].x) / distance);
-            y_vector = local_attraction * ((this.base_y - particles[i].y) / distance);
-            d_x -= x_vector;
-            d_y -= y_vector;
+            local_gravity_well += G * particles[i].mass / (distance ** 1.2);
         }
-
-        this.warped_x = this.base_x + d_x;
-        this.warped_y = this.base_y + d_y;
+        this.radius -= local_gravity_well * 0.05;
+        if (this.radius < 0) {
+            this.radius = 0;
+        };
     },
 
     draw: function( ctx ) {
         ctx.beginPath();
-        ctx.arc( this.warped_x, this.warped_y, 5, 0, TWO_PI );
-        ctx.fillStyle = 'rgba(0, 0, 255, 1)';
+        ctx.arc( this.warped_x, this.warped_y, this.radius, 0, TWO_PI );
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
         ctx.fill();
     }
 };
@@ -217,7 +229,7 @@ demo.setup = function() {
     // Set off some initial particles.
     var i, x, y;
 
-    for ( i = 0; i < 40; i++ ) {
+    for ( i = 0; i < 20; i++ ) {
         x = random(300,900);
         y = random(250,450);
         demo.spawn_particle( x, y );
@@ -230,7 +242,7 @@ demo.setup = function() {
 
     var n_x = 0;
     var n_y = 0;
-    var gridInterval = demo.width / 12;
+    var gridInterval = demo.width / 50;
     var yCounter = gridInterval * -1;
     var xCounter = gridInterval * -1;
 
@@ -344,6 +356,13 @@ demo.update = function() {
 };
 
 demo.draw = function() {
+    for ( var i = planets.length - 1; i >= 0; i-- ) {
+        // planets[i].draw( demo );
+    }
+
+    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
+        GridNodes[i].draw( demo );
+    }
     for ( var i = particles.length - 1; i >= 0; i-- ) {
         particles[i].draw( demo );
         for ( var j = particles.length - 1; j >= 0; j-- ) {
@@ -370,13 +389,6 @@ demo.draw = function() {
                 demo.stroke();
             }
         }
-    }
-    for ( var i = planets.length - 1; i >= 0; i-- ) {
-        // planets[i].draw( demo );
-    }
-
-    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
-        GridNodes[i].draw( demo );
     }
 };
 
