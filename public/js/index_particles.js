@@ -1,3 +1,9 @@
+//TO-DO
+//    -Revise terminal velocity for composite vector
+//
+
+
+
 var default_attraction = 200;
 var attraction = default_attraction;
 var mouseover = false;
@@ -12,6 +18,7 @@ var planet_pool = [];
 var GridNode_pool = [];
 var GridNodes = [];
 var G = 500;
+var terminal_velocity = 10;
 
 var demo = Sketch.create({
     container: document.getElementById( 'container' )
@@ -97,6 +104,12 @@ Particle.prototype = {
         this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction * slow_factor);
         this.vx += this.xtheta;
         this.vy += this.ytheta;
+        if (this.vx > terminal_velocity) {
+            this.vx = terminal_velocity;
+        }
+        if (this.vy > terminal_velocity) {
+            this.vy = terminal_velocity;
+        }
         this.x += this.vx;
         this.y += this.vy;
 
@@ -209,7 +222,7 @@ GridNode.prototype = {
         for ( i = particles.length - 1; i >= 0; i-- ) {
             distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
             local_gravity_well += G * particles[i].mass / (distance ** 1.2);
-        }
+        };
         this.radius -= local_gravity_well * 0.05;
         if (this.radius < 0) {
             this.radius = 0;
