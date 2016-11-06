@@ -191,36 +191,19 @@ Planet.prototype = {
 GridNode.prototype = {
 
     init: function( x, y, n_x, n_y ) {
-        this.base_x = x || 0;
-        this.base_y = y || 0;
-        this.warped_x = x || 0;
-        this.warped_y = y || 0;
+        this.x = x || 0;
+        this.y = y || 0;
         this.n_x = n_x || 0;
         this.n_y = n_y || 1;
         this.radius = 0;
     },
 
     move: function() {
-        // var d_x = 0;
-        // var d_y = 0;
-        // var local_attraction = 0;
-        // var distance = 0;
-        // for ( i = particles.length - 1; i >= 0; i-- ) {
-        //     distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
-        //     local_attraction =  G * particles[i].mass / (distance ** 2);
-        //     x_vector = local_attraction * ((this.base_x - particles[i].x) / distance);
-        //     y_vector = local_attraction * ((this.base_y - particles[i].y) / distance);
-        //     d_x -= x_vector;
-        //     d_y -= y_vector;
-        // }
-        //
-        // this.warped_x = this.base_x + d_x;
-        // this.warped_y = this.base_y + d_y;
         this.radius = 10;
         var local_gravity_well = 0;
         var distance = 0;
         for ( i = particles.length - 1; i >= 0; i-- ) {
-            distance = sqrt((particles[i].x - this.base_x) ** 2 + (particles[i].y - this.base_y) ** 2);
+            distance = find_distance(particles[i], this);
             local_gravity_well += G * particles[i].mass / (distance ** 1.2);
         };
         this.radius -= local_gravity_well * 0.05;
@@ -231,7 +214,7 @@ GridNode.prototype = {
 
     draw: function( ctx ) {
         ctx.beginPath();
-        ctx.arc( this.warped_x, this.warped_y, this.radius, 0, TWO_PI );
+        ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
         ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
         ctx.fill();
     }
@@ -429,9 +412,3 @@ find_distance = function(object_1, object_2) {
 degrees_to_radians = function(degrees) {
     return degrees / 180 * PI;
 }
-
-// demo.keydown = function() {
-//     if (this.keys.SPACE) {
-//         attraction = 0;
-//     };
-// }
