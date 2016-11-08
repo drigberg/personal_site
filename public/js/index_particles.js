@@ -2,8 +2,6 @@
 //    -Revise terminal velocity for composite vector
 //
 
-
-
 var default_attraction = 200;
 var attraction = default_attraction;
 var mouseover = false;
@@ -20,7 +18,7 @@ var GridNodes = [];
 var G = 500;
 var terminal_velocity = 10;
 
-var demo = Sketch.create({
+var particle_field = Sketch.create({
     container: document.getElementById( 'container' )
 });
 
@@ -85,8 +83,8 @@ Particle.prototype = {
     move: function() {
 
         if (mouseover) {
-            for ( i = 0, n = demo.touches.length; i < n; i++ ) {
-                var touch = demo.touches[i];
+            for ( i = 0, n = particle_field.touches.length; i < n; i++ ) {
+                var touch = particle_field.touches[i];
                 this.r_x = (this.x - touch.x);
                 this.r_y = (this.y - touch.y);
             }
@@ -113,7 +111,7 @@ Particle.prototype = {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x > demo.width - 1) {
+        if (this.x > particle_field.width - 1) {
             this.vx = this.vx * -0.7;
             this.xtheta = 0;
         } else if (this.x < 1){
@@ -121,7 +119,7 @@ Particle.prototype = {
             this.xtheta = 0;
         };
 
-        if (this.y > demo.height) {
+        if (this.y > particle_field.height) {
             this.vy = this.vy * -0.7;
             this.ytheta = 0;
         } else if (this.y < 1){
@@ -144,12 +142,12 @@ Planet.prototype = {
         this.alive = true;
         this.x = x || 0;
         this.y = y || 0;
-        if (this.x < demo.width / 2) {
+        if (this.x < particle_field.width / 2) {
             this.vx = random(0,2);
         } else {
             this.vx = random(-2,0);
         }
-        if (this.y < demo.height / 2) {
+        if (this.y < particle_field.height / 2) {
             this.vy = random(0,2);
         } else {
             this.vy = random(-2,0);
@@ -167,13 +165,13 @@ Planet.prototype = {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x - this.diameter > demo.width) {
+        if (this.x - this.diameter > particle_field.width) {
             this.alive = false
         } else if (this.x + this.diameter < 0){
           this.alive = false
         };
 
-        if (this.y - this.diameter > demo.height) {
+        if (this.y - this.diameter > particle_field.height) {
           this.alive = false
         } else if (this.y + this.diameter < 0){
           this.alive = false
@@ -220,7 +218,7 @@ GridNode.prototype = {
     }
 };
 
-demo.setup = function() {
+particle_field.setup = function() {
 
     // Set off some initial particles.
     var i, x, y;
@@ -228,23 +226,23 @@ demo.setup = function() {
     for ( i = 0; i < 20; i++ ) {
         x = random(300,900);
         y = random(250,450);
-        demo.spawn_particle( x, y );
+        particle_field.spawn_particle( x, y );
     }
 
     for (i = 0; i < 3; i++) {
-        demo.spawn_planet();
+        particle_field.spawn_planet();
     }
 
 
     var n_x = 0;
     var n_y = 0;
-    var gridInterval = demo.width / 50;
+    var gridInterval = particle_field.width / 50;
     var yCounter = gridInterval * -1;
     var xCounter = gridInterval * -1;
 
-    while (yCounter < demo.height + gridInterval) {
-        while (xCounter < demo.width + gridInterval) {
-            demo.spawn_GridNode(xCounter, yCounter, n_x, n_y);
+    while (yCounter < particle_field.height + gridInterval) {
+        while (xCounter < particle_field.width + gridInterval) {
+            particle_field.spawn_GridNode(xCounter, yCounter, n_x, n_y);
             xCounter += gridInterval;
             n_x += 1;
         };
@@ -255,35 +253,35 @@ demo.setup = function() {
     };
 };
 
-demo.spawn_particle = function( x, y ) {
+particle_field.spawn_particle = function( x, y ) {
     var particle;
     particle = particle_pool.length ? particle_pool.pop() : new Particle();
     particle.init( x, y, default_particle_width);
     particles.push( particle );
 };
 
-demo.spawn_planet = function() {
+particle_field.spawn_planet = function() {
     var planet, radius;
     planet = planet_pool.length ? planet_pool.pop() : new Planet();
     radius = random(planet_radius_range[0], planet_radius_range[1]);
     var x = 0
     var y = 0
-    while (x + radius > 0 && x - radius < demo.width && y + radius > 0 && y - radius < demo.height) {
-        x = random(-1 * radius - 200, demo.width + radius + 200);
-        y = random(-1 * radius - 200, demo.height + radius + 200);
+    while (x + radius > 0 && x - radius < particle_field.width && y + radius > 0 && y - radius < particle_field.height) {
+        x = random(-1 * radius - 200, particle_field.width + radius + 200);
+        y = random(-1 * radius - 200, particle_field.height + radius + 200);
     }
     planet.init( x, y, radius );
     planets.push( planet );
 };
 
-demo.spawn_GridNode = function( x, y, n_x, n_y) {
+particle_field.spawn_GridNode = function( x, y, n_x, n_y) {
   var gridNode;
   gridNode = new GridNode();
   gridNode.init( x, y, n_x, n_y);
   GridNodes.push( gridNode );
 };
 
-demo.update = function() {
+particle_field.update = function() {
 
     var i, particle, planet;
 
@@ -298,9 +296,9 @@ demo.update = function() {
 
     var j, k, touch;
 
-    for ( j = 0, n = demo.touches.length; j < n; j++ ) {
-        touch = demo.touches[j];
-        // demo.spawn( touch.x, touch.y );
+    for ( j = 0, n = particle_field.touches.length; j < n; j++ ) {
+        touch = particle_field.touches[j];
+        // particle_field.spawn( touch.x, touch.y );
         for ( k = particles.length - 1; k >= 0; k-- ) {
             if (find_distance(particles[k], touch) < max_line_distance) {
                 if (particles[k].radius < 20 && mouseover) {
@@ -342,7 +340,7 @@ demo.update = function() {
         } else {
             planet_pool.push( planets.splice( i, 1 )[0] );
             radius = random(planet_radius_range)
-            demo.spawn_planet( radius );
+            particle_field.spawn_planet( radius );
         };
     }
 
@@ -351,57 +349,57 @@ demo.update = function() {
     }
 };
 
-demo.draw = function() {
+particle_field.draw = function() {
     for ( var i = planets.length - 1; i >= 0; i-- ) {
-        // planets[i].draw( demo );
+        // planets[i].draw( particle_field );
     }
 
     for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
-        GridNodes[i].draw( demo );
+        GridNodes[i].draw( particle_field );
     }
     for ( var i = particles.length - 1; i >= 0; i-- ) {
-        particles[i].draw( demo );
+        particles[i].draw( particle_field );
         for ( var j = particles.length - 1; j >= 0; j-- ) {
             if (i != j && find_distance(particles[i], particles[j]) < max_line_distance) {
-                demo.beginPath();
-                demo.moveTo( particles[i].x, particles[i].y );
-                demo.lineTo( particles[j].x, particles[j].y );
+                particle_field.beginPath();
+                particle_field.moveTo( particles[i].x, particles[i].y );
+                particle_field.lineTo( particles[j].x, particles[j].y );
                 average_colors = {
                     "red" : (particles[i].red + particles[j].red)/2,
                     "green" : (particles[i].green + particles[j].green)/2,
                     "blue" :(particles[i].blue + particles[j].blue)/2
                 };
-                demo.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + ((find_distance(particles[i], particles[j]) / 175) * 0.2).toString() + ')';
-                demo.stroke();
+                particle_field.strokeStyle = 'rgba(' + average_colors["red"].toString() + ', ' + average_colors["green"].toString() + ', ' + average_colors["blue"].toString() + ', ' + ((find_distance(particles[i], particles[j]) / 175) * 0.2).toString() + ')';
+                particle_field.stroke();
             }
         }
         if (particles[i].feedlineOpacity > 0 && mouseover) {
-            for ( var k = 0, n = demo.touches.length; k < n; k++ ) {
-                var touch = demo.touches[k];
-                demo.beginPath();
-                demo.moveTo( particles[i].x, particles[i].y );
-                demo.lineTo( touch.x, touch.y );
-                demo.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
-                demo.stroke();
+            for ( var k = 0, n = particle_field.touches.length; k < n; k++ ) {
+                var touch = particle_field.touches[k];
+                particle_field.beginPath();
+                particle_field.moveTo( particles[i].x, particles[i].y );
+                particle_field.lineTo( touch.x, touch.y );
+                particle_field.strokeStyle = 'rgba(' + particles[i].red.toString() + ', ' + particles[i].green.toString() + ', ' + particles[i].blue.toString() + ', ' + (particles[i].feedlineOpacity).toString() + ')';
+                particle_field.stroke();
             }
         }
     }
 };
 
 
-demo.mousedown = function() {
+particle_field.mousedown = function() {
     attraction = default_attraction * 2;
 }
 
-demo.mouseup = function() {
+particle_field.mouseup = function() {
     attraction = default_attraction;
 }
 
-demo.mouseover = function() {
+particle_field.mouseover = function() {
     mouseover = true;
 }
 
-demo.mouseout = function() {
+particle_field.mouseout = function() {
     mouseover = false;
 }
 
