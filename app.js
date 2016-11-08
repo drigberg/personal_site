@@ -30,6 +30,10 @@ app.get("/sandbox", function (req, res){
     res.render("sandbox");
 });
 
+app.get("/signal_processing", function (req, res){
+    res.render("signal_processing");
+});
+
 //safety net redirect
 app.get("*", function (req, res){
     res.redirect("/");
