@@ -68,9 +68,9 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 	this.randomoffset = (Math.random() * this.spread) - (this.spread / 2); //in seconds
 	///envelope
 	this.source.start(this.now,this.offset + this.randomoffset,this.attack + this.sustain + this.release); //parameters (when,offset,duration)
-	this.gain.gain.setValueAtTime(0.000001, this.now);
-	this.gain.gain.exponentialRampToValueAtTime(this.amp,this.now + this.attack);
-	this.gain.gain.exponentialRampToValueAtTime(0.000001,this.now + (this.attack + this.sustain + this.release) );
+	this.gain.gain.setValueAtTime(0, this.now);
+	this.gain.gain.linearRampToValueAtTime(this.amp,this.now + this.attack);
+	this.gain.gain.linearRampToValueAtTime(0,this.now + (this.attack + this.sustain + this.release) );
 
 	//garbage collection
 	this.source.stop(this.now + this.attack + this.sustain + this.release + 0.1);
@@ -104,7 +104,7 @@ voice.prototype.playmouse = function(p){
 	this.grainscount = 0;
 	var that = this; //for scope issues
 	this.play = function(){
-		//create new grain
+		//create new grains
 		var g = new grain(p,buffer,p.mouseX,p.mouseY,attack,release,spread,pan);
 		//push to the array
 		that.grains[that.graincount] = g;
@@ -114,7 +114,7 @@ voice.prototype.playmouse = function(p){
 			that.graincount = 0;
 		}
 		//next interval
-		this.interval = (density * 500) + 70;
+		this.interval = (density * 500) + 1;
 		that.timeout = setTimeout(that.play,this.interval);
 
 	}
@@ -156,7 +156,7 @@ function waveformdisplay(p){
 	    var step = Math.ceil( data.length / w );
 	    var amp = h / 2;
 
-	    p.background(0);
+	    p.background(255, 40, 200);
 	    for( var i=0; i < w; i++ ){
 	        var min = 1.0;
 	        var max = -1.0;

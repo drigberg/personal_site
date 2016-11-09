@@ -30,37 +30,6 @@ function guiinit(){
 		$(this).css('opacity','1');
 	});
 
-	$('#sample1').click(function(){
-		load();
-	});
-
-	$('#sample2').click(function(){
-		//loading the sound with XML HTTP REQUEST
-
-		var request = new XMLHttpRequest();
-			request.open('GET','audio/synth.mp3',true);
-			request.responseType = "arraybuffer";
-			request.onload = function(){
-				context.decodeAudioData(request.response,function(b){
-					buffer = b; //set the buffer
-					data = buffer.getChannelData(0);
-					isloaded = true;
-					var canvas1 = document.getElementById('canvas');
-					//initialize the processing draw when the buffer is ready
-					var processing = new Processing(canvas1,waveformdisplay);
-					load();
-
-				},function(){
-					console.log('loading failed');
-					alert('loading failed');
-
-				});
-			};
-		request.send();
-
-
-	});
-
 	//drop
 	var drop = document.getElementById('waveform');
 
@@ -68,25 +37,26 @@ function guiinit(){
     //prevents from loading the file in a new page
    	 e.preventDefault();
 	},false);
+
 	drop.addEventListener('drop',function(e){
 		e.preventDefault();
 		var file = e.dataTransfer.files[0];
 		var reader = new FileReader();
-    	reader.onload = function(e){
-    		var array = e.target.result;
-    		context.decodeAudioData(array,function(b){
+  	reader.onload = function(e){
+			console.log(e.target.result)
+  		var array = e.target.result;
+  		context.decodeAudioData(array,function(b){
+			buffer = b
+			data = buffer.getChannelData(0);
+			var canvas1 = document.getElementById('canvas');
+			var processing = new Processing(canvas1,waveformdisplay);
+			load();
 
-    			buffer = b
-    			data = buffer.getChannelData(0);
-    			var canvas1 = document.getElementById('canvas');
-    			var processing = new Processing(canvas1,waveformdisplay);
-    			load();
-
-    		},function(){
-    			console.log('loading failed');
-    			alert('loading failed');
-    		});
-    	}
-    	reader.readAsArrayBuffer(file);
+  		},function(){
+  			console.log('loading failed');
+  			alert('loading failed');
+  		});
+  	}
+  	reader.readAsArrayBuffer(file);
 	},false);
 }
