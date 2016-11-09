@@ -7,11 +7,10 @@ var buffer,buffer2; //global variables for sample files
 var master = context.createGain();
 master.connect(context.destination);
 
-//global varuables
+//global variables
 var w,h;
 var data;
 var drawingdata = []; //an array that keeps the data
-var voices = []; //an array for touch events - polyphonic
 var voicesmono = []; //this will be used for mouse events - monophonic
 var isloaded = false;
 var X = 0;
@@ -22,7 +21,8 @@ var helpvisible = true;
 //control initial settings
 var attack = 0.40;
 var release = 0.40;
-var density = 0.85;
+var density = 0.1;
+var amplitude = 0.8
 var spread = 0.2;
 var reverb = 0.5;
 var pan = 0.1;
@@ -41,37 +41,24 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 	//create the gain for enveloping
 	this.gain = context.createGain();
 
-	//experimenting with adding a panner node - not all the grains will be panned for better performance
-	var yes = parseInt(p.random(3),10);
-	if( yes === 1){
-		this.panner = context.createPanner();
-		this.panner.panningModel = "equalpower";
-		this.panner.distanceModel = "linear";
-		this.panner.setPosition(p.random(pan * -1,pan),0,0);
-		//connections
-		this.source.connect(this.panner);
-		this.panner.connect(this.gain);
-	}else{
-		this.source.connect(this.gain);
-	}
-
-
+	this.source.connect(this.gain);
 	this.gain.connect(master);
 
 	//update the position and calcuate the offset
 	this.positionx = positionx;
 	this.offset = this.positionx * (buffer.duration / w); //pixels to seconds
 
-	//update and calculate the amplitude
+	//update and calculate the density
 	this.positiony = positiony;
-	this.amp = this.positiony / h;
-	this.amp = p.map(this.amp,0.0,1.0,1.0,0.0) * 0.7;
+	this.amp = amplitude;
+	density = this.positiony / h;
+	console.log(density);
 
 	//parameters
 	this.attack = attack * 0.4;
 	this.release = release * 1.5;
 
-	if(this.release < 0){
+	if(this.release <= 0){
 		this.release = 0.1; // 0 - release causes mute for some reason
 	}
 	this.spread = spread;
@@ -88,17 +75,14 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 	var tms = (this.attack + this.release) * 1000; //calculate the time in miliseconds
 	setTimeout(function(){
 		that.gain.disconnect();
-		if(yes === 1){
-			that.panner.disconnect();
-		}
 	},tms + 200);
 
 	//drawing the lines
 	p.stroke(p.random(125) + 125,p.random(250),p.random(250)); //,(this.amp + 0.8) * 255
-	//p.strokeWeight(this.amp * 5);
+	p.strokeWeight(this.amp * 5);
 	this.randomoffsetinpixels = this.randomoffset / (buffer.duration / w);
 	//p.background();
-	p.line(this.positionx + this.randomoffsetinpixels,0,this.positionx + this.randomoffsetinpixels,p.height);
+	p.line(this.positionx,0,this.positionx,p.height);
 	setTimeout(function(){
 		p.background();
 		p.line(that.positionx + that.randomoffsetinpixels,0,that.positionx + that.randomoffsetinpixels,p.height);
@@ -129,37 +113,9 @@ voice.prototype.playmouse = function(p){
 			that.graincount = 0;
 		}
 		//next interval
-		this.dens = p.map(density,1,0,0,1);
-		this.interval = (this.dens * 500) + 70;
+		this.interval = (density * 500) + 70;
 		that.timeout = setTimeout(that.play,this.interval);
 
-	}
-	this.play();
-}
-//play function for touch events - this will get the position from touch events
-voice.prototype.playtouch = function(p,positionx,positiony){
-	//this.positiony = positiony;
-	this.positionx = positionx;
-	this.positiony = positiony;
-	this.grains = [];
-	this.graincount = 0;
-
-	var that = this; //for scope issues
-	this.play = function(){
-		//create new grain
-		var g = new grain(p,buffer,that.positionx,that.positiony,attack,release,spread,pan);
-
-		//push to the array
-		that.grains[that.graincount] = g;
-		that.graincount+=1;
-
-		if(that.graincount > 30){
-			that.graincount = 0;
-		}
-		//next interval
-		this.dens = p.map(density,1,0,0,1);
-		this.interval = (this.dens * 500) + 70;
-		that.timeout = setTimeout( that.play, this.interval );
 	}
 	this.play();
 }
@@ -321,12 +277,7 @@ function grainsdisplay(p){
 					//multitouch optimization
 					var interval;
 					//calculate the reverse interval
-					if(event.touches.length > 1){
-						interval = p.map(density,0,1,1,0.7);
-					}else{
-						interval = p.map(density,0,1,1,0);
-					}
-
+					interval = p.map(density,0,1,0,8);
 					//play
 					v.playtouch(p,clientX,clientY,interval);
 					voices.push(v);
