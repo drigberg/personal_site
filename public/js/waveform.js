@@ -19,13 +19,14 @@ var mouseState = false;
 var helpvisible = true;
 
 //control initial settings
-var attack = 0.40;
-var release = 0.40;
+var attack = 0.20;
+var sustain = 0.1;
+var release = 0.20;
 var density = 0.1;
-var amplitude = 0.8
-var spread = 0.2;
+var amplitude = 0.8;
+var spread = 0.05;
 var reverb = 0.5;
-var pan = 0.1;
+var pan = 0;
 var trans = 1;
 
 
@@ -56,6 +57,7 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 
 	//parameters
 	this.attack = attack * 0.4;
+	this.sustain = sustain * 0.5;
 	this.release = release * 1.5;
 
 	if(this.release <= 0){
@@ -65,14 +67,14 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 
 	this.randomoffset = (Math.random() * this.spread) - (this.spread / 2); //in seconds
 	///envelope
-	this.source.start(this.now,this.offset + this.randomoffset,this.attack + this.release); //parameters (when,offset,duration)
-	this.gain.gain.setValueAtTime(0.0, this.now);
-	this.gain.gain.linearRampToValueAtTime(this.amp,this.now + this.attack);
-	this.gain.gain.linearRampToValueAtTime(0,this.now + (this.attack +  this.release) );
+	this.source.start(this.now,this.offset + this.randomoffset,this.attack + this.sustain + this.release); //parameters (when,offset,duration)
+	this.gain.gain.setValueAtTime(0.000001, this.now);
+	this.gain.gain.exponentialRampToValueAtTime(this.amp,this.now + this.attack);
+	this.gain.gain.exponentialRampToValueAtTime(0.000001,this.now + (this.attack + this.sustain + this.release) );
 
 	//garbage collection
-	this.source.stop(this.now + this.attack + this.release + 0.1);
-	var tms = (this.attack + this.release) * 1000; //calculate the time in miliseconds
+	this.source.stop(this.now + this.attack + this.sustain + this.release + 0.1);
+	var tms = (this.attack + this.sustain + this.release) * 1000; //calculate the time in miliseconds
 	setTimeout(function(){
 		that.gain.disconnect();
 	},tms + 200);
@@ -93,7 +95,6 @@ function grain(p,buffer,positionx,positiony,attack,release,spread,pan){
 
 //the voice class
 function voice(id){
-
 	this.touchid = id; //the id of the touch event
 }
 
@@ -107,7 +108,7 @@ voice.prototype.playmouse = function(p){
 		var g = new grain(p,buffer,p.mouseX,p.mouseY,attack,release,spread,pan);
 		//push to the array
 		that.grains[that.graincount] = g;
-		that.graincount+=1;
+		that.graincount += 1;
 
 		if(that.graincount > 20){
 			that.graincount = 0;
