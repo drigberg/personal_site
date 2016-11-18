@@ -8,6 +8,16 @@
 	float: right;
 }
 
+#resume {
+		display: block;
+		margin: 0 auto;
+		width: 200px;
+}
+
+#coding_bio {
+		padding: 20px 300px;
+}
+
 .navbar {
 	margin-bottom: 0;
 	border: none;

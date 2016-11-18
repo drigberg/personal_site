@@ -34,6 +34,11 @@ app.get("/signal_processing", function (req, res){
     res.render("signal_processing");
 });
 
+app.get('/download_resume', function(req, res){
+  var file = __dirname + '/public/assets/Rigberg_Resume_2016.pdf';
+  res.download(file);
+});
+
 //safety net redirect
 app.get("*", function (req, res){
     res.redirect("/");
