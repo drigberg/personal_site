@@ -7,14 +7,11 @@ var attraction = default_attraction;
 var mouseover = false;
 var slow_factor = 0.25;
 var max_line_distance = 175;
-var default_particle_width = 2;
-var planet_radius_range = [200, 2000];
+var default_particle_width = 1;
+var number_of_particles = 35;
+var max_particle_radius = 10;
 var particles = [];
-var planets = [];
 var particle_pool = [];
-var planet_pool = [];
-var GridNode_pool = [];
-var GridNodes = [];
 var G = 500;
 var terminal_velocity = 10;
 
@@ -37,8 +34,6 @@ function GridNode( x, y, n ) {
 Particle.prototype = {
 
     init: function( x, y, radius ) {
-
-        this.alive = true;
         this.mass = 10;
         this.feedlineOpacity = 0;
         this.x = x || 0;
@@ -136,121 +131,16 @@ Particle.prototype = {
     }
 };
 
-Planet.prototype = {
-
-    init: function( x, y, radius ) {
-        this.alive = true;
-        this.x = x || 0;
-        this.y = y || 0;
-        if (this.x < particle_field.width / 2) {
-            this.vx = random(0,2);
-        } else {
-            this.vx = random(-2,0);
-        }
-        if (this.y < particle_field.height / 2) {
-            this.vy = random(0,2);
-        } else {
-            this.vy = random(-2,0);
-        }
-
-        this.radius = radius || 2000;
-        this.diameter = this.radius * 2;
-        this.red = 0;
-        this.green = random(0,255);
-        this.blue = random(0,255);
-        this.opacity = 0.05;
-    },
-
-    move: function() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x - this.diameter > particle_field.width) {
-            this.alive = false
-        } else if (this.x + this.diameter < 0){
-          this.alive = false
-        };
-
-        if (this.y - this.diameter > particle_field.height) {
-          this.alive = false
-        } else if (this.y + this.diameter < 0){
-          this.alive = false
-        };
-    },
-
-    draw: function( ctx ) {
-        ctx.beginPath();
-        ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
-        ctx.fillStyle = 'rgba(' + this.red.toString() + ', ' + this.green.toString() + ', ' + this.blue.toString() + ', ' + this.opacity.toString() + ')';
-        ctx.fill();
-    }
-};
-
-GridNode.prototype = {
-
-    init: function( x, y, n_x, n_y ) {
-        this.x = x || 0;
-        this.y = y || 0;
-        this.n_x = n_x || 0;
-        this.n_y = n_y || 1;
-        this.radius = 0;
-    },
-
-    move: function() {
-        this.radius = 10;
-        var local_gravity_well = 0;
-        var distance = 0;
-        for ( i = particles.length - 1; i >= 0; i-- ) {
-            distance = find_distance(particles[i], this);
-            local_gravity_well += G * particles[i].mass / (distance ** 1.2);
-        };
-        this.radius -= local_gravity_well * 0.05;
-        if (this.radius < 0) {
-            this.radius = 0;
-        };
-    },
-
-    draw: function( ctx ) {
-        ctx.beginPath();
-        ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-        ctx.fill();
-    }
-};
-
 particle_field.setup = function() {
 
     // Set off some initial particles.
     var i, x, y;
 
-    for ( i = 0; i < 20; i++ ) {
+    for ( i = 0; i < number_of_particles; i++ ) {
         x = random(300,900);
         y = random(250,450);
         particle_field.spawn_particle( x, y );
     }
-
-    for (i = 0; i < 3; i++) {
-        particle_field.spawn_planet();
-    }
-
-
-    var n_x = 0;
-    var n_y = 0;
-    var gridInterval = particle_field.width / 50;
-    var yCounter = gridInterval * -1;
-    var xCounter = gridInterval * -1;
-
-    while (yCounter < particle_field.height + gridInterval) {
-        while (xCounter < particle_field.width + gridInterval) {
-            particle_field.spawn_GridNode(xCounter, yCounter, n_x, n_y);
-            xCounter += gridInterval;
-            n_x += 1;
-        };
-        yCounter += gridInterval;
-        n_y += 1;
-        xCounter = 0;
-        n_x = 0;
-    };
 };
 
 particle_field.spawn_particle = function( x, y ) {
@@ -258,27 +148,6 @@ particle_field.spawn_particle = function( x, y ) {
     particle = particle_pool.length ? particle_pool.pop() : new Particle();
     particle.init( x, y, default_particle_width);
     particles.push( particle );
-};
-
-particle_field.spawn_planet = function() {
-    var planet, radius;
-    planet = planet_pool.length ? planet_pool.pop() : new Planet();
-    radius = random(planet_radius_range[0], planet_radius_range[1]);
-    var x = 0
-    var y = 0
-    while (x + radius > 0 && x - radius < particle_field.width && y + radius > 0 && y - radius < particle_field.height) {
-        x = random(-1 * radius - 200, particle_field.width + radius + 200);
-        y = random(-1 * radius - 200, particle_field.height + radius + 200);
-    }
-    planet.init( x, y, radius );
-    planets.push( planet );
-};
-
-particle_field.spawn_GridNode = function( x, y, n_x, n_y) {
-  var gridNode;
-  gridNode = new GridNode();
-  gridNode.init( x, y, n_x, n_y);
-  GridNodes.push( gridNode );
 };
 
 particle_field.update = function() {
@@ -290,8 +159,7 @@ particle_field.update = function() {
 
         particle = particles[i];
 
-        if ( particle.alive ) particle.move();
-        else particle_pool.push( particles.splice( i, 1 )[0] );
+        particle.move();
     }
 
     var j, k, touch;
@@ -301,7 +169,7 @@ particle_field.update = function() {
         // particle_field.spawn( touch.x, touch.y );
         for ( k = particles.length - 1; k >= 0; k-- ) {
             if (find_distance(particles[k], touch) < max_line_distance) {
-                if (particles[k].radius < 20 && mouseover) {
+                if (particles[k].radius < max_particle_radius && mouseover) {
                     particles[k].feedlineOpacity = 1 - (find_distance(particles[k], touch)) / 200;
                     particles[k].radius += 0.2;
                     if (particles[k].red < 250) {
@@ -331,32 +199,16 @@ particle_field.update = function() {
             };
         }
     }
-
-    //planets
-    for ( i = planets.length - 1; i >= 0; i-- ) {
-        planet = planets[i];
-        if ( planet.alive ) {
-            planet.move()
-        } else {
-            planet_pool.push( planets.splice( i, 1 )[0] );
-            radius = random(planet_radius_range)
-            particle_field.spawn_planet( radius );
-        };
-    }
-
-    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
-        GridNodes[i].move();
-    }
 };
 
 particle_field.draw = function() {
-    for ( var i = planets.length - 1; i >= 0; i-- ) {
-        // planets[i].draw( particle_field );
-    }
-
-    for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
-        GridNodes[i].draw( particle_field );
-    }
+    // for ( var i = planets.length - 1; i >= 0; i-- ) {
+    //     // planets[i].draw( particle_field );
+    // }
+    //
+    // for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
+    //     GridNodes[i].draw( particle_field );
+    // }
     for ( var i = particles.length - 1; i >= 0; i-- ) {
         particles[i].draw( particle_field );
         for ( var j = particles.length - 1; j >= 0; j-- ) {
