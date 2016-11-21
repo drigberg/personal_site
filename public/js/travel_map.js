@@ -14,31 +14,52 @@ var travelMapAPI = function(){
     };
 }
 
-var body = d3.select(".content");
-// var div = body.append("div");
-// div.html("Hello, world!");
-// d3.select(".content")
-//     .style("color", "black")
-//     .style("background-color", "white")
-//     .append("div")
-//       .html("Hello, world!");
-var data = [4, 8, 15, 16, 23, 42];
-// var content = d3.select(".content");
-// content.data(data)
-//   .enter().append("div")
-//     .style("width", function(d) { return d * 10 + "px"; })
-//     .text(function(d) { return d; });
+// canvas resolution
+var width = 1000,
+    height = 600;
 
-var x = d3.scaleLinear()
-    .domain([0, d3.max(data)])
-    .range([0, 800]);
+// projection-settings for mercator
+var projection = d3.geoMercator()
+    // where to center the map in degrees
+    .center([0, 50 ])
+    // zoomlevel
+    .scale(100)
+    // map-rotation
+    .rotate([0,0]);
 
-d3.select(".content")
-  .selectAll("div")
-    .data(data)
-  .enter().append("div")
-    .style("width", function(d) { return x(d) + "px"; })
-    .style("background-color", "steelblue")
-    .style("text-align", "right")
-    .style("padding-right", "10px")
-    .text(function(d) { return d; });
+// defines "svg" as data type and "make canvas" command
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// defines "path" as return of geographic features
+var path = d3.geoPath()
+    .projection(projection);
+
+// group the svg layers
+var g = svg.append("g");
+
+// load data and display the map on the canvas with country geometries
+d3.json("https://d3js.org/world-110m.v1.json", function(error, topology) {
+    if (error) {
+        console.log(error);
+    } else {
+      g.selectAll("path")
+        .data(topojson.object(topology, topology.objects.countries)
+            .geometries)
+      .enter()
+        .append("path")
+        .attr("d", path)
+    }
+});
+
+// zoom and pan functionality
+// var zoom = d3.behavior.zoom()
+//     .on("zoom",function() {
+//         g.attr("transform","translate("+
+//             d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+//         g.selectAll("path")
+//             .attr("d", path.projection(projection));
+//   });
+//
+// svg.call(zoom)
