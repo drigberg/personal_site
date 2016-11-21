@@ -133,12 +133,13 @@ hr:last-of-type {
 
 path {
 	stroke: black;
-	stroke-width: 0.5px;
+	stroke-width: 1px;
+	stroke: white;
 	/*fill: #cc11cc;*/
 	transition: 0.3s;
 }
 
 
 path:hover {
-		fill: steelblue;
+		fill: #EF385D;
 }
