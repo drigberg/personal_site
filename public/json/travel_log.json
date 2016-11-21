@@ -1,47 +1,49 @@
 {
     "High School Graduation Safari" : {
+        "color" : "#33cccc",
         "date" : "June 2011",
         "stops" : [
-            {"Johannesburg" : {
+            {
+                "location" : "Johannesburg",
                 "days" : 1,
                 "coordinates" : [34, 43],
                 "summary" : "Evening and night before morning flight to Zimbabwe"
-              }
             },
-            {"Victoria Falls" : {
+            {
+                "location" :"Victoria Falls",
                 "days" : 2,
                 "coordinates" : [34, 43],
                 "summary" : "Two days spent in Zimbabwe! Zip-lining, rafting, exploring the town, and touring a nearby village."
-              }
             },
-            {"Muchenje" : {
+            {
+                "location" : "Muchenje",
                 "days" : 3,
                 "coordinates" : [34, 43],
                 "summary" : "Safari!"
-              }
             },
-            {"Chitabe" : {
+            {
+                "location" : "Chitabe",
                 "days" : 3,
                 "coordinates" : [34, 43],
                 "summary" : "Saaffarriiii!!!!"
-              }
             }
         ]
     },
     "Summer Nerds of Azkaban Trip" : {
+        "color" : "#cc33cc",
         "date" : "June 2016",
         "stops" : [
-            {"Austin, TX" : {
+            {
+                "location" : "Austin, TX",
                 "days" : 4,
                 "coordinates" : [34, 43],
                 "summary" : "AUSSTTINN!!!!"
-              }
             },
-            {"New Orleans" : {
+            {
+                "location" : "New Orleans",
                 "days" : 3,
                 "coordinates" : [34, 43],
                 "summary" : "NEW ORLEANS AAAHHH"
-              }
             }
         ]
     },
