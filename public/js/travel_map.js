@@ -36,6 +36,8 @@ var svg = d3.select("body").append("svg")
 var path = d3.geoPath()
     .projection(projection);
 
+var color = ["#cc22cc", "#88ee11", "#22ee99", "#eeee22", "#1111ee", "#ee7799", "#11ee11"];
+
 // group the svg layers
 var g = svg.append("g");
 
@@ -50,16 +52,36 @@ d3.json("https://d3js.org/world-110m.v1.json", function(error, topology) {
       .enter()
         .append("path")
         .attr("d", path)
+        .attr("fill",function(d,i){return color[i%color.length];});
     }
 });
 
 // zoom and pan functionality
-// var zoom = d3.behavior.zoom()
-//     .on("zoom",function() {
-//         g.attr("transform","translate("+
-//             d3.event.translate.join(",")+")scale("+d3.event.scale+")");
-//         g.selectAll("path")
-//             .attr("d", path.projection(projection));
-//   });
+var zoom = d3.zoom()
+    .on("zoom", zoomed);
+
+var transform = d3.zoomIdentity;
+
+svg.call(d3.zoom()
+    .scaleExtent([1 / 2, 8])
+    .on("zoom", zoomed));
+
+function zoomed() {
+  g.attr("transform", d3.event.transform);
+}
+
+svg.call(zoom.transform, d3.zoomIdentity);
+
+//
+//
+// svg.call(d3.zoom().on("zoom", function() {
+//           g.attr("transform","translate("+
+//               d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+//           g.selectAll("path")
+//           // g.selectAll("path")._groups[0][0]
+//               .attr("d", path.projection(projection));
+//     }))
+//
+var zoom = d3.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
 //
 // svg.call(zoom)
