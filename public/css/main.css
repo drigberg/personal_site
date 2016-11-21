@@ -130,3 +130,15 @@ hr:last-of-type {
 #world-img {
 	width: 100%;
 }
+
+path {
+	stroke: black;
+	stroke-width: 0.5px;
+	/*fill: #cc11cc;*/
+	transition: 0.3s;
+}
+
+
+path:hover {
+		fill: steelblue;
+}
