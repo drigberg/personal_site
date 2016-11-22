@@ -40,6 +40,7 @@ ul {
 	text-align: center;
 	color: white;
 	letter-spacing: 1.5;
+	margin: 10px 0;
 }
 
 hr {
@@ -65,7 +66,7 @@ hr:last-of-type {
 	/*padding: 20px 10px 20px 10px;*/
 	box-shadow: 0 0 1em rgba(0,0,0,0.2);
 	width: 100%;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 10px auto;
 	transition: all 0.1s;
 	-webkit-transition: all 0.1s;
 	z-index: 1;
@@ -139,7 +140,11 @@ path {
 	transition: 0.3s;
 }
 
-
 path:hover {
 		fill: #EF385D;
+}
+
+svg {
+	margin: 0 auto;
+	display: block;
 }
