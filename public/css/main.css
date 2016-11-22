@@ -14,6 +14,10 @@
 		width: 200px;
 }
 
+.point {
+    opacity: 0.5;
+}
+
 #coding_bio {
 		padding: 20px 300px;
 }
