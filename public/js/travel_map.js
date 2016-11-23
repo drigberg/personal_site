@@ -13,17 +13,17 @@ var TravelMapAPI = function(){
             }
         });
     };
-    this.loadWorldTopo = function(){
+    this.loadWorldTopo = function(obj){
         $.ajax({
             url: "/json/world_topo.json",
             dataType: "json",
             success: function(data) {
-                g.selectAll(".country")
-                  .data(topojson.object(data, data.objects.countries).geometries)
+                obj.g.selectAll(".country")
+                    .data(topojson.object(data, data.objects.countries).geometries)
                 .enter().append("path")
                     .attr("class", "country")
-                    .attr("d", this.path)
-                    .attr("fill",function(d,i){return color[i%color.length];});
+                    .attr("d", obj.path)
+                    .attr("fill",function(d,i){return obj.colors[i%obj.colors.length];});
             },
             failure: function() {
                 console.log("Failed to load world topology");
@@ -32,10 +32,8 @@ var TravelMapAPI = function(){
     };
 }
 
-travelMapAPI = new TravelMapAPI()
-travelMapAPI.loadWorldTopo()
-
 var TravelMap = function(){
+    var that = this;
     //projection setup
     this.width = window.innerWidth;
     this.height = window.innerHeight;
@@ -103,34 +101,32 @@ var TravelMap = function(){
 
     //dragging
 
-    this.svg.call(d3.drag()
-              .on("start", this.dragstarted)
-              .on("drag", this.dragged)
-              .on("end", this.dragended));
-
-    this.scaleDown = function(a){
-        return a/50;
-    }
+    this.dragCall = function(){
+        that.svg.call(d3.drag()
+                  .on("start", this.dragstarted)
+                  .on("drag", this.dragged));
+    };
 
     this.startPoint = [];
     this.endPoint = [];
     this.dragstarted = function() {
-        this.current = projection.rotate()
-        this.startPoint = [this.current[0], this.current[1]]
-        this.endPoint = [d3.event.x, d3.event.y]
-        console.log(this.startPoint)
-    }
+        this.current = that.projection.rotate();
+        that.startPoint = [this.current[0], this.current[1]];
+        that.endPoint = [d3.event.x, d3.event.y];
+    };
 
     this.dragged = function() {
-        this.current = projection.rotate()
-        this.startPoint = this.endPoint;
-        this.endPoint = [d3.event.x, d3.event.y]
-        projection.rotate([this.current[0] + (this.endPoint[0] - this.startPoint[0]), this.current[1] - (this.endPoint[1] - this.startPoint[1])]);
-        svg.selectAll(".point").attr("d", this.path);
-        svg.selectAll(".country").attr("d", this.path);
-    }
+        this.current = that.projection.rotate();
+        that.startPoint = that.endPoint;
+        that.endPoint = [d3.event.x, d3.event.y];
+        that.projection.rotate([this.current[0] + (that.endPoint[0] - that.startPoint[0]), this.current[1] - (that.endPoint[1] - that.startPoint[1])]);
+        that.svg.selectAll(".point").attr("d", that.path);
+        that.svg.selectAll(".country").attr("d", that.path);
+    };
 
-    this.dragended = function() {
-      console.log("Done!")
-    }
-}
+};
+
+travelMap = new TravelMap();
+travelMapAPI = new TravelMapAPI();
+travelMapAPI.loadWorldTopo(travelMap);
+travelMap.dragCall();
