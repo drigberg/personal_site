@@ -22,7 +22,7 @@ var TravelMapAPI = function(){
                   .data(topojson.object(data, data.objects.countries).geometries)
                 .enter().append("path")
                     .attr("class", "country")
-                    .attr("d", path)
+                    .attr("d", this.path)
                     .attr("fill",function(d,i){return color[i%color.length];});
             },
             failure: function() {
@@ -35,101 +35,102 @@ var TravelMapAPI = function(){
 travelMapAPI = new TravelMapAPI()
 travelMapAPI.loadWorldTopo()
 
-//projection setup
-var width = window.innerWidth,
-    height = window.innerHeight;
+var TravelMap = function(){
+    //projection setup
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
 
-var projection = d3.geoOrthographic()
-    .center([-55, 30])
-    .scale(300)
-    .precision(1);
+    this.projection = d3.geoOrthographic()
+        .center([-55, 30])
+        .scale(300)
+        .precision(1);
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    this.svg = d3.select("body").append("svg")
+        .attr("width", this.width)
+        .attr("height", this.height);
 
-var path = d3.geoPath()
-    .projection(projection);
+    this.path = d3.geoPath()
+        .projection(this.projection);
 
 
-// group the svg layers
-var g = svg.append("g");
-var color = ["#F5A71D", "#2FB1C0", "#B1D236", "#30AA6A", "#7a33ee", "#00d0ff"];
+    // group the svg layers
+    this.g = this.svg.append("g");
+    this.colors = ["#F5A71D", "#2FB1C0", "#B1D236", "#30AA6A", "#7a33ee", "#00d0ff"];
 
-// Plotting points
-var places = [
-  {
-      name: "Mediterranean",
-      location: {
-        latitude: 40.42507,
-        longitude: 4.89315
+    // Plotting points
+    this.places = [
+      {
+          name: "Mediterranean",
+          location: {
+            latitude: 40.42507,
+            longitude: 4.89315
+          }
+      },
+      {
+          name: "Atlantic",
+          location: {
+            latitude: 30.92669,
+            longitude: -50.77892
+          }
+      },
+      {
+          name: "Atlantic2",
+          location: {
+            latitude: 10.92669,
+            longitude: -50.77892
+          }
+      },
+      {
+          name: "Atlantic3",
+          location: {
+            latitude: -10.92669,
+            longitude: -50.77892
+          }
       }
-  },
-  {
-      name: "Atlantic",
-      location: {
-        latitude: 30.92669,
-        longitude: -50.77892
-      }
-  },
-  {
-      name: "Atlantic2",
-      location: {
-        latitude: 10.92669,
-        longitude: -50.77892
-      }
-  },
-  {
-      name: "Atlantic3",
-      location: {
-        latitude: -10.92669,
-        longitude: -50.77892
-      }
-  }
-]
+    ]
 
-g.selectAll(".point")
-   .data(places)
-   .enter()
-       .append('path')
-           .attr('class', 'point')
-           .attr('fill', 'red')
-           .datum(function(d) {
-              return {type: 'Point', coordinates: [d.location.longitude, d.location.latitude], radius: 30};
-           })
-           .attr('d', path);
+    this.g.selectAll(".point")
+       .data(this.places)
+       .enter()
+           .append('path')
+               .attr('class', 'point')
+               .attr('fill', 'red')
+               .datum(function(d) {
+                  return {type: 'Point', coordinates: [d.location.longitude, d.location.latitude], radius: 30};
+               })
+               .attr('d', this.path);
 
 
-//dragging
+    //dragging
 
-svg.call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
+    this.svg.call(d3.drag()
+              .on("start", this.dragstarted)
+              .on("drag", this.dragged)
+              .on("end", this.dragended));
 
-function scaleDown(a){
-    return a/50;
-}
+    this.scaleDown = function(a){
+        return a/50;
+    }
 
-var startPoint;
-var change;
-var endPoint
-function dragstarted() {
-    var current = projection.rotate()
-    startPoint = [current[0], current[1]]
-    endPoint = [d3.event.x, d3.event.y]
-    console.log(startPoint)
-}
+    this.startPoint = [];
+    this.endPoint = [];
+    this.dragstarted = function() {
+        this.current = projection.rotate()
+        this.startPoint = [this.current[0], this.current[1]]
+        this.endPoint = [d3.event.x, d3.event.y]
+        console.log(this.startPoint)
+    }
 
-function dragged() {
-    var current = projection.rotate()
-    startPoint = endPoint;
-    endPoint = [d3.event.x, d3.event.y]
-    projection.rotate([current[0] + (endPoint[0] - startPoint[0]), current[1] - (endPoint[1] - startPoint[1])]);
-    svg.selectAll(".point").attr("d", path);
-    svg.selectAll(".country").attr("d", path);
-}
+    this.dragged = function() {
+        this.current = projection.rotate()
+        this.startPoint = this.endPoint;
+        this.endPoint = [d3.event.x, d3.event.y]
+        projection.rotate([this.current[0] + (this.endPoint[0] - this.startPoint[0]), this.current[1] - (this.endPoint[1] - this.startPoint[1])]);
+        svg.selectAll(".point").attr("d", this.path);
+        svg.selectAll(".country").attr("d", this.path);
+    }
 
-function dragended() {
-  console.log("Done!")
+    this.dragended = function() {
+      console.log("Done!")
+    }
 }
