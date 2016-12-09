@@ -23,24 +23,53 @@ Homepage Styling
 }
 
 .scroll-strip-header {
-	background-color: rgba(139, 29, 249, 1);
-	z-index : 0;
+	width: 100%;
+	/*background-color: rgba(139, 29, 249, 1);*/
+	background-color: white;
+	z-index : -1;
 	padding: 50px 50px;
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
 	font-family: 'Libre Baskerville', serif;
+	height: 1100px;
+	display: inline-block;
+	transition: background-color 0.3s ease;
+}
+
+.scroll-strip-1 {
+	display: inline-block;
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Libre Baskerville', serif;
 	height: 800px;
+	background-color: orange;
+}
+
+.scroll-strip-2 {
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Libre Baskerville', serif;
+	height: 800px;
+	background-color: steelblue;
 }
 
 h1 {
+	color: rgba(139, 29, 249, 1);
 	font-size: 72px;
-	margin: 100 auto;
+	margin: 50 auto;
 	display: block;
+	letter-spacing: 1.5px;
 }
 
 #title {
-	height: 300px;
+	height: 200px;
 }
 
 .subtitles {
@@ -56,31 +85,20 @@ h1 {
 #profile-photo {
 	width: 300px;
 	height: 300px;
-	display: block;
 	/*box-shadow: 0 0 1em rgba(0,0,0,0.6);*/
 	border-radius: 10px;
-}
-.scroll-strip-1 {
-	z-index : 0;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Libre Baskerville', serif;
-	height: 800px;
-	background-color: orange;
+	display: block;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
-.scroll-strip-2 {
-	z-index : 0;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Libre Baskerville', serif;
-	height: 800px;
-	background-color: steelblue;
+hr {
+    border: 0;
+    height: 2px;
+	width: 70%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(139, 29, 249), rgba(0, 0, 0, 0));
 }
+
 
 .summary-p {
 	margin-bottom: 50px;
@@ -130,23 +148,7 @@ ul {
 	letter-spacing: 1.5;
 }
 
-hr {
-	margin:10px -50px;
-	border:0;
-	border-top:1px solid #ccc
-}
 
-li hr {
-    width: 70%;
-    margin: 10px auto;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
-}
-
-hr:last-of-type {
-	display: none;
-}
 
 #header {
 	background-color: rgba(0,0,0,0.2);
