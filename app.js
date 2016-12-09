@@ -14,8 +14,8 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
-app.get("/coding", function (req, res){
-    res.render("coding");
+app.get("/projects", function (req, res){
+    res.render("projects");
 });
 
 app.get("/music", function (req, res){

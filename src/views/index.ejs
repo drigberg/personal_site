@@ -1,21 +1,38 @@
 <% include ./partials/header %>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/coding">Coding</a></li>
-        <li><a href="/music">Music</a></li>
-        <li><a href="/travel">Travel</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </nav>
-    <div id="header">
-        <h2 class="heading"><strong>Welcome!</strong></h2>
+
+<div class="parallax"></div>
+
+<div class="scroll-strip-1">
+    <p class="summary-p">Once upon a time, I studied music composition at Yale, and it was a blast, for a time. Far too late, I realized that I loved composing as a hobby, and that it really
+    wasn't the right career for me... But I did some cool stuff in the meantime!</p>
+
+    <div class="soundcloud-embed">
+        <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/110447153&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
     </div>
-    <div id="container"></div>
+</div>
 
-    <script src="../js/sketch.js"></script>
-    <script src="../js/index_particles.js"></script>
+<div class="scroll-strip-2">
+    <p class="summary-p">After some months spent working on the operations team at a small NYC startup, I
+    taught myself how to code beyond my limited classroom experience with Python and Visual Basic, and
+    I transitioned to a dev-ops role at my company.</p>
+    <ul>
+        <li></li>
+    </ul>
+</div>
 
+<div class="scroll-strip-1">
+    My first project was a horoscope generator, which features my favorite project yet: a night sky
+    generator that creates constellations using parameters that you can control with sliders at the
+    bottom of the page.
+
+    <a href="http://www.horoscopegen.com">www.horoscopegen.com</a>
+</div>
+<div class="scroll-strip-2">
+    <p class="summary-p"></p>
+</div>
+<div class ="parallax sketch" id="container"></div>
+
+
+<script src="../js/sketch.js"></script>
+<script src="../js/index_particles.js"></script>
 <% include ./partials/footer %>

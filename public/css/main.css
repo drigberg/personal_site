@@ -8,7 +8,54 @@
 	float: right;
 }
 
-#resume {
+/*--------------
+Homepage Styling
+----------------*/
+.parallax {
+	z-index: -1;
+	background-image: url("/assets/headshot.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.scroll-strip-1 {
+	z-index : 0;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Libre Baskerville', serif;
+	height: 800px;
+	background-color: orange;
+}
+
+.scroll-strip-2 {
+	z-index : 0;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Libre Baskerville', serif;
+	height: 800px;
+	background-color: steelblue;
+}
+
+.summary-p {
+	margin-bottom: 50px;
+	/*width: 50%;*/
+}
+
+.sketch {
+	background-color: rgba(100, 100, 200, 0.5);
+}
+
+
+/*--------------
+Projects Page Styling
+----------------*/#resume {
 		display: block;
 		margin: 0 auto;
 		width: 200px;
@@ -129,4 +176,74 @@ hr:last-of-type {
 
 #world-img {
 	width: 100%;
+}
+
+/*CONSTELLATIONS*/
+#canvas-background {
+	position: absolute;
+	z-index: 1;
+}
+
+
+/*SLIDERS*/
+
+#sliders-div {
+	display: block;
+	float: right;
+	width: 400px;
+	background-color: rgba(0,0,0,0.2);
+	padding: 20px 10px 20px 10px;
+	box-shadow: 0 0 1em rgba(0,0,0,0.2);
+	margin: 15px;
+}
+
+#slider {
+	width: 80px;
+	float: right;
+	display: block;
+	margin: 5px 0;
+	vertical-align: center;
+}
+
+
+
+.small-link {
+	display: block;
+	margin: 10 auto 0 auto;
+}
+
+.slider-text {
+	color: white;
+	display: inline-block;
+	font-weight: 200;
+	margin: 0;
+}
+
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 9px;
+    background: white;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 9px;
+    width: 16px;
+    background: #f0ad4e;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
 }
