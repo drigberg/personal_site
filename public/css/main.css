@@ -13,14 +13,53 @@ Homepage Styling
 ----------------*/
 .parallax {
 	z-index: -1;
-	background-image: url("/assets/headshot.jpg");
+	/*background-image: url("/assets/headshot.jpg");*/
+	background-color: rgba(139, 29, 249, 1);
     height: 100%;
-    background-attachment: fixed;
-    background-position: center;
+    /*background-attachment: fixed;*/
+    /*background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
+.scroll-strip-header {
+	background-color: rgba(139, 29, 249, 1);
+	z-index : 0;
+	padding: 50px 50px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Libre Baskerville', serif;
+	height: 800px;
+}
+
+h1 {
+	font-size: 72px;
+	margin: 100 auto;
+	display: block;
+}
+
+#title {
+	height: 300px;
+}
+
+.subtitles {
+	height: 300px;
+}
+
+#resume-download {
+	width: 200px;
+	margin: 0 auto;
+	display: block;
+}
+
+#profile-photo {
+	width: 300px;
+	height: 300px;
+	display: block;
+	/*box-shadow: 0 0 1em rgba(0,0,0,0.6);*/
+	border-radius: 10px;
+}
 .scroll-strip-1 {
 	z-index : 0;
 	padding: 50px 150px;
@@ -52,14 +91,16 @@ Homepage Styling
 	background-color: rgba(100, 100, 200, 0.5);
 }
 
+.main-page-link {
+	display: block;
+	margin: 0 auto;
+}
+
 
 /*--------------
 Projects Page Styling
-----------------*/#resume {
-		display: block;
-		margin: 0 auto;
-		width: 200px;
-}
+----------------*/
+
 
 #coding_bio {
 		padding: 20px 300px;
