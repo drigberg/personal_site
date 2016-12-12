@@ -1,4 +1,7 @@
-/*HEADER*/
+
+/*--------------
+Nav Bar
+----------------*/
 #brand {
 		margin-top: 15px;
 		letter-spacing: 1.5px;
@@ -6,97 +9,27 @@
 
 .nav {
 	float: right;
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
 }
 
 /*--------------
-Homepage Styling
+General Styling
 ----------------*/
-.parallax {
-	z-index: -1;
-	/*background-image: url("/assets/headshot.jpg");*/
-	background-color: rgba(139, 29, 249, 1);
-    height: 100%;
-    /*background-attachment: fixed;*/
-    /*background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
+body {
+	background-color: #eeeeee;
+	background-size: 1000px;
+	transition: 4s;
 }
 
-#scroll-strip-header {
-	width: 100%;
-	/*background-color: rgba(139, 29, 249, 1);*/
-	background-color: rgb(139, 29, 249);
-	z-index : -1;
-	padding: 50px 50px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	height: 450;
-	display: inline-block;
-	transition: background-color 0.3s ease;
-
-}
-
-#resume-download {
-	background-color: white;
-	color: rgb(139, 29, 249);
-}
-#title-languages {
-	text-decoration: underline;
-}
-
-#scroll-strip-music {
-	display: inline-block;
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: rgb(139, 29, 249);
-	transition: background-color 0.3s ease;
-	padding-top: 100px;
-}
-
-.music-strip-hide {
-	opacity: 0;
-}
-
-#scroll-strip-nestio {
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: steelblue;
-}
-
-#scroll-strip-horoscope {
-	display: inline-block;
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: rgb(139, 29, 249);
-}
-
-#scroll-strip-more-projects {
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	height: 800px;
-	background-color: steelblue;
+ul {
+	list-style: none;
+	padding: 0;
 }
 
 h1 {
-	color: rgba(139, 29, 249, 1);
+	color: rgba(255, 11, 159, 1);
 	font-size: 72px;
 	margin: 50 auto;
 	display: block;
@@ -109,14 +42,150 @@ h2 {
 	display: block;
 }
 
-#title {
-	height: 150px;
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.flex-box > div {
+	flex: 1 1 auto;
+}
+
+/*--------------
+Header Strip
+----------------*/
+
+#scroll-strip-header {
+	width: 100%;
+	background-color: rgb(31, 133, 255);
+	z-index : -1;
+	padding: 100px 20px 50px 20px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	height: 78vh;
+	display: inline-block;
+	transition: background-color 0.4s ease;
+
+}
+
+#resume-download {
+	background-color: white;
+	color: rgb(139, 29, 249);
+	display: block;
+	margin: 20 auto 0 auto;
+}
+
+.navbar {
+	position: fixed;
+	width: 100%;
+}
+.list-title {
+	text-decoration: underline;
+}
+
+.languages {
+	text-align: right;
+}
+
+.header-boxes {
+	height: 300px;
+	margin: 0px 2px;
+}
+
+#profile-photo {
+	width: 300px;
+	height: 300px;
+	box-shadow: 0 0 1em rgba(0,0,0,0.6);
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+#resume-download {
+	width: 200px;
 }
 
 #scroll-down {
 	left: 10%;
-	margin-bottom: 0;
+	margin-top: 50px;
 	color: white;
+	position: absolute;
+	width: 800px;
+}
+
+/*--------------
+Music Strip
+----------------*/
+
+#scroll-strip-music {
+	display: inline-block;
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: rgb(31, 133, 255);
+	transition: background-color 0.3s ease;
+	padding-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	transition: background-color 0.4s ease;
+}
+
+.music-strip-hide {
+	opacity: 0;
+}
+
+#soundcloud-div {
+	padding: 0 100px;
+}
+
+.soundcloud-embed {
+	width: 300px;
+	margin: 0 10px;
+	/*display: inline-block;*/
+}
+
+/*--------------
+Nestio Strip
+----------------*/
+
+#scroll-strip-nestio {
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: rgb(255, 11, 159);
+	transition: background-color 0.4s ease;
+}
+
+.nestio-strip-hide {
+	opacity: 0;
+}
+
+/*--------------
+Horoscope Strip
+----------------*/
+
+#scroll-strip-horoscope {
+	display: inline-block;
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: rgb(255, 181, 11);
+	transition: background-color 0.4s ease;
+
 }
 
 #horoscope-title {
@@ -125,221 +194,41 @@ h2 {
 	box-shadow: 0 0 1em rgba(0,0,0,0.6);
 	margin: 0 auto;
 	display: block;
-
 }
 
-.subtitles {
-	height: 300px;
+/*--------------
+Project Strip
+----------------*/
+
+#scroll-strip-more-projects {
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	height: 800px;
+	background-color: rgb(31, 133, 255);
+	transition: background-color 0.4s ease;
 }
 
-#resume-download {
-	width: 200px;
-	margin: 0 auto;
-	display: block;
-}
-
-#profile-photo {
-	width: 300px;
-	height: 300px;
-	/*box-shadow: 0 0 1em rgba(0,0,0,0.6);*/
-	border-radius: 10px;
-	display: block;
-}
-
-hr {
-    border: 0;
-    height: 2px;
-	width: 70%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(139, 29, 249), rgba(0, 0, 0, 0));
-}
-
-
-.summary-p {
-	margin-bottom: 50px;
-	/*width: 50%;*/
-}
+/*--------------
+Sketch Strip
+----------------*/
 
 .sketch {
 	background-color: rgba(100, 100, 200, 0.5);
 }
 
-.main-page-link {
-	display: block;
-	margin: 0 auto;
-}
-
-
-/*--------------
-Projects Page Styling
-----------------*/
-
-
-#coding_bio {
-		padding: 20px 300px;
-}
-
-.navbar {
-	margin-bottom: 0;
-	border: none;
-	border-radius: 0;
-}
-
-/*GLOBAL STYLING*/
-body {
-	background-color: #eeeeee;
-	background-size: 1000px;
-	transition: 4s;
-}
-
-ul {
-	list-style: none;
-	padding: 0;
-}
-
-.heading {
-	text-align: center;
-	color: white;
-}
-
-
-
-#header {
-	background-color: rgba(0,0,0,0.2);
-	/*padding: 20px 10px 20px 10px;*/
-	box-shadow: 0 0 1em rgba(0,0,0,0.2);
-	width: 100%;
-	margin: 0 auto 30px auto;
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-	z-index: 1;
-	position: absolute;
-}
-
-.content {
-	margin-top : 90px;
-}
-
-
-/*INDEX*/
-
-#container {
-	position: absolute;
-	z-index = -2;
-}
-
-#cover-left {
-	position: absolute;
-	display: inline-block;
-	left: 0;
-	background-image: url("/assets/glacier-cover.jpg");
-	background-repeat: no-repeat;
-	background-position: 66% 100%;
-	background-size: cover;
-	height: 600px;
-	width: 200px;
-	z-index: -1;
-	margin: 0 auto 0 auto;
-	border-radius: 0 0 20px 0;
-}
-
-#cover-right {
-	position: absolute;
-	display: inline-block;
-	right: 0;
-	background-size: cover;
-	background-image: url("/assets/scuba-cover.jpg");
-	background-repeat: no-repeat;
-	background-position: 53% 60%;
-	height: 600px;
-	width: 200px;
-	z-index: -1;
-	margin: 0 auto 0 auto;
-	border-radius: 0 0 0 20px;
-}
-
 /*CODING*/
+
 .github-widget {
 	margin: 20px auto;
 }
 
-/*MUSIC*/
-
-#soundcloud-div {
-	padding: 0 100px;
-}
 
 /*TRAVEL*/
 
 #world-img {
 	width: 100%;
-}
-
-/*CONSTELLATIONS*/
-#canvas-background {
-	position: absolute;
-	z-index: 1;
-}
-
-
-/*SLIDERS*/
-
-#sliders-div {
-	display: block;
-	float: right;
-	width: 400px;
-	background-color: rgba(0,0,0,0.2);
-	padding: 20px 10px 20px 10px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.2);
-	margin: 15px;
-}
-
-#slider {
-	width: 80px;
-	float: right;
-	display: block;
-	margin: 5px 0;
-	vertical-align: center;
-}
-
-
-
-.small-link {
-	display: block;
-	margin: 10 auto 0 auto;
-}
-
-.slider-text {
-	color: white;
-	display: inline-block;
-	font-weight: 200;
-	margin: 0;
-}
-
-
-input[type=range]{
-    -webkit-appearance: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 9px;
-    background: white;
-    border: none;
-    border-radius: 3px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 9px;
-    width: 16px;
-    background: #f0ad4e;
-}
-
-input[type=range]:focus {
-    outline: none;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ccc;
 }
