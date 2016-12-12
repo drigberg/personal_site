@@ -23,14 +23,6 @@ function Particle( x, y, radius ) {
     this.init( x, y, radius );
 }
 
-function Planet( x, y, radius ) {
-    this.init( x, y, radius );
-}
-
-function GridNode( x, y, n ) {
-    this.init( x, y, n );
-}
-
 Particle.prototype = {
 
     init: function( x, y, radius ) {
@@ -44,11 +36,9 @@ Particle.prototype = {
         this.r = sqrt((this.r_x * this.r_x) + (this.r_y * this.r_y));
 
         this.radius = radius || 2;
-        this.wander = 0.15;
         this.xtheta = 0;
         this.ytheta = 0;
 
-        this.drag = 3;
         this.red = 0;
         this.green = 0;
         this.blue = 100;
@@ -152,7 +142,7 @@ particle_field.spawn_particle = function( x, y ) {
 
 particle_field.update = function() {
 
-    var i, particle, planet;
+    var i, particle;
 
     //particles
     for ( i = particles.length - 1; i >= 0; i-- ) {
@@ -202,13 +192,6 @@ particle_field.update = function() {
 };
 
 particle_field.draw = function() {
-    // for ( var i = planets.length - 1; i >= 0; i-- ) {
-    //     // planets[i].draw( particle_field );
-    // }
-    //
-    // for ( var i = GridNodes.length - 1; i >= 0; i-- ) {
-    //     GridNodes[i].draw( particle_field );
-    // }
     for ( var i = particles.length - 1; i >= 0; i-- ) {
         particles[i].draw( particle_field );
         for ( var j = particles.length - 1; j >= 0; j-- ) {
