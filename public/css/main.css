@@ -22,40 +22,75 @@ Homepage Styling
     background-size: cover;*/
 }
 
-.scroll-strip-header {
+#scroll-strip-header {
 	width: 100%;
 	/*background-color: rgba(139, 29, 249, 1);*/
-	background-color: white;
+	background-color: rgb(139, 29, 249);
 	z-index : -1;
 	padding: 50px 50px;
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
-	font-family: 'Libre Baskerville', serif;
-	height: 1100px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	height: 450;
 	display: inline-block;
 	transition: background-color 0.3s ease;
+
 }
 
-.scroll-strip-1 {
+#resume-download {
+	background-color: white;
+	color: rgb(139, 29, 249);
+}
+#title-languages {
+	text-decoration: underline;
+}
+
+#scroll-strip-music {
 	display: inline-block;
 	z-index : -1;
 	padding: 50px 150px;
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
-	font-family: 'Libre Baskerville', serif;
-	height: 800px;
-	background-color: orange;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: rgb(139, 29, 249);
+	transition: background-color 0.3s ease;
+	padding-top: 100px;
 }
 
-.scroll-strip-2 {
+.music-strip-hide {
+	opacity: 0;
+}
+
+#scroll-strip-nestio {
 	z-index : -1;
 	padding: 50px 150px;
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
-	font-family: 'Libre Baskerville', serif;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: steelblue;
+}
+
+#scroll-strip-horoscope {
+	display: inline-block;
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	background-color: rgb(139, 29, 249);
+}
+
+#scroll-strip-more-projects {
+	z-index : -1;
+	padding: 50px 150px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
 	height: 800px;
 	background-color: steelblue;
 }
@@ -65,11 +100,32 @@ h1 {
 	font-size: 72px;
 	margin: 50 auto;
 	display: block;
-	letter-spacing: 1.5px;
+}
+
+h2 {
+	color: white;
+	font-size: 32px;
+	margin: 50 auto;
+	display: block;
 }
 
 #title {
-	height: 200px;
+	height: 150px;
+}
+
+#scroll-down {
+	left: 10%;
+	margin-bottom: 0;
+	color: white;
+}
+
+#horoscope-title {
+	height: 300px;
+	width: 800px;
+	box-shadow: 0 0 1em rgba(0,0,0,0.6);
+	margin: 0 auto;
+	display: block;
+
 }
 
 .subtitles {
@@ -88,8 +144,6 @@ h1 {
 	/*box-shadow: 0 0 1em rgba(0,0,0,0.6);*/
 	border-radius: 10px;
 	display: block;
-	opacity: 0;
-	transition: opacity 0.3s ease;
 }
 
 hr {
@@ -145,7 +199,6 @@ ul {
 .heading {
 	text-align: center;
 	color: white;
-	letter-spacing: 1.5;
 }
 
 
