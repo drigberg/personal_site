@@ -121,7 +121,7 @@ Header Strip
 	border-radius: 50%;
 	display: block;
 	margin: 0 auto;
-	transition: opacity 0.5s ease;
+	transition: opacity 0.1s ease;
 }
 
 .bubble-photo:hover {
@@ -145,6 +145,11 @@ Header Strip
 	width: 150px;
 	height: 150px;
 	transition: opacity 2s ease;
+}
+
+#filler {
+	width: 400px;
+	height: 300px;
 }
 
 /*--------------
