@@ -29,6 +29,7 @@ var states = {
 
 window.onload = function(){
     animationsEnabled = true;
+    rotatePhoto($("#profile-photo"));
 }
 
 window.onscroll = function(){
@@ -90,12 +91,3 @@ window.setInterval(function(){
     };
     $(".arrow").css("opacity", arrowOpacity)
 }, 2000);
-
-function rotatePhoto(element){
-    var rotation = 0;
-    if (animationsEnabled){
-        element.css("transform", "rotate(" + rotation + "deg)");
-        element.css("-ms-transform", "rotate(" + rotation + "deg)");
-        element.css("-webkit-transform", "rotate(" + rotation + "deg)");
-    };
-};

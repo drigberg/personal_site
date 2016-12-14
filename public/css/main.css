@@ -109,6 +109,11 @@ Header Strip
 	margin: 0 auto;
 }
 
+#profile-photo:hover {
+	animation: spin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+}
+
 .bubble-photo {
 	width: 200px;
 	height: 200px;
@@ -117,6 +122,11 @@ Header Strip
 	display: block;
 	margin: 0 auto;
 	transition: opacity 0.5s ease;
+}
+
+.bubble-photo:hover {
+	animation: reverseSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
 }
 
 #resume-download {
@@ -251,4 +261,21 @@ Sketch Strip
 
 #world-img {
 	width: 100%;
+}
+
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); 	}
+  8%  { transform: rotate(-15deg); }
+  20%  { transform: rotate(800deg); }
+  30% { transform: rotate(0deg); 	}
+  100%   { transform: rotate(0deg); 	}
+}
+
+@keyframes reverseSpin {
+  0%   { transform: rotate(0deg); 	}
+  8%  { transform: rotate(15deg); }
+  20%  { transform: rotate(-800deg); }
+  30% { transform: rotate(0deg); 	}
+  100%   { transform: rotate(0deg); 	}
 }
