@@ -36,6 +36,11 @@ Progress Bar
 	transition: 0.4s;
 }
 
+#progress-bar i:hover {
+	animation: spin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+}
+
 .progress-bar-top {
 	/*border-top: 2px solid rgb(49, 49, 49);*/
 	/*border-bottom: 1px solid rgb(49, 49, 49);*/
