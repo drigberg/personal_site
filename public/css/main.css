@@ -79,6 +79,10 @@ Header Strip
 	margin: 20 auto 0 auto;
 }
 
+#header-flex-box-1 {
+	margin-bottom: 50px;
+}
+
 .navbar {
 	position: fixed;
 	width: 100%;
@@ -105,16 +109,32 @@ Header Strip
 	margin: 0 auto;
 }
 
+.bubble-photo {
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 0 1em rgba(0,0,0,0.6);
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+	transition: opacity 0.5s ease;
+}
+
 #resume-download {
 	width: 200px;
 }
 
 #scroll-down {
-	left: 10%;
-	margin-top: 50px;
+	left: 30%;
+	margin-top: 150px;
 	color: white;
 	position: absolute;
 	width: 800px;
+}
+
+.arrow {
+	width: 150px;
+	height: 150px;
+	transition: opacity 2s ease;
 }
 
 /*--------------

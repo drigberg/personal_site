@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 <div id="canvas-background"></div>
 <div id="scroll-strip-header">
-    <div class="flex-box">
+    <div class="flex-box" id="header-flex-box-1">
         <!-- <div class="col-sm-12" id="title"><h1>Daniel Rigberg</h1></div> -->
         <div class="header-boxes">
             <p class="list-title languages">Languages/Tools</p>
@@ -30,7 +30,17 @@
             </ul>
         </div>
     </div>
-    <div id="scroll-down"><h2>(scroll down for considerably more detail)</h2></div>
+    <div class="flex-box" id="header-flex-box-2">
+        <img class="header-strip-hide arrow" src="/assets/arrow.gif">
+        <div class="header-boxes">
+            <img class="bubble-photo header-strip-hide" src="/assets/scuba_bubble.jpg">
+        </div>
+        <div class="header-boxes">
+            <img class="bubble-photo header-strip-hide" src="/assets/mountain_bubble.jpg">
+        </div>
+        <img class="header-strip-hide arrow" src="/assets/arrow.gif">
+    </div>
+
 </div>
 
 <div id="scroll-strip-music">
