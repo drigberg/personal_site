@@ -15,12 +15,60 @@ Nav Bar
 }
 
 /*--------------
+Progress Bar
+----------------*/
+
+#progress-bar {
+	right: 50px;
+	top: 30%;
+	position: fixed;
+	z-index: 1;
+	/*float: right;*/
+	flex-direction: column;
+	border-radius: 5px;
+	border-color: rgb(49, 49, 49);
+	box-shadow: 0 0 1em rgba(0,0,0,0.6);
+}
+
+#progress-bar i {
+	text-align: center;
+	padding: 8px 2px 8px 2px;
+	transition: 0.4s;
+}
+
+.progress-bar-top {
+	border-top: 2px solid rgb(49, 49, 49);
+	border-bottom: 1px solid rgb(49, 49, 49);
+	border-left: 2px solid rgb(49, 49, 49);
+	border-right: 2px solid rgb(49, 49, 49);
+	border-radius: 5px 5px 0 0;
+	color: rgb(49, 49, 49);
+}
+
+.progress-bar-middle {
+	border-top: 1px solid rgb(49, 49, 49);
+	border-bottom: 1px solid rgb(49, 49, 49);
+	border-left: 2px solid rgb(49, 49, 49);
+	border-right: 2px solid rgb(49, 49, 49);
+	color: rgba(0, 0, 0, 0);
+}
+
+.progress-bar-bottom {
+	border-top: 1px solid rgb(49, 49, 49);
+	border-bottom: 2px solid rgb(49, 49, 49);
+	border-left: 2px solid rgb(49, 49, 49);
+	border-right: 2px solid rgb(49, 49, 49);
+	border-radius: 0 0 5px 5px;
+	color: rgba(0, 0, 0, 0);
+}
+
+/*--------------
 General Styling
 ----------------*/
 body {
-	background-color: #eeeeee;
+	background-color: rgb(255, 255, 255);
 	background-size: 1000px;
-	transition: 4s;
+	transition: 0.4s;
 }
 
 ul {
@@ -29,7 +77,7 @@ ul {
 }
 
 h1 {
-	color: rgba(255, 11, 159, 1);
+	color: rgb(31, 133, 255);
 	font-size: 72px;
 	margin: 50 auto;
 	display: block;
@@ -59,10 +107,9 @@ Header Strip
 
 #scroll-strip-header {
 	width: 100%;
-	background-color: rgb(31, 133, 255);
 	z-index : -1;
-	padding: 100px 20px 50px 20px;
-	color: white;
+	padding: 150px 20px 50px 20px;
+	color: rgb(31, 133, 255);
 	font-size: 30px;
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
@@ -73,10 +120,14 @@ Header Strip
 }
 
 #resume-download {
-	background-color: white;
-	color: rgb(139, 29, 249);
+	background-color: rgb(31, 133, 255);
+	color: rgb(255, 255, 255);
 	display: block;
 	margin: 20 auto 0 auto;
+}
+
+.btn-lg {
+	color: rgb(255, 255, 255);
 }
 
 #header-flex-box-1 {
@@ -141,17 +192,6 @@ Header Strip
 	width: 800px;
 }
 
-.arrow {
-	width: 150px;
-	height: 150px;
-	transition: opacity 2s ease;
-}
-
-#filler {
-	width: 400px;
-	height: 300px;
-}
-
 /*--------------
 Music Strip
 ----------------*/
@@ -164,7 +204,6 @@ Music Strip
 	font-size: 30px;
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: rgb(31, 133, 255);
 	transition: background-color 0.3s ease;
 	padding-top: 100px;
 	display: flex;
@@ -198,12 +237,12 @@ Nestio Strip
 	font-size: 30px;
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: rgb(255, 11, 159);
 	transition: background-color 0.4s ease;
 }
 
 .nestio-strip-hide {
 	opacity: 0;
+	transition: opacity 0.4s ease;
 }
 
 /*--------------
@@ -218,7 +257,6 @@ Horoscope Strip
 	font-size: 30px;
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	background-color: rgb(255, 181, 11);
 	transition: background-color 0.4s ease;
 
 }
@@ -243,7 +281,6 @@ Project Strip
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
 	height: 800px;
-	background-color: rgb(31, 133, 255);
 	transition: background-color 0.4s ease;
 }
 
@@ -270,17 +307,17 @@ Sketch Strip
 
 
 @keyframes spin {
-  0%   { transform: rotate(0deg); 	}
-  8%  { transform: rotate(-15deg); }
-  20%  { transform: rotate(800deg); }
-  30% { transform: rotate(0deg); 	}
-  100%   { transform: rotate(0deg); 	}
+  0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+  8%  { transform: rotate(-15deg); -webkit-transform: rotate(-15deg); -ms-transform: rotate(-15deg);	}
+  20%  { transform: rotate(800deg); -webkit-transform: rotate(800deg); -ms-transform: rotate(800deg);	}
+  30% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+  100%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
 }
 
 @keyframes reverseSpin {
-  0%   { transform: rotate(0deg); 	}
-  8%  { transform: rotate(15deg); }
-  20%  { transform: rotate(-800deg); }
-  30% { transform: rotate(0deg); 	}
-  100%   { transform: rotate(0deg); 	}
+	0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+    8%  { transform: rotate(15deg); -webkit-transform: rotate(15deg); -ms-transform: rotate(15deg);	}
+    20%  { transform: rotate(-800deg); -webkit-transform: rotate(-800deg); -ms-transform: rotate(-800deg);	}
+    30% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+    100%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
 }

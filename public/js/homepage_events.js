@@ -5,8 +5,12 @@ var _purple = "rgb(139, 29, 249)";
 var _pink = "rgb(255, 11, 159)";
 var _lightBlue = "rgb(31, 133, 255)";
 var _white = "rgb(255, 255, 255)";
+var _transparent = "rgba(0, 0, 0, 0)"
 var _gold = "rgb(255, 181, 11)";
+var _gray = "rgb(49, 49, 49)"
+var _icon_shaded = _gray;
 var music_visible = false;
+
 var breaks = {
     music : {
         forward : 500,
@@ -29,23 +33,26 @@ var states = {
 
 window.onload = function(){
     animationsEnabled = true;
-    rotatePhoto($("#profile-photo"));
+    checkScroll();
 }
 
 window.onscroll = function(){
+    checkScroll();
+};
+
+function checkScroll(){
     if ($(document).scrollTop() >= breaks.music.forward){
         transitions.music.forward();
-    } else if ($(document).scrollTop() <= breaks.music.reverse && states.music.visible) {
+    } else if ($(document).scrollTop() <= breaks.music.reverse) {
         transitions.music.reverse();
     };
 
     if ($(document).scrollTop() >= breaks.nestio.forward) {
         transitions.nestio.forward();
     } else if ($(document).scrollTop() <= breaks.nestio.reverse && states.nestio.visible) {
-        console.log("FIRING");
         transitions.nestio.reverse();
     }
-};
+}
 
 var transitions = {
     music : {
@@ -53,41 +60,41 @@ var transitions = {
             states.music.visible = true;
             $(".music-strip-hide").css("opacity", 1);
             $(".header-strip-hide").css("opacity", 0);
-            $("#scroll-strip-music").css("background-color", _pink);
+            $("body").css("background-color", _gold);
+            $("#header-icon").css("color", _transparent);
+            $("#music-icon").css("color", _icon_shaded)
+            $("#career-icon").css("color", _transparent)
+            $("#coding-icon").css("color", _transparent);
         },
         reverse : function(){
             states.music.visible = false;
             $(".music-strip-hide").css("opacity", 0);
             $(".header-strip-hide").css("opacity", 1);
-            $("#scroll-strip-music").css("background-color", _lightBlue);
+            $("body").css("background-color", _white);
+            $("#header-icon").css("color", _icon_shaded);
+            $("#music-icon").css("color", _transparent)
+            $("#career-icon").css("color", _transparent)
+            $("#coding-icon").css("color", _transparent);
         },
     },
     nestio : {
         forward : function(){
             states.nestio.visible = true;
             $(".nestio-strip-hide").css("opacity", 1);
-            $("#scroll-strip-nestio").css("background-color", _gold);
-            // $("#scroll-strip-music").css("height", "-=300");
+            $("body").css("background-color", _pink);
+            $("#header-icon").css("color", _transparent);
+            $("#music-icon").css("color", _transparent)
+            $("#career-icon").css("color", _icon_shaded)
+            $("#coding-icon").css("color", _transparent);
         },
         reverse : function(){
             states.nestio.visible = false;
             $(".nestio-strip-hide").css("opacity", 0);
-            $("#scroll-strip-nestio").css("background-color", _pink);
+            $("body").css("background-color", _gold);
+            $("#header-icon").css("color", _transparent);
+            $("#music-icon").css("color", _icon_shaded)
+            $("#career-icon").css("color", _transparent)
+            $("#coding-icon").css("color", _transparent);
         },
     }
 };
-
-window.setInterval(function(){
-    if (!states.music.visible){
-        if (animationsEnabled){
-            if (arrowOpacity == 0) {
-                arrowOpacity = 1;
-            } else {
-                arrowOpacity = 0;
-            };
-        };
-    } else {
-        arrowOpacity = 0;
-    };
-    $(".arrow").css("opacity", arrowOpacity)
-}, 2000);
