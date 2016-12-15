@@ -2,6 +2,7 @@
 var backgroundColor, speed, numConstellations;
 var swarms;
 var numSwarms;
+var bugSize;
 
 //=========================
 //Setup & draw functions
@@ -16,6 +17,7 @@ function makeCanvas(){
     var canvas = createCanvas(($(window).width()), $(window).height() + 50);
     canvas.parent('canvas-background');
     backgroundColor = "rgba(0, 0, 0, 0)";
+    bugSize = 6;
 };
 
 function setInitialValues(){
@@ -23,7 +25,7 @@ function setInitialValues(){
 };
 
 function resetSwarms(){
-    numSwarms = 10;
+    numSwarms = 20;
     swarms = new Array(numSwarms);
     for (var i = 0; i < swarms.length; i++) {
         swarms[i] = new Swarm(random(0, width), random(0, height), random(0, width), random(0, height));
@@ -37,7 +39,7 @@ function draw() {
     noStroke();
     for (var i = 0; i < swarms.length; i++) {
         var newDest = random(0,1);
-        if (newDest > 0.99) {
+        if (newDest > 0.999) {
             console.log("HEYO!");
             swarms[i].destination = {
                 x : random(0, width),
@@ -67,10 +69,10 @@ var Swarm = function(spawnX, spawnY, destX, destY){
   this.b = 0;
   this.spawnX = spawnX;
   this.spawnY = spawnY;
-  this.numBugs = random(10, 30);
+  this.numBugs = random(10, 60);
   this.init = function(){
       for (var i = 0; i < this.numBugs; i++) {
-          this.bugs.push(new Bug(this, this.spawnX, this.spawnY, 8));
+          this.bugs.push(new Bug(this, this.spawnX, this.spawnY, bugSize));
       };
   };
   this.init();
@@ -79,9 +81,10 @@ var Swarm = function(spawnX, spawnY, destX, destY){
 var Bug = function(parentSwarm, x, y, r){
     //set of coordinates, radius, and color
     var that = this;
+    this.spread = random(30, 150)
     this.parentSwarm = parentSwarm;
-    this.x = x + random(-100, 100);
-    this.y = y + random(-100, 100);
+    this.x = x + random(-1 * this.spread, this.spread);
+    this.y = y + random(-1 * this.spread, this.spread);
     this.radius = r;
     this.turningSpeed = 0;
     this.vector = {
@@ -89,7 +92,7 @@ var Bug = function(parentSwarm, x, y, r){
             x : 0,
             y : -1
         },
-        magnitude : 5
+        magnitude : 4
     };
 
     this.acceleration = {
