@@ -36,9 +36,9 @@ Progress Bar
 	transition: 0.4s;
 }
 
-#progress-bar i:hover {
-	animation: spin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+i:hover {
+	animation: iconSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);	
 }
 
 .progress-bar-top {
@@ -71,7 +71,7 @@ Progress Bar
 General Styling
 ----------------*/
 body {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(248, 248, 248);
 	background-size: 1000px;
 	transition: 0.4s;
 }
@@ -325,4 +325,11 @@ Sketch Strip
     20%  { transform: rotate(-800deg); -webkit-transform: rotate(-800deg); -ms-transform: rotate(-800deg);	}
     30% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
     100%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
+}
+
+@keyframes iconSpin {
+  0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+  30%  { transform: rotate(-720deg); -webkit-transform: rotate(-720deg); -ms-transform: rotate(-720deg);	}
+  50%  { transform: rotate(-720deg); -webkit-transform: rotate(-720deg); -ms-transform: rotate(-720deg);	}
+  80%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
 }
