@@ -17,7 +17,7 @@ function makeCanvas(){
     var canvas = createCanvas(($(window).width()), $(window).height() + 50);
     canvas.parent('canvas-background');
     backgroundColor = "rgba(0, 0, 0, 0)";
-    bugSize = 6;
+    bugSize = 3;
 };
 
 function setInitialValues(){
@@ -39,7 +39,7 @@ function draw() {
     noStroke();
     for (var i = 0; i < swarms.length; i++) {
         var newDest = random(0,1);
-        if (newDest > 0.999) {
+        if (newDest > 0.998) {
             console.log("HEYO!");
             swarms[i].destination = {
                 x : random(0, width),
@@ -48,6 +48,7 @@ function draw() {
         };
         fill(swarms[i].r, swarms[i].g, swarms[i].b);
         for (var j = 0; j < swarms[i].bugs.length; j++) {
+            noStroke();
             swarms[i].bugs[j].update();
         };
     };
@@ -64,6 +65,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
       y : destY
   };
   this.bugs = [];
+  this.wander = 0;
   this.r = 0;
   this.g = 0;
   this.b = 0;
@@ -81,7 +83,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
 var Bug = function(parentSwarm, x, y, r){
     //set of coordinates, radius, and color
     var that = this;
-    this.spread = random(30, 150)
+    this.spread = random(30, 100)
     this.parentSwarm = parentSwarm;
     this.x = x + random(-1 * this.spread, this.spread);
     this.y = y + random(-1 * this.spread, this.spread);
@@ -143,7 +145,8 @@ var Bug = function(parentSwarm, x, y, r){
 
         that.acceleration.angular += angle * 0.001;
 
-
+        that.wander = random(-0.001, 0.001);
+        that.acceleration.angular += that.wander;
 
         if (that.acceleration.angular > 0.005) {
             that.acceleration.angular = 0.005;
