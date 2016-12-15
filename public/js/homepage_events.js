@@ -13,12 +13,16 @@ var music_visible = false;
 
 var breaks = {
     music : {
-        forward : 500,
-        reverse : 150
+        forward : 350,
+        reverse : 350
     },
     nestio : {
         forward : 1200,
         reverse : 1050
+    },
+    coding: {
+        forward : 2000,
+        reverse : 2000
     }
 };
 
@@ -27,6 +31,9 @@ var states = {
         visible : false,
     },
     nestio : {
+        visible : false
+    },
+    coding : {
         visible : false
     }
 };
@@ -51,6 +58,12 @@ function checkScroll(){
         transitions.nestio.forward();
     } else if ($(document).scrollTop() <= breaks.nestio.reverse && states.nestio.visible) {
         transitions.nestio.reverse();
+    }
+
+    if ($(document).scrollTop() >= breaks.coding.forward) {
+        transitions.coding.forward();
+    } else if ($(document).scrollTop() <= breaks.coding.reverse && states.coding.visible) {
+        transitions.coding.reverse();
     }
 }
 
@@ -94,6 +107,26 @@ var transitions = {
             $("#header-icon").css("color", _transparent);
             $("#music-icon").css("color", _icon_shaded)
             $("#career-icon").css("color", _transparent)
+            $("#coding-icon").css("color", _transparent);
+        },
+    },
+    coding : {
+        forward : function(){
+            states.coding.visible = true;
+            $(".coding-strip-hide").css("opacity", 1);
+            $("body").css("background-color", _purple);
+            $("#header-icon").css("color", _transparent);
+            $("#music-icon").css("color", _transparent)
+            $("#career-icon").css("color", _transparent)
+            $("#coding-icon").css("color", _icon_shaded);
+        },
+        reverse : function(){
+            states.coding.visible = false;
+            $(".coding-strip-hide").css("opacity", 0);
+            $("body").css("background-color", _pink);
+            $("#header-icon").css("color", _transparent);
+            $("#music-icon").css("color", _transparent)
+            $("#career-icon").css("color", _icon_shaded)
             $("#coding-icon").css("color", _transparent);
         },
     }

@@ -20,10 +20,9 @@ Progress Bar
 
 #progress-bar {
 	right: 50px;
-	top: 30%;
+	top: 15%;
 	position: fixed;
 	z-index: 1;
-	/*float: right;*/
 	flex-direction: column;
 	border-radius: 5px;
 	border-color: rgb(49, 49, 49);
@@ -38,7 +37,7 @@ Progress Bar
 
 i:hover {
 	animation: iconSpin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);	
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 }
 
 .progress-bar-top {
@@ -210,7 +209,6 @@ Music Strip
 	font-weight: 300px;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
 	transition: background-color 0.3s ease;
-	padding-top: 100px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -237,7 +235,7 @@ Nestio Strip
 
 #scroll-strip-nestio {
 	z-index : -1;
-	padding: 50px 150px;
+	padding: 0px 150px;
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
@@ -275,7 +273,7 @@ Horoscope Strip
 }
 
 /*--------------
-Project Strip
+Coding Strip
 ----------------*/
 
 #scroll-strip-more-projects {
@@ -287,6 +285,11 @@ Project Strip
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
 	height: 800px;
 	transition: background-color 0.4s ease;
+}
+
+.coding-strip-hide {
+	opacity : 0;
+	transition: opacity 0.4s ease;
 }
 
 /*--------------
