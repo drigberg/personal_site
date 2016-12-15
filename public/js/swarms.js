@@ -27,7 +27,7 @@ function setInitialValues(){
 };
 
 function resetSwarms(){
-    numSwarms = 20;
+    numSwarms = 10;
     swarms = new Array(numSwarms);
     for (var i = 0; i < swarms.length; i++) {
         swarms[i] = new Swarm(random(0, width), random(0, height), random(0, width), random(0, height));
@@ -49,7 +49,7 @@ function draw() {
             };
         };
         // fill(swarms[i].r, swarms[i].g, swarms[i].b);
-        fill('rgba(0, 0, 0, 0.6)');
+        fill('rgba(0, 0, 0, 1)');
         for (var j = 0; j < swarms[i].bugs.length; j++) {
             noStroke();
             swarms[i].bugs[j].update();

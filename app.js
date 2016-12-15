@@ -14,24 +14,8 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
-app.get("/projects", function (req, res){
-    res.render("projects");
-});
-
-app.get("/music", function (req, res){
-    res.render("music");
-});
-
-app.get("/travel", function (req, res){
-    res.render("travel");
-});
-
-app.get("/sandbox", function (req, res){
-    res.render("sandbox");
-});
-
-app.get("/signal_processing", function (req, res){
-    res.render("signal_processing");
+app.get("/swarm", function (req, res){
+    res.render("swarm");
 });
 
 app.get('/download_resume', function(req, res){
