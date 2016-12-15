@@ -3,6 +3,7 @@ var backgroundColor, speed, numConstellations;
 var swarms;
 var numSwarms;
 var bugSize;
+var speed;
 
 //=========================
 //Setup & draw functions
@@ -18,6 +19,7 @@ function makeCanvas(){
     canvas.parent('canvas-background');
     backgroundColor = "rgba(0, 0, 0, 0)";
     bugSize = 3;
+    speed = 5;
 };
 
 function setInitialValues(){
@@ -39,14 +41,15 @@ function draw() {
     noStroke();
     for (var i = 0; i < swarms.length; i++) {
         var newDest = random(0,1);
-        if (newDest > 0.998) {
+        if (newDest > 0.996) {
             console.log("HEYO!");
             swarms[i].destination = {
                 x : random(0, width),
                 y : random(0, height)
             };
         };
-        fill(swarms[i].r, swarms[i].g, swarms[i].b);
+        // fill(swarms[i].r, swarms[i].g, swarms[i].b);
+        fill('rgba(0, 0, 0, 0.6)');
         for (var j = 0; j < swarms[i].bugs.length; j++) {
             noStroke();
             swarms[i].bugs[j].update();
@@ -69,6 +72,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
   this.r = 0;
   this.g = 0;
   this.b = 0;
+  this.a = 0.5
   this.spawnX = spawnX;
   this.spawnY = spawnY;
   this.numBugs = random(10, 60);
@@ -94,7 +98,7 @@ var Bug = function(parentSwarm, x, y, r){
             x : 0,
             y : -1
         },
-        magnitude : 4
+        magnitude : speed
     };
 
     this.acceleration = {
