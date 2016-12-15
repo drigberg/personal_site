@@ -17,12 +17,12 @@ var breaks = {
         reverse : 350
     },
     nestio : {
-        forward : 1200,
+        forward : 1100,
         reverse : 1050
     },
     coding: {
-        forward : 2000,
-        reverse : 2000
+        forward : 1650,
+        reverse : 1600
     }
 };
 

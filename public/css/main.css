@@ -25,7 +25,6 @@ Progress Bar
 	z-index: 1;
 	flex-direction: column;
 	border-radius: 5px;
-	border-color: rgb(49, 49, 49);
 	box-shadow: 0 0 1em rgba(0,0,0,0.6);
 }
 
@@ -105,6 +104,10 @@ h2 {
 	flex: 1 1 auto;
 }
 
+button:hover {
+	animation: buttonWobble 2s infinite;
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);}
+
 /*--------------
 Header Strip
 ----------------*/
@@ -165,7 +168,7 @@ Header Strip
 }
 
 #profile-photo:hover {
-	animation: spin 4s infinite;
+	animation: iconSpin 4s infinite;
 	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
 }
 
@@ -207,26 +210,29 @@ Music Strip
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	font-family: 'Nunito Sans', sans-serif;	height: 700px;
 	transition: background-color 0.3s ease;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 	transition: background-color 0.4s ease;
 }
 
 .music-strip-hide {
 	opacity: 0;
+	transition: opacity 0.4s ease;
 }
 
 #soundcloud-div {
-	padding: 0 100px;
+	/*padding: 0;*/
 }
 
 .soundcloud-embed {
 	width: 300px;
 	margin: 0 10px;
 	/*display: inline-block;*/
+}
+
+#music-summary {
+	margin-bottom: 0px;
+	height: 200px;
 }
 
 /*--------------
@@ -239,13 +245,35 @@ Nestio Strip
 	color: white;
 	font-size: 30px;
 	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	font-family: 'Nunito Sans', sans-serif;
+	height: 500px;
 	transition: background-color 0.4s ease;
 }
 
 .nestio-strip-hide {
 	opacity: 0;
 	transition: opacity 0.4s ease;
+}
+
+.summary-p {
+	margin: 0 0 50 0;
+}
+
+.thumbnail {
+	height: 200px;
+	width: 200px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	padding: 5px;
+}
+
+.thumbnail:hover {
+	animation: iconSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
+}
+
+#nestio-summary {
+	margin-top: 50px;
 }
 
 /*--------------
@@ -335,4 +363,42 @@ Sketch Strip
   30%  { transform: rotate(-720deg); -webkit-transform: rotate(-720deg); -ms-transform: rotate(-720deg);	}
   50%  { transform: rotate(-720deg); -webkit-transform: rotate(-720deg); -ms-transform: rotate(-720deg);	}
   80%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
+}
+
+@keyframes buttonWobble {
+  0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
+  10%  { transform: rotate(-7deg); -webkit-transform: rotate(-7deg); -ms-transform: rotate(-7deg);		}
+  20%  { transform: rotate(7deg); -webkit-transform: rotate(7deg); -ms-transform: rotate(7deg);			}
+  30%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
+  80%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
+}
+
+
+
+
+/*TESTING*/
+
+.circle-curve {
+	width: 200px;
+	height: auto;
+    border-radius: 50%;
+	margin: 2px;
+	display: inline-block;
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
+}
+
+.music-page {
+	padding-top: 100px;
+}
+
+#curve {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+}
+
+.curve-text {
+	width: 200px;
+	display: inline-block;
 }
