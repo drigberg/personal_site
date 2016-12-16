@@ -4,6 +4,7 @@ var swarms;
 var numSwarms;
 var bugSize;
 var speed;
+var newDestProb;
 
 //=========================
 //Setup & draw functions
@@ -20,6 +21,8 @@ function makeCanvas(){
     backgroundColor = "rgba(0, 0, 0, 0)";
     bugSize = 3;
     speed = 5;
+    numSwarms = 2;
+    newDestProb = 0.993;
 };
 
 function setInitialValues(){
@@ -27,7 +30,6 @@ function setInitialValues(){
 };
 
 function resetSwarms(){
-    numSwarms = 10;
     swarms = new Array(numSwarms);
     for (var i = 0; i < swarms.length; i++) {
         swarms[i] = new Swarm(random(0, width), random(0, height), random(0, width), random(0, height));
@@ -41,7 +43,7 @@ function draw() {
     noStroke();
     for (var i = 0; i < swarms.length; i++) {
         var newDest = random(0,1);
-        if (newDest > 0.996) {
+        if (newDest > newDestProb) {
             console.log("HEYO!");
             swarms[i].destination = {
                 x : random(0, width),
@@ -75,7 +77,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
   this.a = 0.5
   this.spawnX = spawnX;
   this.spawnY = spawnY;
-  this.numBugs = random(10, 60);
+  this.numBugs = random(700, 1000);
   this.init = function(){
       for (var i = 0; i < this.numBugs; i++) {
           this.bugs.push(new Bug(this, this.spawnX, this.spawnY, bugSize));
@@ -149,8 +151,8 @@ var Bug = function(parentSwarm, x, y, r){
 
         that.acceleration.angular += angle * 0.001;
 
-        that.wander = random(-0.001, 0.001);
-        that.acceleration.angular += that.wander;
+        //that.wander = random(-0.001, 0.001);
+        //that.acceleration.angular += that.wander;
 
         if (that.acceleration.angular > 0.005) {
             that.acceleration.angular = 0.005;
@@ -172,7 +174,26 @@ var Bug = function(parentSwarm, x, y, r){
 
         newAngle = currentAngleFromOrigin + that.turningSpeed
 
+        distanceToDest = sqrt(Math.pow(this.parentSwarm.destination.x - this.x, 2) + Math.pow(this.parentSwarm.destination.y - this.y, 2));
+
+        if (distanceToDest < 300) {
+            this.acceleration.magnitude = -0.2;
+        } else {
+            this.acceleration.magnitude = 0.1;
+        }
+
+        this.vector.magnitude += this.acceleration.magnitude;
+
+        if (this.vector.magnitude < 0.1) {
+            this.vector.magnitude = 0.1;
+        } else if (this.vector.magnitude > 5) {
+            this.vector.magnitude = 5;
+        };
+
         newVector = findUnitVector(0, 0, cos(newAngle), sin(newAngle))
+
+
+
 
         that.vector.unitVector.x = newVector.x;
         that.vector.unitVector.y = newVector.y;
