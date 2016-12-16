@@ -22,7 +22,7 @@ function makeCanvas(){
     bugSize = 3;
     speed = 5;
     numSwarms = 2;
-    newDestProb = 0.993;
+    newDestProb = 0.99;
 };
 
 function setInitialValues(){
