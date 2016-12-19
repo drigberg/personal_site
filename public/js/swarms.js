@@ -148,7 +148,7 @@ var Bug = function(parentSwarm, x, y, r){
         //     that.acceleration.angular += angle * 0.001;
         // }
 
-        that.acceleration.angular += angle * 0.001;
+        that.acceleration.angular += angle * 0.004;
 
         //that.wander = random(-0.001, 0.001);
         //that.acceleration.angular += that.wander;
@@ -175,7 +175,7 @@ var Bug = function(parentSwarm, x, y, r){
 
         distanceToDest = sqrt(Math.pow(this.parentSwarm.destination.x - this.x, 2) + Math.pow(this.parentSwarm.destination.y - this.y, 2));
 
-        if (distanceToDest < 300) {
+        if (distanceToDest < 100) {
             this.acceleration.magnitude = -0.2;
         } else {
             this.acceleration.magnitude = 0.1;
