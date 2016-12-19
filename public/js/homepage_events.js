@@ -7,22 +7,23 @@ var _lightBlue = "rgb(31, 133, 255)";
 var _white = "rgb(248, 248, 248)";
 var _transparent = "rgba(0, 0, 0, 0)"
 var _gold = "rgb(255, 181, 11)";
-var _gray = "rgb(49, 49, 49)"
-var _icon_shaded = _gray;
+var _gray = "rgb(49, 49, 49)";
+var _icon_active = _gray;
+var _icon_faded = "rgba(49, 49, 49, 0.5)";
 var music_visible = false;
 
 var breaks = {
     music : {
-        forward : 350,
-        reverse : 350
+        forward : 650,
+        reverse : 650
     },
     nestio : {
-        forward : 1100,
-        reverse : 1050
+        forward : 1400,
+        reverse : 1400
     },
     coding: {
-        forward : 1650,
-        reverse : 1600
+        forward : 2250,
+        reverse : 2250
     }
 };
 
@@ -74,20 +75,20 @@ var transitions = {
             $(".music-strip-hide").css("opacity", 1);
             $(".header-strip-hide").css("opacity", 0);
             $("body").css("background-color", _gold);
-            $("#header-icon").css("color", _transparent);
-            $("#music-icon").css("color", _icon_shaded)
-            $("#career-icon").css("color", _transparent)
-            $("#coding-icon").css("color", _transparent);
+            $("#header-icon").css("opacity", 0.5);
+            $("#music-icon").css("opacity", 1);
+            $("#career-icon").css("opacity", 0.5);
+            $("#coding-icon").css("opacity", 0.5);
         },
         reverse : function(){
             states.music.visible = false;
             $(".music-strip-hide").css("opacity", 0);
             $(".header-strip-hide").css("opacity", 1);
             $("body").css("background-color", _white);
-            $("#header-icon").css("color", _icon_shaded);
-            $("#music-icon").css("color", _transparent)
-            $("#career-icon").css("color", _transparent)
-            $("#coding-icon").css("color", _transparent);
+            $("#header-icon").css("opacity", 1);
+            $("#music-icon").css("opacity", 0.5);
+            $("#career-icon").css("opacity", 0.5);
+            $("#coding-icon").css("opacity", 0.5);
         },
     },
     nestio : {
@@ -95,19 +96,19 @@ var transitions = {
             states.nestio.visible = true;
             $(".nestio-strip-hide").css("opacity", 1);
             $("body").css("background-color", _pink);
-            $("#header-icon").css("color", _transparent);
-            $("#music-icon").css("color", _transparent)
-            $("#career-icon").css("color", _icon_shaded)
-            $("#coding-icon").css("color", _transparent);
+            $("#header-icon").css("opacity", 0.5);
+            $("#music-icon").css("opacity", 0.5);
+            $("#career-icon").css("opacity", 1);
+            $("#coding-icon").css("opacity", 0.5);
         },
         reverse : function(){
             states.nestio.visible = false;
             $(".nestio-strip-hide").css("opacity", 0);
             $("body").css("background-color", _gold);
-            $("#header-icon").css("color", _transparent);
-            $("#music-icon").css("color", _icon_shaded)
-            $("#career-icon").css("color", _transparent)
-            $("#coding-icon").css("color", _transparent);
+            $("#header-icon").css("opacity", 0.5);
+            $("#music-icon").css("opacity", 1);
+            $("#career-icon").css("opacity", 0.5);
+            $("#coding-icon").css("opacity", 0.5);
         },
     },
     coding : {
@@ -115,19 +116,39 @@ var transitions = {
             states.coding.visible = true;
             $(".coding-strip-hide").css("opacity", 1);
             $("body").css("background-color", _purple);
-            $("#header-icon").css("color", _transparent);
-            $("#music-icon").css("color", _transparent)
-            $("#career-icon").css("color", _transparent)
-            $("#coding-icon").css("color", _icon_shaded);
+            $("#header-icon").css("opacity", 0.5);
+            $("#music-icon").css("opacity", 0.5);
+            $("#career-icon").css("opacity", 0.5);
+            $("#coding-icon").css("opacity", 1);
         },
         reverse : function(){
             states.coding.visible = false;
             $(".coding-strip-hide").css("opacity", 0);
             $("body").css("background-color", _pink);
-            $("#header-icon").css("color", _transparent);
-            $("#music-icon").css("color", _transparent)
-            $("#career-icon").css("color", _icon_shaded)
-            $("#coding-icon").css("color", _transparent);
-        },
+            $("#header-icon").css("opacity", 0.5);
+            $("#music-icon").css("opacity", 0.5);
+            $("#career-icon").css("opacity", 1);
+            $("#coding-icon").css("opacity", 0.5);
+        }
     }
 };
+
+$("#header-icon").click(function(){
+    $(document).scrollTop(0);
+    checkScroll();
+});
+
+$("#music-icon").click(function(){
+    $(document).scrollTop(900);
+    checkScroll();
+});
+
+$("#career-icon").click(function(){
+    $(document).scrollTop(1700);
+    checkScroll();
+});
+
+$("#coding-icon").click(function(){
+    $(document).scrollTop(2500);
+    checkScroll();
+});

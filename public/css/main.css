@@ -12,6 +12,12 @@ Nav Bar
 	margin-bottom: 0;
 	border: none;
 	border-radius: 0;
+	z-index : 2;
+}
+
+.navbar-pages {
+	width: 30%;
+	display: flex;
 }
 
 /*--------------
@@ -20,18 +26,21 @@ Progress Bar
 
 #progress-bar {
 	right: 50px;
-	top: 15%;
+	bottom: 50px;
 	position: fixed;
 	z-index: 1;
-	flex-direction: column;
+	flex-direction: row;
 	border-radius: 5px;
 	box-shadow: 0 0 1em rgba(0,0,0,0.6);
 }
 
 #progress-bar i {
 	text-align: center;
+	color: rgb(49, 49, 49);
+	opacity: 0.5;
 	padding: 8px 2px 8px 2px;
 	transition: 0.4s;
+	margin: 5px 10px;
 }
 
 i:hover {
@@ -69,14 +78,49 @@ i:hover {
 General Styling
 ----------------*/
 
+.section-strip {
+	width: 100%;
+	z-index : -1;
+	padding: 150px 20px 100px 20px;
+	font-size: 30px;
+	font-weight: 300px;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	/*height: 100vh;*/
+	height: 700px;
+	display: inline-block;
+	transition: background-color 0.4s ease;
+	margin-bottom: 100px;
+}
+
+.summary-column {
+	position: absolute;
+	left: 450px;
+	margin-top: 200px;
+	padding-right: 50px;
+}
+
+.graphics-column {
+	position: absolute;
+	left: 50px;
+	margin-top: 50px;
+}
+
+.graphics-column-2 {
+	position: absolute;
+	left: 215px;
+	margin-top: 50px;
+}
+
 #canvas-background {
 	z-index: -2;
 	position: absolute;
 }
+
 body {
 	background-color: rgb(248, 248, 248);
 	background-size: 1000px;
 	transition: 0.4s;
+	letter-spacing: 1.5px;
 }
 
 ul {
@@ -92,17 +136,19 @@ h1 {
 }
 
 h2 {
-	color: white;
-	font-size: 32px;
+	color: rgb(49, 49, 49);
+	font-size: 48px;
 	margin: 50 auto;
 	display: block;
+	letter-spacing: 1.5px;
+
 }
 
 .flex-box {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
+	/*flex-wrap: wrap;*/
+	/*justify-content: flex-start;*/
 }
 
 .flex-box > div {
@@ -111,25 +157,18 @@ h2 {
 
 button:hover {
 	animation: buttonWobble 2s infinite;
-	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);}
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 /*--------------
 Header Strip
 ----------------*/
 
-#scroll-strip-header {
-	width: 100%;
-	z-index : -1;
-	padding: 150px 20px 50px 20px;
-	color: rgb(31, 133, 255);
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	height: 78vh;
-	display: inline-block;
-	transition: background-color 0.4s ease;
-
-}
 
 #resume-download {
 	background-color: rgb(31, 133, 255);
@@ -154,6 +193,15 @@ Header Strip
 	text-decoration: underline;
 }
 
+#title-text {
+	vertical-align: text-bottom;
+}
+
+#title {
+	vertical-align: middle;
+	padding-top: 50px;
+}
+
 .languages {
 	text-align: right;
 }
@@ -161,6 +209,10 @@ Header Strip
 .header-boxes {
 	height: 300px;
 	margin: 0px 2px;
+}
+
+#profile-photo-div {
+	margin-right: 50px;
 }
 
 #profile-photo {
@@ -172,10 +224,10 @@ Header Strip
 	margin: 0 auto;
 }
 
-#profile-photo:hover {
+/*#profile-photo:hover {
 	animation: iconSpin 4s infinite;
 	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
-}
+}*/
 
 .bubble-photo {
 	width: 200px;
@@ -208,25 +260,15 @@ Header Strip
 Music Strip
 ----------------*/
 
-#scroll-strip-music {
-	display: inline-block;
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 700px;
-	transition: background-color 0.3s ease;
-	transition: background-color 0.4s ease;
-}
-
 .music-strip-hide {
 	opacity: 0;
 	transition: opacity 0.4s ease;
 }
 
-#soundcloud-div {
-	/*padding: 0;*/
+#soundcloud-flex-box {
+	display: flex;
+	flex-direction: column;
+	margin-right: 50px;
 }
 
 .soundcloud-embed {
@@ -238,6 +280,7 @@ Music Strip
 #music-summary {
 	margin-bottom: 0px;
 	height: 200px;
+	padding-top: 150px;
 }
 
 /*--------------
@@ -260,65 +303,65 @@ Nestio Strip
 	transition: opacity 0.4s ease;
 }
 
+#nestio-flex-box {
+	display: flex;
+	flex-direction: row;
+}
+
+#skills-div {
+	/*width: 20%;*/
+	margin-right: 50px;
+}
 .summary-p {
 	margin: 0 0 50 0;
 }
 
-.thumbnail {
-	height: 200px;
-	width: 200px;
-	border: 1px solid #ddd;
-	border-radius: 50%;
-	padding: 5px;
-}
-
-.thumbnail:hover {
-	animation: iconSpin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-}
-
-#nestio-summary {
-	margin-top: 50px;
-}
-
-/*--------------
-Horoscope Strip
-----------------*/
-
-#scroll-strip-horoscope {
-	display: inline-block;
+.thumbnail-skill {
 	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	transition: background-color 0.4s ease;
-
+	height: 150px;
+	width: 150px;
+	border: 1px solid #ddd;
+	margin: 5px;
+	padding: 3px;
+	background-color: white;
 }
 
-#horoscope-title {
-	height: 300px;
-	width: 800px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.6);
-	margin: 0 auto;
-	display: block;
-}
+
 
 /*--------------
 Coding Strip
 ----------------*/
 
-#scroll-strip-more-projects {
-	z-index : -1;
-	padding: 50px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	height: 800px;
-	transition: background-color 0.4s ease;
+#coding-flex-box {
+	display: flex;
+	flex-direction: row;
 }
+
+#projects-div {
+	display: flex;
+	flex-direction: column;
+	margin-right: 50px;
+}
+
+.thumbnail-link {
+	z-index : -1;
+	height: 150px;
+	width: 150px;
+	border: 1px solid #ddd;
+	margin: 5px;
+	border-radius: 50%;
+	padding: 3px;
+	background-color: white;
+}
+
+.thumbnail-link:hover {
+	animation: iconSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
+}
+
+/*--------------
+Coding Strip
+----------------*/
 
 .coding-strip-hide {
 	opacity : 0;
