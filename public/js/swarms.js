@@ -44,7 +44,6 @@ function draw() {
     for (var i = 0; i < swarms.length; i++) {
         var newDest = random(0,1);
         if (newDest > newDestProb) {
-            console.log("HEYO!");
             swarms[i].destination = {
                 x : random(0, width),
                 y : random(0, height)
