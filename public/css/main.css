@@ -97,10 +97,12 @@ General Styling
 	left: 450px;
 	margin-top: 200px;
 	padding-right: 50px;
+	z-index: -1;
 }
 
 .graphics-column {
 	position: absolute;
+	z-index: -1;
 	left: 50px;
 	margin-top: 50px;
 }
@@ -109,6 +111,7 @@ General Styling
 	position: absolute;
 	left: 215px;
 	margin-top: 50px;
+	z-index: -1;
 }
 
 #canvas-background {
@@ -287,7 +290,7 @@ Music Strip
 Nestio Strip
 ----------------*/
 
-#scroll-strip-nestio {
+/*#scroll-strip-nestio {
 	z-index : -1;
 	padding: 0px 150px;
 	color: white;
@@ -296,7 +299,7 @@ Nestio Strip
 	font-family: 'Nunito Sans', sans-serif;
 	height: 500px;
 	transition: background-color 0.4s ease;
-}
+}*/
 
 .nestio-strip-hide {
 	opacity: 0;
