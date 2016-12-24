@@ -2,7 +2,7 @@
 
 <div class="flex-box" id="progress-bar">
     <i class="fa fa-3x fa-user-circle progress-bar-top" id="header-icon" aria-hidden="true"></i>
-    <i class="fa fa-3x fa-graduation-cap progress-bar-middle" id="music-icon"  aria-hidden="true"></i>
+    <i class="fa fa-3x fa-music progress-bar-middle" id="music-icon"  aria-hidden="true"></i>
     <i class="fa fa-3x fa-id-card progress-bar-middle" id="career-icon" aria-hidden="true"></i>
     <i class="fa fa-3x fa-code-fork progress-bar-bottom" id="coding-icon" aria-hidden="true"></i>
 </div>
@@ -21,55 +21,84 @@
 </div>
 
 <div class="section-strip" id="music-strip">
-    <div class="graphics-column" id="soundcloud-flex-box">
-        <div class="soundcloud-embed music-strip-hide">
-            <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/110447153&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+    <div class="graphics-column" id="audio-flex-box">
+        <div class="audio-div">
+            <h4>"September"</h4>
+            <h4>for bassoon and piano</h4>
+            <audio controls>
+                <source src="/assets/september.mp3" type="audio/mpeg">
+                (Your browser does not support the audio element.)
+            </audio>
         </div>
-        <div class="soundcloud-embed music-strip-hide">
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/206807523&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        <hr>
+        <div class="audio-div">
+            <h4>"Zinkara"</h4>
+            <h4>for two guitars</h4>
+            <audio controls>
+                <source src="/assets/zinkara.mp3" type="audio/mpeg">
+                (Your browser does not support the audio element.)
+            </audio>
+        </div>
+        <hr>
+        <div class="audio-div">
+            <h4>"Gravity Cats"</h4>
+            <h4>for chamber ensemble</h4>
+            <audio controls>
+                <source src="/assets/gravity_cats.mp3" type="audio/mpeg">
+                (Your browser does not support the audio element.)
+            </audio>
+        </div>
+        <hr>
+        <div class="audio-div">
+            <h4>"Holovarium"</h4>
+            <h4>for chamber ensemble</h4>
+            <audio controls>
+                <source src="/assets/holovarium.mp3" type="audio/mpeg">
+                (Your browser does not support the audio element.)
+            </audio>
         </div>
     </div>
-    <p class="music-strip-hide summary-column">Once upon a time, I studied music composition at Yale, but it wasn't the career for me.</p>
+    <p class="summary-column">Once upon a time, I studied music composition at Yale, but it wasn't the career for me.</p>
 </div>
 
 <div class="section-strip" id="nestio-strip">
-    <div class="graphics-column" id="soundcloud-flex-box">
+    <div class="graphics-column skills-flex-box">
         <div id="skills-div">
-            <div><img class="thumbnail-skill nestio-strip-hide" id="django" src="/assets/django.png"></div>
-            <div><img class="thumbnail-skill nestio-strip-hide" id="python" src="/assets/python.png"></div>
-            <div><img class="thumbnail-skill nestio-strip-hide" id="excel" src="/assets/excel.png"></div>
+            <div><img class="thumbnail-skill" id="django" src="/assets/django.png"></div>
+            <div><img class="thumbnail-skill" id="python" src="/assets/python.png"></div>
+            <div><img class="thumbnail-skill" id="excel" src="/assets/excel.png"></div>
         </div>
     </div>
-    <div class="graphics-column-2" id="soundcloud-flex-box">
+    <div class="graphics-column-2 skills-flex-box">
         <div id="skills-div">
-            <div><img class="thumbnail-skill nestio-strip-hide" id="node" src="/assets/python.png"></div>
-            <div><img class="thumbnail-skill nestio-strip-hide" id="js" src="/assets/excel.png"></div>
-            <div><img class="thumbnail-skill nestio-strip-hide" id="mongo" src="/assets/django.png"></div>
+            <div class="thumbnail-skill-blank"></div>
+            <div><img class="thumbnail-skill" id="js" src="/assets/node.png"></div>
+            <div class="thumbnail-skill-blank"></div>
         </div>
     </div>
-    <p class="nestio-strip-hide summary-column">After graduating, I joined an NYC startup called Nestio, taught myself how to code, and transitioned to a developer role.</p>
+    <p class="summary-column">After graduating, I joined an NYC startup called Nestio, taught myself how to code, and transitioned to a developer role.</p>
 </div>
 
 <div class="section-strip" id="coding-strip">
     <div class="graphics-column">
         <div class="projects-div">
             <div></div>
-            <div><a href="http://www.horoscopegen.com" target="_blank"><img class="thumbnail-link coding-strip-hide" id="django" src="/assets/constellations.png"></a></div>
-            <div><a href="https://github.com/drigberg/terminal_battleship" target="_blank"><img class="thumbnail-link coding-strip-hide" src="/assets/battleship.png"></a></div>
-            <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link coding-strip-hide" src="/assets/algorithms.png"></a></div>
+            <div><a href="http://www.horoscopegen.com" target="_blank"><img class="thumbnail-link" id="django" src="/assets/constellations.png"></a></div>
+            <div><a href="https://github.com/drigberg/terminal_battleship" target="_blank"><img class="thumbnail-link" src="/assets/battleship.png"></a></div>
+            <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link" src="/assets/algorithms.png"></a></div>
             <div></div>
         </div>
     </div>
     <div class="graphics-column-2">
         <div class="projects-div">
             <div></div>
-            <div><a href="http://www.horoscopegen.com" target="_blank"><img class="thumbnail-link coding-strip-hide" id="django" src="/assets/constellations.png"></a></div>
-            <div><a href="https://github.com/drigberg/terminal_battleship" target="_blank"><img class="thumbnail-link coding-strip-hide" src="/assets/battleship.png"></a></div>
-            <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link coding-strip-hide" src="/assets/algorithms.png"></a></div>
+            <div><a href="https://github.com/drigberg/liars_dice" target="_blank"><img class="thumbnail-link" id="django" src="/assets/liars_dice.png"></a></div>
+            <div><a href="/swarm" target="_blank"><img class="thumbnail-link" src="/assets/swarm.png"></a></div>
+            <!-- <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link" src="/assets/algorithms.png"></a></div> -->
             <div></div>
         </div>
     </div>
-    <p class="coding-strip-hide summary-column">Since then, I've been studying independently and pair-programming at the Recurse Center in NYC.<p>
+    <p class="summary-column">Recently, I've been studying independently and pair-programming at the Recurse Center in NYC.<p>
 </div>
 
 
