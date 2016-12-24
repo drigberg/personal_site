@@ -16,7 +16,7 @@ Strips
 	opacity: 0;
 }
 
-#coding-strip {
+#projects-strip {
 	display: none;
 	opacity: 0;
 }
@@ -104,6 +104,10 @@ hr {
 	left: 450px;
 	padding-right: 50px;
 	z-index: -1;
+}
+
+.skills-column {
+	padding-top: 150px;
 }
 
 .graphics-column {
@@ -306,10 +310,10 @@ career Strip
 }
 
 /*--------------
-Coding Strip
+projects Strip
 ----------------*/
 
-#coding-flex-box {
+#projects-flex-box {
 	display: flex;
 	flex-direction: row;
 }
@@ -337,7 +341,7 @@ Coding Strip
 }
 
 /*--------------
-Coding Strip
+projects Strip
 ----------------*/
 
 /*--------------
@@ -348,7 +352,7 @@ Sketch Strip
 	background-color: rgba(100, 100, 200, 0.5);
 }
 
-/*CODING*/
+/*projects*/
 
 .github-widget {
 	margin: 20px auto;

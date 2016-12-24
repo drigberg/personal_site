@@ -4,7 +4,9 @@
     <i class="fa fa-3x fa-user-circle progress-bar-top" id="header-icon" aria-hidden="true"></i>
     <i class="fa fa-3x fa-graduation-cap progress-bar-middle" id="music-icon"  aria-hidden="true"></i>
     <i class="fa fa-3x fa-id-card progress-bar-middle" id="career-icon" aria-hidden="true"></i>
-    <i class="fa fa-3x fa-code-fork progress-bar-bottom" id="coding-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-code-fork progress-bar-bottom" id="projects-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-sort-amount-desc progress-bar-bottom" id="skills-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-bicycle progress-bar-bottom" id="interests-icon" aria-hidden="true"></i>
 </div>
 
 <div class="section-strip" id="header-strip">
@@ -79,7 +81,47 @@
     <p class="summary-column">After graduating, I joined an NYC startup called career, taught myself how to code, and transitioned to a developer role.</p>
 </div>
 
-<div class="section-strip" id="coding-strip">
+<div class="section-strip" id="projects-strip">
+    <div class="graphics-column">
+        <div class="projects-div">
+            <div></div>
+            <div><a href="http://www.horoscopegen.com" target="_blank"><img class="thumbnail-link" id="django" src="/assets/constellations.png"></a></div>
+            <div><a href="https://github.com/drigberg/terminal_battleship" target="_blank"><img class="thumbnail-link" src="/assets/battleship.png"></a></div>
+            <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link" src="/assets/algorithms.png"></a></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="graphics-column-2">
+        <div class="projects-div">
+            <div></div>
+            <div><a href="https://github.com/drigberg/liars_dice" target="_blank"><img class="thumbnail-link" id="django" src="/assets/liars_dice.png"></a></div>
+            <div><a href="/swarm" target="_blank"><img class="thumbnail-link" src="/assets/swarm.png"></a></div>
+            <!-- <div><a href="https://github.com/drigberg/algorithms_and_design_patterns" target="_blank"><img class="thumbnail-link" src="/assets/algorithms.png"></a></div> -->
+            <div></div>
+        </div>
+    </div>
+    <p class="summary-column">Recently, I've been studying independently and pair-programming at the Recurse Center in NYC.<p>
+</div>
+
+<div class="section-strip" id="skills-strip">
+    <div class="graphics-column">
+        <div class="skills-div">
+            <h2>My skills include:</h2>
+        </div>
+    </div>
+    <div class="summary-column skills-column">
+        <ul>
+            <li>Javascript</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>HTML5/CSS</li>
+            <li>P5.js</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section-strip" id="interests-strip">
     <div class="graphics-column">
         <div class="projects-div">
             <div></div>
@@ -102,11 +144,8 @@
 </div>
 
 
-
-<!-- <script src="../js/sketch.js"></script>
-<script src="../js/index_particles.js"></script> -->
 <!-- <script src="../js/p5.min.js"></script>
 <script src="../js/p5.dom.min.js"></script>
-<script src="../js/homepage_scroll.js"></script> -->
+-->
 
 <% include ./partials/footer %>

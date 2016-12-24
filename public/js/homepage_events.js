@@ -8,57 +8,39 @@ var _gray = "rgb(49, 49, 49)";
 var _icon_active = _gray;
 var _icon_faded = "rgba(49, 49, 49, 0.5)";
 
-var stripIds = [
-    "header-strip",
-    "music-strip",
-    "career-strip",
-    "coding-strip"
+var sections = [
+    "header",
+    "music",
+    "career",
+    "projects",
+    "skills",
+    "interests"
 ];
 
-var iconIds = [
-    "header-icon",
-    "music-icon",
-    "career-icon",
-    "coding-icon"
-];
+for (var j = 0; j < sections.length; j++) {
+    $("#" + sections[j] + "-icon").click(function(){
+        var section = this.id.slice(0, this.id.indexOf("-"));
+        _showOneStrip(section);
+        _highlightOneIcon(section);
+    });
+};
 
-$("#header-icon").click(function(){
-    _showOneStrip("header-strip");
-    _highlightOneIcon("header-icon");
-});
-
-$("#music-icon").click(function(){
-    _showOneStrip("music-strip");
-    _highlightOneIcon("music-icon");
-    // $("body").css("background-color", _lightBlue);
-});
-
-$("#career-icon").click(function(){
-    _showOneStrip("career-strip");
-    _highlightOneIcon("career-icon");
-});
-
-$("#coding-icon").click(function(){
-    _showOneStrip("coding-strip");
-    _highlightOneIcon("coding-icon");
-});
-
-function _showOneStrip(stripIdToShow) {
-    for (var i = 0; i < stripIds.length; i++) {
-        if (stripIds[i] != stripIdToShow) {
-            $("#" + stripIds[i]).css("display", "none").css("opacity", 0);
+function _showOneStrip(section) {
+    for (var i = 0; i < sections.length; i++) {
+        if (sections[i] != section) {
+            $("#" + sections[i] + "-strip").css("display", "none").css("opacity", 0);
         } else {
-            $("#" + stripIds[i]).css("display", "block").css("opacity", 1);
+            $("#" + sections[i] + "-strip").css("display", "block").css("opacity", 1);
         };
     };
 };
 
-function _highlightOneIcon(iconIdToShow) {
-    for (var i = 0; i < iconIds.length; i++) {
-        if (iconIds[i] != iconIdToShow) {
-            $("#" + iconIds[i]).css("color", "rgba(24, 24, 24, 0.5)")
+function _highlightOneIcon(section) {
+    for (var i = 0; i < sections.length; i++) {
+        if (sections[i] != section) {
+            $("#" + sections[i] + "-icon").css("color", "rgba(24, 24, 24, 0.5)")
         } else {
-            $("#" + iconIds[i]).css("color", "rgba(24, 24, 24, 1)")
+            $("#" + sections[i] + "-icon").css("color", "rgba(24, 24, 24, 1)")
         };
     };
 };
