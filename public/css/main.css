@@ -1,18 +1,43 @@
+/*--------------
+Strips
+----------------*/
+#header-strip {
+	padding-top: 150px;
+	display: block;
+}
+
+#music-strip {
+	display: none;
+	opacity: 0;
+}
+
+#nestio-strip {
+	display: none;
+	opacity: 0;
+}
+
+#coding-strip {
+	display: none;
+	opacity: 0;
+}
+
 
 /*--------------
 Nav Bar
 ----------------*/
 #brand {
-		margin-top: 15px;
-		letter-spacing: 1.5px;
+	margin-top: 15px;
+	letter-spacing: 1.5px;
 }
 
+nav {
+	z-index: 3;
+}
 .nav {
 	float: right;
 	margin-bottom: 0;
 	border: none;
 	border-radius: 0;
-	z-index : 2;
 }
 
 .navbar-pages {
@@ -35,12 +60,16 @@ Progress Bar
 }
 
 #progress-bar i {
+	cursor: pointer;
 	text-align: center;
-	color: rgb(49, 49, 49);
-	opacity: 0.5;
+	color: rgba(49, 49, 49, 0.5);
 	padding: 8px 2px 8px 2px;
-	transition: 0.4s;
+	transition: 0.2s;
 	margin: 5px 10px;
+}
+
+#progress-bar #header-icon {
+	color: rgba(49, 49, 49, 1);
 }
 
 i:hover {
@@ -48,70 +77,47 @@ i:hover {
 	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 }
 
-.progress-bar-top {
-	/*border-top: 2px solid rgb(49, 49, 49);*/
-	/*border-bottom: 1px solid rgb(49, 49, 49);*/
-	/*border-left: 2px solid rgb(49, 49, 49);*/
-	/*border-right: 2px solid rgb(49, 49, 49);*/
-	/*border-radius: 5px 5px 0 0;*/
-	color: rgb(49, 49, 49);
-}
-
-.progress-bar-middle {
-	/*border-top: 1px solid rgb(49, 49, 49);*/
-	/*border-bottom: 1px solid rgb(49, 49, 49);*/
-	/*border-left: 2px solid rgb(49, 49, 49);*/
-	/*border-right: 2px solid rgb(49, 49, 49);*/
-	color: rgba(0, 0, 0, 0);
-}
-
-.progress-bar-bottom {
-	/*border-top: 1px solid rgb(49, 49, 49);*/
-	/*border-bottom: 2px solid rgb(49, 49, 49);*/
-	/*border-left: 2px solid rgb(49, 49, 49);*/
-	/*border-right: 2px solid rgb(49, 49, 49);*/
-	/*border-radius: 0 0 5px 5px;*/
-	color: rgba(0, 0, 0, 0);
-}
-
 /*--------------
 General Styling
 ----------------*/
 
+hr {
+	border: 0;
+	width: 96%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 .section-strip {
 	width: 100%;
 	z-index : -1;
-	padding: 150px 20px 100px 20px;
+	padding: 100px 20px 0px 20px;
 	font-size: 30px;
-	font-weight: 300px;
+	font-weight: 300;
 	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	/*height: 100vh;*/
-	height: 700px;
-	display: inline-block;
-	transition: background-color 0.4s ease;
-	margin-bottom: 100px;
+	display: block;
+	transition: all 0.4s ease;
 }
 
 .summary-column {
 	position: absolute;
 	left: 450px;
-	margin-top: 200px;
 	padding-right: 50px;
 	z-index: -1;
 }
 
 .graphics-column {
 	position: absolute;
-	z-index: -1;
+	z-index: 0;
 	left: 50px;
-	margin-top: 50px;
 }
 
 .graphics-column-2 {
 	position: absolute;
+	display: flex;
+
 	left: 215px;
-	margin-top: 50px;
-	z-index: -1;
+	z-index: 0;
 }
 
 #canvas-background {
@@ -172,7 +178,6 @@ a:hover {
 Header Strip
 ----------------*/
 
-
 #resume-download {
 	background-color: rgb(31, 133, 255);
 	color: rgb(255, 255, 255);
@@ -192,6 +197,7 @@ Header Strip
 	position: fixed;
 	width: 100%;
 }
+
 .list-title {
 	text-decoration: underline;
 }
@@ -251,27 +257,13 @@ Header Strip
 	width: 200px;
 }
 
-#scroll-down {
-	left: 30%;
-	margin-top: 150px;
-	color: white;
-	position: absolute;
-	width: 800px;
-}
-
 /*--------------
 Music Strip
 ----------------*/
 
-.music-strip-hide {
-	opacity: 0;
-	transition: opacity 0.4s ease;
-}
-
-#soundcloud-flex-box {
+#audio-flex-box {
 	display: flex;
 	flex-direction: column;
-	margin-right: 50px;
 }
 
 .soundcloud-embed {
@@ -289,22 +281,6 @@ Music Strip
 /*--------------
 Nestio Strip
 ----------------*/
-
-/*#scroll-strip-nestio {
-	z-index : -1;
-	padding: 0px 150px;
-	color: white;
-	font-size: 30px;
-	font-weight: 300px;
-	font-family: 'Nunito Sans', sans-serif;
-	height: 500px;
-	transition: background-color 0.4s ease;
-}*/
-
-.nestio-strip-hide {
-	opacity: 0;
-	transition: opacity 0.4s ease;
-}
 
 #nestio-flex-box {
 	display: flex;
@@ -328,8 +304,6 @@ Nestio Strip
 	padding: 3px;
 	background-color: white;
 }
-
-
 
 /*--------------
 Coding Strip
@@ -365,11 +339,6 @@ Coding Strip
 /*--------------
 Coding Strip
 ----------------*/
-
-.coding-strip-hide {
-	opacity : 0;
-	transition: opacity 0.4s ease;
-}
 
 /*--------------
 Sketch Strip
