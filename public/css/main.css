@@ -6,21 +6,10 @@ Strips
 	display: block;
 }
 
-#music-strip {
+.initially-hidden {
 	display: none;
 	opacity: 0;
 }
-
-#career-strip {
-	display: none;
-	opacity: 0;
-}
-
-#coding-strip {
-	display: none;
-	opacity: 0;
-}
-
 
 /*--------------
 Nav Bar
@@ -33,16 +22,12 @@ Nav Bar
 nav {
 	z-index: 3;
 }
+
 .nav {
 	float: right;
 	margin-bottom: 0;
 	border: none;
 	border-radius: 0;
-}
-
-.navbar-pages {
-	width: 30%;
-	display: flex;
 }
 
 /*--------------
@@ -72,68 +57,9 @@ Progress Bar
 	color: rgba(49, 49, 49, 1);
 }
 
-i:hover {
-	animation: iconSpin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-}
-
 /*--------------
 General Styling
 ----------------*/
-
-hr {
-	border: 0;
-	width: 96%;
-    height: 2px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
-.section-strip {
-	width: 100%;
-	z-index : -1;
-	padding: 100px 20px 0px 20px;
-	font-size: 30px;
-	font-weight: 300;
-	font-family: 'Nunito Sans', sans-serif;	height: 800px;
-	display: block;
-	transition: all 0.4s ease;
-}
-
-.summary-column {
-	position: absolute;
-	left: 450px;
-	padding-right: 50px;
-	z-index: -1;
-}
-
-.skills-column {
-	padding-top: 150px;
-}
-
-.graphics-column {
-	position: absolute;
-	z-index: 0;
-	left: 50px;
-}
-
-.graphics-column-2 {
-	position: absolute;
-	left: 215px;
-	z-index: 0;
-}
-
-.image-text {
-	text-align: center;
-	opacity: 0;
-	margin: 2 auto;
-	width: 100%;
-	transition: opacity 0.2s ease;
-}
-
-#canvas-background {
-	z-index: -2;
-	position: absolute;
-}
 
 body {
 	background-color: rgb(248, 248, 248);
@@ -163,15 +89,16 @@ h2 {
 
 }
 
-.flex-box {
-	display: flex;
-	flex-direction: row;
-	/*flex-wrap: wrap;*/
-	/*justify-content: flex-start;*/
+hr {
+	border: 0;
+	width: 96%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.flex-box > div {
-	flex: 1 1 auto;
+i:hover {
+	animation: iconSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 }
 
 button:hover {
@@ -184,45 +111,70 @@ a:hover {
 	text-decoration: none;
 }
 
+.section-strip {
+	width: 100%;
+	z-index : -1;
+	padding: 100px 20px 0px 20px;
+	font-size: 30px;
+	font-weight: 300;
+	font-family: 'Nunito Sans', sans-serif;	height: 800px;
+	transition: all 0.4s ease;
+}
+
+.summary-column {
+	position: absolute;
+	left: 450px;
+	padding-right: 50px;
+	z-index: -1;
+}
+
+.graphics-column {
+	position: absolute;
+	z-index: 0;
+	left: 50px;
+}
+
+.graphics-column-2 {
+	position: absolute;
+	left: 215px;
+	z-index: 0;
+}
+
+.image-text {
+	text-align: center;
+	opacity: 0;
+	margin: 2 auto;
+	width: 100%;
+	transition: opacity 0.2s ease;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	/*flex-wrap: wrap;*/
+	/*justify-content: flex-start;*/
+}
+
+.flex-box > div {
+	flex: 1 1 auto;
+}
+
+#canvas-background {
+	z-index: -2;
+	position: absolute;
+}
+
 /*--------------
 Header Strip
 ----------------*/
-
-#resume-download {
-	background-color: rgb(31, 133, 255);
-	color: rgb(255, 255, 255);
-	display: block;
-	margin: 20 auto 0 auto;
-}
 
 .btn-lg {
 	color: rgb(255, 255, 255);
 }
 
-#header-flex-box-1 {
-	margin-bottom: 50px;
-}
-
 .navbar {
 	position: fixed;
 	width: 100%;
-}
-
-.list-title {
-	text-decoration: underline;
-}
-
-#title-text {
-	vertical-align: text-bottom;
-}
-
-#title {
-	vertical-align: middle;
-	padding-top: 50px;
-}
-
-.languages {
-	text-align: right;
 }
 
 .header-boxes {
@@ -243,28 +195,24 @@ Header Strip
 	margin: 0 auto;
 }
 
-/*#profile-photo:hover {
-	animation: iconSpin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
-}*/
-
-.bubble-photo {
-	width: 200px;
-	height: 200px;
-	box-shadow: 0 0 1em rgba(0,0,0,0.6);
-	border-radius: 50%;
-	display: block;
-	margin: 0 auto;
-	transition: opacity 0.1s ease;
+#header-flex-box {
+	margin-bottom: 50px;
 }
 
-.bubble-photo:hover {
-	animation: reverseSpin 4s infinite;
-	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+#title-text {
+	vertical-align: text-bottom;
+}
+
+#title-div {
+	vertical-align: middle;
+	padding-top: 50px;
 }
 
 #resume-download {
-	width: 200px;
+	background-color: rgb(31, 133, 255);
+	color: rgb(255, 255, 255);
+	display: block;
+	margin: 20 auto 0 auto;
 }
 
 /*--------------
@@ -276,34 +224,9 @@ Music Strip
 	flex-direction: column;
 }
 
-.soundcloud-embed {
-	width: 300px;
-	margin: 0 10px;
-	/*display: inline-block;*/
-}
-
-#music-summary {
-	margin-bottom: 0px;
-	height: 200px;
-	padding-top: 150px;
-}
-
 /*--------------
 Skills Strip
 ----------------*/
-
-#career-flex-box {
-	display: flex;
-	flex-direction: row;
-}
-
-#skills-div {
-	/*width: 20%;*/
-	margin-right: 50px;
-}
-.summary-p {
-	margin: 0 0 50 0;
-}
 
 .thumbnail-skill {
 	z-index : -1;
@@ -315,23 +238,15 @@ Skills Strip
 	background-color: white;
 }
 
+#skills-div {
+	margin-right: 50px;
+}
+
 /*--------------
 Project Strip
 ----------------*/
-
-#coding-flex-box {
-	display: flex;
-	flex-direction: row;
-}
-
 .project-div:hover .image-text {
 	opacity: 1;
-}
-
-#coding-div {
-	display: flex;
-	flex-direction: column;
-	margin-right: 50px;
 }
 
 .thumbnail-link {
@@ -346,55 +261,19 @@ Project Strip
 	background-color: white;
 }
 
-.thumbnail-link-parent {
-	margin: 0 auto;
-}
-
 .thumbnail-link:hover {
 	animation: iconSpin 4s infinite;
 	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 }
 
-/*--------------
-coding Strip
-----------------*/
-
-/*--------------
-Sketch Strip
-----------------*/
-
-.sketch {
-	background-color: rgba(100, 100, 200, 0.5);
+.thumbnail-link-parent {
+	margin: 0 auto;
 }
 
-/*coding*/
-
-.github-widget {
-	margin: 20px auto;
-}
-
-
-/*TRAVEL*/
-
-#world-img {
-	width: 100%;
-}
-
-
-@keyframes spin {
-  0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
-  8%  { transform: rotate(-15deg); -webkit-transform: rotate(-15deg); -ms-transform: rotate(-15deg);	}
-  20%  { transform: rotate(800deg); -webkit-transform: rotate(800deg); -ms-transform: rotate(800deg);	}
-  30% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
-  100%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
-}
-
-@keyframes reverseSpin {
-	0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
-    8%  { transform: rotate(15deg); -webkit-transform: rotate(15deg); -ms-transform: rotate(15deg);	}
-    20%  { transform: rotate(-800deg); -webkit-transform: rotate(-800deg); -ms-transform: rotate(-800deg);	}
-    30% { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}
-    100%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
+#coding-div {
+	display: flex;
+	flex-direction: column;
+	margin-right: 50px;
 }
 
 @keyframes iconSpin {
@@ -410,34 +289,4 @@ Sketch Strip
   20%  { transform: rotate(7deg); -webkit-transform: rotate(7deg); -ms-transform: rotate(7deg);			}
   30%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
   80%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
-}
-
-
-
-
-/*TESTING*/
-
-.circle-curve {
-	width: 200px;
-	height: auto;
-    border-radius: 50%;
-	margin: 2px;
-	display: inline-block;
-    -webkit-shape-outside:circle();
-    shape-outside:circle();
-}
-
-.music-page {
-	padding-top: 100px;
-}
-
-#curve {
-	display: block;
-	margin: 0 auto;
-	width: 100px;
-}
-
-.curve-text {
-	width: 200px;
-	display: inline-block;
 }
