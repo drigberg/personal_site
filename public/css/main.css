@@ -11,7 +11,7 @@ Strips
 	opacity: 0;
 }
 
-#nestio-strip {
+#career-strip {
 	display: none;
 	opacity: 0;
 }
@@ -279,10 +279,10 @@ Music Strip
 }
 
 /*--------------
-Nestio Strip
+career Strip
 ----------------*/
 
-#nestio-flex-box {
+#career-flex-box {
 	display: flex;
 	flex-direction: row;
 }

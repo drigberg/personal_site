@@ -11,7 +11,7 @@ var _icon_faded = "rgba(49, 49, 49, 0.5)";
 var stripIds = [
     "header-strip",
     "music-strip",
-    "nestio-strip",
+    "career-strip",
     "coding-strip"
 ];
 
@@ -34,7 +34,7 @@ $("#music-icon").click(function(){
 });
 
 $("#career-icon").click(function(){
-    _showOneStrip("nestio-strip");
+    _showOneStrip("career-strip");
     _highlightOneIcon("career-icon");
 });
 
