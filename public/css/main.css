@@ -16,7 +16,7 @@ Strips
 	opacity: 0;
 }
 
-#projects-strip {
+#coding-strip {
 	display: none;
 	opacity: 0;
 }
@@ -118,10 +118,16 @@ hr {
 
 .graphics-column-2 {
 	position: absolute;
-	display: flex;
-
 	left: 215px;
 	z-index: 0;
+}
+
+.image-text {
+	text-align: center;
+	opacity: 0;
+	margin: 2 auto;
+	width: 100%;
+	transition: opacity 0.2s ease;
 }
 
 #canvas-background {
@@ -283,7 +289,7 @@ Music Strip
 }
 
 /*--------------
-career Strip
+Skills Strip
 ----------------*/
 
 #career-flex-box {
@@ -310,21 +316,26 @@ career Strip
 }
 
 /*--------------
-projects Strip
+Project Strip
 ----------------*/
 
-#projects-flex-box {
+#coding-flex-box {
 	display: flex;
 	flex-direction: row;
 }
 
-#projects-div {
+.project-div:hover .image-text {
+	opacity: 1;
+}
+
+#coding-div {
 	display: flex;
 	flex-direction: column;
 	margin-right: 50px;
 }
 
 .thumbnail-link {
+	display: block;
 	z-index : -1;
 	height: 150px;
 	width: 150px;
@@ -335,13 +346,17 @@ projects Strip
 	background-color: white;
 }
 
+.thumbnail-link-parent {
+	margin: 0 auto;
+}
+
 .thumbnail-link:hover {
 	animation: iconSpin 4s infinite;
 	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 }
 
 /*--------------
-projects Strip
+coding Strip
 ----------------*/
 
 /*--------------
@@ -352,7 +367,7 @@ Sketch Strip
 	background-color: rgba(100, 100, 200, 0.5);
 }
 
-/*projects*/
+/*coding*/
 
 .github-widget {
 	margin: 20px auto;

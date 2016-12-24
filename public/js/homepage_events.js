@@ -11,10 +11,9 @@ var _icon_faded = "rgba(49, 49, 49, 0.5)";
 var sections = [
     "header",
     "music",
-    "career",
-    "projects",
-    "skills",
-    "interests"
+    "coding",
+    "interests",
+    "skills"
 ];
 
 for (var j = 0; j < sections.length; j++) {
