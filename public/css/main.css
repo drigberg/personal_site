@@ -1,8 +1,304 @@
 /*--------------
 Smartphones
 ----------------*/
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+	/*--------------
+	General Styling
+	----------------*/
 
+	body {
+		background-color: rgb(248, 248, 248);
+		transition: 0.4s;
+		letter-spacing: 1.5px;
+		height: 100%;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	h1 {
+		color: rgb(31, 133, 255);
+		font-size: 72px;
+		margin: 50 auto;
+		display: block;
+	}
+
+	h2 {
+		color: rgb(49, 49, 49);
+		font-size: 48px;
+		margin: 50 auto;
+		display: block;
+		letter-spacing: 1.5px;
+
+	}
+
+	hr {
+		border: 0;
+		width: 96%;
+	    height: 2px;
+	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+	i:hover {
+		animation: iconSpin 4s infinite;
+		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
+	}
+
+	button:hover {
+		animation: buttonWobble 2s infinite;
+		animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+		color: black;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	.section-strip {
+		width: 100%;
+		z-index : -1;
+		padding: 100px 20px 0px 20px;
+		font-size: 30px;
+		font-weight: 300;
+		font-family: 'Nunito Sans', sans-serif;
+		transition: all 0.4s ease;
+		margin-bottom: 35px;
+		/*height: 550px;*/
+	}
+
+	.summary-column {
+		display: none;
+	}
+
+	.graphics-column {
+		z-index: -1;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.graphics-column-2 {
+		display: none;
+		left: 215px;
+	}
+
+	.image-text {
+		text-align: center;
+		margin: 2 auto;
+		width: 100%;
+		transition: opacity 0.2s ease;
+	}
+
+	.flex-box {
+		display: flex;
+		flex-direction: row;
+		/*flex-wrap: wrap;*/
+		/*justify-content: flex-start;*/
+	}
+
+	.flex-box > div {
+		flex: 1 1 auto;
+	}
+
+	#canvas-background {
+		z-index: -2;
+		position: absolute;
+	}
+
+	/*--------------
+	Strips
+	----------------*/
+
+	.initially-hidden {
+		display: none;
+		opacity: 0;
+	}
+
+	/*--------------
+	Nav Bar
+	----------------*/
+	#brand {
+		padding-left: 10px;
+		margin-top: 15px;
+		letter-spacing: 1.5px;
+	}
+
+	nav {
+		z-index: 3;
+	}
+
+	.nav {
+		float: right;
+		margin-bottom: 0;
+		border: none;
+		border-radius: 0;
+	}
+
+	/*--------------
+	Progress Bar
+	----------------*/
+
+	#progress-bar {
+		margin: 50px auto 20px auto;
+		z-index: 0;
+		flex-direction: row;
+		border-radius: 5px;
+		width: 300px;
+		padding: 8px 2px 8px 2px;
+		box-shadow: 0 0 1em rgba(0,0,0,0.6);
+	}
+
+	#progress-bar i {
+		cursor: pointer;
+		text-align: center;
+		color: rgba(49, 49, 49, 0.5);
+		transition: 0.2s;
+		margin: 5px 12px;
+		font-size: 32px;
+	}
+
+	#progress-bar #header-icon {
+		color: rgba(49, 49, 49, 1);
+	}
+
+
+	/*--------------
+	Header Strip
+	----------------*/
+
+	.btn-lg {
+		color: rgb(255, 255, 255);
+	}
+
+	.navbar {
+		position: fixed;
+		width: 100%;
+	}
+
+	#profile-photo {
+		width: 200px;
+		height: 200px;
+		box-shadow: 0 0 1em rgba(0,0,0,0.6);
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#title-text {
+		display: none;
+		vertical-align: text-bottom;
+	}
+
+	#title-div {
+		display: none;
+	}
+
+	#resume-download {
+		background-color: rgb(31, 133, 255);
+		color: rgb(255, 255, 255);
+		display: block;
+		margin: 20 auto 0 auto;
+	}
+
+	/*--------------
+	Music Strip
+	----------------*/
+
+	.mobile-summary {
+		display: block;
+		font-size: 17px;
+		text-align: center;
+	}
+
+	.audio-div h4 {
+		display: none;
+	}
+
+	#audio-flex-box hr {
+		margin: 5px 0px 15px 0px;
+	}
+
+	#audio-flex-box {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/*--------------
+	Skills Strip
+	----------------*/
+
+	.thumbnail-skill {
+		z-index : -1;
+		height: 70px;
+		width: 70px;
+		border: 1px solid #ddd;
+		margin: 5px 0px;
+		padding: 3px;
+		background-color: white;
+	}
+
+	.skill-div {
+		display: block;
+	}
+
+	#skills-column {
+		min-height: 150px;
+	}
+
+	.thumbnail-div {
+		width: 100%;
+		height: 150px;
+	}
+
+	/*--------------
+	Project Strip
+	----------------*/
+
+	.project-div:hover .image-text {
+		opacity: 1;
+	}
+
+	.thumbnail-link {
+		display: block;
+		z-index : -1;
+		height: 150px;
+		width: 150px;
+		border: 1px solid #ddd;
+		margin: 5px auto 20px auto;
+		border-radius: 50%;
+		padding: 3px;
+		background-color: white;
+	}
+
+	.thumbnail-link:hover {
+		animation: iconSpin 4s infinite;
+		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
+	}
+
+	.thumbnail-link-parent {
+		margin: 0 auto;
+	}
+
+	#coding-div {
+		display: flex;
+		flex-direction: column;
+		margin-right: 50px;
+	}
+
+	.thumbnail-interest {
+		z-index : -1;
+		height: 100px;
+		width: 100px;
+		border: 1px solid #ddd;
+		margin: 5px 0px;
+		padding: 3px;
+		background-color: white;
+	}
+
+	#interests-column {
+		min-height: 320px;
+	}
 
 }
 
@@ -10,9 +306,6 @@ Smartphones
 Tablets
 ----------------*/
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
-	body {
-		background-color: green;
-	}
 	/*--------------
 	Strips
 	----------------*/
@@ -53,7 +346,7 @@ Tablets
 		right: 50px;
 		bottom: 50px;
 		position: fixed;
-		z-index: 1;
+		z-index: 0;
 		flex-direction: row;
 		border-radius: 5px;
 		box-shadow: 0 0 1em rgba(0,0,0,0.6);
@@ -128,7 +421,6 @@ Tablets
 
 	.section-strip {
 		width: 100%;
-		z-index : -1;
 		padding: 100px 20px 0px 20px;
 		font-size: 30px;
 		font-weight: 300;
@@ -146,14 +438,14 @@ Tablets
 
 	.graphics-column {
 		position: absolute;
-		z-index: 0;
+		z-index: -1;
 		left: 20px;
 	}
 
 	.graphics-column-2 {
 		position: absolute;
 		left: 130;
-		z-index: 0;
+		z-index: -1;
 	}
 
 	.image-text {
@@ -198,6 +490,7 @@ Tablets
 		margin: 0px 2px;
 	}
 
+
 	#profile-photo-div {
 		margin-right: 50px;
 	}
@@ -241,7 +534,7 @@ Tablets
 	}
 
 	/*--------------
-	Skills Strip
+	projects Strip
 	----------------*/
 
 	.thumbnail-skill {
@@ -254,7 +547,7 @@ Tablets
 		background-color: white;
 	}
 
-	#skills-div {
+	#projects-div {
 		margin-right: 50px;
 	}
 
@@ -297,9 +590,6 @@ Tablets
 Laptops
 ----------------*/
 @media only screen  and (min-width : 1025px) {
-	body {
-		background-color: green;
-	}
 	/*--------------
 	Strips
 	----------------*/
@@ -340,7 +630,7 @@ Laptops
 		right: 50px;
 		bottom: 50px;
 		position: fixed;
-		z-index: 1;
+		z-index: 0;
 		flex-direction: row;
 		border-radius: 5px;
 		box-shadow: 0 0 1em rgba(0,0,0,0.6);
@@ -432,14 +722,14 @@ Laptops
 
 	.graphics-column {
 		position: absolute;
-		z-index: 0;
+		z-index: -1;
 		left: 50px;
 	}
 
 	.graphics-column-2 {
 		position: absolute;
 		left: 215px;
-		z-index: 0;
+		z-index: -1;
 	}
 
 	.image-text {
@@ -527,7 +817,7 @@ Laptops
 	}
 
 	/*--------------
-	Skills Strip
+	projects Strip
 	----------------*/
 
 	.thumbnail-skill {
@@ -540,7 +830,7 @@ Laptops
 		background-color: white;
 	}
 
-	#skills-div {
+	#projects-div {
 		margin-right: 50px;
 	}
 
@@ -577,6 +867,10 @@ Laptops
 		flex-direction: column;
 		margin-right: 50px;
 	}
+}
+
+audio {
+	background-color: rgb(248, 248, 248);
 }
 
 

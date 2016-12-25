@@ -1,13 +1,5 @@
 <% include ./partials/header %>
 
-<div class="flex-box" id="progress-bar">
-    <i class="fa fa-3x fa-user-circle progress-bar-top" id="header-icon" aria-hidden="true"></i>
-    <i class="fa fa-3x fa-graduation-cap progress-bar-middle" id="music-icon"  aria-hidden="true"></i>
-    <i class="fa fa-3x fa-code-fork progress-bar-bottom" id="coding-icon" aria-hidden="true"></i>
-    <i class="fa fa-3x fa-sort-amount-desc progress-bar-bottom" id="skills-icon" aria-hidden="true"></i>
-    <i class="fa fa-3x fa-bicycle progress-bar-bottom" id="interests-icon" aria-hidden="true"></i>
-</div>
-
 <div class="section-strip" id="header-strip">
     <div class="flex-box" id="header-flex-box">
         <!-- <div class="col-sm-12" id="title"><h1>Daniel Rigberg</h1></div> -->
@@ -23,9 +15,12 @@
 
 <div class="section-strip initially-hidden" id="music-strip">
     <div class="graphics-column" id="audio-flex-box">
+        <p class="mobile-summary">Once upon a time, I studied music composition at Yale, but it wasn't the career for me.</p>
+        <hr class="mobile-hr">
         <div class="audio-div">
             <h4>"September"</h4>
             <h4>for bassoon and piano</h4>
+            <h5>"September" for bassoon and piano</h5>
             <audio controls>
                 <source src="/assets/audio/september.mp3" type="audio/mpeg">
                 (Your browser does not support the audio element.)
@@ -35,6 +30,7 @@
         <div class="audio-div">
             <h4>"Zinkara"</h4>
             <h4>for two guitars</h4>
+            <h5>"Zinkara" for two guitars</h5>
             <audio controls>
                 <source src="/assets/audio/zinkara.mp3" type="audio/mpeg">
                 (Your browser does not support the audio element.)
@@ -44,6 +40,7 @@
         <div class="audio-div">
             <h4>"Gravity Cats"</h4>
             <h4>for chamber ensemble</h4>
+            <h5>"Gravity Cats" for chamber ensemble</h5>
             <audio controls>
                 <source src="/assets/audio/gravity_cats.mp3" type="audio/mpeg">
                 (Your browser does not support the audio element.)
@@ -53,6 +50,7 @@
         <div class="audio-div">
             <h4>"Holovarium"</h4>
             <h4>for chamber ensemble</h4>
+            <h5>"Holovarium" for chamber ensemble</h5>
             <audio controls>
                 <source src="/assets/audio/holovarium.mp3" type="audio/mpeg">
                 (Your browser does not support the audio element.)
@@ -63,24 +61,21 @@
 </div>
 
 <div class="section-strip initially-hidden" id="coding-strip">
-    <div class="graphics-column skills-flex-box">
-        <div id="skills-div">
-            <div><img class="thumbnail-skill" id="django" src="/assets/photos/django.png"></div>
-            <div><img class="thumbnail-skill" id="python" src="/assets/photos/python.png"></div>
-            <div><img class="thumbnail-skill" id="excel" src="/assets/photos/excel.png"></div>
+    <p class="mobile-summary">After graduating, I joined an NYC startup called Nestio, taught myself how to code, and transitioned to a developer role. <br><br> Recently, I've been studying independently and pair-programming at the Recurse Center in NYC.</p>
+    <div class="graphics-column" id="skills-column">
+        <div class="thumbnail-div">
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="django" src="/assets/photos/django.png"></div>
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="python" src="/assets/photos/python.png"></div>
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="excel" src="/assets/photos/excel.png"></div>
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="p5" src="/assets/photos/p5js.png"></div>
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="js" src="/assets/photos/node.png"></div>
+            <div class="skill-div col-xs-4"><img class="thumbnail-skill" id="html" src="/assets/photos/html.png"></div>
         </div>
     </div>
-    <div class="graphics-column-2 skills-flex-box">
-        <div id="skills-div">
-            <div><img class="thumbnail-skill" id="p5" src="/assets/photos/p5js.png"></div>
-            <div><img class="thumbnail-skill" id="js" src="/assets/photos/node.png"></div>
-            <div><img class="thumbnail-skill" id="html" src="/assets/photos/html.png"></div>
-        </div>
-    </div>
-    <p class="summary-column">After graduating, I joined an NYC startup called career, taught myself how to code, and transitioned to a developer role. <br><br> Recently, I've been studying independently and pair-programming at the Recurse Center in NYC.<p>
+    <p class="summary-column">After graduating, I joined an NYC startup called Nestio, taught myself how to code, and transitioned to a developer role. <br><br> Recently, I've been studying independently and pair-programming at the Recurse Center in NYC.</p>
 </div>
 
-<div class="section-strip initially-hidden" id="skills-strip">
+<div class="section-strip initially-hidden" id="projects-strip">
     <div class="graphics-column">
         <div class="coding-div">
             <div></div>
@@ -118,18 +113,16 @@
 </div>
 
 <div class="section-strip initially-hidden" id="interests-strip">
-    <div class="graphics-column">
-        <div class="coding-div">
-            <div><img class="thumbnail-skill" id="django" src="/assets/photos/mountain.jpg"></div>
-            <div><img class="thumbnail-skill" id="python" src="/assets/photos/glacier.jpg"></div>
-            <div><img class="thumbnail-skill" id="excel" src="/assets/photos/guitar.jpg"></div>
-        </div>
-    </div>
-    <div class="graphics-column-2">
-        <div class="coding-div">
-            <div><img class="thumbnail-skill" id="django" src="/assets/photos/scuba.jpg"></div>
-            <div><img class="thumbnail-skill" id="python" src="/assets/photos/skydiving.jpg"></div>
-            <div><img class="thumbnail-skill" id="excel" src="/assets/photos/unicycle.jpg"></div>
+    <p class="mobile-summary">In my spare time, I love traveling, cooking, slack-lining,
+        scuba diving, reading, singing, working on my electro-pop album, skydiving, dancing, etc.</p>
+    <div class="graphics-column" id="interests-column">
+        <div class="thumbnail-div">
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="django" src="/assets/photos/mountain.jpg"></div>
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="python" src="/assets/photos/glacier.jpg"></div>
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="excel" src="/assets/photos/guitar.jpg"></div>
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="django" src="/assets/photos/scuba.jpg"></div>
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="python" src="/assets/photos/skydiving.jpg"></div>
+            <div class="skill-div col-xs-6"><img class="thumbnail-interest" id="excel" src="/assets/photos/unicycle.jpg"></div>
         </div>
     </div>
     <p class="summary-column">In my spare time, I love traveling, cooking, slack-lining,
@@ -138,7 +131,15 @@
         unicycling, skateboarding, swimming, paper-folding, playing guitar, walking in the rain,
         rock-climbing, playing with cats, writing short stories, sewing stuffed animals, attempting (but mostly failing)
         to draw things, and enjoying many, many other activities.
-    <p>
+    </p>
+</div>
+
+<div class="flex-box" id="progress-bar">
+    <i class="fa fa-3x fa-user-circle progress-bar-top" id="header-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-graduation-cap progress-bar-middle" id="music-icon"  aria-hidden="true"></i>
+    <i class="fa fa-3x fa-code-fork progress-bar-bottom" id="coding-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-wrench progress-bar-bottom" id="projects-icon" aria-hidden="true"></i>
+    <i class="fa fa-3x fa-bicycle progress-bar-bottom" id="interests-icon" aria-hidden="true"></i>
 </div>
 
 

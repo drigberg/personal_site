@@ -12,8 +12,8 @@ var sections = [
     "header",
     "music",
     "coding",
-    "interests",
-    "skills"
+    "projects",
+    "interests"
 ];
 
 for (var j = 0; j < sections.length; j++) {
