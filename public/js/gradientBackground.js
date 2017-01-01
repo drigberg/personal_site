@@ -2,11 +2,12 @@
 var Y_AXIS = 1;
 var X_AXIS = 2;
 var colors;
-var increment = 1;
+var increment = 2;
 
 function setup() {
     var canvas = createCanvas(($(window).width()), $(window).height());
     canvas.parent('canvas-background');
+    frameRate(10);
 
     // Define colors
     colors = [
@@ -28,10 +29,10 @@ function draw() {
         } else if (colors[i].value > 250) {
             colors[i].direction = -1;
         };
-        colors[i].value += 2 * colors[i].direction;
+        colors[i].value += increment * colors[i].direction;
     };
     clear();
-    setGradient(0, 0, width, height, colors[0].value, colors[1].value, Y_AXIS);
+    setGradient(0, 0, width, height, Y_AXIS);
     // setGradient(width/2, 0, width/2, height, color(colors[1].value), color(colors[0].value), Y_AXIS);
 }
 
@@ -39,7 +40,7 @@ function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
 
-function setGradient(x, y, w, h, color1, color2, axis) {
+function setGradient(x, y, w, h, axis) {
 
     noFill();
 
@@ -55,12 +56,12 @@ function setGradient(x, y, w, h, color1, color2, axis) {
             line(x, i, x+w, i);
         }
     }
-    else if (axis == X_AXIS) {  // Left to right gradient
-        for (var i = x; i <= x+w; i++) {
-            var inter = map(i, x, x+w, 0, 1);
-            var gradient = lerpColor(color1, color2, inter);
-            stroke(gradient);
-            line(i, y, i, y+h);
-        }
-    }
+    // else if (axis == X_AXIS) {  // Left to right gradient
+    //     for (var i = x; i <= x+w; i++) {
+    //         var inter = map(i, x, x+w, 0, 1);
+    //         var gradient = lerpColor(color1, color2, inter);
+    //         stroke(gradient);
+    //         line(i, y, i, y+h);
+    //     }
+    // }
 }
