@@ -809,6 +809,7 @@ Laptops
 	}
 
 	#header-flex-box {
+		padding-left: 35px;
 		margin-bottom: 50px;
 	}
 
@@ -833,6 +834,7 @@ Laptops
 	----------------*/
 
 	#audio-flex-box {
+		padding-left: 35px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -891,8 +893,8 @@ Laptops
 
 	.thumbnail-interest {
 		z-index : -1;
-		height: 200px;
-		width: 200px;
+		height: 250px;
+		width: 250px;
 		border: 1px solid #ddd;
 		margin: 5px 0px;
 		padding: 3px;
