@@ -103,7 +103,7 @@ Smartphones
 
 	#canvas-background {
 		z-index: -2;
-		position: absolute;
+		position: fixed;
 	}
 
 	/*--------------
@@ -467,7 +467,7 @@ Tablets
 
 	#canvas-background {
 		z-index: -2;
-		position: absolute;
+		position: fixed;
 	}
 
 	/*--------------
@@ -774,7 +774,7 @@ Laptops
 
 	#canvas-background {
 		z-index: -2;
-		position: absolute;
+		position: fixed;
 	}
 
 	/*--------------
