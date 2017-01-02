@@ -2,7 +2,7 @@
 var Y_AXIS = 1;
 var X_AXIS = 2;
 var colors;
-var increment = 2;
+var increment = 4;
 
 function setup() {
     var canvas = createCanvas(($(window).width()), $(window).height());
@@ -24,9 +24,9 @@ function setup() {
 
 function draw() {
     for (var i = 0; i < colors.length; i++) {
-        if (colors[i].value < 2) {
+        if (colors[i].value < 10) {
             colors[i].direction = 1;
-        } else if (colors[i].value > 250) {
+        } else if (colors[i].value > 245) {
             colors[i].direction = -1;
         };
         colors[i].value += increment * colors[i].direction;

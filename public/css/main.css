@@ -219,11 +219,6 @@ Smartphones
 		margin: 5px 0px 15px 0px;
 	}
 
-	#audio-flex-box {
-		display: flex;
-		flex-direction: column;
-	}
-
 	/*--------------
 	Skills Strip
 	----------------*/
@@ -526,10 +521,6 @@ Tablets
 	Music Strip
 	----------------*/
 
-	#audio-flex-box {
-		display: flex;
-		flex-direction: column;
-	}
 
 	.mobile-hr {
 		display: none;
@@ -735,8 +726,9 @@ Laptops
 
 	.large-summary {
 		padding: 20px;
-		border: 1px solid #999;
-		display: inline-block;
+		margin: 0 auto 20px auto;
+		width: 900px;
+		display: block;
 		z-index: -1;
 		font-size: 16px;
 	}
@@ -833,12 +825,6 @@ Laptops
 	Music Strip
 	----------------*/
 
-	#audio-flex-box {
-		padding-left: 35px;
-		display: flex;
-		flex-direction: column;
-	}
-
 	/*--------------
 	projects Strip
 	----------------*/
@@ -865,12 +851,12 @@ Laptops
 	}
 
 	.thumbnail-link {
-		display: block;
+		display: inline-block;
 		z-index : -1;
 		height: 200px;
 		width: 200px;
 		border: 1px solid #999;
-		margin: 5px;
+		margin: 5px auto;
 		border-radius: 50%;
 		padding: 3px;
 		background-color: white;
@@ -948,4 +934,19 @@ audio {
 		padding: 3px;
 		background-color: white;
 	}
+}
+
+.audio-div {
+	display: block;
+}
+
+.audio-element {
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.hr {
+	margin: 40px auto;
+	width: 60%;
 }
