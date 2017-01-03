@@ -75,35 +75,6 @@ var customCommands = {
     }
 };
 
-function help(){
-    return "INSTRUCTIONS GO HERE\nAND HERE\nAND HERE";
-};
-
-$( "body" ).on('DOMSubtreeModified', "span", function() {
-    var color = "#aaaaaa";
-    if ($(this).html() == "codingSkills"){
-        color = themeColors.codingSkills[0];
-    } else if ($(this).html() == "otherSkills"){
-        color = themeColors.otherSkills[0];
-    } else if ($(this).html() == "help"){
-        color = themeColors.help[0];
-    } else {
-        var isSkill = false;
-        for (var n = 0; n < allSkills.length; n++) {
-            if ($(this).html() == allSkills[n].name) {
-                isSkill = allSkills[n].type;
-                break;
-            };
-        };
-        if (isSkill == "coding") {
-            color = themeColors.codingSkills[0];
-        } else if (isSkill == "other") {
-            color = themeColors.otherSkills[0];
-        };
-    };
-    $(this).css("color", color);
-});
-
 jQuery(function($, undefined) {
     $('#terminal').terminal(function(command, term) {
         if (command !== '') {
@@ -131,10 +102,17 @@ jQuery(function($, undefined) {
                     };
 
                     if (!isSkill){
-                        var result = window.eval(command);
-                        if (result !== undefined) {
-                            term.echo(new String(result));
-                        };
+                        term.echo("That's not a valid command! Valid commands will be highlighted as you type them. Try typing 'help' for some reminders!", {
+                            finalize: function(div) {
+                                var color;
+                                if (color == themeColors.help[0]) {
+                                    color = themeColors.help[1];
+                                } else {
+                                    color = themeColors.help[0];
+                                };
+                                div.css("color", color);
+                            }
+                        });
                     };
                 };
             } catch(e) {
@@ -146,9 +124,34 @@ jQuery(function($, undefined) {
     }, {
         greetings: 'Type "help"!\n\n',
         name: 'terminal',
-        height: 400,
+        height: 200,
         prompt: 'js> '
     });
+});
+
+$( "body" ).on('DOMSubtreeModified', "span", function() {
+    var color = "#aaaaaa";
+    if ($(this).html() == "codingSkills"){
+        color = themeColors.codingSkills[0];
+    } else if ($(this).html() == "otherSkills"){
+        color = themeColors.otherSkills[0];
+    } else if ($(this).html() == "help"){
+        color = themeColors.help[0];
+    } else {
+        var isSkill = false;
+        for (var n = 0; n < allSkills.length; n++) {
+            if ($(this).html() == allSkills[n].name) {
+                isSkill = allSkills[n].type;
+                break;
+            };
+        };
+        if (isSkill == "coding") {
+            color = themeColors.codingSkills[0];
+        } else if (isSkill == "other") {
+            color = themeColors.otherSkills[0];
+        };
+    };
+    $(this).css("color", color);
 });
 
 var allSkills = [

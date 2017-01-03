@@ -9,17 +9,51 @@ All devices
 	background-color: white;
 }
 
-.centered {
-	margin: 0 auto;
-	text-align: center;
+h1 {
+	color: rgb(31, 133, 255);
+	font-size: 72px;
+	margin: 50 auto;
+	display: block;
 }
 
-b {
-	font-weight: 600;
+h2 {
+	color: rgb(49, 49, 49);
+	font-size: 48px;
+	margin: 50 auto;
+	display: block;
+	letter-spacing: 1.5px;
 }
 
-#terminal {
-	margin: 0 100px 200px 100px;
+hr {
+	border: 0;
+	width: 96%;
+	height: 2px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+i:hover {
+	animation: iconSpin 4s infinite;
+	animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
+}
+
+button:hover {
+	animation: buttonWobble 2s infinite;
+	animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#brand {
+	padding-left: 10px;
+	margin-top: 15px;
+	letter-spacing: 1.5px;
+}
+
+.audio-div {
+	margin-bottom: 50px;
 }
 
 /*--------------
@@ -29,61 +63,28 @@ Smartphones
 	/*--------------
 	General Styling
 	----------------*/
+	.mobile-only {
+		display: block;
+	}
 
 	body {
 		background-color: rgb(248, 248, 248);
-		transition: 0.4s;
 		letter-spacing: 1.5px;
-		height: 100%;
 	}
 
-	ul {
-		list-style: none;
-		padding: 0;
+	#terminal {
+		margin: 0 10px 0 10px;
 	}
 
-	h1 {
-		color: rgb(31, 133, 255);
-		font-size: 72px;
-		margin: 50 auto;
+	h4 {
 		display: block;
-	}
-
-	h2 {
-		color: rgb(49, 49, 49);
-		font-size: 48px;
-		margin: 50 auto;
-		display: block;
-		letter-spacing: 1.5px;
-
-	}
-
-	hr {
-		border: 0;
-		width: 96%;
-	    height: 2px;
-	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-
-	i:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	button:hover {
-		animation: buttonWobble 2s infinite;
-		animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
-		color: black;
-	}
-
-	a:hover {
-		text-decoration: none;
+		margin: 0 auto;
 	}
 
 	.section-strip {
 		width: 100%;
 		z-index : -1;
-		padding: 100px 20px 0px 20px;
+		padding: 100px 5px 0px 5px;
 		font-size: 30px;
 		font-weight: 300;
 		font-family: 'Nunito Sans', sans-serif;
@@ -94,17 +95,6 @@ Smartphones
 
 	.large-summary {
 		display: none;
-	}
-
-	.graphics-column {
-		z-index: -1;
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	.graphics-column-2 {
-		display: none;
-		left: 215px;
 	}
 
 	.image-text {
@@ -142,11 +132,7 @@ Smartphones
 	/*--------------
 	Nav Bar
 	----------------*/
-	#brand {
-		padding-left: 10px;
-		margin-top: 15px;
-		letter-spacing: 1.5px;
-	}
+
 
 	nav {
 		z-index: 3;
@@ -235,12 +221,25 @@ Smartphones
 		text-align: center;
 	}
 
+	audio {
+		width: 95%;
+		max-width: 300px;
+	}
+
+	.audio-div {
+		text-align: center;
+	}
+
+	.audio-div:first-of-type {
+		margin-top: 50px;
+	}
+
 	.audio-div h4 {
 		display: none;
 	}
 
 	#audio-flex-box hr {
-		margin: 5px 0px 15px 0px;
+		margin: 5px auto 15px auto;
 	}
 
 	/*--------------
@@ -319,6 +318,10 @@ Tablets
 	/*--------------
 	Strips
 	----------------*/
+	.mobile-only {
+		display: none;
+	}
+
 	#header-strip {
 		padding-top: 150px;
 		display: block;
@@ -333,13 +336,13 @@ Tablets
 		display: none;
 	}
 
+	#terminal {
+		margin: 0 100px 0 100px;
+	}
+
 	/*--------------
 	Nav Bar
 	----------------*/
-	#brand {
-		margin-top: 15px;
-		letter-spacing: 1.5px;
-	}
 
 	nav {
 		z-index: 3;
@@ -385,52 +388,7 @@ Tablets
 
 	body {
 		background-color: rgb(248, 248, 248);
-		background-size: 1000px;
-		transition: 0.4s;
 		letter-spacing: 1.5px;
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	h1 {
-		color: rgb(31, 133, 255);
-		font-size: 72px;
-		margin: 50 auto;
-		display: block;
-	}
-
-	h2 {
-		color: rgb(49, 49, 49);
-		font-size: 48px;
-		margin: 50 auto;
-		display: block;
-		letter-spacing: 1.5px;
-
-	}
-
-	hr {
-		border: 0;
-		width: 96%;
-		height: 2px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-
-	i:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	button:hover {
-		animation: buttonWobble 2s infinite;
-		animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
-		color: black;
-	}
-
-	a:hover {
-		text-decoration: none;
 	}
 
 	.section-strip {
@@ -446,13 +404,7 @@ Tablets
 		display: inline-block;
 		z-index: -1;
 		font-size: 24px;
-	}
-
-	.graphics-column {
-		display: inline-block;
-		z-index: -1;
-		width: 45%;
-		height: 400px;
+		margin-bottom: 50px;
 	}
 
 	.thumbnail-div {
@@ -540,7 +492,6 @@ Tablets
 	Music Strip
 	----------------*/
 
-
 	.mobile-hr {
 		display: none;
 	}
@@ -611,6 +562,10 @@ Laptops
 	/*--------------
 	Strips
 	----------------*/
+	.mobile-only {
+		display: none;
+	}
+
 	#header-strip {
 		padding-top: 150px;
 		display: block;
@@ -618,6 +573,10 @@ Laptops
 
 	.mobile-summary {
 		display: none;
+	}
+
+	#terminal {
+		margin: 0 100px 0 100px;
 	}
 
 	.initially-hidden {
@@ -628,10 +587,6 @@ Laptops
 	/*--------------
 	Nav Bar
 	----------------*/
-	#brand {
-		margin-top: 15px;
-		letter-spacing: 1.5px;
-	}
 
 	nav {
 		z-index: 3;
@@ -677,57 +632,13 @@ Laptops
 
 	body {
 		background-color: rgb(248, 248, 248);
-		background-size: 1000px;
-		transition: 0.4s;
 		letter-spacing: 1.5px;
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	h1 {
-		color: rgb(31, 133, 255);
-		font-size: 72px;
-		margin: 50 auto;
-		display: block;
-	}
-
-	h2 {
-		color: rgb(49, 49, 49);
-		font-size: 48px;
-		margin: 50 auto;
-		display: block;
-		letter-spacing: 1.5px;
-
-	}
-
-	hr {
-		border: 0;
-		width: 96%;
-	    height: 2px;
-	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-
-	i:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	button:hover {
-		animation: buttonWobble 2s infinite;
-		animation-timing-function: cubic-bezier(0, 0.3, 0.7, 1.0);
-		color: black;
-	}
-
-	a:hover {
-		text-decoration: none;
 	}
 
 	.mobile-hr {
 		display: none;
 	}
+
 	.section-strip {
 		width: 100%;
 		z-index : -1;
@@ -754,18 +665,6 @@ Laptops
 		display: block;
 		z-index: -1;
 		font-size: 16px;
-	}
-
-	.graphics-column {
-		position: absolute;
-		z-index: -1;
-		left: 50px;
-	}
-
-	.graphics-column-2 {
-		position: absolute;
-		left: 215px;
-		z-index: -1;
 	}
 
 	.image-text {

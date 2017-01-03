@@ -49,19 +49,9 @@ function setGradient(x, y, w, h, axis) {
             var inter = map(i, y, y+h, 0, 1);
             color_1 = "rgba(0, " + parseInt(colors[0].value).toString() + ", 250, 0.2)";
             color_2 = "rgba(0, " + parseInt(colors[1].value).toString() + ", 250, 0.2)";
-            // color_1 = "rgba(10, 10, 10, 0.4)";
-            // color_2 = "rgba(50, 100, 200, 0.4)";
             var gradient = lerpColor(color(color_1), color(color_2), inter);
             stroke(gradient);
             line(x, i, x+w, i);
         }
     }
-    // else if (axis == X_AXIS) {  // Left to right gradient
-    //     for (var i = x; i <= x+w; i++) {
-    //         var inter = map(i, x, x+w, 0, 1);
-    //         var gradient = lerpColor(color1, color2, inter);
-    //         stroke(gradient);
-    //         line(i, y, i, y+h);
-    //     }
-    // }
 }
