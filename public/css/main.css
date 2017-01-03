@@ -433,7 +433,7 @@ Tablets
 
 	#canvas-background {
 		z-index: -2;
-		position: fixed;
+		/*position: fixed;*/
 	}
 
 	/*--------------
@@ -617,7 +617,7 @@ Laptops
 		cursor: pointer;
 		text-align: center;
 		color: rgba(49, 49, 49, 0.5);
-		padding: 8px 2px 8px 2px;
+		padding: 4px 2px 4px 2px;
 		transition: 0.2s;
 		margin: 5px 10px;
 	}

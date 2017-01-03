@@ -76,57 +76,62 @@ var customCommands = {
 };
 
 jQuery(function($, undefined) {
-    $('#terminal').terminal(function(command, term) {
-        if (command !== '') {
-            try {
-                if (command in customCommands){
-                    customCommands[command](term);
-                } else {
-                    isSkill = false;
-                    for (var n = 0; n < allSkills.length; n++) {
-                        if (command == allSkills[n].name) {
-                            isSkill = allSkills[n].type;
-                            term.echo(allSkills[n].description, {
+    try {
+        $('#terminal').terminal(function(command, term) {
+            if (command !== '') {
+                try {
+                    if (command in customCommands){
+                        customCommands[command](term);
+                    } else {
+                        isSkill = false;
+                        for (var n = 0; n < allSkills.length; n++) {
+                            if (command == allSkills[n].name) {
+                                isSkill = allSkills[n].type;
+                                term.echo(allSkills[n].description, {
+                                    finalize: function(div) {
+                                        var color = "#aaaaaa";
+                                        if (isSkill == "coding") {
+                                            color = themeColors.codingSkills[0];
+                                        } else if (isSkill == "other") {
+                                            color = themeColors.otherSkills[0];
+                                        };
+                                        div.css("color", color);
+                                    }
+                                });
+                                break;
+                            }
+                        };
+
+                        if (!isSkill){
+                            term.echo("That's not a valid command! Valid commands will be highlighted as you type them. Try typing 'help' for some reminders!", {
                                 finalize: function(div) {
-                                    var color = "#aaaaaa";
-                                    if (isSkill == "coding") {
-                                        color = themeColors.codingSkills[0];
-                                    } else if (isSkill == "other") {
-                                        color = themeColors.otherSkills[0];
+                                    var color;
+                                    if (color == themeColors.help[0]) {
+                                        color = themeColors.help[1];
+                                    } else {
+                                        color = themeColors.help[0];
                                     };
                                     div.css("color", color);
                                 }
                             });
-                            break;
-                        }
+                        };
                     };
-
-                    if (!isSkill){
-                        term.echo("That's not a valid command! Valid commands will be highlighted as you type them. Try typing 'help' for some reminders!", {
-                            finalize: function(div) {
-                                var color;
-                                if (color == themeColors.help[0]) {
-                                    color = themeColors.help[1];
-                                } else {
-                                    color = themeColors.help[0];
-                                };
-                                div.css("color", color);
-                            }
-                        });
-                    };
-                };
-            } catch(e) {
-                term.error(new String(e));
+                } catch(e) {
+                    term.error(new String(e));
+                }
+            } else {
+               term.echo('');
             }
-        } else {
-           term.echo('');
-        }
-    }, {
-        greetings: 'Type "help"!\n\n',
-        name: 'terminal',
-        height: 200,
-        prompt: 'js> '
-    });
+        }, {
+            greetings: 'Type "help"!\n\n',
+            name: 'SkillsBot',
+            height: 400,
+            prompt: 'SkillsBot> '
+        });
+    } catch (NS_ERROR_FAILURE) {
+        $("#SkillsBot-intro").html("Use the SkillsBot below to see what I learned and what I'm studying now! <br><br> Ooooooo, you're using Firefox, or some other browser I haven't fully debugged yet! SkillsBot doesn't work for you yet, but I should have it figured out soon. Try Chrome or Safari!");
+        // $("#SkillsBot-intro").html() += "(Firefox users: this doesn't work for you yet. Not sure why. Will figure it out.)";
+    };
 });
 
 $( "body" ).on('DOMSubtreeModified', "span", function() {
