@@ -604,12 +604,12 @@ Laptops
 	----------------*/
 
 	#progress-bar {
-		right: 50px;
-		bottom: 50px;
-		position: fixed;
+		margin: 50px 50px 20px auto;
 		z-index: 0;
 		flex-direction: row;
 		border-radius: 5px;
+		width: 340px;
+		padding: 8px 2px 8px 2px;
 		box-shadow: 0 0 1em rgba(0,0,0,0.6);
 	}
 
@@ -645,7 +645,8 @@ Laptops
 		padding: 100px 20px 0px 20px;
 		font-size: 30px;
 		font-weight: 300;
-		font-family: 'Nunito Sans', sans-serif;	height: 800px;
+		font-family: 'Nunito Sans', sans-serif;
+		min-height: 500px;
 		transition: all 0.4s ease;
 	}
 
