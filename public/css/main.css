@@ -1,4 +1,28 @@
 /*--------------
+All devices
+----------------*/
+.thumbnail-interest {
+	z-index : -1;
+	border: 1px solid #ddd;
+	margin: 5px auto;
+	padding: 3px;
+	background-color: white;
+}
+
+.centered {
+	margin: 0 auto;
+	text-align: center;
+}
+
+b {
+	font-weight: 600;
+}
+
+#terminal {
+	margin: 0 100px 200px 100px;
+}
+
+/*--------------
 Smartphones
 ----------------*/
 @media only screen and (max-width : 520px) {
@@ -279,13 +303,8 @@ Smartphones
 	}
 
 	.thumbnail-interest {
-		z-index : -1;
 		height: 100px;
 		width: 100px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
 	}
 
 	#interests-column {
@@ -565,13 +584,8 @@ Tablets
 	}
 
 	.thumbnail-interest {
-		z-index : -1;
 		height: 150px;
 		width: 150px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
 	}
 
 	.thumbnail-link:hover {
@@ -641,6 +655,7 @@ Laptops
 		z-index: 0;
 		flex-direction: row;
 		border-radius: 5px;
+		background: white;
 		box-shadow: 0 0 1em rgba(0,0,0,0.6);
 	}
 
@@ -733,6 +748,15 @@ Laptops
 		font-size: 16px;
 	}
 
+	.skills-list {
+		padding: 20px;
+		margin: 0 auto 20px auto;
+		width: 600;
+		display: block;
+		z-index: -1;
+		font-size: 16px;
+	}
+
 	.graphics-column {
 		position: absolute;
 		z-index: -1;
@@ -751,6 +775,11 @@ Laptops
 		margin: 2 auto;
 		width: 100%;
 		transition: opacity 0.2s ease;
+	}
+
+	.thumbnail-link-div {
+		display: block;
+		margin: 0 auto;
 	}
 
 	.flex-box {
@@ -831,12 +860,18 @@ Laptops
 
 	.thumbnail-skill {
 		z-index : -1;
-		height: 150px;
-		width: 150px;
+		height: 100px;
+		width: 100px;
 		border: 1px solid #ddd;
 		margin: 5px;
 		padding: 3px;
 		background-color: white;
+	}
+
+	.thumbnail-div {
+		display: block;
+		width: 700px;
+		margin: 0 auto;
 	}
 
 	#projects-div {
@@ -862,13 +897,19 @@ Laptops
 		background-color: white;
 	}
 
+	#projects-column {
+		padding: 0 50px;
+	}
+
 	.thumbnail-link:hover {
 		animation: iconSpin 4s infinite;
 		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
 	}
 
 	.thumbnail-link-parent {
+		display: inline-block;
 		margin: 0 auto;
+		text-align: center;
 	}
 
 	#coding-div {
@@ -902,37 +943,24 @@ audio {
 
 @media only screen  and (min-width : 769px) and (max-width : 900px){
 	.thumbnail-interest {
-		z-index : -1;
 		height: 150px;
 		width: 150px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
 	}
 }
 
+/*Desktop: only small*/
 @media only screen  and (min-width : 900px) and (max-width : 1100px){
 	.thumbnail-interest {
-		z-index : -1;
 		height: 200px;
 		width: 200px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
 	}
 }
 
+/*Desktop: only large*/
 @media only screen  and (min-width : 1101px) {
 	.thumbnail-interest {
-		z-index : -1;
-		height: 250px;
-		width: 250px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
+		height: 150px;
+		width: 150px;
 	}
 }
 
