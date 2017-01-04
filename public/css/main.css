@@ -56,6 +56,21 @@ a:hover {
 	margin-bottom: 50px;
 }
 
+.particle-summary {
+	z-index: 1;
+	position: absolute;
+	padding: 10px;
+	left: 50px;
+	top: 100px;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 1em rgba(0,0,0,0.6);
+}
+
+.particleDemos {
+
+}
+
 /*--------------
 Smartphones
 ----------------*/
@@ -151,7 +166,6 @@ Smartphones
 
 	#progress-bar {
 		margin: 50px auto 20px auto;
-		z-index: 0;
 		flex-direction: row;
 		border-radius: 5px;
 		width: 300px;
@@ -360,8 +374,7 @@ Tablets
 	----------------*/
 
 	#progress-bar {
-		margin: 50px auto 20px auto;
-		z-index: 0;
+		margin: 150px auto 20px auto;
 		flex-direction: row;
 		border-radius: 5px;
 		width: 300px;
@@ -393,6 +406,7 @@ Tablets
 
 	.section-strip {
 		width: 100%;
+		z-index : -1;
 		padding: 100px 20px 0px 20px;
 		font-size: 30px;
 		font-weight: 300;
@@ -433,7 +447,7 @@ Tablets
 
 	#canvas-background {
 		z-index: -2;
-		/*position: fixed;*/
+		position: fixed;
 	}
 
 	/*--------------

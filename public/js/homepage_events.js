@@ -32,6 +32,7 @@ function _showOneStrip(section) {
             $("#" + sections[i] + "-strip").css("display", "block").css("opacity", 1);
         };
     };
+    $(document).scrollTop(0);
 };
 
 function _highlightOneIcon(section) {
