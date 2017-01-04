@@ -27,7 +27,7 @@ app.get("/swarm", function (req, res){
 });
 
 app.get('/download_resume', function(req, res){
-  var file = __dirname + '/public/assets/Rigberg_Resume_2016.pdf';
+  var file = __dirname + '/public/assets/DanielRigberg_Resume.pdf';
   res.download(file);
 });
 
