@@ -14,6 +14,14 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+app.get("/particleHub", function (req, res){
+    res.render("particleHub");
+});
+
+app.get("/gravitateAndFeed", function (req, res){
+    res.render("gravitateAndFeed");
+});
+
 app.get("/swarm", function (req, res){
     res.render("swarm");
 });

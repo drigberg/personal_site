@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+<div class="particle-summary">
+    <h3>Gravitate And Feed</h3>
+    <h5>Each particle is pulled towards a single point. If the mouse is on the
+        screen, that point is the center of the screen; otherwise, the mouse pointer.
+        When a particle nears the mouse, it extends a line to it, and it slowly grows
+        and turns pink. The effect fades if it falls away from the mouse. Clicking
+        and holding doubles the attraction.
+    </h5>
+</div>
+
+<div id="gravitate_canvas"></div>
+
+<script language="javascript" type="text/javascript" src="/js/sketch.min.js"></script>
+<script language="javascript" type="text/javascript" src="/js/gravitate_and_feed.js"></script>
+<% include ./partials/footer %>
