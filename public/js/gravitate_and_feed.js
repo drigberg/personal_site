@@ -16,7 +16,7 @@ var G = 500;
 var terminal_velocity = 10;
 
 var particle_field = Sketch.create({
-    container: document.getElementById( 'container' )
+    container: document.getElementById('gravitate_canvas')
 });
 
 function Particle( x, y, radius ) {
