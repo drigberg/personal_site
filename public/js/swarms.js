@@ -25,6 +25,10 @@ function makeCanvas(){
     newDestProb = 0.99;
 };
 
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
 function setInitialValues(){
     emptyVector = [0,0];
 };
