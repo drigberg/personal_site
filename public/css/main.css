@@ -108,10 +108,6 @@ Smartphones
 		/*height: 550px;*/
 	}
 
-	.large-summary {
-		display: none;
-	}
-
 	.image-text {
 		text-align: center;
 		margin: 2 auto;
@@ -229,7 +225,7 @@ Smartphones
 	Music Strip
 	----------------*/
 
-	.mobile-summary {
+	.page-summary {
 		display: block;
 		font-size: 17px;
 		text-align: center;
@@ -346,10 +342,6 @@ Tablets
 		opacity: 0;
 	}
 
-	.mobile-summary {
-		display: none;
-	}
-
 	#terminal {
 		margin: 0 100px 0 100px;
 	}
@@ -414,7 +406,7 @@ Tablets
 		transition: all 0.4s ease;
 	}
 
-	.large-summary {
+	.page-summary {
 		display: inline-block;
 		z-index: -1;
 		font-size: 24px;
@@ -585,10 +577,6 @@ Laptops
 		display: block;
 	}
 
-	.mobile-summary {
-		display: none;
-	}
-
 	#terminal {
 		margin: 0 100px 0 100px;
 	}
@@ -664,7 +652,7 @@ Laptops
 		transition: all 0.4s ease;
 	}
 
-	.large-summary {
+	.page-summary {
 		padding: 20px;
 		margin: 0 auto 20px auto;
 		width: 900px;
