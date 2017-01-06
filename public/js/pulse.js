@@ -4,8 +4,17 @@ const nodeSize = 8;
 const emptyVector = [0,0];
 const rows = 35;
 const columns = 50;
-const forceConstant = 100;
-const forceExponent = 1.2;
+const pulseForceConstant = 100;
+const pulseForceExponent = 1.2;
+const attractionToHome = 50;
+const attractionExponent = 1.2;
+
+
+//--------Todo
+//--add pulse charging on mouse hold
+//--new mode: nodes go into swarm mode towards the mouse
+//--new mode: floating in space mode, with boundaries
+
 
 //=========================
 //Setup & draw functions
@@ -27,15 +36,19 @@ function windowResized() {
 }
 
 function respaceNodes(){
+    //space nodes evenly across screen
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
-            grid[col][row].x = $(window).width() / columns * col + $(window).width() / columns * 0.5;
-            grid[col][row].y = $(window).height() / rows * row + $(window).height() / columns * 0.5;
+            grid[col][row].homeX = $(window).width() / columns * col + $(window).width() / columns * 0.5;
+            grid[col][row].homeY = $(window).height() / rows * row + $(window).height() / columns * 0.5;
+            grid[col][row].x = grid[col][row].homeX;
+            grid[col][row].y = grid[col][row].homeY;
         };
     };
 };
 
 function makeGrid(){
+    //draw grid of nodes
     grid = new Array(columns);
     for (var col = 0; col < columns; col++){
         grid[col] = new Array(columns);
@@ -50,6 +63,7 @@ function draw() {
     background(backgroundColor);
     noStroke();
     fill('rgba(0, 0, 255, 0.5)');
+    //draw all nodes
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
             grid[col][row].update();
@@ -65,57 +79,67 @@ var Node = function(row, column){
   this.row = row;
   this.column = column;
   this.radius = nodeSize;
+  this.homeX = null;
+  this.homeY = null;
   this.x = null;
   this.y = null;
   this.r = 0;
   this.g = 0;
   this.b = 0;
   this.a = 0.5;
+  this.vector = new Vector(0, -1, 0);
+  this.acceleration = 0;
 
   this.update = function() {
+      //move node according to motion vector, draw
       this.x += this.vector.x * this.vector.magnitude;
       this.y += this.vector.y * this.vector.magnitude;
       ellipse(this.x, this.y, this.radius, this.radius);
   };
 
   this.accelerate = function() {
+      distance = findDistance(this.homeX, this.homeY, this.x, this.y);
+      force = attractionToHome / Math.pow(distance, attractionExponent);
 
+      homeUnitVector = findUnitVector(x, y, node.x, node.y);
+      homeNormalVector = convertUnitToNormalVector(homeUnitVector, force);
+
+      nodeUnitVector = findUnitVector(0, 0, node.vector.x, node.vector.y);
+      nodeNormalVector = convertUnitToNormalVector(nodeUnitVector, node.vector.magnitude);
+
+      sumVector = findUnitVector(
+          0,
+          0,
+          nodeNormalVector.x + pulseNormalVector.x,
+          nodeNormalVector.y + pulseNormalVector.y
+      );
+
+      sumVector.magnitude = findDistance(
+          0,
+          0,
+          nodeNormalVector.x + pulseNormalVector.x,
+          nodeNormalVector.y + pulseNormalVector.y
+      );
+
+      node.vector = sumVector;
   };
-
-  this.vector = new Vector(0, -1, 0);
-
-  this.acceleration = 0;
 };
 
 function pulse(x, y) {
+    //push all nodes away from pulse location
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
-            node = grid[col][row];
-            distance = findDistance(x, y, node.x, node.y);
-            force = forceConstant / Math.pow(distance, forceExponent);
+            var node = grid[col][row];
+            var distance = findDistance(x, y, node.x, node.y);
+            var force = pulseForceConstant / Math.pow(distance, pulseForceExponent);
 
-            pulseNormalVector = findUnitVector(x, y, node.x, node.y);
-            pulseNormalVector.x *= force;
-            pulseNormalVector.y *= force;
-            pulseNormalVector.magnitude = findDistance(
-                0,
-                0,
-                pulseNormalVector.x,
-                pulseNormalVector.y
-            );
+            var pulseUnitVector = findUnitVector(x, y, node.x, node.y);
+            var pulseNormalVector = convertUnitToNormalVector(pulseUnitVector, force);
 
-            nodeNormalVector = new Vector(
-                node.vector.x * node.vector.magnitude,
-                node.vector.y * node.vector.magnitude,
-                findDistance(
-                    0,
-                    0,
-                    node.vector.x * node.vector.magnitude,
-                    node.vector.y * node.vector.magnitude
-                )
-            );
+            var nodeUnitVector = findUnitVector(0, 0, node.vector.x, node.vector.y);
+            var nodeNormalVector = convertUnitToNormalVector(nodeUnitVector, node.vector.magnitude);
 
-            sumVector = findUnitVector(
+            var sumVector = findUnitVector(
                 0,
                 0,
                 nodeNormalVector.x + pulseNormalVector.x,
@@ -135,6 +159,7 @@ function pulse(x, y) {
 };
 
 function mouseClicked() {
+    //set pulse away from mouse click
     pulse(mouseX, mouseY);
 };
 
@@ -170,6 +195,14 @@ function findUnitVector(x1, y1, x2, y2) {
     var magnitude = sqrt((Math.pow(normalVector.x, 2)) + (Math.pow(normalVector.y, 2)));
     var unitVector = new Vector(normalVector.x / magnitude, normalVector.y / magnitude, 1);
     return unitVector;
+};
+
+function convertUnitToNormalVector(unitVector, magnitude) {
+    normalVector = new Vector();
+    normalVector.x = unitVector.x * magnitude;
+    normalVector.y = unitVector.y * magnitude;
+    normalVector.magnitude = magnitude;
+    return normalVector;
 };
 
 function findDistance(x1, y1, x2, y2) {
