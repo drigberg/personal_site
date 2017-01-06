@@ -22,6 +22,10 @@ app.get("/gravitateAndFeed", function (req, res){
     res.render("gravitateAndFeed");
 });
 
+app.get("/pulse", function (req, res){
+    res.render("pulse");
+});
+
 app.get("/swarm", function (req, res){
     res.render("swarm");
 });
