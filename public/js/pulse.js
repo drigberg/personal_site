@@ -2,9 +2,10 @@
 const backgroundColor = "rgba(0, 0, 0, 0)";
 const nodeSize = 8;
 const emptyVector = [0,0];
-const rows = 7;
-const columns = 10;
-const forceConstant = 10;
+const rows = 35;
+const columns = 50;
+const forceConstant = 100;
+const forceExponent = 1.2;
 
 //=========================
 //Setup & draw functions
@@ -72,23 +73,63 @@ var Node = function(row, column){
   this.a = 0.5;
 
   this.update = function() {
+      this.x += this.vector.x * this.vector.magnitude;
+      this.y += this.vector.y * this.vector.magnitude;
       ellipse(this.x, this.y, this.radius, this.radius);
   };
 
   this.accelerate = function() {
 
   };
+
+  this.vector = new Vector(0, -1, 0);
+
+  this.acceleration = 0;
 };
 
 function pulse(x, y) {
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
             node = grid[col][row];
-            unitVector = findUnitVector(x, y, node.x, node.y);
             distance = findDistance(x, y, node.x, node.y);
-            force = forceConstant / Math.pow(distance, 2);
-            node.accelerationVector.x += unitVector.x * force;
-            node.accelerationVector.y += unitVector.y * force;
+            force = forceConstant / Math.pow(distance, forceExponent);
+
+            pulseNormalVector = findUnitVector(x, y, node.x, node.y);
+            pulseNormalVector.x *= force;
+            pulseNormalVector.y *= force;
+            pulseNormalVector.magnitude = findDistance(
+                0,
+                0,
+                pulseNormalVector.x,
+                pulseNormalVector.y
+            );
+
+            nodeNormalVector = new Vector(
+                node.vector.x * node.vector.magnitude,
+                node.vector.y * node.vector.magnitude,
+                findDistance(
+                    0,
+                    0,
+                    node.vector.x * node.vector.magnitude,
+                    node.vector.y * node.vector.magnitude
+                )
+            );
+
+            sumVector = findUnitVector(
+                0,
+                0,
+                nodeNormalVector.x + pulseNormalVector.x,
+                nodeNormalVector.y + pulseNormalVector.y
+            );
+
+            sumVector.magnitude = findDistance(
+                0,
+                0,
+                nodeNormalVector.x + pulseNormalVector.x,
+                nodeNormalVector.y + pulseNormalVector.y
+            );
+
+            node.vector = sumVector;
         };
     };
 };
