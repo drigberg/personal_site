@@ -12,8 +12,23 @@ const terminalVelocity = 10;
 const dragStrength = 0.1;
 const recurringPulseFrequency = 1;
 const modes = ["grid", "space"];
+const pulseFrequency = 50;
+const pulseBubbleRadius = 20;
+const pulseBubbleColor = 'rgba(255, 11, 140, 0.7)';
+const recurringPulseBubbleColor = 'rgba(0, 0, 0, 0.7)';
+const nodeColor = 'rgba(0, 0, 255, 0.5)';
+const pulseTypes = {
+    singlePulse : "singlePulse",
+    recurringPulse : "recurringPulse"
+};
+
+var pulseBubbles = [];
+var recurringBubbles = [];
 var activeModeIndex = 0;
 var grid;
+var recurringPulses = [];
+var frameCount = 0;
+
 
 
 //--------Todo
@@ -65,16 +80,16 @@ function makeGrid(){
 };
 
 function draw() {
+    frameCount += 1;
     clear();
     background(backgroundColor);
     noStroke();
-    fill('rgba(0, 0, 255, 0.5)');
-    //draw all nodes
-    for (var col = 0; col < columns; col++){
-        for (var row = 0; row < rows; row++){
-            grid[col][row].update();
-        };
+
+    updatePulseBubbles();
+    if (frameCount % pulseFrequency == 0) {
+        executeRecurringPulses();
     };
+    drawNodes();
 };
 
 
@@ -96,12 +111,40 @@ var Node = function(row, column) {
     this.vector = new Vector(0, -1, 0);
     this.acceleration = 0;
     this.count = 0;
+
+    this.checkForBoundaries = function() {
+        if (this.x < 0) {
+            this.x = 1;
+            this.vector.x *= -1;
+            if (this.vector.x < 0) {
+                this.vector.x *= -1;
+            };
+
+        } else if (this.x > $(window).width()) {
+            this.x = $(window).width() - 1;
+            this.vector.x *= -1;
+            if (this.vector.x > 0) {
+                this.vector.x *= -1;
+            };
+        };
+
+        if (this.y < 0) {
+            this.y = 1;
+            if (this.vector.y < 0) {
+                this.vector.y *= -1;
+            };
+        } else if (this.y > $(window).height()) {
+            this.y = $(window).height() - 1;
+            if (this.vector.y > 0) {
+                this.vector.y *= -1;
+            };
+        };
+    };
+
     this.update = function() {
         //move node according to motion vector, draw
         this.accelerate(this.homeX, this.homeY);
-        if (this.vector.magnitude > terminalVelocity) {
-            this.vector.magnitude = terminalVelocity;
-        };
+        // this.checkForBoundaries();
         this.x += this.vector.x * this.vector.magnitude;
         this.y += this.vector.y * this.vector.magnitude;
         ellipse(this.x, this.y, this.radius, this.radius);
@@ -113,8 +156,11 @@ var Node = function(row, column) {
             this.vector = this.findAttractionToHome(attractionSourceX, attractionSourceY);
             this.applyDrag();
         };
+
         if (this.vector.magnitude < 0.1) {
             this.vector.magnitude = 0;
+        } else if (this.vector.magnitude > terminalVelocity) {
+            this.vector.magnitude = terminalVelocity;
         };
     };
 
@@ -163,9 +209,66 @@ var Node = function(row, column) {
     };
 };
 
-var recurringPulse = function(x, y, strength) {
+var RecurringPulse = function(x, y, strength) {
+    this.x = x;
+    this.y = y;
+    this.strength = strength;
+    this.execute = function(){
+        pulse(this.x, this.y, this.strength);
+    };
+};
 
+var PulseBubble = function(x, y, radius, type, color) {
+    this.alive = true;
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.color = color;
+    this.type = type;
+    this.update = function(){
+        ellipse(this.x, this.y, this.radius, this.radius);
+        if (this.type == pulseTypes.singlePulse) {
+            this.radius -= 1;
+            if (this.radius < 1) {
+                this.alive = false;
+            }
+        } else if (this.type == pulseTypes.recurringPulse) {
+            if (this.radius > 10) {
+                this.radius -= 1;
+            };
+        };
+    };
+};
+
+//=========================
+//Motion functions
+//=========================
+
+
+function drawNodes(){
+    fill(nodeColor);
+    for (var col = 0; col < columns; col++){
+        for (var row = 0; row < rows; row++){
+            grid[col][row].update();
+        };
+    };
 }
+
+function executeRecurringPulses(){
+    for (var i = 0; i < recurringPulses.length; i++) {
+        recurringPulses[i].execute();
+    }
+}
+
+function updatePulseBubbles(){
+    for (var i = 0; i < pulseBubbles.length; i++) {
+        fill(pulseBubbles[i].color);
+        pulseBubbles[i].update();
+        if (!pulseBubbles[i].alive) {
+            pulseBubbles.splice(i, 1);
+        };
+    };
+};
 
 function pulse(x, y, strength) {
     //push all nodes away from pulse location
@@ -202,22 +305,38 @@ function pulse(x, y, strength) {
 
 function mouseClicked() {
     //set pulse away from mouse click
-    pulse(mouseX, mouseY, pulseForceConstant);
+    if (keyIsPressed && keyCode == 16) {
+        pulseBubbles.push(new PulseBubble(mouseX, mouseY, pulseBubbleRadius, pulseTypes.recurringPulse, recurringPulseBubbleColor));
+        recurringPulses.push(new RecurringPulse(mouseX, mouseY, pulseForceConstant));
+    } else {
+        pulseBubbles.push(new PulseBubble(mouseX, mouseY, pulseBubbleRadius, pulseTypes.singlePulse, pulseBubbleColor));
+        pulse(mouseX, mouseY, pulseForceConstant);
+    };
 };
 
 function keyPressed() {
-    if (keyCode === 32) {
-        if (activeModeIndex == modes.length - 1) {
-            activeModeIndex = 0;
-        } else {
-            activeModeIndex += 1;
+    if (keyCode) {
+        switch (keyCode) {
+            case 32:
+                if (activeModeIndex == modes.length - 1) {
+                    activeModeIndex = 0;
+                } else {
+                    activeModeIndex += 1;
+                };
+                break;
+            case 13:
+                console.log("resetting pulses!");
+                recurringPulses = [];
+                for (var i = 0; i < pulseBubbles.length; i++) {
+                    pulseBubbles[i].type = pulseTypes.singlePulse;
+                };
+                break;
         };
     };
 };
 
-
 //=========================
-//Generation functions
+//Angle functions
 //=========================
 
 var Vector = function(x, y, magnitude) {
