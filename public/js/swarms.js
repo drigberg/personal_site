@@ -5,6 +5,7 @@ var numSwarms;
 var bugSize;
 var speed;
 var newDestProb;
+var maxTurnSpeed, maxAngularAcceleration;
 
 //=========================
 //Setup & draw functions
@@ -19,9 +20,9 @@ function makeCanvas(){
     var canvas = createCanvas(($(window).width()), $(window).height() + 50);
     canvas.parent('canvas-background');
     backgroundColor = "rgba(0, 0, 0, 0)";
-    bugSize = 3;
+    bugSize = 5;
     speed = 5;
-    numSwarms = 2;
+    numSwarms = 1;
     newDestProb = 0.99;
 };
 
@@ -31,6 +32,8 @@ function windowResized() {
 
 function setInitialValues(){
     emptyVector = [0,0];
+    maxTurnSpeed = 0.1;
+    maxAngularAcceleration = 0.04;
 };
 
 function resetSwarms(){
@@ -46,17 +49,9 @@ function draw() {
     background(backgroundColor);
     noStroke();
     for (var i = 0; i < swarms.length; i++) {
-        var newDest = random(0,1);
-        if (newDest > newDestProb) {
-            swarms[i].destination = {
-                x : random(0, width),
-                y : random(0, height)
-            };
-        };
         // fill(swarms[i].r, swarms[i].g, swarms[i].b);
         fill('rgba(0, 0, 0, 1)');
         for (var j = 0; j < swarms[i].bugs.length; j++) {
-            noStroke();
             swarms[i].bugs[j].update();
         };
     };
@@ -80,7 +75,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
   this.a = 0.5
   this.spawnX = spawnX;
   this.spawnY = spawnY;
-  this.numBugs = random(700, 1000);
+  this.numBugs = 300;
   this.init = function(){
       for (var i = 0; i < this.numBugs; i++) {
           this.bugs.push(new Bug(this, this.spawnX, this.spawnY, bugSize));
@@ -92,7 +87,7 @@ var Swarm = function(spawnX, spawnY, destX, destY){
 var Bug = function(parentSwarm, x, y, r){
     //set of coordinates, radius, and color
     var that = this;
-    this.spread = random(30, 100)
+    this.spread = 200;
     this.parentSwarm = parentSwarm;
     this.x = x + random(-1 * this.spread, this.spread);
     this.y = y + random(-1 * this.spread, this.spread);
@@ -115,6 +110,7 @@ var Bug = function(parentSwarm, x, y, r){
     this.accelerate = function(){
         var unitVectorToDest = findUnitVector(this.x, this.y, this.parentSwarm.destination.x, this.parentSwarm.destination.y);
         var currentUnitVector = findUnitVector(0, 0, this.vector.unitVector.x, this.vector.unitVector.y)
+
         var destAngleFromOrigin = findAngleFromOrigin(unitVectorToDest);
         var currentAngleFromOrigin = findAngleFromOrigin(currentUnitVector);
         var angle = findAngle(unitVectorToDest, currentUnitVector);
@@ -144,31 +140,28 @@ var Bug = function(parentSwarm, x, y, r){
         };
 
 
-        // if (abs(angle) > PI/6) {
-        //     that.acceleration.angular -= angle * 0.001;
-        // } else if (abs(angle) > PI/10){
-        //     that.acceleration.angular += angle * 0.001;
-        // } else {
-        //     that.acceleration.angular += angle * 0.001;
-        // }
-
-        that.acceleration.angular += angle * 0.004;
-
-        //that.wander = random(-0.001, 0.001);
-        //that.acceleration.angular += that.wander;
-
-        if (that.acceleration.angular > 0.005) {
-            that.acceleration.angular = 0.005;
-        } else if (that.acceleration.angular < -0.005) {
-            that.acceleration.angular = -0.005;
+        if (!angle && angle != 0) {
+            that.acceleration.angular = 0;
+        } else if (abs(angle) < PI/50) {
+            that.acceleration.angular = 0;
+        } else {
+            that.acceleration.angular += angle;
         };
 
-        that.turningSpeed += that.acceleration.angular;
 
-        if (that.turningSpeed > 0.05) {
-            that.turningSpeed = 0.05;
-        } else if (that.turningSpeed < -0.05) {
-            that.turningSpeed = -0.05;
+
+        if (abs(that.acceleration.angular) > maxAngularAcceleration) {
+            that.acceleration.angular *= (abs(maxAngularAcceleration / that.acceleration.angular));
+        };
+
+        if (that.acceleration.angular == 0) {
+            that.turningSpeed = 0;
+        } else {
+            that.turningSpeed += that.acceleration.angular;
+        }
+
+        if (abs(that.turningSpeed) > maxTurnSpeed) {
+            that.turningSpeed *= (abs(maxTurnSpeed / that.turningSpeed));
         };
 
         if (currentAngleFromOrigin < 0){
@@ -177,21 +170,6 @@ var Bug = function(parentSwarm, x, y, r){
 
         newAngle = currentAngleFromOrigin + that.turningSpeed
 
-        distanceToDest = sqrt(Math.pow(this.parentSwarm.destination.x - this.x, 2) + Math.pow(this.parentSwarm.destination.y - this.y, 2));
-
-        if (distanceToDest < 100) {
-            this.acceleration.magnitude = -0.2;
-        } else {
-            this.acceleration.magnitude = 0.1;
-        }
-
-        this.vector.magnitude += this.acceleration.magnitude;
-
-        if (this.vector.magnitude < 0.1) {
-            this.vector.magnitude = 0.1;
-        } else if (this.vector.magnitude > 5) {
-            this.vector.magnitude = 5;
-        };
 
         newVector = findUnitVector(0, 0, cos(newAngle), sin(newAngle))
 
@@ -208,6 +186,11 @@ var Bug = function(parentSwarm, x, y, r){
         this.accelerate();
         this.x += this.vector.unitVector.x * this.vector.magnitude;
         this.y += this.vector.unitVector.y * this.vector.magnitude;
+        var lineVectorX = this.x + this.vector.unitVector.x * this.vector.magnitude * 4;
+        var lineVectorY = this.y + this.vector.unitVector.y * this.vector.magnitude * 4;
+        stroke(250, 0, 250);
+        line(this.x, this.y, lineVectorX, lineVectorY);
+        noStroke();
         ellipse(this.x, this.y, this.radius, this.radius);
     };
 };
@@ -218,9 +201,21 @@ var Vector = function(x, y, magnitude) {
     this.magnitude = magnitude;
 };
 
+//=========================
+//Movement functions
+//=========================
+
+function touchStarted() {
+    for (var i = 0; i < swarms.length; i++) {
+        swarms[i].destination = {
+              x : mouseX,
+              y : mouseY
+          };
+    }
+};
 
 //=========================
-//Generation functions
+//Angle functions
 //=========================
 
 function findAngle(vector1, vector2) {
@@ -240,9 +235,15 @@ function findAngleFromOrigin(vector) {
 
 function findUnitVector(x1, y1, x2, y2) {
     //calculates normal vector between two points (in order), converts to unit vector
+    var unitVector;
     var normalVector = new Vector(x2 - x1, y2 - y1, null);
     var magnitude = sqrt((Math.pow(normalVector.x, 2)) + (Math.pow(normalVector.y, 2)));
-    var unitVector = new Vector(normalVector.x / magnitude, normalVector.y / magnitude, 1);
+    if (magnitude != 0) {
+        unitVector = new Vector(normalVector.x / magnitude, normalVector.y / magnitude, 1);
+    } else {
+        unitVector = new Vector(1, 0, 1)
+    }
+
     return unitVector;
 };
 
