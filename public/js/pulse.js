@@ -303,7 +303,7 @@ function pulse(x, y, strength) {
     };
 };
 
-function mouseClicked() {
+function touchStarted() {
     //set pulse away from mouse click
     if (keyIsPressed && keyCode == 16) {
         pulseBubbles.push(new PulseBubble(mouseX, mouseY, pulseBubbleRadius, pulseTypes.recurringPulse, recurringPulseBubbleColor));
