@@ -18,8 +18,12 @@ app.get("/gravitateAndFeed", function (req, res){
     res.render("gravitateAndFeed");
 });
 
-app.get("/pulse", function (req, res){
-    res.render("pulse");
+app.get("/pulse2D", function (req, res){
+    res.render("pulse2D");
+});
+
+app.get("/pulse3D", function (req, res){
+    res.render("pulse3D");
 });
 
 app.get("/swarm", function (req, res){
