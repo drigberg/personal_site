@@ -26,8 +26,12 @@ app.get("/pulse3D", function (req, res){
     res.render("pulse3D");
 });
 
-app.get("/swarm", function (req, res){
-    res.render("swarm");
+app.get("/swarm2D", function (req, res){
+    res.render("swarm2D");
+});
+
+app.get("/swarm3D", function (req, res){
+    res.render("swarm3D");
 });
 
 app.get('/download_resume', function(req, res){
