@@ -1,3 +1,4 @@
+//original script by Jakub Jankiewicz, from http://terminal.jcubic.pl/
 var themeColors = {
     codingSkills : ["#11DAFF","#1B9CFF"],
     otherSkills : ["#2CFF00","#17A600"],
