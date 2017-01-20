@@ -1,7 +1,3 @@
-//TO-DO
-//    -Revise terminal velocity for composite vector
-//
-
 var default_attraction = 200;
 var attraction = default_attraction;
 var mouseover = false;
@@ -24,7 +20,6 @@ function Particle( x, y, radius ) {
 }
 
 Particle.prototype = {
-
     init: function( x, y, radius ) {
         this.mass = 10;
         this.feedlineOpacity = 0;
@@ -47,26 +42,16 @@ Particle.prototype = {
         //Coordinated orbits
 
         if (this.r_x > 0){
-            if (this.r_y > 0) {
-                this.vx = (-5 / this.r) * (this.r_y)
-                this.vy = (5 / this.r) * (this.r_x)
-            } else {
-                this.vx = (-5 / this.r) * (this.r_y)
-                this.vy = (5 / this.r) * (this.r_x)
-            }
+            this.vx = (-5 / this.r) * (this.r_y)
+            this.vy = (5 / this.r) * (this.r_x)
         } else {
-          if (this.r_y > 0) {
-              this.vx = 5 / this.r * (this.r_y)
-              this.vy = 5 / this.r * (this.r_x)
-          } else {
-              this.vx = (5 / this.r) * (this.r_y)
-              this.vy = (5 / this.r) * (this.r_x)
-          }
+          this.vx = (5 / this.r) * (this.r_y)
+          this.vy = (5 / this.r) * (this.r_x)
         };
     },
 
     move: function() {
-
+        //attract towards attraction source
         if (mouseover) {
             for ( i = 0, n = particle_field.touches.length; i < n; i++ ) {
                 var touch = particle_field.touches[i];
@@ -77,8 +62,8 @@ Particle.prototype = {
             this.r_x = (this.x - this.origin[0]);
             this.r_y = (this.y - this.origin[1]);
         }
-        // this.r_x = (this.x - this.origin[0]);
-        // this.r_y = (this.y - this.origin[1]);
+
+        //base attraction off of composite distance
         this.r = sqrt((this.r_x * this.r_x) + (this.r_y * this.r_y));
 
         if (this.r < 30 ) this.r = 30;
@@ -87,6 +72,8 @@ Particle.prototype = {
         this.ytheta = (-(this.r_y / (this.r * this.r)) * attraction * slow_factor);
         this.vx += this.xtheta;
         this.vy += this.ytheta;
+
+        //terminal velocity acts on each component vector--needs to be revised
         if (this.vx > terminal_velocity) {
             this.vx = terminal_velocity;
         }
@@ -96,6 +83,7 @@ Particle.prototype = {
         this.x += this.vx;
         this.y += this.vy;
 
+        //border detection
         if (this.x > particle_field.width - 1) {
             this.vx = this.vx * -0.7;
             this.xtheta = 0;
@@ -122,8 +110,6 @@ Particle.prototype = {
 };
 
 particle_field.setup = function() {
-
-    // Set off some initial particles.
     var i, x, y;
 
     for ( i = 0; i < number_of_particles; i++ ) {
@@ -141,22 +127,15 @@ particle_field.spawn_particle = function( x, y ) {
 };
 
 particle_field.update = function() {
-
     var i, particle;
-
-    //particles
     for ( i = particles.length - 1; i >= 0; i-- ) {
-
-        particle = particles[i];
-
-        particle.move();
-    }
+        particles[i].move();
+    };
 
     var j, k, touch;
 
     for ( j = 0, n = particle_field.touches.length; j < n; j++ ) {
         touch = particle_field.touches[j];
-        // particle_field.spawn( touch.x, touch.y );
         for ( k = particles.length - 1; k >= 0; k-- ) {
             if (find_distance(particles[k], touch) < max_line_distance) {
                 if (particles[k].radius < max_particle_radius && mouseover) {
@@ -223,6 +202,7 @@ particle_field.draw = function() {
 
 
 particle_field.mousedown = function() {
+    //extra gravity when mouse is pressed
     attraction = default_attraction * 2;
 }
 
@@ -231,6 +211,7 @@ particle_field.mouseup = function() {
 }
 
 particle_field.mouseover = function() {
+    //particles are only attracted to the mouse when it is over the canvas
     mouseover = true;
 }
 
@@ -240,8 +221,4 @@ particle_field.mouseout = function() {
 
 find_distance = function(object_1, object_2) {
     return sqrt((object_1.x - object_2.x) ** 2 + (object_1.y - object_2.y) ** 2)
-}
-
-degrees_to_radians = function(degrees) {
-    return degrees / 180 * PI;
 }
