@@ -47,7 +47,7 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(($(window).width()), $(window).height());
+    var canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-background');
 };
 

@@ -5,7 +5,7 @@ var colors;
 var increment = 4;
 
 function setup() {
-    var canvas = createCanvas(($(window).width()), $(window).height());
+    var canvas = createCanvas(windowWidth, windowHeight + 50);
     canvas.parent('canvas-background');
     frameRate(10);
 

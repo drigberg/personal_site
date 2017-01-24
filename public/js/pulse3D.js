@@ -51,7 +51,7 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(($(window).width()), $(window).height(), WEBGL);
+    var canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-background');
 };
 

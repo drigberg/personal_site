@@ -16,7 +16,7 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(($(window).width()), $(window).height() + 50);
+    var canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-background');
     backgroundColor = "rgba(0, 0, 0, 0)";
 };
