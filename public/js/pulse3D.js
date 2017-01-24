@@ -51,12 +51,12 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(windowWidth, windowHeight);
+    var canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.parent('canvas-background');
 };
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+	resizeCanvas(windowWidth, windowHeight, WEBGL);
     respaceNodes();
 }
 
@@ -65,8 +65,8 @@ function respaceNodes(){
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
             for (var depthRow = 0; depthRow < depthRows; depthRow++){
-                grid[col][row][depthRow].homeX = $(window).width() / columns * col + $(window).width() / columns * 0.5 - $(window).width() / 2;
-                grid[col][row][depthRow].homeY = $(window).height() / rows * row + $(window).height() / rows * 0.5  - $(window).height() / 2;
+                grid[col][row][depthRow].homeX = windowWidth / columns * col + windowWidth / columns * 0.5 - windowWidth / 2;
+                grid[col][row][depthRow].homeY = windowHeight / rows * row + windowHeight / rows * 0.5  - windowHeight / 2;
                 grid[col][row][depthRow].homeZ = depthRange / depthRows * depthRow + depthRange / depthRows * 0.5 - depthRange;
                 grid[col][row].x = grid[col][row][depthRow].homeX;
                 grid[col][row].y = grid[col][row][depthRow].homeY;
@@ -96,8 +96,8 @@ function draw() {
     background(backgroundColor);
     noStroke();
     ambientLight(100);
-    pointLight(250, 100, 100, 1500, 600, lightZ - 500);
-    pointLight(250, 100, 250, -1000, -600, lightZ);
+    pointLight(250, 100, 100, 1500, 600, lightZ);
+    // pointLight(250, 100, 250, -1000, -600, lightZ);
 
     updatePulseBubbles();
     if (frameCount % pulseFrequency == 0) {
@@ -326,8 +326,8 @@ function pulse(x, y, z, strength) {
 
 function touchStarted() {
     //begin pulse preview
-    var canvasX = (mouseX - $(window).width() / 2) * 0.8;
-    var canvasY = (mouseY - $(window).height() / 2) * 0.8;
+    var canvasX = (mouseX - windowWidth / 2) * 0.8;
+    var canvasY = (mouseY - windowHeight / 2) * 0.8;
     var depth = defaultDepth;
     var type = null;
     if (keyIsPressed && keyCode == 16) {

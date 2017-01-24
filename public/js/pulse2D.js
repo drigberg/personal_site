@@ -60,8 +60,8 @@ function respaceNodes(){
     //space nodes evenly across screen
     for (var col = 0; col < columns; col++){
         for (var row = 0; row < rows; row++){
-            grid[col][row].homeX = $(window).width() / columns * col + $(window).width() / columns * 0.5;
-            grid[col][row].homeY = $(window).height() / rows * row + $(window).height() / columns * 0.5;
+            grid[col][row].homeX = windowWidth / columns * col + windowWidth / columns * 0.5;
+            grid[col][row].homeY = windowHeight / rows * row + windowHeight / columns * 0.5;
             grid[col][row].x = grid[col][row].homeX;
             grid[col][row].y = grid[col][row].homeY;
         };
@@ -120,8 +120,8 @@ var Node = function(row, column) {
                 this.vector.x *= -1;
             };
 
-        } else if (this.x > $(window).width()) {
-            this.x = $(window).width() - 1;
+        } else if (this.x > windowWidth) {
+            this.x = windowWidth - 1;
             this.vector.x *= -1;
             if (this.vector.x > 0) {
                 this.vector.x *= -1;
@@ -133,8 +133,8 @@ var Node = function(row, column) {
             if (this.vector.y < 0) {
                 this.vector.y *= -1;
             };
-        } else if (this.y > $(window).height()) {
-            this.y = $(window).height() - 1;
+        } else if (this.y > windowHeight) {
+            this.y = windowHeight - 1;
             if (this.vector.y > 0) {
                 this.vector.y *= -1;
             };

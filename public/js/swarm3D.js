@@ -28,13 +28,13 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(windowWidth, windowHeight);
+    var canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.parent('canvas-background');
     backgroundColor = "rgba(255, 255, 255, 1)";
 };
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+	resizeCanvas(windowWidth, windowHeight, WEBGL);
 }
 
 function resetBirds(){
@@ -51,7 +51,7 @@ function draw() {
     clear();
     background(backgroundColor);
     noStroke();
-    ambientLight(100);
+    // ambientLight(100);
     pointLight(250, 100, 250, -1000, -1000, lightZ);
     pointLight(100, 250, 250, 1000, 1000, lightZ);
     skyRabbit.update();
