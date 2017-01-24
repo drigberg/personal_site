@@ -5,8 +5,8 @@ var count = 0;
 const fr = 100;
 var branchProb = 0.01;
 const defaults = {
-    minDecayRate        : 0.001,
-    maxDecayRate        : 0.01,
+    minDecayRate        : 0.0015,
+    maxDecayRate        : 0.006,
     maxDistanceFromSeed : 700,
     yMomentum           : -1,
     numTrees            : 1,
@@ -72,7 +72,9 @@ var Branch = function(tree, x, y, xMomentum, yMomentum, thickness, maxDecayRate,
     this.yMomentum = yMomentum;
     this.thickness = thickness;
     this.update = function(){
-        if (this.a > 0 || this.thickness > 0) {
+        var dead = this.a <= 0 || this.thickness <= 0;
+        var outOfBounds = (this.x > windowWidth + 10) || (this.x < -10) || (this.y < -10);
+        if (!(dead || outOfBounds)) {
             while (true) {
                 if (random(0, 1) < branchProb) {
                     this.tree.branches.push(new Branch(this.tree, this.x, this.y, this.xMomentum, this.yMomentum, this.thickness, this.decayRate, this.r, this.g, this.b, this.a));
