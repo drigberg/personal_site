@@ -321,6 +321,8 @@ var FishFood = function(x, y) {
     };
 
     this.update = function(){
+        this.width = this.image.width;
+        this.height = this.image.height;
         this.sink();
         this.x += this.vector.x * this.vector.magnitude;
         this.y += this.vector.y * this.vector.magnitude;
@@ -335,12 +337,11 @@ var FishFood = function(x, y) {
     };
 
     this.loadImage = function() {
-        this.image = loadImage("../assets/fishFood.png");
-        this.width = this.image.width;
-        this.height = this.image.height;
+        this.image = loadImage("../assets/photos/fishy/maykin.png");
+
     };
 
-    // this.loadImage();
+    this.loadImage();
 };
 
 var Bubble = function(x, y, vector) {
