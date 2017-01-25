@@ -337,8 +337,9 @@ var FishFood = function(x, y) {
     };
 
     this.loadImage = function() {
-        this.image = loadImage("../assets/photos/fishy/maykin.png");
-
+        this.image = loadImage("../assets/photos/fishy/maykin.png", function(img) {
+                img.resize(60, 20);
+        });
     };
 
     this.loadImage();
