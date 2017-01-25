@@ -23,6 +23,11 @@ app.get("/MaykinFishBuddy", function (req, res){
     res.render("MaykinFishBuddy");
 });
 
+app.get("/SociomanticFishBuddy", function (req, res){
+    res.render("SociomanticFishBuddy");
+});
+
+
 app.get("/garden2D", function (req, res){
     res.render("garden2D");
 });
