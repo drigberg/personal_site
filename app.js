@@ -14,6 +14,11 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+
+app.get("/fishBuddy", function (req, res){
+    res.render("fishBuddy");
+});
+
 app.get("/garden2D", function (req, res){
     res.render("garden2D");
 });
