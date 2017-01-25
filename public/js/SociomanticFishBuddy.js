@@ -329,10 +329,6 @@ var FishFood = function(x, y) {
 
         if (this.image) {
             image(this.image, this.x, this.y);
-        } else {
-            stroke(10);
-            fill(10);
-            ellipse(this.x, this.y, this.width, this.height);
         };
     };
 
