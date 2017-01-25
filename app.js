@@ -14,6 +14,10 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+app.get("/garden2D", function (req, res){
+    res.render("garden2D");
+});
+
 app.get("/gravitateAndFeed", function (req, res){
     res.render("gravitateAndFeed");
 });
