@@ -19,6 +19,10 @@ app.get("/fishBuddy", function (req, res){
     res.render("fishBuddy");
 });
 
+app.get("/KayakFishBuddy", function (req, res){
+    res.render("KayakFishBuddy");
+});
+
 app.get("/MaykinFishBuddy", function (req, res){
     res.render("MaykinFishBuddy");
 });
