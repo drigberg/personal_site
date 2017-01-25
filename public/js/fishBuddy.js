@@ -1,7 +1,7 @@
 //----------global defaults
 //
 const constants = {
-    backgroundColor : "rgba(255, 255, 255, 1)",
+    backgroundColor : "rgba(0, 0, 255, 0.2)",
     deceleration : 0.3,
     acceleration : 0.1,
     slowDownRadius : 30,
