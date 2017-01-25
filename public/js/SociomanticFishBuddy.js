@@ -275,9 +275,7 @@ var Fish = function(x, y){
 
         if (this.image.current.direction && this.images[this.image.current.direction][this.image.current.index]) {
             image(this.images[this.image.current.direction][this.image.current.index], this.x, this.y);
-        } else {
-            ellipse(this.x, this.y, 40, 40);
-        }
+        };
     };
     this.loadImages();
 };
@@ -329,6 +327,10 @@ var FishFood = function(x, y) {
 
         if (this.image) {
             image(this.image, this.x, this.y);
+        } else {
+            stroke(10);
+            fill(10);
+            ellipse(this.x, this.y, this.width, this.height);
         };
     };
 

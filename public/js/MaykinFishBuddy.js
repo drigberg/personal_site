@@ -275,9 +275,7 @@ var Fish = function(x, y){
 
         if (this.image.current.direction && this.images[this.image.current.direction][this.image.current.index]) {
             image(this.images[this.image.current.direction][this.image.current.index], this.x, this.y);
-        } else {
-            ellipse(this.x, this.y, 20, 20);
-        }
+        };
     };
     this.loadImages();
 };
