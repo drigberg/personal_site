@@ -132,7 +132,7 @@ var Fish = function(x, y){
 
     this.loadImages = function() {
         for (var i = 1; i <= 8; i++) {
-            let filename = "../assets/photos/fishy/neutral" + i + ".png";
+            let filename = "../assets/photos/fishy/neutral/neutral" + i + ".png";
             console.log(filename);
             this.images.neutral.push(loadImage(filename));
             console.log("Loaded!")
