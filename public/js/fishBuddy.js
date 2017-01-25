@@ -269,7 +269,7 @@ var Fish = function(x, y){
 
         stroke(10);
 
-        if (frameCount % 2 == 0) {
+        if (frameCount % 4 == 0) {
             this.selectImage();
         };
 
