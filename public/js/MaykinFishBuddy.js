@@ -23,7 +23,6 @@ var bubbles = [];
 var fishFoods = [];
 var wanderEnabled = true;
 var fish;
-var neutral1;
 
 //=========================
 //Setup & draw functions
@@ -34,7 +33,7 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(($(window).width()), $(window).height() + 50);
+    var canvas = createCanvas(windowWidth, windowHeight + 50);
     canvas.parent('canvas-background');
 };
 
