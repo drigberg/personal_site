@@ -206,7 +206,7 @@ var Fish = function(x, y){
                 this.accelerate();
             };
 
-            if (distanceToTarget < 20) {
+            if (distanceToTarget < 40) {
                 this.target.alive = false;
             };
 
