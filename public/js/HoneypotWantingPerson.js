@@ -31,7 +31,7 @@ function setup() {
 }
 
 function makeCanvas(){
-    var canvas = createCanvas(windowWidth, windowHeight + 50);
+    var canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-background');
 };
 
@@ -67,6 +67,7 @@ function flyingThings() {
 //=========================
 
 var Thing = function() {
+    var that = this;
     this.x = null;
     this.y = null;
     this.width = 0;
@@ -95,9 +96,11 @@ var Thing = function() {
     };
 
     this.loadImage = function() {
-        this.image = loadImage("../assets/photos/things/honeypot.png");
-        this.width = this.image.width;
-        this.height = this.image.height;
+        this.image = loadImage("../assets/photos/things/honeypot.png", function(img) {
+            that.width = that.image.width;
+            that.height = that.image.height;
+            that.y = windowHeight - that.height - 10;
+        });
     };
 
     this.init = function() {
@@ -109,7 +112,7 @@ var Thing = function() {
             this.x = windowWidth + 100;
             this.direction = -1;
         };
-        this.y = person.hip.height + constants.bodySize;
+
     };
 
     this.init();
