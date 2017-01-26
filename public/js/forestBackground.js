@@ -1,5 +1,5 @@
 //----------global defaults
-var backgroundColor = "rgba(255, 255, 255, 1)";
+var backgroundColor = "rgba(255, 255, 255, 0)";
 var trees = [];
 var count = 0;
 const fr = 100;
