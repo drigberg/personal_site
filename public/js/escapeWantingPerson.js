@@ -73,7 +73,7 @@ var Thing = function() {
     this.height = 0;
     this.alive = true;
     this.direction = 0;
-    this.speed = random(4, 10);
+    this.speed = random(1.5, 10);
     this.image = null;
 
     this.update = function() {
