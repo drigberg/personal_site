@@ -23,6 +23,10 @@ app.get("/KayakFishBuddy", function (req, res){
     res.render("KayakFishBuddy");
 });
 
+app.get("/DeliveryFishy", function (req, res){
+    res.render("DeliveryFishy");
+});
+
 app.get("/Door2DoorFishy", function (req, res){
     res.render("Door2DoorFishy");
 });
