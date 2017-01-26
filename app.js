@@ -22,6 +22,10 @@ app.get("/OpenSourceWantingPerson", function (req, res){
     res.render("OpenSourceWantingPerson");
 });
 
+app.get("/InventorumWantingPerson", function (req, res){
+    res.render("InventorumWantingPerson");
+});
+
 app.get("/thingWantingPerson", function (req, res){
     res.render("thingWantingPerson");
 });
