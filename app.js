@@ -18,6 +18,10 @@ app.get("/EscapeWantingPerson", function (req, res){
     res.render("EscapeWantingPerson");
 });
 
+app.get("/OpenSourceWantingPerson", function (req, res){
+    res.render("OpenSourceWantingPerson");
+});
+
 app.get("/thingWantingPerson", function (req, res){
     res.render("thingWantingPerson");
 });
