@@ -14,6 +14,10 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+app.get("/escapeWantingPerson", function (req, res){
+    res.render("escapeWantingPerson");
+});
+
 app.get("/thingWantingPerson", function (req, res){
     res.render("thingWantingPerson");
 });
