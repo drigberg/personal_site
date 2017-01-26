@@ -73,7 +73,8 @@ var Thing = function() {
     this.height = 0;
     this.alive = true;
     this.direction = 0;
-    this.speed = random(2, 10);
+    this.speed = random(1.5, 10);
+    this.image = null;
 
     this.update = function() {
         this.x += this.speed * this.direction;
@@ -86,10 +87,21 @@ var Thing = function() {
                 this.alive = false;
             };
         };
-        ellipse(this.x, this.y, this.width, this.height);
+        if (this.image) {
+            image(this.image, this.x, this.y);
+        } else {
+            ellipse(this.x, this.y, this.width, this.height);
+        };
+    };
+
+    this.loadImage = function() {
+        this.image = loadImage("../assets/photos/things/home.png");
+        this.width = this.image.width;
+        this.height = this.image.height;
     };
 
     this.init = function() {
+        this.loadImage();
         if (random(0, 1) < 0.5) {
             this.x = -100;
             this.direction = 1;
@@ -98,8 +110,6 @@ var Thing = function() {
             this.direction = -1;
         };
         this.y = random(0, windowHeight - constants.bodySize * 3);
-        this.width = random(10, 40);
-        this.height = this.width;
     };
 
     this.init();
