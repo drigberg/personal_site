@@ -14,6 +14,9 @@ app.get("/", function (req, res){
     res.render("index");
 });
 
+app.get("/thingWantingPerson", function (req, res){
+    res.render("thingWantingPerson");
+});
 
 app.get("/fishBuddy", function (req, res){
     res.render("fishBuddy");
