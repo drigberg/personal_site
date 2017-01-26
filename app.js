@@ -22,6 +22,10 @@ app.get("/OpenSourceWantingPerson", function (req, res){
     res.render("OpenSourceWantingPerson");
 });
 
+app.get("/BitcoinWantingPerson", function (req, res){
+    res.render("BitcoinWantingPerson");
+});
+
 app.get("/InventorumWantingPerson", function (req, res){
     res.render("InventorumWantingPerson");
 });
