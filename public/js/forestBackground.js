@@ -67,7 +67,7 @@ var Tree = function(x) {
         if (trees.length < 5) {
             let maxDecayRate = defaults.minDecayRate;
         };
-        this.branches = [new Branch(this, x, windowHeight, 0, defaults.yMomentum, defaults.thickness, defaults.maxDecayRate, 220, 225, 230, 1)];
+        this.branches = [new Branch(this, x, windowHeight, 0, defaults.yMomentum, defaults.thickness, defaults.maxDecayRate, random(210, 250), random(210, 250), random(210, 250), 1)];
     };
     this.init();
 };

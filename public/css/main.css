@@ -1,6 +1,12 @@
 /*--------------
 All devices
 ----------------*/
+
+body {
+	background-color: rgba(220, 220, 240, 0.2);
+	letter-spacing: 1.5px;
+}
+
 .thumbnail-interest {
 	z-index : -1;
 	border: 1px solid #ddd;
@@ -83,10 +89,7 @@ Smartphones
 		display: block;
 	}
 
-	body {
-		background-color: rgb(248, 248, 248);
-		letter-spacing: 1.5px;
-	}
+
 
 	#terminal {
 		margin: 0 10px 0 10px;
@@ -392,11 +395,6 @@ Tablets
 	General Styling
 	----------------*/
 
-	body {
-		background-color: rgb(248, 248, 248);
-		letter-spacing: 1.5px;
-	}
-
 	.section-strip {
 		width: 100%;
 		z-index : -1;
@@ -632,11 +630,6 @@ Laptops
 	/*--------------
 	General Styling
 	----------------*/
-
-	body {
-		background-color: rgb(248, 248, 248);
-		letter-spacing: 1.5px;
-	}
 
 	.mobile-hr {
 		display: none;
