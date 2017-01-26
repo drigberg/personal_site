@@ -38,7 +38,7 @@ function windowResized() {
 
 function draw() {
     //grow all branches
-    if (frameCount < 5 || Math.floor(frameCount / fr) == frameCount / fr && trees.length < 40) {
+    if (frameCount < 5 || Math.floor(frameCount / fr) == frameCount / fr && trees.length < windowWidth / 50) {
         trees.push(new Tree(random(0, windowWidth)));
     };
     noStroke();
@@ -57,12 +57,19 @@ function updateTrees(){
 //Classes
 //=========================
 var Tree = function(x) {
-    this.branches = [new Branch(this, x, windowHeight, 0, defaults.yMomentum, defaults.thickness, defaults.maxDecayRate, 220, 225, 230, 1)];
     this.update = function(){
         for (var i = 0; i < this.branches.length; i++) {
             this.branches[i].update();
         };
     };
+    this.init = function() {
+        let maxDecayRate = defaults.maxDecayRate;
+        if (trees.length < 5) {
+            let maxDecayRate = defaults.minDecayRate;
+        };
+        this.branches = [new Branch(this, x, windowHeight, 0, defaults.yMomentum, defaults.thickness, defaults.maxDecayRate, 220, 225, 230, 1)];
+    };
+    this.init();
 };
 
 var Branch = function(tree, x, y, xMomentum, yMomentum, thickness, maxDecayRate, r, g, b, a) {
