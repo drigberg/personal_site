@@ -26,6 +26,11 @@ app.get("/BitcoinWantingPerson", function (req, res){
     res.render("BitcoinWantingPerson");
 });
 
+app.get("/HoneypotWantingPerson", function (req, res){
+    res.render("HoneypotWantingPerson");
+});
+
+
 app.get("/InventorumWantingPerson", function (req, res){
     res.render("InventorumWantingPerson");
 });
