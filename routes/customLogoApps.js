@@ -2,47 +2,43 @@ var express     = require("express"),
     router      = express.Router({mergeParams: true});
 
 router.get("/EscapeWantingPerson", function (req, res){
-    res.render("EscapeWantingPerson");
+    res.render("customLogoApps/EscapeWantingPerson");
 });
 
 router.get("/OpenSourceWantingPerson", function (req, res){
-    res.render("OpenSourceWantingPerson");
+    res.render("customLogoApps/OpenSourceWantingPerson");
 });
 
 router.get("/BitcoinWantingPerson", function (req, res){
-    res.render("BitcoinWantingPerson");
+    res.render("customLogoApps/BitcoinWantingPerson");
 });
 
 router.get("/HoneypotWantingPerson", function (req, res){
-    res.render("HoneypotWantingPerson");
+    res.render("customLogoApps/HoneypotWantingPerson");
 });
 
 router.get("/InventorumWantingPerson", function (req, res){
-    res.render("InventorumWantingPerson");
-});
-
-router.get("/thingWantingPerson", function (req, res){
-    res.render("thingWantingPerson");
+    res.render("customLogoApps/InventorumWantingPerson");
 });
 
 router.get("/KayakFishBuddy", function (req, res){
-    res.render("KayakFishBuddy");
+    res.render("customLogoApps/KayakFishBuddy");
 });
 
 router.get("/DeliveryFishy", function (req, res){
-    res.render("DeliveryFishy");
+    res.render("customLogoApps/DeliveryFishy");
 });
 
 router.get("/Door2DoorFishy", function (req, res){
-    res.render("Door2DoorFishy");
+    res.render("customLogoApps/Door2DoorFishy");
 });
 
 router.get("/MaykinFishBuddy", function (req, res){
-    res.render("MaykinFishBuddy");
+    res.render("customLogoApps/MaykinFishBuddy");
 });
 
 router.get("/SociomanticFishBuddy", function (req, res){
-    res.render("SociomanticFishBuddy");
+    res.render("customLogoApps/SociomanticFishBuddy");
 });
 
 
