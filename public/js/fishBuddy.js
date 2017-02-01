@@ -310,8 +310,6 @@ var FishFood = function(x, y) {
             this.vector.x = sumUnitVector.x;
             this.vector.y = sumUnitVector.y;
 
-
-
             this.vector.magnitude += constants.fishFoodAcceleration;
             this.vector.magnitude *= constants.fishFoodDrag;
         };
