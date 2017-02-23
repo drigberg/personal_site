@@ -12,6 +12,11 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 // seedDB();
 
+app.get('/download_resume', function(req, res){
+  var file = __dirname + '/public/assets/DanielRigberg_Resume.pdf';
+  res.download(file);
+});
+
 app.use("/", indexRoutes);
 app.use("/", customLogoRoutes);
 app.use("/", projectRoutes);

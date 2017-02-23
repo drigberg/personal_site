@@ -6,9 +6,4 @@ router.get("/", function (req, res){
     res.render("index");
 });
 
-router.get('/download_resume', function(req, res){
-  var file = '/public/assets/DanielRigberg_Resume.pdf';
-  res.download(file);
-});
-
 module.exports = router;
