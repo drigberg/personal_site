@@ -7,7 +7,7 @@ router.get("/", function (req, res){
 });
 
 router.get('/download_resume', function(req, res){
-  var file = __dirname + '/public/assets/DanielRigberg_Resume.pdf';
+  var file = '/public/assets/DanielRigberg_Resume.pdf';
   res.download(file);
 });
 
