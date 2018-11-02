@@ -28,10 +28,6 @@ app.get("/", function (req, res) {
     res.render("index");
 });
 
-app.get("/penguin_defender", function (req, res) {
-    res.render("penguin_defender");
-});
-
 app.get('/download_resume', function(req, res) {
     res.download(path.join(__dirname, '/public/assets/DanielRigberg_Resume.pdf'));
 });
