@@ -1,84 +1,15 @@
 doctype html
 html
-include partials/head.pug
+include components/head.pug
 body
-    include partials/navbar.pug
+    include components/navbar.pug
     div(id="canvas-background")
-
-    div(class="section-strip", id="header-strip")
-        div(class="flex-box", id="header-flex-box")
-            div(class="header-boxes", id="profile-photo-div")
-                img(id="profile-photo", src="/assets/photos/headshot.jpg")
-                a(href="/download_resume", download="DanielRigberg_Resume.pdf")
-                    button(id="resume-download", download="DanielRigberg_Resume.pdf", class="btn btn-lg") Download Resume
-            div(class="header-boxes", id="title-div")
-                h2(id="title-text") Daniel Rigberg: web developer
-                h4
-                    strong email:
-                    | daniel.rigberg (at) gmail.com
-                h4
-                    strong linkedin:
-                    | https://www.linkedin.com/in/daniel-rigberg
-
-    div(class="section-strip initially-hidden" id="music-strip")
-        div(id="audio-flex-box")
-            p(class="page-summary")
-                | Once upon a time, I studied music composition at Yale.
-                | It wasn't the career for me, but songwriting continues
-                | to be one of my primary pastimes.
-            div(class="audio-div col-xs-12 col-sm-6")
-                h4(class="audio-element") "Gravity Cats"
-                h4(class="audio-element") for chamber ensemble
-                h5(class="audio-element") "Gravity Cats" for chamber ensemble
-                audio(controls, class="audio-element")
-                    source(src="/assets/audio/gravity_cats.mp3", type="audio/mpeg")
-                    | (Your browser does not support the audio element.)
-            div(class="audio-div col-xs-12 col-sm-6")
-                h4(class="audio-element") "September"
-                h4(class="audio-element") for bassoon and piano
-                h5(class="audio-element") "September" for bassoon and piano
-                audio(controls, class="audio-element")
-                    source(src="/assets/audio/september.mp3", type="audio/mpeg")
-                    | (Your browser does not support the audio element.)
-
-            div(class="audio-div col-xs-12 col-sm-6")
-                h4(class="audio-element") "Zinkara"
-                h4(class="audio-element") for two guitars
-                h5(class="audio-element") "Zinkara" for two guitars
-                audio(controls, class="audio-element")
-                    source(src="/assets/audio/zinkara.mp3", type="audio/mpeg")
-                    | (Your browser does not support the audio element.)
-            div(class="audio-div col-xs-12 col-sm-6")
-                h4(class="audio-element") "Holovarium"
-                h4(class="audio-element") for chamber ensemble
-                h5(class="audio-element") "Holovarium" for chamber ensemble
-                audio(controls, class="audio-element")
-                    source(src="/assets/audio/holovarium.mp3", type="audio/mpeg")
-                    | (Your browser does not support the audio element.)
-
-div(class="section-strip initially-hidden", id="coding-strip")
-    p(class="page-summary")
-        | I have been working with Node.js full-time for two years.
-
-div(class="section-strip initially-hidden", id="projects-strip")
-    p(class="page-summary")
-        | My most recent project is an html game called "Penguin Defender." Currently functional but still being fine-tuned, it is written with Typescript and uses Pixi.js for visuals, Planck.js for physics, and SoundJS for audio.
-        br
-        br
-        | Click the image below to play!
-    div(class="penguin-container")
-        a(href="", target="_blank")
-            img(id="penguin-preview", src="/assets/photos/penguin_defender.png")
-
-div(class="section-strip initially-hidden", id="interests-strip")
-
-div(class="flex-box", id="progress-bar")
-    i(class="fa fa-3x fa-user-circle progress-bar-top", id="header-icon", aria-hidden="true")
-    i(class="fa fa-3x fa-building progress-bar-bottom", id="coding-icon", aria-hidden="true")
-    i(class="fa fa-3x fa-laptop-code progress-bar-bottom", id="projects-icon", aria-hidden="true")
-    i(class="fa fa-3x fa-music progress-bar-middle", id="music-icon", aria-hidden="true")
-
-script(src="/js/forestBackground.js")
-script(src="/js/p5.min.js")
-script(src="/js/p5.dom.min.js")
-include partials/footer.pug
+    include components/home.pug
+    include components/music.pug
+    include components/work.pug
+    include components/projects.pug
+    include components/progress.pug
+    script(src="/js/forestBackground.js")
+    script(src="/js/p5.min.js")
+    script(src="/js/p5.dom.min.js")
+include components/footer.pug
