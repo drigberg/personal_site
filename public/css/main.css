@@ -75,7 +75,11 @@ a:hover {
 
 .penguin-container {
 	position: relative;
-	margin: 10 auto;
+	text-align: center;
+}
+
+#penguin-preview {
+	width: 50%;
 }
 
 /*--------------
