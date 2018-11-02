@@ -7,14 +7,6 @@ body {
 	letter-spacing: 1.5px;
 }
 
-.thumbnail-interest {
-	z-index : -1;
-	border: 1px solid #ddd;
-	margin: 5px auto;
-	padding: 3px;
-	background-color: white;
-}
-
 h1 {
 	color: rgb(31, 133, 255);
 	font-size: 72px;
@@ -81,8 +73,9 @@ a:hover {
 	box-shadow: 0 0 1em rgba(0,0,0,1);
 }
 
-.particleDemos {
-
+.penguin-container {
+	position: relative;
+	margin: 10 auto;
 }
 
 /*--------------
@@ -262,24 +255,9 @@ Smartphones
 	Skills Strip
 	----------------*/
 
-	.thumbnail-skill {
-		z-index : -1;
-		height: 70px;
-		width: 70px;
-		border: 1px solid #ddd;
-		margin: 5px 0px;
-		padding: 3px;
-		background-color: white;
-	}
-
 	#skills-column {
 		min-height: 150px;
 		margin-bottom: 50px;
-	}
-
-	.thumbnail-div {
-		width: 100%;
-		height: 150px;
 	}
 
 	/*--------------
@@ -290,36 +268,10 @@ Smartphones
 		opacity: 1;
 	}
 
-	.thumbnail-link {
-		display: block;
-		z-index : -1;
-		height: 150px;
-		width: 150px;
-		border: 1px solid #999;
-		margin: 5px auto 20px auto;
-		border-radius: 50%;
-		padding: 3px;
-		background-color: white;
-	}
-
-	.thumbnail-link:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	.thumbnail-link-parent {
-		margin: 0 auto;
-	}
-
 	#coding-div {
 		display: flex;
 		flex-direction: column;
 		margin-right: 50px;
-	}
-
-	.thumbnail-interest {
-		height: 100px;
-		width: 100px;
 	}
 
 	#interests-column {
@@ -414,12 +366,6 @@ Tablets
 		margin-bottom: 50px;
 	}
 
-	.thumbnail-div {
-		z-index: -1;
-		display: block;
-		width: 100%;
-	}
-
 	.image-text {
 		text-align: center;
 		height: 50px;
@@ -496,58 +442,6 @@ Tablets
 
 	.mobile-hr {
 		display: none;
-	}
-
-	/*--------------
-	projects Strip
-	----------------*/
-
-	.thumbnail-skill {
-		z-index : -1;
-		height: 150px;
-		width: 150px;
-		border: 1px solid #ddd;
-		margin: 5px;
-		padding: 3px;
-		background-color: white;
-	}
-
-	#projects-div {
-		margin-right: 50px;
-	}
-
-	/*--------------
-	Project Strip
-	----------------*/
-
-	.project-div {
-		padding: 0;
-	}
-
-	.thumbnail-link {
-		display: block;
-		z-index : -1;
-		height: 140px;
-		width: 140px;
-		border: 1px solid #999;
-		margin: 5px auto 30px auto;
-		border-radius: 50%;
-		padding: 3px;
-		background-color: white;
-	}
-
-	.thumbnail-interest {
-		height: 150px;
-		width: 150px;
-	}
-
-	.thumbnail-link:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	.thumbnail-link-parent {
-		margin: 0 auto;
 	}
 
 	#coding-div {
@@ -669,11 +563,6 @@ Laptops
 		transition: opacity 0.2s ease;
 	}
 
-	.thumbnail-link-div {
-		display: block;
-		margin: 0 auto;
-	}
-
 	.flex-box {
 		display: flex;
 		flex-direction: row;
@@ -738,66 +627,8 @@ Laptops
 	}
 
 	/*--------------
-	Music Strip
-	----------------*/
-
-	/*--------------
-	projects Strip
-	----------------*/
-
-	.thumbnail-skill {
-		z-index : -1;
-		height: 100px;
-		width: 100px;
-		border: 1px solid #ddd;
-		margin: 5px;
-		padding: 3px;
-		background-color: white;
-	}
-
-	.thumbnail-div {
-		display: block;
-		width: 700px;
-		margin: 0 auto;
-	}
-
-	#projects-div {
-		margin-right: 50px;
-	}
-
-	/*--------------
 	Project Strip
 	----------------*/
-	.project-div:hover .image-text {
-		opacity: 1;
-	}
-
-	.thumbnail-link {
-		display: inline-block;
-		z-index : -1;
-		height: 200px;
-		width: 200px;
-		border: 1px solid #999;
-		margin: 5px auto;
-		border-radius: 50%;
-		padding: 3px;
-		background-color: white;
-	}
-
-	#projects-column {
-		padding: 0 50px;
-	}
-
-	.thumbnail-link:hover {
-		animation: iconSpin 4s infinite;
-		animation-timing-function: cubic-bezier(0, 0.6, 0.7, 1.0);
-	}
-
-	.thumbnail-link-parent {
-		display: inline-block;
-		margin: 0 auto;
-		text-align: center;
-	}
 
 	#coding-div {
 		display: flex;
@@ -826,29 +657,6 @@ audio {
   20%  { transform: rotate(7deg); -webkit-transform: rotate(7deg); -ms-transform: rotate(7deg);			}
   30%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
   80%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);		}
-}
-
-@media only screen  and (min-width : 769px) and (max-width : 900px){
-	.thumbnail-interest {
-		height: 150px;
-		width: 150px;
-	}
-}
-
-/*Desktop: only small*/
-@media only screen  and (min-width : 900px) and (max-width : 1100px){
-	.thumbnail-interest {
-		height: 200px;
-		width: 200px;
-	}
-}
-
-/*Desktop: only large*/
-@media only screen  and (min-width : 1101px) {
-	.thumbnail-interest {
-		height: 150px;
-		width: 150px;
-	}
 }
 
 .audio-div {

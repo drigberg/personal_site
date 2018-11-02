@@ -7,20 +7,10 @@
     "test": "test"
   },
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "ejs": "^2.4.1",
-    "mongodb": "^2.1.16",
-    "method-override": "^2.3.5",
-    "express": "^4.13.4",
-    "requirejs": "^2.2.0",
-    "sinon": "^1.17.3",
-    "mongoose": "^4.4.12"
-  },
-  "devDependencies": {
-    "mocha": "^2.4.5"
+    "express": "^4.16.4",
+    "pug": "2.0.3"
   },
   "scripts": {
-    "test": "mocha",
     "start": "node app.js"
   },
   "repository": {
