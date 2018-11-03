@@ -22,13 +22,6 @@ h2 {
 	letter-spacing: 1.5px;
 }
 
-hr {
-	border: 0;
-	width: 96%;
-	height: 2px;
-	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
 .navbar {
 	position: fixed;
 	width: 100%;
@@ -61,16 +54,11 @@ a:hover {
 	margin-bottom: 50px;
 }
 
-.particle-summary {
-	z-index: 1;
-	position: absolute;
-	padding: 10px;
-	left: 50px;
-	top: 100px;
-	width: 300px;
-	color: white;
-	background-color: rgba(0, 0, 0, 1);
-	box-shadow: 0 0 1em rgba(0,0,0,1);
+#title-div {
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 50px;
+	margin-bottom: 50px;
 }
 
 .showcase-container {
@@ -82,48 +70,55 @@ a:hover {
 	width: 50%;
 }
 
-.work-flex-box {
-	text-align: center;
-	width: 70%;
+#work-strip {
+	width: 90%;
 	margin: 0 auto;
-	flex-wrap: wrap;
-	justify-content: flex-start;
 }
 
-.work-container {
+.work-category {
 	border: 5px inset steelblue;
-	margin: 15px;
+	text-align: center;
+	margin: 20px;
 	background-color: rgb(248, 248, 254);
 	border-radius: 10px;
 	padding: 15px;
 }
 
 .work-container h4 {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
-/*
-.work-items {
+
+.work-category-items {
+	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
-	flex: 1 0 50%;
 	justify-content: space-around;
-} */
+	flex-grow: 1;
+}
 
 .work-item {
 	margin: 5px;
 	background-color: white;
 	border-style: solid;
 	border-radius: 5px;
-	padding: 5px;
+	padding: 10px;
 	border-color: steelblue;
 }
 
 .work-item p {
 	font-size: 16px;
+	margin: 0;
 }
 
 .work-item img {
 	width: 64px;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 /*--------------
@@ -133,17 +128,13 @@ Smartphones
 	/*--------------
 	General Styling
 	----------------*/
-	.mobile-only {
-		display: block;
-	}
-
-	#terminal {
-		margin: 0 10px 0 10px;
-	}
-
 	h4 {
 		display: block;
 		margin: 0 auto;
+	}
+
+	#header-strip {
+		padding-top: 15px;
 	}
 
 	.section-strip {
@@ -155,19 +146,6 @@ Smartphones
 		transition: all 0.4s ease;
 		margin-bottom: 35px;
 		/*height: 550px;*/
-	}
-
-	.image-text {
-		text-align: center;
-		margin: 2 auto;
-		width: 100%;
-		transition: opacity 0.2s ease;
-	}
-
-	.flex-box {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
 	}
 
 	.flex-box > div {
@@ -238,6 +216,11 @@ Smartphones
 		color: rgb(255, 255, 255);
 	}
 
+	#header-flex-box {
+		display: block;
+		margin: 0px auto;
+	}
+
 	#profile-photo {
 		width: 200px;
 		height: 200px;
@@ -248,19 +231,19 @@ Smartphones
 	}
 
 	#title-text {
-		display: none;
 		vertical-align: text-bottom;
+		font-size: 17px;
 	}
 
-	#title-div {
-		display: none;
+	#title-div > h4 {
+		font-size: 12px;
 	}
 
 	#resume-download {
 		background-color: rgb(31, 133, 255);
 		color: rgb(255, 255, 255);
 		display: block;
-		margin: 20 auto 0 auto;
+		margin: 20px auto;
 	}
 
 	/*--------------
@@ -302,12 +285,8 @@ Tablets
 	/*--------------
 	Strips
 	----------------*/
-	.mobile-only {
-		display: none;
-	}
-
 	#header-strip {
-		padding-top: 150px;
+		padding-top: 0px;
 		display: block;
 	}
 
@@ -316,9 +295,6 @@ Tablets
 		opacity: 0;
 	}
 
-	#terminal {
-		margin: 0 100px 0 100px;
-	}
 
 	/*--------------
 	Nav Bar
@@ -340,7 +316,7 @@ Tablets
 	----------------*/
 
 	#progress-bar {
-		margin: 150px auto 20px auto;
+		margin: 50px auto 20px auto;
 		flex-direction: row;
 		border-radius: 5px;
 		width: 240px;
@@ -378,22 +354,8 @@ Tablets
 	.page-summary {
 		display: inline-block;
 		z-index: -1;
-		font-size: 24px;
+		font-size: 17px;
 		margin-bottom: 50px;
-	}
-
-	.image-text {
-		text-align: center;
-		height: 50px;
-		margin: 2px auto;
-		width: 100%;
-	}
-
-	.flex-box {
-		display: flex;
-		flex-direction: row;
-		/*flex-wrap: wrap;*/
-		/*justify-content: flex-start;*/
 	}
 
 	.flex-box > div {
@@ -414,13 +376,7 @@ Tablets
 	}
 
 	.header-boxes {
-		height: 300px;
 		margin: 0px 2px;
-	}
-
-
-	#profile-photo-div {
-		margin-right: 50px;
 	}
 
 	#profile-photo {
@@ -440,45 +396,24 @@ Tablets
 		vertical-align: text-bottom;
 	}
 
-	#title-div {
-		vertical-align: middle;
-		padding-top: 50px;
-	}
-
 	#resume-download {
 		background-color: rgb(31, 133, 255);
 		color: rgb(255, 255, 255);
 		display: block;
-		margin: 20 auto 0 auto;
-	}
-
-	/*--------------
-	Music Strip
-	----------------*/
-
-	.mobile-hr {
-		display: none;
+		margin: 20px auto;
 	}
 }
 
 /*--------------
 Laptops
 ----------------*/
-@media only screen  and (min-width : 769px) {
+@media only screen and (min-width : 769px) {
 	/*--------------
 	Strips
 	----------------*/
-	.mobile-only {
-		display: none;
-	}
-
 	#header-strip {
 		padding-top: 150px;
 		display: block;
-	}
-
-	#terminal {
-		margin: 0 100px 0 100px;
 	}
 
 	.initially-hidden {
@@ -506,8 +441,7 @@ Laptops
 	----------------*/
 
 	#progress-bar {
-		margin: 50px 50px 20px auto;
-		z-index: 0;
+		margin: 50px auto 20px auto;
 		flex-direction: row;
 		border-radius: 5px;
 		width: 280px;
@@ -532,10 +466,6 @@ Laptops
 	General Styling
 	----------------*/
 
-	.mobile-hr {
-		display: none;
-	}
-
 	.section-strip {
 		width: 100%;
 		padding: 100px 20px 0px 20px;
@@ -549,34 +479,10 @@ Laptops
 	.page-summary {
 		padding: 20px;
 		margin: 0 auto 20px auto;
-		width: 900px;
+		width: 90%;
 		display: block;
 		z-index: -1;
 		font-size: 16px;
-	}
-
-	.skills-list {
-		padding: 20px;
-		margin: 0 auto 20px auto;
-		width: 600;
-		display: block;
-		z-index: -1;
-		font-size: 16px;
-	}
-
-	.image-text {
-		text-align: center;
-		opacity: 0;
-		margin: 2 auto;
-		width: 100%;
-		transition: opacity 0.2s ease;
-	}
-
-	.flex-box {
-		display: flex;
-		flex-direction: row;
-		/*flex-wrap: wrap;*/
-		/*justify-content: flex-start;*/
 	}
 
 	.flex-box > div {
@@ -589,6 +495,14 @@ Laptops
 	}
 
 	/*--------------
+	Work Strip
+	----------------*/
+
+	#work-strip {
+		width: 70%;
+	}
+
+	/*--------------
 	Header Strip
 	----------------*/
 
@@ -597,12 +511,7 @@ Laptops
 	}
 
 	.header-boxes {
-		height: 300px;
 		margin: 0px 2px;
-	}
-
-	#profile-photo-div {
-		margin-right: 50px;
 	}
 
 	#profile-photo {
@@ -623,16 +532,11 @@ Laptops
 		vertical-align: text-bottom;
 	}
 
-	#title-div {
-		vertical-align: middle;
-		padding-top: 50px;
-	}
-
 	#resume-download {
 		background-color: rgb(31, 133, 255);
 		color: rgb(255, 255, 255);
 		display: block;
-		margin: 20 auto 0 auto;
+		margin: 20px auto;
 	}
 }
 
@@ -640,8 +544,6 @@ audio {
 	background-color: rgb(248, 248, 248);
 	box-shadow: 0 0 1em rgba(0, 100, 200, 0.7);
 }
-
-
 
 @keyframes iconSpin {
   0%   { transform: rotate(0deg); -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg);			}

@@ -29,7 +29,7 @@ app.get("/", function (req, res) {
 });
 
 app.get('/download_resume', function(req, res) {
-    res.download(path.join(__dirname, '/public/assets/DanielRigberg_Resume.pdf'));
+    res.download(path.join(__dirname, '/public/assets/DanielRigberg_CV.pdf'));
 });
 
 app.get("*", function (req, res) {
