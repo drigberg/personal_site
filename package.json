@@ -11,7 +11,8 @@
     "pug": "2.0.3"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/drigberg/personal_site/issues"
   },
-  "homepage": "https://github.com/drigberg/personal_site#readme"
+  "homepage": "https://github.com/drigberg/personal_site#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }

@@ -1,24 +1,9 @@
 div(class="section-strip initially-hidden", id="showcase-strip")
     p(class="page-summary")
-        | My most recent project is an html game called "Penguin Defender." Currently functional but still being fine-tuned, it is written with Typescript and uses Pixi.js for visuals, Planck.js for physics, and SoundJS for audio.
+        | My most recent project is an image-to-ASCII-art converter written in Python, compatible with both webcams and Youtube videos. Tired of HD? Try ultra-low resolution!
         br
         br
-        | Click the image below to play!
-
-        br
-        br
-        | Please note: collisions are currently not working since fixing a security vulnerability in a dependency. Security comes first! Will fix.
-        br
-        br
-        | Left/right: A/D
-        br
-        | Jump: W
-        br
-        | Attack: S
-        br
-        | Throw fish: space
-        br
-        | Pause: P
+        | See a demo below, or view the source code at 
+        a(href="https://github.com/drigberg/image2ascii", target="_blank") https://github.com/drigberg/image2ascii
     div(class="showcase-container")
-        a(href="https://penguin-defender.herokuapp.com/", target="_blank")
-            img(id="showcase-preview", src="/assets/images/penguin_defender.png")
+        iframe(width="560" height="315" src="https://www.youtube.com/embed/ZLYriI2lGLA?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
