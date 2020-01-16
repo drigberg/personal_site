@@ -121,6 +121,12 @@ a:hover {
 	justify-content: flex-start;
 }
 
+.vimeo_iframe {
+	position:relative;
+	width:100%;
+	height:480px;
+}
+
 /*--------------
 Smartphones
 ----------------*/
@@ -206,6 +212,14 @@ Smartphones
 
 	#progress-bar #header-icon {
 		color: rgba(49, 49, 49, 1);
+	}
+
+	/*--------------
+	Showcase Strip
+	----------------*/
+
+	.vimeo_iframe {
+		height: 360px;
 	}
 
 	/*--------------
@@ -365,6 +379,15 @@ Tablets
 	#canvas-background {
 		z-index: -2;
 		position: fixed;
+	}
+
+
+	/*--------------
+	Showcase Strip
+	----------------*/
+
+	.vimeo_iframe {
+		height: 480px;
 	}
 
 	/*--------------
