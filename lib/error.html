@@ -11,11 +11,25 @@
         integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+    body {
+        background-color: rgb(5,0,87);
+        background: linear-gradient(0deg, rgba(5,0,87,1) 0%, rgba(9,9,121,1) 39%, rgba(0,127,255,1) 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        color: white;
+    }
+</style>
 <body>
-    <div id="error-canvas-background"></div>
-    <div class="section-strip" id="error-div">
+    <div id="canvas-background" class="background"></div>
+    <div id="error-div" class="section-strip">
         <h1>Beep boop, does not compute!</h1>
-        <h2><a href="/">Return to base</a></h2>
+        <button class="btn btn-lg"><a href="/">Return to base</a></button>
     </div>
+    <script src="/public/js/fishtank.js"></script>
+    <script src="/public/js/p5.min.js"></script>
+    <script src="/public/js/p5.dom.min.js"></script>
 </body>
 </html>

@@ -7,6 +7,11 @@ body {
 	letter-spacing: 1.5px;
 }
 
+.background {
+	z-index: -2;
+	position: fixed;
+}
+
 h1 {
 	color: rgb(31, 133, 255);
 	font-size: 72px;
@@ -161,11 +166,6 @@ Smartphones
 
 	.flex-box > div {
 		flex: 1 1 auto;
-	}
-
-	#canvas-background {
-		z-index: -2;
-		position: fixed;
 	}
 
 	/*--------------
@@ -381,11 +381,6 @@ Tablets
 		flex: 1 1 auto;
 	}
 
-	#canvas-background {
-		z-index: -2;
-		position: fixed;
-	}
-
 
 	/*--------------
 	Showcase Strip
@@ -515,11 +510,6 @@ Laptops
 
 	.flex-box > div {
 		flex: 1 1 auto;
-	}
-
-	#canvas-background {
-		z-index: -2;
-		position: fixed;
 	}
 
 	/*--------------
