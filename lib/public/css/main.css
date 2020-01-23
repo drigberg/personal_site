@@ -22,6 +22,11 @@ h2 {
 	letter-spacing: 1.5px;
 }
 
+#error-div {
+	text-align: center;
+	padding-top: 20%;
+}
+
 .navbar {
 	position: fixed;
 	width: 100%;
