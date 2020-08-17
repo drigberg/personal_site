@@ -1,220 +1,344 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Daniel Rigberg</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,900">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
-        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,900"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+      integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <!-- VERSION HASH 713841 -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only"> Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <p id="brand">Daniel Rigberg: programmer, adventurer, musician</p>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://github.com/drigberg" target="_blank">
-                            <i class="fab fa-2x fa-github-square" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/daniel-rigberg" target="_blank">
-                            <i class="fab fa-2x fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:daniel.rigberg@gmail.com" target="_blank">
-                            <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only"> Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p id="brand">Daniel Rigberg: programmer, adventurer, musician</p>
         </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="https://github.com/drigberg" target="_blank">
+                <i class="fab fa-2x fa-github-square" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/daniel-rigberg"
+                target="_blank"
+              >
+                <i class="fab fa-2x fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:daniel.rigberg@gmail.com" target="_blank">
+                <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div id="canvas-background" class="background"></div>
     <!-- HEADER -->
     <div class="section-strip" id="header-strip">
-        <div class="flex-box" id="header-flex-box">
-            <div class="header-boxes" id="title-div">
-                <h2 id="title-text">Daniel Rigberg: web developer</h2>
-                <h4><strong>email: </strong>daniel.rigberg (at) gmail.com</h4>
-                <h4><strong>linkedin: </strong>https://www.linkedin.com/in/daniel-rigberg</h4>
-            </div>
-            <div class="header-boxes" id="profile-photo-div">
-                <img id="profile-photo" src="/public/assets/images/headshot.jpg">
-                <a href="/public/assets/rigberg_resume.pdf" download="rigberg_resume.pdf">
-                    <button id="resume-download" class="btn btn-lg">Download Resume</button>
-                </a>
-            </div>
+      <div class="flex-box" id="header-flex-box">
+        <div class="header-boxes" id="title-div">
+          <h2 id="title-text">Daniel Rigberg: web developer</h2>
+          <h4><strong>email: </strong>daniel.rigberg (at) gmail.com</h4>
+          <h4>
+            <strong>linkedin: </strong
+            >https://www.linkedin.com/in/daniel-rigberg
+          </h4>
         </div>
+        <div class="header-boxes" id="profile-photo-div">
+          <img id="profile-photo" src="/public/assets/images/headshot.jpg" />
+          <a
+            href="/public/assets/rigberg_resume.pdf"
+            download="rigberg_resume.pdf"
+          >
+            <button id="resume-download" class="btn btn-lg">
+              Download Resume
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
     <!-- MUSIC -->
     <div class="section-strip initially-hidden" id="music-strip">
-        <div id="audio-flex-box">
-            <p class="page-summary">Once upon a time, I studied music composition at Yale. It wasn't the career for me, but songwriting continues to be one of my primary pastimes.
-            <div class="audio-div col-xs-12 col-sm-6">
-                <h4 class="audio-element">"Gravity Cats"</h4>
-                <h4 class="audio-element">for chamber ensemble</h4>
-                <h5 class="audio-element">"Gravity Cats" for chamber ensemble</h5>
-                <audio controls class="audio-element">
-                    <source src="/public/assets/audio/gravity_cats.mp3" type="audio/mpeg">(Your browser does not support the audio element.)
-                </audio>
-            </div>
-            <div class="audio-div col-xs-12 col-sm-6">
-                <h4 class="audio-element">"September"</h4>
-                <h4 class="audio-element">for bassoon and piano</h4>
-                <h5 class="audio-element">"September" for bassoon and piano</h5>
-                <audio controls class="audio-element">
-                    <source src="/public/assets/audio/september.mp3" type="audio/mpeg">(Your browser does not support the audio element.)
-                </audio>
-            </div>
-            <div class="audio-div col-xs-12 col-sm-6">
-                <h4 class="audio-element">"Zinkara"</h4>
-                <h4 class="audio-element">for two guitars</h4>
-                <h5 class="audio-element">"Zinkara" for two guitars</h5>
-                <audio controls class="audio-element">
-                    <source src="/public/assets/audio/zinkara.mp3" type="audio/mpeg">(Your browser does not support the audio element.)
-                </audio>
-            </div>
-            <div class="audio-div col-xs-12 col-sm-6">
-                <h4 class="audio-element">"Holovarium"</h4>
-                <h4 class="audio-element">for chamber ensemble</h4>
-                <h5 class="audio-element">"Holovarium" for chamber ensemble</h5>
-                <audio controls class="audio-element">
-                    <source src="/public/assets/audio/holovarium.mp3" type="audio/mpeg">(Your browser does not support the audio element.)
-                </audio>
-            </div>
+      <div id="audio-flex-box">
+        <p class="page-summary">
+          Once upon a time, I studied music composition at Yale. It wasn't the
+          career for me, but songwriting continues to be one of my primary
+          pastimes.
+        </p>
+        <div class="audio-div col-xs-12 col-sm-6">
+          <h4 class="audio-element">"Gravity Cats"</h4>
+          <h4 class="audio-element">for chamber ensemble</h4>
+          <h5 class="audio-element">"Gravity Cats" for chamber ensemble</h5>
+          <audio controls class="audio-element">
+            <source
+              src="/public/assets/audio/gravity_cats.mp3"
+              type="audio/mpeg"
+            />
+            (Your browser does not support the audio element.)
+          </audio>
         </div>
+        <div class="audio-div col-xs-12 col-sm-6">
+          <h4 class="audio-element">"September"</h4>
+          <h4 class="audio-element">for bassoon and piano</h4>
+          <h5 class="audio-element">"September" for bassoon and piano</h5>
+          <audio controls class="audio-element">
+            <source
+              src="/public/assets/audio/september.mp3"
+              type="audio/mpeg"
+            />
+            (Your browser does not support the audio element.)
+          </audio>
+        </div>
+        <div class="audio-div col-xs-12 col-sm-6">
+          <h4 class="audio-element">"Zinkara"</h4>
+          <h4 class="audio-element">for two guitars</h4>
+          <h5 class="audio-element">"Zinkara" for two guitars</h5>
+          <audio controls class="audio-element">
+            <source src="/public/assets/audio/zinkara.mp3" type="audio/mpeg" />
+            (Your browser does not support the audio element.)
+          </audio>
+        </div>
+        <div class="audio-div col-xs-12 col-sm-6">
+          <h4 class="audio-element">"Holovarium"</h4>
+          <h4 class="audio-element">for chamber ensemble</h4>
+          <h5 class="audio-element">"Holovarium" for chamber ensemble</h5>
+          <audio controls class="audio-element">
+            <source
+              src="/public/assets/audio/holovarium.mp3"
+              type="audio/mpeg"
+            />
+            (Your browser does not support the audio element.)
+          </audio>
+        </div>
+      </div>
     </div>
     <!-- WORK -->
-    <div class="section-strip initially-hidden"id="work-strip">
-        <div id="work-content">
-            <div class="work-category">
-                <h4>Languages</h4>
-                <div class="work-category-items">
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/node.png'>
-                        <p>Node.js</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/typescript.svg'>
-                        <p>Typescript</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/python.png'>
-                        <p>Python</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/go.png'>
-                        <p>Go</p>
-                    </div>
-                </div>
+    <div class="section-strip initially-hidden" id="work-strip">
+      <div id="work-content">
+        <div class="work-category">
+          <h4>Languages</h4>
+          <div class="work-category-items">
+            <div class="work-item">
+              <img src="/public/assets/images/icons/node.png" />
+              <p>Node.js</p>
             </div>
-            <div class="work-category">
-                <h4>Backend</h4>
-                <div class="work-category-items">
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/express.png'>
-                        <p>Express</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/tornado.png'>
-                        <p>Tornado</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/mongo.png'>
-                        <p>Mongodb</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/postgres.png'>
-                        <p>Postgres</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/redis.png'>
-                        <p>Redis</p>
-                    </div>
-                </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/typescript.svg" />
+              <p>Typescript</p>
             </div>
-            <div class="work-category">
-                <h4>Frontend</h4>
-                <div class="work-category-items">
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/react.png'>
-                        <p>React</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/angular.png'>
-                        <p>Angular</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/html5.ico'>
-                        <p>HTML5</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/css3.jpg'>
-                        <p>CSS3</p>
-                    </div>
-                </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/python.png" />
+              <p>Python</p>
             </div>
-            <div class="work-category">
-                <h4>Other Technologies</h4>
-                <div class="work-category-items">
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/aws.png'>
-                        <p>AWS</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/docker.png'>
-                        <p>Docker</p>
-                    </div>
-                    <div class="work-item">
-                        <img src='/public/assets/images/icons/git.png'>
-                        <p>Git</p>
-                    </div>
-                </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/go.png" />
+              <p>Go</p>
             </div>
+          </div>
         </div>
-    </div>    
+        <div class="work-category">
+          <h4>Backend</h4>
+          <div class="work-category-items">
+            <div class="work-item">
+              <img src="/public/assets/images/icons/express.png" />
+              <p>Express</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/tornado.png" />
+              <p>Tornado</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/mongo.png" />
+              <p>Mongodb</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/postgres.png" />
+              <p>Postgres</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/redis.png" />
+              <p>Redis</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-category">
+          <h4>Frontend</h4>
+          <div class="work-category-items">
+            <div class="work-item">
+              <img src="/public/assets/images/icons/react.png" />
+              <p>React</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/angular.png" />
+              <p>Angular</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/html5.ico" />
+              <p>HTML5</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/css3.jpg" />
+              <p>CSS3</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-category">
+          <h4>Other Technologies</h4>
+          <div class="work-category-items">
+            <div class="work-item">
+              <img src="/public/assets/images/icons/aws.png" />
+              <p>AWS</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/docker.png" />
+              <p>Docker</p>
+            </div>
+            <div class="work-item">
+              <img src="/public/assets/images/icons/git.png" />
+              <p>Git</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- SHOWCASE -->
     <div class="section-strip initially-hidden" id="showcase-strip">
-        <p class="page-summary">My most recent project is an image-to-ASCII-art converter written in Python, compatible with both webcams and Youtube videos. Tired of HD? Try ultra-low resolution!<br><br>See a demo below, or view the source code at <a href="https://github.com/drigberg/image2ascii" target="_blank">https://github.com/drigberg/image2ascii</a></p>
+      <div>
+        <p class="page-summary">
+          My latest project is a game inspired by the Windows 95 3D Maze
+          screensaver! Can you memorize the way out?<br /><br />Play the game by
+          clicking the image below (desktop only), or view the source code at
+          <a href="https://github.com/drigberg/MazeQuest" target="_blank"
+            >https://github.com/drigberg/MazeQuest</a
+          >
+        </p>
         <div class="showcase-container">
-            <div style="position:relative;">
-                <iframe src="https://player.vimeo.com/video/385266015" class="vimeo_iframe" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
-            </div>
-            <script src="https://player.vimeo.com/api/player.js"></script>
+          <a href="/public/maze_quest/index.html" target="_blank">
+            <img
+              class="project-img"
+              src="/public/assets/images/maze_quest.png"
+            />
+          </a>
         </div>
+      </div>
+      <hr />
+      <div>
+        <p class="page-summary">
+          During the great lockdown of 2020, I made myself a virtual aquarium!
+          There's no goal to this game: just relax and enjoy the water.<br /><br />Play
+          the game by clicking the image below (desktop only), or view the
+          source code at
+          <a href="https://github.com/drigberg/virtual_aquarium" target="_blank"
+            >https://github.com/drigberg/virtual_aquarium</a
+          >
+        </p>
+        <div class="showcase-container">
+          <a href="/public/virtual_aquarium/index.html" target="_blank">
+            <img
+              class="project-img"
+              src="/public/assets/images/virtual_aquarium.png"
+            />
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <p class="page-summary">
+          In 2019 I made an image-to-ASCII-art converter written in Python,
+          compatible with both webcams and Youtube videos. Tired of HD? Try
+          ultra-low resolution!<br /><br />See a demo below, or view the source
+          code at
+          <a href="https://github.com/drigberg/image2ascii" target="_blank"
+            >https://github.com/drigberg/image2ascii</a
+          >
+        </p>
+        <div class="showcase-container">
+          <div style="position: relative;">
+            <iframe
+              src="https://player.vimeo.com/video/385266015"
+              class="vimeo_iframe"
+              frameborder="0"
+              allow="fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+      </div>
     </div>
     <!-- PROGRESS -->
     <div class="flex-box" id="progress-bar">
-        <i class="fa fa-3x fa-user-circle progress-bar-top" id="header-icon" aria-hidden="true"></i>
-        <i class="fa fa-3x fa-building progress-bar-bottom" id="work-icon" aria-hidden="true"></i>
-        <i class="fa fa-3x fa-laptop-code progress-bar-bottom" id="showcase-icon" aria-hidden="true"></i>
-        <i class="fa fa-3x fa-music progress-bar-middle" id="music-icon" aria-hidden="true"></i>
-      </div>
+      <i
+        class="fa fa-3x fa-user-circle progress-bar-top"
+        id="header-icon"
+        aria-hidden="true"
+      ></i>
+      <i
+        class="fa fa-3x fa-building progress-bar-bottom"
+        id="work-icon"
+        aria-hidden="true"
+      ></i>
+      <i
+        class="fa fa-3x fa-laptop-code progress-bar-bottom"
+        id="showcase-icon"
+        aria-hidden="true"
+      ></i>
+      <i
+        class="fa fa-3x fa-music progress-bar-middle"
+        id="music-icon"
+        aria-hidden="true"
+      ></i>
+    </div>
     <!-- JS -->
     <script src="/public/js/forestBackground.js"></script>
     <script src="/public/js/p5.min.js"></script>
     <script src="/public/js/p5.dom.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      type="text/javascript"
+    ></script>
     <script src="/public/js/homepage_events.js"></script>
-</body>
+  </body>
 </html>
