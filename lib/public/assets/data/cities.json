@@ -1,0 +1,226 @@
+{
+  "AGADIR": [
+    -9,
+    30
+  ],
+  "AMSTERDAM": [
+    6,
+    53
+  ],
+  "ANNECY": [
+    5.5,
+    46
+  ],
+  "ANTWERP": [
+    4,
+    51
+  ],
+  "AUSTIN": [
+    -95,
+    30
+  ],
+  "BALI": [
+    150,
+    -10
+  ],
+  "BAKU": [
+    50,
+    40
+  ],
+  "BANGKOK": [
+    101,
+    14
+  ],
+  "BARCELONA": [
+    0,
+    40
+  ],
+  "BASEL": [
+    7.5,
+    47
+  ],
+  "BERLIN": [
+    13,
+    52
+  ],
+  "BRASOV": [
+    26,
+    47.5
+  ],
+  "BRAGA": [
+    -9,
+    39
+  ],
+  "BRUGES": [
+    3.5,
+    51
+  ],
+  "BRUSSELS": [
+    4,
+    51
+  ],
+  "BUCHAREST": [
+    26,
+    45
+  ],
+  "BUSAN": [
+    129,
+    35.5
+  ],
+  "CAPE_TOWN": [
+    8,
+    -10
+  ],
+  "CHISINAU": [
+    27,
+    48
+  ],
+  "COLOGNE": [
+    7,
+    52
+  ],
+  "CORFU": [
+    20,
+    39.5
+  ],
+  "DOURO_VALLEY": [
+    -8,
+    38
+  ],
+  "FORT_LAUDERDALE": [
+    -80,
+    26
+  ],
+  "GENEVA": [
+    7,
+    45.5
+  ],
+  "GWANGJANG": [
+    127,
+    36
+  ],
+  "JAKARTA": [
+    149,
+    -12
+  ],
+  "JEJU": [
+    127,
+    33.5
+  ],
+  "KRABI": [
+    100,
+    7.5
+  ],
+  "KOH_PHI_PHI": [
+    99,
+    8
+  ],
+  "LITOCHORO": [
+    22,
+    40.5
+  ],
+  "LONDON": [
+    0,
+    52
+  ],
+  "LUXEMBOURG": [
+    6.5,
+    49
+  ],
+  "LYON": [
+    5,
+    44.5
+  ],
+  "MUCHENJE": [
+    4,
+    -10
+  ],
+  "MUENSTER": [
+    8,
+    53
+  ],
+  "NEW_ORLEANS": [
+    -90,
+    30
+  ],
+  "NICE": [
+    6,
+    43
+  ],
+  "NYC": [
+    -75,
+    40
+  ],
+  "OKAVANGO": [
+    4,
+    -10
+  ],
+  "OURANOPOULI": [
+    23.5,
+    40.5
+  ],
+  "PARIS": [
+    4.5,
+    48
+  ],
+  "PHUKET": [
+    98,
+    8.5
+  ],
+  "PORTO": [
+    -9,
+    40
+  ],
+  "PORTLAND": [
+    -124,
+    44
+  ],
+  "ROME": [
+    15,
+    41
+  ],
+  "SAN_FRANCISCO": [
+    -124,
+    40
+  ],
+  "SEOUL": [
+    127,
+    38
+  ],
+  "SIBIU": [
+    22,
+    47
+  ],
+  "SIGHISOARA": [
+    22,
+    45
+  ],
+  "SKOPJE": [
+    22,
+    41.5
+  ],
+  "SOFIA": [
+    23.5,
+    42
+  ],
+  "TAGAZHOUT": [
+    -12,
+    28
+  ],
+  "THESSALONIKI": [
+    23,
+    40.5
+  ],
+  "TRIESTE": [
+    13,
+    45.7
+  ],
+  "VENICE": [
+    12.2,
+    45
+  ],
+  "VICTORIA_FALLS": [
+    4,
+    -10
+  ]
+}
