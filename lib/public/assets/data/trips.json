@@ -1,5 +1,6 @@
 [
   {
+    "id": "safari_2011",
     "color": "#ee0066",
     "name": "Safari 2011",
     "locations": [
@@ -30,6 +31,7 @@
     ]
   },
   {
+    "id": "austin_2016",
     "color": "#eeee55",
     "name": "Austin 2016",
     "locations": [
@@ -52,6 +54,7 @@
     ]
   },
   {
+    "id": "florida_2016",
     "color": "#eeaa22",
     "name": "Florida 2016",
     "locations": [
@@ -70,6 +73,7 @@
     ]
   },
   {
+    "id": "portland_2016",
     "color": "#3388ee",
     "name": "Portland 2016",
     "locations": [
@@ -92,6 +96,7 @@
     ]
   },
   {
+    "id": "world_trip_2016",
     "color": "#8822ee",
     "name": "World Trip 2016",
     "locations": [
@@ -146,6 +151,7 @@
     ]
   },
   {
+    "id": "berlin_roadtrip",
     "color": "#cc00ee",
     "name": "Berlin Roadtrip",
     "locations": [
@@ -168,6 +174,7 @@
     ]
   },
   {
+    "id": "morocco_surfing",
     "color": "#cc00ee",
     "name": "Morocco Surfing",
     "locations": [
@@ -194,6 +201,7 @@
     ]
   },
   {
+    "id": "london_weekend",
     "color": "#ee00aa",
     "name": "London Weekend",
     "locations": [
@@ -212,6 +220,7 @@
     ]
   },
   {
+    "id": "portugal_surf_week",
     "color": "#ee00aa",
     "name": "Portugal Surf Week",
     "locations": [
@@ -242,6 +251,7 @@
     ]
   },
   {
+    "id": "greece_roadtrip_2018",
     "color": "#ee00ee",
     "name": "Greece Roadtrip 2018",
     "locations": [
@@ -276,6 +286,7 @@
     ]
   },
   {
+    "id": "greece_beach_2019",
     "color": "#00eecc",
     "name": "Greece Beach 2019",
     "locations": [
@@ -294,6 +305,7 @@
     ]
   },
   {
+    "id": "italy_2018",
     "color": "#00eecc",
     "name": "Italy 2018",
     "locations": [
@@ -320,6 +332,7 @@
     ]
   },
   {
+    "id": "annecy_roadtrip_2018",
     "color": "#eecc00",
     "name": "Annecy Roadtrip 2018",
     "locations": [
@@ -354,6 +367,7 @@
     ]
   },
   {
+    "id": "korea_2019",
     "color": "#ee9933",
     "name": "Korea 2019",
     "locations": [
@@ -396,6 +410,7 @@
     ]
   },
   {
+    "id": "romania_2020",
     "color": "#ee5555",
     "name": "Romania 2020",
     "locations": [
@@ -430,6 +445,7 @@
     ]
   },
   {
+    "id": "thailand_2020",
     "color": "#ee5555",
     "name": "Thailand 2020",
     "locations": [
@@ -460,6 +476,7 @@
     ]
   },
   {
+    "id": "nice_roadtrip",
     "color": "#00ee44",
     "name": "Nice Roadtrip",
     "locations": [
@@ -490,6 +507,7 @@
     ]
   },
   {
+    "id": "greece_all_inclusive_week",
     "color": "#00ccee",
     "name": "Greece All-Inclusive Week",
     "locations": [
