@@ -1,0 +1,394 @@
+{
+  "AGADIR": {
+    "coordinates": [
+      -9.6,
+      30.4
+    ],
+    "displayName": "Agadir"
+  },
+  "AMSTERDAM": {
+    "coordinates": [
+      4.9,
+      52.36
+    ],
+    "displayName": "Amsterdam"
+  },
+  "ANNECY": {
+    "coordinates": [
+      6.13,
+      45.9
+    ],
+    "displayName": "Annecy"
+  },
+  "ANTWERP": {
+    "coordinates": [
+      4.4,
+      51.2
+    ],
+    "displayName": "Antwerp"
+  },
+  "AUSTIN": {
+    "coordinates": [
+      -97.74,
+      30.27
+    ],
+    "displayName": "Austin"
+  },
+  "BALI": {
+    "coordinates": [
+      115.09,
+      -8.34
+    ],
+    "displayName": "Bali"
+  },
+  "BAKU": {
+    "coordinates": [
+      50,
+      40
+    ],
+    "displayName": "Baku"
+  },
+  "BANGKOK": {
+    "coordinates": [
+      101,
+      14
+    ],
+    "displayName": "Bangkok"
+  },
+  "BARCELONA": {
+    "coordinates": [
+      0,
+      40
+    ],
+    "displayName": "Barcelona"
+  },
+  "BASEL": {
+    "coordinates": [
+      7.5,
+      47
+    ],
+    "displayName": "Basel"
+  },
+  "BERLIN": {
+    "coordinates": [
+      13,
+      52
+    ],
+    "displayName": "Berlin"
+  },
+  "BRASOV": {
+    "coordinates": [
+      26,
+      47.5
+    ],
+    "displayName": "Brașov"
+  },
+  "BRAGA": {
+    "coordinates": [
+      -9,
+      39
+    ],
+    "displayName": "Braga"
+  },
+  "BRUGES": {
+    "coordinates": [
+      3.5,
+      51
+    ],
+    "displayName": "Bruges"
+  },
+  "BRUSSELS": {
+    "coordinates": [
+      4,
+      51
+    ],
+    "displayName": "Brussels"
+  },
+  "BUCHAREST": {
+    "coordinates": [
+      26,
+      45
+    ],
+    "displayName": "Bucharest"
+  },
+  "BUSAN": {
+    "coordinates": [
+      129.08,
+      35.18
+    ],
+    "displayName": "Busan"
+  },
+  "CAPE_TOWN": {
+    "coordinates": [
+      18.42,
+      -33.9
+    ],
+    "displayName": "Cape Town"
+  },
+  "CHISINAU": {
+    "coordinates": [
+      27,
+      48
+    ],
+    "displayName": "Chisinau"
+  },
+  "COLOGNE": {
+    "coordinates": [
+      7,
+      52
+    ],
+    "displayName": "Cologne"
+  },
+  "CORFU": {
+    "coordinates": [
+      20,
+      39.5
+    ],
+    "displayName": "Corfu"
+  },
+  "DOURO_VALLEY": {
+    "coordinates": [
+      -8,
+      38
+    ],
+    "displayName": "Douro Valley"
+  },
+  "FORT_LAUDERDALE": {
+    "coordinates": [
+      -80,
+      26
+    ],
+    "displayName": "Ft. Lauderdale"
+  },
+  "GENEVA": {
+    "coordinates": [
+      7,
+      45.5
+    ],
+    "displayName": "Geneva"
+  },
+  "GWANGJU": {
+    "coordinates": [
+      126.86,
+      35.16
+    ],
+    "displayName": "Gwangju"
+  },
+  "JAKARTA": {
+    "coordinates": [
+      106.85,
+      -6.21
+    ],
+    "displayName": "Jakarta"
+  },
+  "JEJU": {
+    "coordinates": [
+      127,
+      33.5
+    ],
+    "displayName": "Jeju"
+  },
+  "KRABI": {
+    "coordinates": [
+      100,
+      7.5
+    ],
+    "displayName": "Krabi"
+  },
+  "KOH_PHI_PHI": {
+    "coordinates": [
+      99,
+      8
+    ],
+    "displayName": "Koh Phi Phi"
+  },
+  "LITOCHORO": {
+    "coordinates": [
+      22,
+      40.5
+    ],
+    "displayName": "Litochoro"
+  },
+  "LONDON": {
+    "coordinates": [
+      0,
+      52
+    ],
+    "displayName": "London"
+  },
+  "LUXEMBOURG": {
+    "coordinates": [
+      6.5,
+      49
+    ],
+    "displayName": "Luxembourg"
+  },
+  "LYON": {
+    "coordinates": [
+      5,
+      44.5
+    ],
+    "displayName": "Lyon"
+  },
+  "KASANE": {
+    "coordinates": [
+      24.69,
+      -17.95
+    ],
+    "displayName": "Kasane"
+  },
+  "MUENSTER": {
+    "coordinates": [
+      8,
+      53
+    ],
+    "displayName": "Muenster"
+  },
+  "NEW_ORLEANS": {
+    "coordinates": [
+      -90.07,
+      29.95
+    ],
+    "displayName": "New Orleans"
+  },
+  "NICE": {
+    "coordinates": [
+      6,
+      43
+    ],
+    "displayName": "Nice"
+  },
+  "NYC": {
+    "coordinates": [
+      -74.01,
+      40.71
+    ],
+    "displayName": "NYC"
+  },
+  "OKAVANGO": {
+    "coordinates": [
+      22.9,
+      -19.65
+    ],
+    "displayName": "Okavango Delta"
+  },
+  "OURANOUPOLI": {
+    "coordinates": [
+      23.5,
+      40.5
+    ],
+    "displayName": "Ouranoupoli"
+  },
+  "PARIS": {
+    "coordinates": [
+      4.5,
+      48
+    ],
+    "displayName": "Paris"
+  },
+  "PHUKET": {
+    "coordinates": [
+      98,
+      8.5
+    ],
+    "displayName": "Phuket"
+  },
+  "PORTO": {
+    "coordinates": [
+      -9,
+      40
+    ],
+    "displayName": "Porto"
+  },
+  "PORTLAND": {
+    "coordinates": [
+      -122.68,
+      45.51
+    ],
+    "displayName": "Portland"
+  },
+  "ROME": {
+    "coordinates": [
+      15,
+      41
+    ],
+    "displayName": "Rome"
+  },
+  "SAN_FRANCISCO": {
+    "coordinates": [
+      -122.42,
+      37.77
+    ],
+    "displayName": "San Francisco"
+  },
+  "SEOUL": {
+    "coordinates": [
+      126.98,
+      37.57
+    ],
+    "displayName": "Seoul"
+  },
+  "SIBIU": {
+    "coordinates": [
+      22,
+      47
+    ],
+    "displayName": "Sibiu"
+  },
+  "SIGHISOARA": {
+    "coordinates": [
+      22,
+      45
+    ],
+    "displayName": "Sighișoara"
+  },
+  "SKOPJE": {
+    "coordinates": [
+      22,
+      41.5
+    ],
+    "displayName": "Skopje"
+  },
+  "SOFIA": {
+    "coordinates": [
+      23.5,
+      42
+    ],
+    "displayName": "Sofia"
+  },
+  "TAGAZHOUT": {
+    "coordinates": [
+      -12,
+      28
+    ],
+    "displayName": "Tagazhout"
+  },
+  "THESSALONIKI": {
+    "coordinates": [
+      23,
+      40.5
+    ],
+    "displayName": "Thessaloniki"
+  },
+  "TRIESTE": {
+    "coordinates": [
+      13,
+      45.7
+    ],
+    "displayName": "Trieste"
+  },
+  "VENICE": {
+    "coordinates": [
+      12.2,
+      45
+    ],
+    "displayName": "Venice"
+  },
+  "VICTORIA_FALLS": {
+    "coordinates": [
+      25.86,
+      -17.92
+    ],
+    "displayName": "Victoria Falls"
+  }
+}

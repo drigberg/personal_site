@@ -2,6 +2,14 @@
 All devices
 ----------------*/
 
+#travel-strip {
+  font-size: 18px;
+}
+
+#globe {
+  font-weight: 600;
+}
+
 body {
   background-color: rgba(220, 220, 240, 0.2);
   letter-spacing: 1.5px;
@@ -154,7 +162,7 @@ Smartphones
     margin: 0 auto;
   }
 
-  #header-strip {
+  #profile-strip {
     padding-top: 15px;
   }
 
@@ -166,7 +174,7 @@ Smartphones
     font-family: "Nunito Sans", sans-serif;
     transition: all 0.4s ease;
     margin-bottom: 35px;
-    /*height: 550px;*/
+    overflow-wrap: break-word;
   }
 
   .flex-box > div {
@@ -174,7 +182,7 @@ Smartphones
   }
 
   /*--------------
-	Strips
+	Pages
 	----------------*/
 
   .initially-hidden {
@@ -205,7 +213,7 @@ Smartphones
     margin: 50px auto 20px auto;
     flex-direction: row;
     border-radius: 5px;
-    width: 240px;
+    width: 300px;
     padding: 8px 2px 8px 2px;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
   }
@@ -219,12 +227,12 @@ Smartphones
     font-size: 32px;
   }
 
-  #progress-bar #header-icon {
+  #progress-bar #profile-icon {
     color: rgba(49, 49, 49, 1);
   }
 
   /*--------------
-	Showcase Strip
+	Showcase Page
 	----------------*/
 
   .vimeo_iframe {
@@ -232,7 +240,7 @@ Smartphones
   }
 
   /*--------------
-	Header Strip
+	Profile Page
 	----------------*/
 
   .btn-lg {
@@ -270,7 +278,7 @@ Smartphones
   }
 
   /*--------------
-	Music Strip
+	Music Page
 	----------------*/
 
   .page-summary {
@@ -299,14 +307,34 @@ Smartphones
   #audio-flex-box hr {
     margin: 5px auto 15px auto;
   }
+
+  #travel-flex-box {
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  #globe {
+    width: 240px;
+    height: 240px;
+  }
 }
 
 /*--------------
 Tablets
 ----------------*/
 @media only screen and (min-width: 521px) and (max-width: 768px) {
+  #travel-flex-box {
+    width: 480px;
+    margin: 0 auto;
+  }
+
+  #globe {
+    width: 480px;
+    height: 480px;
+  }
+
   /*--------------
-	Strips
+	Pages
 	----------------*/
   #header-strip {
     padding-top: 0px;
@@ -341,7 +369,7 @@ Tablets
     margin: 50px auto 20px auto;
     flex-direction: row;
     border-radius: 5px;
-    width: 240px;
+    width: 300px;
     padding: 8px 2px 8px 2px;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
   }
@@ -385,7 +413,7 @@ Tablets
   }
 
   /*--------------
-	Showcase Strip
+	Showcase Page
 	----------------*/
 
   .vimeo_iframe {
@@ -393,7 +421,7 @@ Tablets
   }
 
   /*--------------
-	Header Strip
+	Header Page
 	----------------*/
 
   .btn-lg {
@@ -433,8 +461,17 @@ Tablets
 Laptops
 ----------------*/
 @media only screen and (min-width: 769px) {
+  #travel-flex-box {
+    width: 720px;
+    margin: 0 auto;
+  }
+
+  #globe {
+    width: 720px;
+    height: 720px;
+  }
   /*--------------
-	Strips
+	Pages
 	----------------*/
   #header-strip {
     padding-top: 150px;
@@ -469,7 +506,7 @@ Laptops
     margin: 50px auto 20px auto;
     flex-direction: row;
     border-radius: 5px;
-    width: 280px;
+    width: 360px;
     padding: 8px 2px 8px 2px;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
   }
@@ -515,7 +552,7 @@ Laptops
   }
 
   /*--------------
-	Work Strip
+	Work Page
 	----------------*/
 
   #work-strip {
@@ -523,7 +560,7 @@ Laptops
   }
 
   /*--------------
-	Header Strip
+	Profile Page
 	----------------*/
 
   .btn-lg {
@@ -631,4 +668,44 @@ hr {
   border: none;
   color: rgba(0, 0, 0, 0.6);
   background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* ------------------------
+TRAVEL
+------------------------- */
+
+#travel-flex-box {
+  margin: 0 auto;
+}
+
+#globe {
+  background: rgba(0, 0, 0, 0);
+  border: medium solid black;
+}
+
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-width: 0.5px;
+  stroke-opacity: 0.5;
+}
+
+.fill {
+  fill: #118ab2;
+}
+.land {
+  fill: #06d6a0;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.5px;
 }

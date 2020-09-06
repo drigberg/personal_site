@@ -70,10 +70,10 @@
       </div>
     </nav>
     <div id="canvas-background" class="background"></div>
-    <!-- HEADER -->
-    <div class="section-strip" id="header-strip">
-      <div class="flex-box" id="header-flex-box">
-        <div class="header-boxes" id="title-div">
+    <!-- PROFILE -->
+    <div class="section-strip initially-hidden" id="profile-strip">
+      <div class="flex-box" id="profile-flex-box">
+        <div class="profile-boxes" id="title-div">
           <h2 id="title-text">Daniel Rigberg: web developer</h2>
           <h4><strong>email: </strong>daniel.rigberg (at) gmail.com</h4>
           <h4>
@@ -81,7 +81,7 @@
             >https://www.linkedin.com/in/daniel-rigberg
           </h4>
         </div>
-        <div class="header-boxes" id="profile-photo-div">
+        <div class="profile-boxes" id="profile-photo-div">
           <img id="profile-photo" src="/public/assets/images/headshot.jpg" />
           <a
             href="/public/assets/rigberg_resume.pdf"
@@ -167,10 +167,6 @@
               <img src="/public/assets/images/icons/python.png" />
               <p>Python</p>
             </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/go.png" />
-              <p>Go</p>
-            </div>
           </div>
         </div>
         <div class="work-category">
@@ -181,20 +177,12 @@
               <p>Express</p>
             </div>
             <div class="work-item">
-              <img src="/public/assets/images/icons/tornado.png" />
-              <p>Tornado</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/mongo.png" />
-              <p>Mongodb</p>
-            </div>
-            <div class="work-item">
               <img src="/public/assets/images/icons/postgres.png" />
               <p>Postgres</p>
             </div>
             <div class="work-item">
-              <img src="/public/assets/images/icons/redis.png" />
-              <p>Redis</p>
+              <img src="/public/assets/images/icons/mongo.png" />
+              <p>Mongodb</p>
             </div>
           </div>
         </div>
@@ -204,10 +192,6 @@
             <div class="work-item">
               <img src="/public/assets/images/icons/react.png" />
               <p>React</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/angular.png" />
-              <p>Angular</p>
             </div>
             <div class="work-item">
               <img src="/public/assets/images/icons/html5.ico" />
@@ -290,7 +274,7 @@
           >
         </p>
         <div class="showcase-container">
-          <div style="position: relative;">
+          <div style="position: relative">
             <iframe
               src="https://player.vimeo.com/video/385266015"
               class="vimeo_iframe"
@@ -303,11 +287,24 @@
         </div>
       </div>
     </div>
+    <!-- TRAVEL -->
+    <div class="section-strip initially-hidden" id="travel-strip">
+      <div>
+        <p class="page-summary">
+          Check out all my trips since 2007!<br /><br />Drag the globe to look
+          around, and hover (or tap on mobile) to highlight routes.
+        </p>
+        <div class="flex-box" id="travel-flex-box">
+          <div id="globe"></div>
+        </div>
+      </div>
+      <hr />
+    </div>
     <!-- PROGRESS -->
     <div class="flex-box" id="progress-bar">
       <i
         class="fa fa-3x fa-user-circle progress-bar-top"
-        id="header-icon"
+        id="profile-icon"
         aria-hidden="true"
       ></i>
       <i
@@ -325,11 +322,20 @@
         id="music-icon"
         aria-hidden="true"
       ></i>
+      <i
+        class="fa fa-3x fa-plane progress-bar-middle"
+        id="travel-icon"
+        aria-hidden="true"
+      ></i>
     </div>
     <!-- JS -->
     <script src="/public/js/forestBackground.js"></script>
     <script src="/public/js/p5.min.js"></script>
     <script src="/public/js/p5.dom.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="/public/js/d3.geo.zoom.js"></script>
+    <script src="/public/js/travel-map.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -339,6 +345,6 @@
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
       type="text/javascript"
     ></script>
-    <script src="/public/js/homepage_events.js"></script>
+    <script src="/public/js/navigation.js"></script>
   </body>
 </html>
