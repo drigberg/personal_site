@@ -651,7 +651,7 @@ TRAVEL
 }
 
 .fill {
-  fill: #fff;
+  fill: #00ccff;
 }
 
 .graticule {
@@ -662,16 +662,11 @@ TRAVEL
 }
 
 .land {
-  fill: #222;
+  fill: #c724b1;
 }
 
 .boundary {
   fill: none;
   stroke: #fff;
   stroke-width: 0.5px;
-}
-
-.overlay {
-  fill: none;
-  pointer-events: all;
 }
