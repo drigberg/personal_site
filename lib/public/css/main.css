@@ -6,6 +6,10 @@ All devices
   font-size: 18px;
 }
 
+#globe {
+  font-weight: 600;
+}
+
 body {
   background-color: rgba(220, 220, 240, 0.2);
   letter-spacing: 1.5px;
@@ -686,10 +690,6 @@ TRAVEL
   stroke-width: 3px;
 }
 
-.fill {
-  fill: #00ccff;
-}
-
 .graticule {
   fill: none;
   stroke: #777;
@@ -697,8 +697,11 @@ TRAVEL
   stroke-opacity: 0.5;
 }
 
+.fill {
+  fill: #118ab2;
+}
 .land {
-  fill: #c724b1;
+  fill: #06d6a0;
 }
 
 .boundary {
