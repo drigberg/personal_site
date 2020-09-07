@@ -1,7 +1,6 @@
 [
   {
     "id": "safari_2011",
-    "color": "#ee0066",
     "name": "Safari 2011",
     "locations": [
       {
@@ -31,8 +30,365 @@
     ]
   },
   {
+    "id": "winter_tour_2012",
+    "name": "Winter Tour 2011",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "HERSHEY"
+      },
+      {
+        "arrivalDate": "",
+        "city": "EXCELSIOR"
+      },
+      {
+        "arrivalDate": "",
+        "city": "MINNEAPOLIS"
+      },
+      {
+        "arrivalDate": "",
+        "city": "WATERTOWN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "MILWAUKEE"
+      },
+      {
+        "arrivalDate": "2011",
+        "city": "HERSHEY"
+      }
+    ]
+  },
+  {
+    "id": "spring_tour_2012",
+    "name": "Spring Tour 2012",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "DENVER"
+      },
+      {
+        "arrivalDate": "",
+        "city": "BEAVER_CREEK"
+      },
+      {
+        "arrivalDate": "",
+        "city": "DENVER"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ASUNCION"
+      },
+      {
+        "arrivalDate": "",
+        "city": "CIUDAD_DEL_ESTE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "IGUAZU_FALLS"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ENCARNACION"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "summer_tour_2012",
+    "name": "Summer Tour 2012",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ISTANBUL"
+      },
+      {
+        "arrivalDate": "",
+        "city": "FETHIYE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ISTANBUL"
+      },
+      {
+        "arrivalDate": "",
+        "city": "JOHANNESBURG"
+      },
+      {
+        "arrivalDate": "",
+        "city": "CAPE_TOWN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "PORT_ELIZABETH"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "camping_2012",
+    "name": "Camping 2012",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "HERSHEY"
+      },
+      {
+        "arrivalDate": "",
+        "city": "WAYLAND"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ACADIA"
+      },
+      {
+        "arrivalDate": "",
+        "city": "WAYLAND"
+      },
+      {
+        "arrivalDate": "",
+        "city": "HERSHEY"
+      }
+    ]
+  },
+  {
+    "id": "winter_tour_2013",
+    "name": "Winter Tour 2013",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "SAN_FRANCISCO"
+      },
+      {
+        "arrivalDate": "",
+        "city": "PORTLAND"
+      },
+      {
+        "arrivalDate": "",
+        "city": "COOS_BAY"
+      }
+    ]
+  },
+  {
+    "id": "spring_tour_2013",
+    "name": "Spring Tour 2013",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "FORT_LAUDERDALE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NASSAU"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "summer_tour_2013",
+    "name": "",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "BEIJING"
+      },
+      {
+        "arrivalDate": "",
+        "city": "SHENZHEN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "HONG_KONG"
+      },
+      {
+        "arrivalDate": "",
+        "city": "BANGKOK"
+      },
+      {
+        "arrivalDate": "",
+        "city": "YANGON"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "spring_tour_2014",
+    "name": "Spring Tour 2014",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "SAN_DIEGO"
+      },
+      {
+        "arrivalDate": "",
+        "city": "QUEENSTOWN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "AUCKLAND"
+      },
+      {
+        "arrivalDate": "",
+        "city": "WAITOMO"
+      },
+      {
+        "arrivalDate": "",
+        "city": "AUCKLAND"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "summer_tour_2014",
+    "name": "",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "DUBLIN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "GALWAY"
+      },
+      {
+        "arrivalDate": "",
+        "city": "CORK"
+      },
+      {
+        "arrivalDate": "",
+        "city": "LONDON"
+      },
+      {
+        "arrivalDate": "",
+        "city": "PARIS"
+      },
+      {
+        "arrivalDate": "",
+        "city": "AVOLASCA"
+      },
+      {
+        "arrivalDate": "",
+        "city": "BERLIN"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
+    "id": "camping_2015",
+    "name": "Camping 2015",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "HERSHEY"
+      },
+      {
+        "arrivalDate": "",
+        "city": "MONONGAHELA"
+      },
+      {
+        "arrivalDate": "",
+        "city": "HERSHEY"
+      }
+    ]
+  },
+  {
+    "id": "alaska_2015",
+    "name": "",
+    "locations": [
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ANCHORAGE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "COOPERS_LANDING"
+      },
+      {
+        "arrivalDate": "",
+        "city": "HOMER"
+      },
+      {
+        "arrivalDate": "",
+        "city": "SEWARD"
+      },
+      {
+        "arrivalDate": "",
+        "city": "DENALI"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ANCHORAGE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "MATANUSKA"
+      },
+      {
+        "arrivalDate": "",
+        "city": "ANCHORAGE"
+      },
+      {
+        "arrivalDate": "",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
     "id": "austin_2016",
-    "color": "#eeee55",
     "name": "Austin 2016",
     "locations": [
       {
@@ -54,27 +410,7 @@
     ]
   },
   {
-    "id": "florida_2016",
-    "color": "#eeaa22",
-    "name": "Florida 2016",
-    "locations": [
-      {
-        "arrivalDate": "2016-07-20",
-        "city": "NYC"
-      },
-      {
-        "arrivalDate": "2016-07-20",
-        "city": "FORT_LAUDERDALE"
-      },
-      {
-        "arrivalDate": "2016-07-20",
-        "city": "NYC"
-      }
-    ]
-  },
-  {
     "id": "portland_2016",
-    "color": "#3388ee",
     "name": "Portland 2016",
     "locations": [
       {
@@ -97,7 +433,6 @@
   },
   {
     "id": "world_trip_2016",
-    "color": "#8822ee",
     "name": "World Trip 2016",
     "locations": [
       {
@@ -152,7 +487,6 @@
   },
   {
     "id": "berlin_roadtrip",
-    "color": "#cc00ee",
     "name": "Berlin Roadtrip",
     "locations": [
       {
@@ -175,7 +509,6 @@
   },
   {
     "id": "morocco_surfing",
-    "color": "#cc00ee",
     "name": "Morocco Surfing",
     "locations": [
       {
@@ -188,7 +521,7 @@
       },
       {
         "arrivalDate": "2017-08-28",
-        "city": "TAGAZHOUT"
+        "city": "TAGHAZOUT"
       },
       {
         "arrivalDate": "2017-08-28",
@@ -201,9 +534,8 @@
     ]
   },
   {
-    "id": "london_weekend",
-    "color": "#ee00aa",
-    "name": "London Weekend",
+    "id": "london_2016",
+    "name": "London 2016",
     "locations": [
       {
         "arrivalDate": "2017-06-10",
@@ -220,8 +552,47 @@
     ]
   },
   {
+    "id": "norway_2016",
+    "name": "Norway 2016",
+    "locations": [
+      {
+        "arrivalDate": "2017-06-10",
+        "city": "AMSTERDAM"
+      },
+      {
+        "arrivalDate": "2017-06-10",
+        "city": "OSLO"
+      },
+      {
+        "arrivalDate": "2017-06-10",
+        "city": "BERGEN"
+      },
+      {
+        "arrivalDate": "2017-06-21",
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "austria_2016",
+    "name": "Austria 2016",
+    "locations": [
+      {
+        "arrivalDate": "2017-06-10",
+        "city": "AMSTERDAM"
+      },
+      {
+        "arrivalDate": "2017-06-10",
+        "city": "VIENNA"
+      },
+      {
+        "arrivalDate": "2017-06-21",
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
     "id": "portugal_surf_week",
-    "color": "#ee00aa",
     "name": "Portugal Surf Week",
     "locations": [
       {
@@ -252,7 +623,6 @@
   },
   {
     "id": "greece_roadtrip_2018",
-    "color": "#ee00ee",
     "name": "Greece Roadtrip 2018",
     "locations": [
       {
@@ -287,7 +657,6 @@
   },
   {
     "id": "greece_beach_2019",
-    "color": "#00eecc",
     "name": "Greece Beach 2019",
     "locations": [
       {
@@ -306,7 +675,6 @@
   },
   {
     "id": "italy_2018",
-    "color": "#00eecc",
     "name": "Italy 2018",
     "locations": [
       {
@@ -333,7 +701,6 @@
   },
   {
     "id": "annecy_roadtrip_2018",
-    "color": "#eecc00",
     "name": "Annecy Roadtrip 2018",
     "locations": [
       {
@@ -358,6 +725,10 @@
       },
       {
         "arrivalDate": "2020-06-20",
+        "city": "STRASBOURG"
+      },
+      {
+        "arrivalDate": "2020-06-20",
         "city": "COLOGNE"
       },
       {
@@ -368,7 +739,6 @@
   },
   {
     "id": "korea_2019",
-    "color": "#ee9933",
     "name": "Korea 2019",
     "locations": [
       {
@@ -411,7 +781,6 @@
   },
   {
     "id": "romania_2020",
-    "color": "#ee5555",
     "name": "Romania 2020",
     "locations": [
       {
@@ -423,16 +792,28 @@
         "city": "BUCHAREST"
       },
       {
-        "arrivalDate": "2020-01-24",
-        "city": "SIGHISOARA"
-      },
-      {
         "arrivalDate": "2020-01-25",
         "city": "SIBIU"
       },
       {
+        "arrivalDate": "2020-01-25",
+        "city": "CLUJ"
+      },
+      {
+        "arrivalDate": "2020-01-24",
+        "city": "SIGHISOARA"
+      },
+      {
+        "arrivalDate": "",
+        "city": "SINCA_NOUA"
+      },
+      {
         "arrivalDate": "2020-02-05",
         "city": "BRASOV"
+      },
+      {
+        "arrivalDate": "2020-02-05",
+        "city": "SINAIA"
       },
       {
         "arrivalDate": "2020-01-20",
@@ -445,8 +826,45 @@
     ]
   },
   {
+    "id": "christmas_2019",
+    "name": "Christmas 2019",
+    "locations": [
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "AMSTERDAM"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "FORT_LAUDERDALE"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "ORLANDO"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "TAMPA"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "FORT_LAUDERDALE"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "HERSHEY"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "2016-07-20",
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
     "id": "thailand_2020",
-    "color": "#ee5555",
     "name": "Thailand 2020",
     "locations": [
       {
@@ -477,7 +895,6 @@
   },
   {
     "id": "nice_roadtrip",
-    "color": "#00ee44",
     "name": "Nice Roadtrip",
     "locations": [
       {
@@ -508,7 +925,6 @@
   },
   {
     "id": "greece_all_inclusive_week",
-    "color": "#00ccee",
     "name": "Greece All-Inclusive Week",
     "locations": [
       {

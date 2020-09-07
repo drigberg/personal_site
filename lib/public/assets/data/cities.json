@@ -1,8 +1,309 @@
 {
+  "ACADIA": {
+    "coordinates": [
+      -68.27,
+      44.34
+    ],
+    "displayName": "Acadia National Park"
+  },
+  "ANCHORAGE": {
+    "coordinates": [
+      -149.9,
+      61.22
+    ],
+    "displayName": "Anchorage"
+  },
+  "ASUNCION": {
+    "coordinates": [
+      -57.58,
+      -25.26
+    ],
+    "displayName": "Asunción"
+  },
+  "AUCKLAND": {
+    "coordinates": [
+      174.76,
+      -36.85
+    ],
+    "displayName": "Auckland"
+  },
+  "AVOLASCA": {
+    "coordinates": [
+      8.97,
+      44.8
+    ],
+    "displayName": "Avolasca"
+  },
+  "NASSAU": {
+    "coordinates": [
+      -77.35,
+      25.04
+    ],
+    "displayName": "Nassau"
+  },
+  "BEAVER_CREEK": {
+    "coordinates": [
+      -106.52,
+      39.6
+    ],
+    "displayName": "Beaver Creek"
+  },
+  "BEIJING": {
+    "coordinates": [
+      116.41,
+      39.9
+    ],
+    "displayName": "Beijing"
+  },
+  "BERGEN": {
+    "coordinates": [
+      5.32,
+      60.39
+    ],
+    "displayName": "Bergen"
+  },
+  "CIUDAD_DEL_ESTE": {
+    "coordinates": [
+      -54.66,
+      -25.5
+    ],
+    "displayName": "Ciudad del Este"
+  },
+  "CLUJ": {
+    "coordinates": [
+      23.62,
+      46.77
+    ],
+    "displayName": "Cluj"
+  },
+  "COOPERS_LANDING": {
+    "coordinates": [
+      -149.83,
+      60.49
+    ],
+    "displayName": "Coopers Landing"
+  },
+  "COOS_BAY": {
+    "coordinates": [
+      -124.21,
+      43.37
+    ],
+    "displayName": "Coos Bay"
+  },
+  "CORK": {
+    "coordinates": [
+      -8.48,
+      51.9
+    ],
+    "displayName": "Cork"
+  },
+  "DENALI": {
+    "coordinates": [
+      -151.19,
+      63.11
+    ],
+    "displayName": "Denali"
+  },
+  "DENVER": {
+    "coordinates": [
+      -104.99,
+      39.74
+    ],
+    "displayName": "Denver"
+  },
+  "DUBLIN": {
+    "coordinates": [
+      -6.26,
+      53.35
+    ],
+    "displayName": "Dublin"
+  },
+  "ENCARNACION": {
+    "coordinates": [
+      -55.91,
+      -27.25
+    ],
+    "displayName": "Encarnacion"
+  },
+  "EXCELSIOR": {
+    "coordinates": [
+      -93.57,
+      44.9
+    ],
+    "displayName": "Excelsior"
+  },
+  "FETHIYE": {
+    "coordinates": [
+      29.13,
+      36.66
+    ],
+    "displayName": "Fethiye"
+  },
+  "GALWAY": {
+    "coordinates": [
+      -9.06,
+      53.27
+    ],
+    "displayName": "Galway"
+  },
+  "HERSHEY": {
+    "coordinates": [
+      -76.66,
+      40.29
+    ],
+    "displayName": "Hershey"
+  },
+  "HOMER": {
+    "coordinates": [
+      -151.55,
+      59.64
+    ],
+    "displayName": "Homer"
+  },
+  "HONG_KONG": {
+    "coordinates": [
+      114.17,
+      22.32
+    ],
+    "displayName": "Hong Kong"
+  },
+  "IGUAZU_FALLS": {
+    "coordinates": [
+      -54.44,
+      -25.7
+    ],
+    "displayName": "Iguazu Falls"
+  },
+  "ISTANBUL": {
+    "coordinates": [
+      28.98,
+      41.0
+    ],
+    "displayName": "Istanbul"
+  },
+  "JOHANNESBURG": {
+    "coordinates": [
+      28.05,
+      -26.2
+    ],
+    "displayName": "Johannesburg"
+  },
+  "MATANUSKA": {
+    "coordinates": [
+      -150.17,
+      62.26
+    ],
+    "displayName": "Matanuska"
+  },
+  "MILWAUKEE": {
+    "coordinates": [
+      -87.91,
+      43.04
+    ],
+    "displayName": "Milwaukee"
+  },
+  "MINNEAPOLIS": {
+    "coordinates": [
+      -93.27,
+      44.98
+    ],
+    "displayName": "Minneapolis"
+  },
+  "MONONGAHELA": {
+    "coordinates": [
+      -79.93,
+      40.20
+    ],
+    "displayName": "Monongahela"
+  },
+  "ORLANDO": {
+    "coordinates": [
+      -81.38,
+      28.54
+    ],
+    "displayName": "Orlando"
+  },
+  "OSLO": {
+    "coordinates": [
+      10.75,
+      59.91
+    ],
+    "displayName": "Oslo"
+  },
+  "PORT_ELIZABETH": {
+    "coordinates": [
+      25.6,
+      -33.96
+    ],
+    "displayName": "Port Elizabeth"
+  },
+  "QUEENSTOWN": {
+    "coordinates": [
+      168.67,
+      -45.03
+    ],
+    "displayName": "Queenstown"
+  },
+  "SAN_DIEGO": {
+    "coordinates": [
+      -117.17,
+      32.72
+    ],
+    "displayName": "San Diego"
+  },
+  "SEWARD": {
+    "coordinates": [
+      -149.44,
+      60.1
+    ],
+    "displayName": "Seward"
+  },
+  "SHENZHEN": {
+    "coordinates": [
+      114.06,
+      22.54
+    ],
+    "displayName": "Shenzhen"
+  },
+  "TAMPA": {
+    "coordinates": [
+      -82.46,
+      27.95
+    ],
+    "displayName": "Tampa"
+  },
+  "VIENNA": {
+    "coordinates": [
+      16.37,
+      48.21
+    ],
+    "displayName": "Vienna"
+  },
+  "WAITOMO": {
+    "coordinates": [
+      175.11,
+      -38.26
+    ],
+    "displayName": "Waitomo"
+  },
+  "WATERTOWN": {
+    "coordinates": [
+      -88.73,
+      43.19
+    ],
+    "displayName": "Watertown"
+  },
+  "YANGON": {
+    "coordinates": [
+      96.17,
+      16.84
+    ],
+    "displayName": "Yangon"
+  },
   "AGADIR": {
     "coordinates": [
       -9.6,
-      30.4
+      30.43
     ],
     "displayName": "Agadir"
   },
@@ -23,7 +324,7 @@
   "ANTWERP": {
     "coordinates": [
       4.4,
-      51.2
+      51.22
     ],
     "displayName": "Antwerp"
   },
@@ -43,71 +344,71 @@
   },
   "BAKU": {
     "coordinates": [
-      50,
-      40
+      49.87,
+      40.41
     ],
     "displayName": "Baku"
   },
   "BANGKOK": {
     "coordinates": [
-      101,
-      14
+      100.5,
+      13.76
     ],
     "displayName": "Bangkok"
   },
   "BARCELONA": {
     "coordinates": [
-      0,
-      40
+      2.17,
+      41.39
     ],
     "displayName": "Barcelona"
   },
   "BASEL": {
     "coordinates": [
-      7.5,
-      47
+      7.59,
+      47.56
     ],
     "displayName": "Basel"
   },
   "BERLIN": {
     "coordinates": [
-      13,
-      52
+      13.4,
+      52.52
     ],
     "displayName": "Berlin"
   },
   "BRASOV": {
     "coordinates": [
-      26,
-      47.5
+      25.59,
+      45.64
     ],
     "displayName": "Brașov"
   },
   "BRAGA": {
     "coordinates": [
-      -9,
-      39
+      -8.42,
+      41.54
     ],
     "displayName": "Braga"
   },
   "BRUGES": {
     "coordinates": [
-      3.5,
-      51
+      3.22,
+      51.21
     ],
     "displayName": "Bruges"
   },
   "BRUSSELS": {
     "coordinates": [
-      4,
-      51
+      4.35,
+      50.85
     ],
     "displayName": "Brussels"
   },
   "BUCHAREST": {
     "coordinates": [
-      26,
-      45
+      26.1,
+      44.43
     ],
     "displayName": "Bucharest"
   },
@@ -127,43 +428,43 @@
   },
   "CHISINAU": {
     "coordinates": [
-      27,
-      48
+      28.86,
+      47.01
     ],
     "displayName": "Chisinau"
   },
   "COLOGNE": {
     "coordinates": [
-      7,
-      52
+      6.96,
+      50.94
     ],
     "displayName": "Cologne"
   },
   "CORFU": {
     "coordinates": [
-      20,
-      39.5
+      19.92,
+      39.62
     ],
     "displayName": "Corfu"
   },
   "DOURO_VALLEY": {
     "coordinates": [
-      -8,
-      38
+      -7.79,
+      41.1
     ],
     "displayName": "Douro Valley"
   },
   "FORT_LAUDERDALE": {
     "coordinates": [
-      -80,
-      26
+      -80.14,
+      26.12
     ],
     "displayName": "Ft. Lauderdale"
   },
   "GENEVA": {
     "coordinates": [
-      7,
-      45.5
+      6.14,
+      46.2
     ],
     "displayName": "Geneva"
   },
@@ -183,50 +484,50 @@
   },
   "JEJU": {
     "coordinates": [
-      127,
+      126.53,
       33.5
     ],
     "displayName": "Jeju"
   },
   "KRABI": {
     "coordinates": [
-      100,
-      7.5
+      98.91,
+      8.1
     ],
     "displayName": "Krabi"
   },
   "KOH_PHI_PHI": {
     "coordinates": [
-      99,
-      8
+      98.78,
+      7.74
     ],
     "displayName": "Koh Phi Phi"
   },
   "LITOCHORO": {
     "coordinates": [
-      22,
-      40.5
+      22.5,
+      40.1
     ],
     "displayName": "Litochoro"
   },
   "LONDON": {
     "coordinates": [
-      0,
-      52
+      -0.13,
+      51.51
     ],
     "displayName": "London"
   },
   "LUXEMBOURG": {
     "coordinates": [
-      6.5,
-      49
+      6.13,
+      49.82
     ],
     "displayName": "Luxembourg"
   },
   "LYON": {
     "coordinates": [
-      5,
-      44.5
+      4.84,
+      45.76
     ],
     "displayName": "Lyon"
   },
@@ -239,8 +540,8 @@
   },
   "MUENSTER": {
     "coordinates": [
-      8,
-      53
+      7.63,
+      51.96
     ],
     "displayName": "Muenster"
   },
@@ -253,8 +554,8 @@
   },
   "NICE": {
     "coordinates": [
-      6,
-      43
+      7.26,
+      43.71
     ],
     "displayName": "Nice"
   },
@@ -274,29 +575,29 @@
   },
   "OURANOUPOLI": {
     "coordinates": [
-      23.5,
-      40.5
+      23.98,
+      40.32
     ],
     "displayName": "Ouranoupoli"
   },
   "PARIS": {
     "coordinates": [
-      4.5,
-      48
+      2.35,
+      48.86
     ],
     "displayName": "Paris"
   },
   "PHUKET": {
     "coordinates": [
-      98,
-      8.5
+      98.39,
+      7.88
     ],
     "displayName": "Phuket"
   },
   "PORTO": {
     "coordinates": [
-      -9,
-      40
+      -8.63,
+      41.16
     ],
     "displayName": "Porto"
   },
@@ -309,8 +610,8 @@
   },
   "ROME": {
     "coordinates": [
-      15,
-      41
+      12.5,
+      41.9
     ],
     "displayName": "Rome"
   },
@@ -330,57 +631,78 @@
   },
   "SIBIU": {
     "coordinates": [
-      22,
-      47
+      24.12,
+      45.79
     ],
     "displayName": "Sibiu"
   },
   "SIGHISOARA": {
     "coordinates": [
-      22,
-      45
+      24.8,
+      46.22
     ],
     "displayName": "Sighișoara"
   },
+  "SINAIA": {
+    "coordinates": [
+      25.56,
+      45.33
+    ],
+    "displayName": "Sinaia"
+  },
+  "SINCA_NOUA": {
+    "coordinates": [
+      23.24,
+      45.7
+    ],
+    "displayName": "Șinca Nouă"
+  },
   "SKOPJE": {
     "coordinates": [
-      22,
-      41.5
+      21.43,
+      42.0
     ],
     "displayName": "Skopje"
   },
   "SOFIA": {
     "coordinates": [
-      23.5,
-      42
+      23.32,
+      42.7
     ],
     "displayName": "Sofia"
   },
-  "TAGAZHOUT": {
+  "STRASBOURG": {
     "coordinates": [
-      -12,
-      28
+      7.75,
+      48.57
     ],
-    "displayName": "Tagazhout"
+    "displayName": "Sofia"
+  },
+  "TAGHAZOUT": {
+    "coordinates": [
+      -9.71,
+      30.55
+    ],
+    "displayName": "Taghazout"
   },
   "THESSALONIKI": {
     "coordinates": [
-      23,
-      40.5
+      22.94,
+      40.64
     ],
     "displayName": "Thessaloniki"
   },
   "TRIESTE": {
     "coordinates": [
-      13,
-      45.7
+      13.78,
+      45.65
     ],
     "displayName": "Trieste"
   },
   "VENICE": {
     "coordinates": [
-      12.2,
-      45
+      12.32,
+      45.44
     ],
     "displayName": "Venice"
   },
@@ -390,5 +712,12 @@
       -17.92
     ],
     "displayName": "Victoria Falls"
+  },
+  "WAYLAND": {
+    "coordinates": [
+      -71.36,
+      42.36
+    ],
+    "displayName": "Wayland"
   }
 }
