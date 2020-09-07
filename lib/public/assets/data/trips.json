@@ -4,35 +4,27 @@
     "name": "Ionian Village 2009",
     "locations": [
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "ATHENS"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "IONIKO"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "ZAKYNTHOS"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "IONIKO"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "OLYMPIA"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "ATHENS"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       }
     ]
@@ -42,27 +34,21 @@
     "name": "Safari 2011",
     "locations": [
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "CAPE_TOWN"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "VICTORIA_FALLS"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "KASANE"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "OKAVANGO"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       }
     ]
@@ -72,27 +58,21 @@
     "name": "Winter Tour 2011",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "HERSHEY"
       },
       {
-        "arrivalDate": "",
         "city": "EXCELSIOR"
       },
       {
-        "arrivalDate": "",
         "city": "MINNEAPOLIS"
       },
       {
-        "arrivalDate": "",
         "city": "WATERTOWN"
       },
       {
-        "arrivalDate": "",
         "city": "MILWAUKEE"
       },
       {
-        "arrivalDate": "2011",
         "city": "HERSHEY"
       }
     ]
@@ -102,43 +82,33 @@
     "name": "Spring Tour 2012",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "DENVER"
       },
       {
-        "arrivalDate": "",
         "city": "BEAVER_CREEK"
       },
       {
-        "arrivalDate": "",
         "city": "DENVER"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "ASUNCION"
       },
       {
-        "arrivalDate": "",
         "city": "CIUDAD_DEL_ESTE"
       },
       {
-        "arrivalDate": "",
         "city": "IGUAZU_FALLS"
       },
       {
-        "arrivalDate": "",
         "city": "ENCARNACION"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -148,35 +118,27 @@
     "name": "Summer Tour 2012",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "ISTANBUL"
       },
       {
-        "arrivalDate": "",
         "city": "FETHIYE"
       },
       {
-        "arrivalDate": "",
         "city": "ISTANBUL"
       },
       {
-        "arrivalDate": "",
         "city": "JOHANNESBURG"
       },
       {
-        "arrivalDate": "",
         "city": "CAPE_TOWN"
       },
       {
-        "arrivalDate": "",
         "city": "PORT_ELIZABETH"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -186,23 +148,18 @@
     "name": "Camping 2012",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "HERSHEY"
       },
       {
-        "arrivalDate": "",
         "city": "WAYLAND"
       },
       {
-        "arrivalDate": "",
         "city": "ACADIA"
       },
       {
-        "arrivalDate": "",
         "city": "WAYLAND"
       },
       {
-        "arrivalDate": "",
         "city": "HERSHEY"
       }
     ]
@@ -212,19 +169,15 @@
     "name": "Winter Tour 2013",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "SAN_FRANCISCO"
       },
       {
-        "arrivalDate": "",
         "city": "PORTLAND"
       },
       {
-        "arrivalDate": "",
         "city": "COOS_BAY"
       }
     ]
@@ -234,19 +187,15 @@
     "name": "Spring Tour 2013",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "FORT_LAUDERDALE"
       },
       {
-        "arrivalDate": "",
         "city": "NASSAU"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -256,31 +205,24 @@
     "name": "",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "BEIJING"
       },
       {
-        "arrivalDate": "",
         "city": "SHENZHEN"
       },
       {
-        "arrivalDate": "",
         "city": "HONG_KONG"
       },
       {
-        "arrivalDate": "",
         "city": "BANGKOK"
       },
       {
-        "arrivalDate": "",
         "city": "YANGON"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -290,31 +232,24 @@
     "name": "Spring Tour 2014",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "SAN_DIEGO"
       },
       {
-        "arrivalDate": "",
         "city": "QUEENSTOWN"
       },
       {
-        "arrivalDate": "",
         "city": "AUCKLAND"
       },
       {
-        "arrivalDate": "",
         "city": "WAITOMO"
       },
       {
-        "arrivalDate": "",
         "city": "AUCKLAND"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -324,39 +259,30 @@
     "name": "",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "DUBLIN"
       },
       {
-        "arrivalDate": "",
         "city": "GALWAY"
       },
       {
-        "arrivalDate": "",
         "city": "CORK"
       },
       {
-        "arrivalDate": "",
         "city": "LONDON"
       },
       {
-        "arrivalDate": "",
         "city": "PARIS"
       },
       {
-        "arrivalDate": "",
         "city": "AVOLASCA"
       },
       {
-        "arrivalDate": "",
         "city": "BERLIN"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -366,15 +292,12 @@
     "name": "Camping 2015",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "HERSHEY"
       },
       {
-        "arrivalDate": "",
         "city": "MONONGAHELA"
       },
       {
-        "arrivalDate": "",
         "city": "HERSHEY"
       }
     ]
@@ -384,43 +307,33 @@
     "name": "",
     "locations": [
       {
-        "arrivalDate": "",
         "city": "NYC"
       },
       {
-        "arrivalDate": "",
         "city": "ANCHORAGE"
       },
       {
-        "arrivalDate": "",
         "city": "COOPERS_LANDING"
       },
       {
-        "arrivalDate": "",
         "city": "HOMER"
       },
       {
-        "arrivalDate": "",
         "city": "SEWARD"
       },
       {
-        "arrivalDate": "",
         "city": "DENALI"
       },
       {
-        "arrivalDate": "",
         "city": "ANCHORAGE"
       },
       {
-        "arrivalDate": "",
         "city": "MATANUSKA"
       },
       {
-        "arrivalDate": "",
         "city": "ANCHORAGE"
       },
       {
-        "arrivalDate": "",
         "city": "NYC"
       }
     ]
@@ -430,19 +343,15 @@
     "name": "Austin 2016",
     "locations": [
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "AUSTIN"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "NEW_ORLEANS"
       },
       {
-        "arrivalDate": "2016-05-20",
         "city": "NYC"
       }
     ]
@@ -452,19 +361,15 @@
     "name": "Portland 2016",
     "locations": [
       {
-        "arrivalDate": "2016-10-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "SAN_FRANCISCO"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "PORTLAND"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "NYC"
       }
     ]
@@ -474,51 +379,39 @@
     "name": "World Trip 2016",
     "locations": [
       {
-        "arrivalDate": "2016-10-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "BALI"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "JAKARTA"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "BAKU"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "CHISINAU"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "BRUSSELS"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "ANTWERP"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "BRUGES"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "PARIS"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "BARCELONA"
       },
       {
-        "arrivalDate": "2016-10-20",
         "city": "NYC"
       }
     ]
@@ -528,19 +421,15 @@
     "name": "Berlin Roadtrip",
     "locations": [
       {
-        "arrivalDate": "2017-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2017-08-28",
         "city": "BERLIN"
       },
       {
-        "arrivalDate": "2017-08-28",
         "city": "MUENSTER"
       },
       {
-        "arrivalDate": "2017-09-03",
         "city": "AMSTERDAM"
       }
     ]
@@ -550,23 +439,18 @@
     "name": "Morocco Surfing",
     "locations": [
       {
-        "arrivalDate": "2017-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2017-08-28",
         "city": "AGADIR"
       },
       {
-        "arrivalDate": "2017-08-28",
         "city": "TAGHAZOUT"
       },
       {
-        "arrivalDate": "2017-08-28",
         "city": "AGADIR"
       },
       {
-        "arrivalDate": "2017-09-03",
         "city": "AMSTERDAM"
       }
     ]
@@ -576,15 +460,12 @@
     "name": "London 2016",
     "locations": [
       {
-        "arrivalDate": "2017-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2017-06-10",
         "city": "LONDON"
       },
       {
-        "arrivalDate": "2017-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -594,19 +475,15 @@
     "name": "Norway 2016",
     "locations": [
       {
-        "arrivalDate": "2017-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2017-06-10",
         "city": "OSLO"
       },
       {
-        "arrivalDate": "2017-06-10",
         "city": "BERGEN"
       },
       {
-        "arrivalDate": "2017-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -616,15 +493,12 @@
     "name": "Austria 2016",
     "locations": [
       {
-        "arrivalDate": "2017-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2017-06-10",
         "city": "VIENNA"
       },
       {
-        "arrivalDate": "2017-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -634,27 +508,21 @@
     "name": "Portugal Surf Week",
     "locations": [
       {
-        "arrivalDate": "2018-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2018-06-10",
         "city": "PORTO"
       },
       {
-        "arrivalDate": "2018-06-10",
         "city": "DOURO_VALLEY"
       },
       {
-        "arrivalDate": "2018-06-10",
         "city": "BRAGA"
       },
       {
-        "arrivalDate": "2018-06-10",
         "city": "PORTO"
       },
       {
-        "arrivalDate": "2018-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -664,35 +532,27 @@
     "name": "Greece Roadtrip 2018",
     "locations": [
       {
-        "arrivalDate": "2018-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "SOFIA"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "OURANOUPOLI"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "LITOCHORO"
       },
       {
-        "arrivalDate": "",
         "city": "JANCHE"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "SKOPJE"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "SOFIA"
       },
       {
-        "arrivalDate": "2018-09-01",
         "city": "AMSTERDAM"
       }
     ]
@@ -702,15 +562,12 @@
     "name": "Greece Beach 2019",
     "locations": [
       {
-        "arrivalDate": "2018-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "THESSALONIKI"
       },
       {
-        "arrivalDate": "2018-09-01",
         "city": "AMSTERDAM"
       }
     ]
@@ -720,23 +577,18 @@
     "name": "Italy 2018",
     "locations": [
       {
-        "arrivalDate": "2018-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "VENICE"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "TRIESTE"
       },
       {
-        "arrivalDate": "2018-08-28",
         "city": "VENICE"
       },
       {
-        "arrivalDate": "2018-09-01",
         "city": "AMSTERDAM"
       }
     ]
@@ -746,35 +598,27 @@
     "name": "Annecy Roadtrip 2018",
     "locations": [
       {
-        "arrivalDate": "2020-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2020-06-10",
         "city": "LUXEMBOURG"
       },
       {
-        "arrivalDate": "2020-06-13",
         "city": "ANNECY"
       },
       {
-        "arrivalDate": "2020-06-18",
         "city": "GENEVA"
       },
       {
-        "arrivalDate": "2020-06-20",
         "city": "BASEL"
       },
       {
-        "arrivalDate": "2020-06-20",
         "city": "STRASBOURG"
       },
       {
-        "arrivalDate": "2020-06-20",
         "city": "COLOGNE"
       },
       {
-        "arrivalDate": "2020-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -784,39 +628,30 @@
     "name": "Korea 2019",
     "locations": [
       {
-        "arrivalDate": "2019-05-20",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2018-05-20",
         "city": "ROME"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "SEOUL"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "JEJU"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "SEOUL"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "GWANGJU"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "BUSAN"
       },
       {
-        "arrivalDate": "2019-05-20",
         "city": "SEOUL"
       },
       {
-        "arrivalDate": "2019-02-08",
         "city": "AMSTERDAM"
       }
     ]
@@ -826,43 +661,33 @@
     "name": "Romania 2020",
     "locations": [
       {
-        "arrivalDate": "2020-01-20",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2020-01-20",
         "city": "BUCHAREST"
       },
       {
-        "arrivalDate": "2020-01-25",
         "city": "SIBIU"
       },
       {
-        "arrivalDate": "2020-01-25",
         "city": "CLUJ"
       },
       {
-        "arrivalDate": "2020-01-24",
         "city": "SIGHISOARA"
       },
       {
-        "arrivalDate": "",
         "city": "SINCA_NOUA"
       },
       {
-        "arrivalDate": "2020-02-05",
         "city": "BRASOV"
       },
       {
-        "arrivalDate": "2020-02-05",
         "city": "SINAIA"
       },
       {
-        "arrivalDate": "2020-01-20",
         "city": "BUCHAREST"
       },
       {
-        "arrivalDate": "2020-02-08",
         "city": "AMSTERDAM"
       }
     ]
@@ -872,39 +697,30 @@
     "name": "Christmas 2019",
     "locations": [
       {
-        "arrivalDate": "2016-07-20",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "LISBON"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "FORT_LAUDERDALE"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "ORLANDO"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "TAMPA"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "FORT_LAUDERDALE"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "HERSHEY"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "NYC"
       },
       {
-        "arrivalDate": "2016-07-20",
         "city": "AMSTERDAM"
       }
     ]
@@ -914,27 +730,21 @@
     "name": "Thailand 2020",
     "locations": [
       {
-        "arrivalDate": "2020-01-20",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2020-01-20",
         "city": "KRABI"
       },
       {
-        "arrivalDate": "2020-01-24",
         "city": "KOH_PHI_PHI"
       },
       {
-        "arrivalDate": "2020-01-25",
         "city": "PHUKET"
       },
       {
-        "arrivalDate": "2020-02-05",
         "city": "BANGKOK"
       },
       {
-        "arrivalDate": "2020-02-08",
         "city": "AMSTERDAM"
       }
     ]
@@ -944,27 +754,21 @@
     "name": "Nice Roadtrip",
     "locations": [
       {
-        "arrivalDate": "2020-06-10",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2020-06-10",
         "city": "PARIS"
       },
       {
-        "arrivalDate": "2020-06-13",
         "city": "ANNECY"
       },
       {
-        "arrivalDate": "2020-06-18",
         "city": "NICE"
       },
       {
-        "arrivalDate": "2020-06-20",
         "city": "LYON"
       },
       {
-        "arrivalDate": "2020-06-21",
         "city": "AMSTERDAM"
       }
     ]
@@ -974,15 +778,12 @@
     "name": "Greece All-Inclusive Week",
     "locations": [
       {
-        "arrivalDate": "2020-08-28",
         "city": "AMSTERDAM"
       },
       {
-        "arrivalDate": "2020-08-28",
         "city": "CORFU"
       },
       {
-        "arrivalDate": "2020-09-03",
         "city": "AMSTERDAM"
       }
     ]
