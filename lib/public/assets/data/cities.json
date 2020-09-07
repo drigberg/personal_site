@@ -118,6 +118,13 @@
     ],
     "displayName": "Denver"
   },
+  "DIJON": {
+    "coordinates": [
+      5.04,
+      47.32
+    ],
+    "displayName": "Dijon"
+  },
   "DUBLIN": {
     "coordinates": [
       -6.26,
@@ -306,13 +313,6 @@
       16.84
     ],
     "displayName": "Yangon"
-  },
-  "AGADIR": {
-    "coordinates": [
-      -9.6,
-      30.43
-    ],
-    "displayName": "Agadir"
   },
   "AMSTERDAM": {
     "coordinates": [
@@ -711,7 +711,7 @@
       7.75,
       48.57
     ],
-    "displayName": "Sofia"
+    "displayName": "Strasbourg"
   },
   "TAGHAZOUT": {
     "coordinates": [

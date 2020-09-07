@@ -442,13 +442,7 @@
         "city": "AMSTERDAM"
       },
       {
-        "city": "AGADIR"
-      },
-      {
         "city": "TAGHAZOUT"
-      },
-      {
-        "city": "AGADIR"
       },
       {
         "city": "AMSTERDAM"
@@ -758,6 +752,9 @@
       },
       {
         "city": "PARIS"
+      },
+      {
+        "city": "DIJON"
       },
       {
         "city": "ANNECY"
