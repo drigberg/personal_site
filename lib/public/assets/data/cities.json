@@ -510,6 +510,13 @@
     ],
     "displayName": "Koh Phi Phi"
   },
+  "LISBON": {
+    "coordinates": [
+      -9.14,
+      38.72
+    ],
+    "displayName": "Lisbon"
+  },
   "LITOCHORO": {
     "coordinates": [
       22.5,
