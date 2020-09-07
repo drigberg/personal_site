@@ -20,6 +20,13 @@
     ],
     "displayName": "Asunción"
   },
+  "ATHENS": {
+    "coordinates": [
+      23.73,
+      37.98
+    ],
+    "displayName": "Athens"
+  },
   "AUCKLAND": {
     "coordinates": [
       174.76,
@@ -573,12 +580,26 @@
     ],
     "displayName": "Okavango Delta"
   },
+  "OLYMPIA": {
+    "coordinates": [
+      21.71,
+      37.53
+    ],
+    "displayName": "Olympia"
+  },
   "OURANOUPOLI": {
     "coordinates": [
       23.98,
       40.32
     ],
     "displayName": "Ouranoupoli"
+  },
+  "IONIKO": {
+    "coordinates": [
+      21.15,
+      37.83
+    ],
+    "displayName": "Ioniko"
   },
   "PARIS": {
     "coordinates": [
@@ -719,5 +740,12 @@
       42.36
     ],
     "displayName": "Wayland"
+  },
+  "ZAKYNTHOS": {
+    "coordinates": [
+      20.9,
+      37.79
+    ],
+    "displayName": "Zakynthos"
   }
 }

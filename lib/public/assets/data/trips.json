@@ -1,5 +1,43 @@
 [
   {
+    "id": "ionian_village_2009",
+    "name": "Ionian Village 2009",
+    "locations": [
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "NYC"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "ATHENS"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "IONIKO"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "ZAKYNTHOS"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "IONIKO"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "OLYMPIA"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "ATHENS"
+      },
+      {
+        "arrivalDate": "2016-05-20",
+        "city": "NYC"
+      }
+    ]
+  },
+  {
     "id": "safari_2011",
     "name": "Safari 2011",
     "locations": [
