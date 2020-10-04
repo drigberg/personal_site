@@ -784,5 +784,26 @@
         "city": "AMSTERDAM"
       }
     ]
+  },
+  {
+    "id": "switzerland_solo_trip",
+    "name": "Switzerland Solo Trip",
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "GENEVA"
+      },
+      {
+        "city": "SAINT_STEPHAN"
+      },
+      {
+        "city": "GENEVA"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
   }
 ]

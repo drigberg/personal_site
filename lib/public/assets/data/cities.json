@@ -650,6 +650,13 @@
     ],
     "displayName": "Rome"
   },
+  "SAINT_STEPHAN": {
+    "coordinates": [
+      7.23,
+      46.3
+    ],
+    "displayName": "St. Stephan"
+  },
   "SAN_FRANCISCO": {
     "coordinates": [
       -122.42,
