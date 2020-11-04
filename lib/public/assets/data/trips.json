@@ -2,6 +2,7 @@
   {
     "id": "ionian_village_2009",
     "name": "Ionian Village 2009",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -32,6 +33,7 @@
   {
     "id": "safari_2011",
     "name": "Safari 2011",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -56,6 +58,7 @@
   {
     "id": "winter_tour_2012",
     "name": "Winter Tour 2011",
+    "alan": false,
     "locations": [
       {
         "city": "HERSHEY"
@@ -80,6 +83,7 @@
   {
     "id": "spring_tour_2012",
     "name": "Spring Tour 2012",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -116,6 +120,7 @@
   {
     "id": "summer_tour_2012",
     "name": "Summer Tour 2012",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -146,6 +151,7 @@
   {
     "id": "camping_2012",
     "name": "Camping 2012",
+    "alan": false,
     "locations": [
       {
         "city": "HERSHEY"
@@ -167,6 +173,7 @@
   {
     "id": "winter_tour_2013",
     "name": "Winter Tour 2013",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -185,6 +192,7 @@
   {
     "id": "spring_tour_2013",
     "name": "Spring Tour 2013",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -203,6 +211,7 @@
   {
     "id": "summer_tour_2013",
     "name": "",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -230,6 +239,7 @@
   {
     "id": "spring_tour_2014",
     "name": "Spring Tour 2014",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -257,6 +267,7 @@
   {
     "id": "summer_tour_2014",
     "name": "",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -290,6 +301,7 @@
   {
     "id": "camping_2015",
     "name": "Camping 2015",
+    "alan": false,
     "locations": [
       {
         "city": "HERSHEY"
@@ -305,6 +317,7 @@
   {
     "id": "alaska_2015",
     "name": "",
+    "alan": false,
     "locations": [
       {
         "city": "NYC"
@@ -341,6 +354,7 @@
   {
     "id": "austin_2016",
     "name": "Austin 2016",
+    "alan": true,
     "locations": [
       {
         "city": "NYC"
@@ -359,6 +373,7 @@
   {
     "id": "portland_2016",
     "name": "Portland 2016",
+    "alan": true,
     "locations": [
       {
         "city": "NYC"
@@ -377,6 +392,7 @@
   {
     "id": "world_trip_2016",
     "name": "World Trip 2016",
+    "alan": true,
     "locations": [
       {
         "city": "NYC"
@@ -419,6 +435,7 @@
   {
     "id": "berlin_roadtrip",
     "name": "Berlin Roadtrip",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -437,6 +454,7 @@
   {
     "id": "morocco_surfing",
     "name": "Morocco Surfing",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -452,6 +470,7 @@
   {
     "id": "london_2016",
     "name": "London 2016",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -467,6 +486,7 @@
   {
     "id": "norway_2016",
     "name": "Norway 2016",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -485,6 +505,7 @@
   {
     "id": "austria_2016",
     "name": "Austria 2016",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -500,6 +521,7 @@
   {
     "id": "portugal_surf_week",
     "name": "Portugal Surf Week",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -524,6 +546,7 @@
   {
     "id": "greece_roadtrip_2018",
     "name": "Greece Roadtrip 2018",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -554,6 +577,7 @@
   {
     "id": "greece_beach_2019",
     "name": "Greece Beach 2019",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -569,6 +593,7 @@
   {
     "id": "italy_2018",
     "name": "Italy 2018",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -590,6 +615,7 @@
   {
     "id": "annecy_roadtrip_2018",
     "name": "Annecy Roadtrip 2018",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -620,6 +646,7 @@
   {
     "id": "korea_2019",
     "name": "Korea 2019",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -653,6 +680,7 @@
   {
     "id": "romania_2020",
     "name": "Romania 2020",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -689,6 +717,7 @@
   {
     "id": "christmas_2019",
     "name": "Christmas 2019",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -722,6 +751,7 @@
   {
     "id": "thailand_2020",
     "name": "Thailand 2020",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -746,6 +776,7 @@
   {
     "id": "nice_roadtrip",
     "name": "Nice Roadtrip",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -773,6 +804,7 @@
   {
     "id": "greece_all_inclusive_week",
     "name": "Greece All-Inclusive Week",
+    "alan": true,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -788,6 +820,7 @@
   {
     "id": "switzerland_solo_trip",
     "name": "Switzerland Solo Trip",
+    "alan": false,
     "locations": [
       {
         "city": "AMSTERDAM"
@@ -800,6 +833,25 @@
       },
       {
         "city": "GENEVA"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "portugal_2020",
+    "name": "Portugal Surf Trip 2020",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "SAGRES"
+      },
+      {
+        "city": "FARO"
       },
       {
         "city": "AMSTERDAM"

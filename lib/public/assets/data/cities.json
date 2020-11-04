@@ -146,6 +146,12 @@
     ],
     "displayName": "Excelsior"
   },
+  "FARO": {
+    "coordinates": [
+      -7.93,
+      37.02
+    ]
+  },
   "FETHIYE": {
     "coordinates": [
       29.13,
@@ -257,6 +263,12 @@
       -45.03
     ],
     "displayName": "Queenstown"
+  },
+  "SAGRES": {
+    "coordinates": [
+      -8.94,
+      37.02
+    ]
   },
   "SAN_DIEGO": {
     "coordinates": [
