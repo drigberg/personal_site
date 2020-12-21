@@ -857,5 +857,54 @@
         "city": "AMSTERDAM"
       }
     ]
+  },
+  {
+    "id": "hershey_2020",
+    "name": "Hershey 2020",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "CIUDAD_DE_MEXICO"
+      },
+      {
+        "city": "PUEBLA"
+      },
+      {
+        "city": "CIUDAD_DE_MEXICO"
+      },
+      {
+        "city": "TULUM"
+      },
+      {
+        "city": "MAHAHUAL"
+      },
+      {
+        "city": "BACALAR"
+      },
+      {
+        "city": "TULUM"
+      },
+      {
+        "city": "HOUSTON"
+      },
+      {
+        "city": "AUSTIN"
+      },
+      {
+        "city": "FAIRFIELD_BAY"
+      },
+      {
+        "city": "KNOXVILLE"
+      },
+      {
+        "city": "HERSHEY"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
   }
 ]

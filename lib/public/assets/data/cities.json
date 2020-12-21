@@ -69,6 +69,13 @@
     ],
     "displayName": "Avolasca"
   },
+  "BACALAR": {
+    "coordinates": [
+      -88.39,
+      18.68
+    ],
+    "displayName": "Bacalar"
+  },
   "BAKU": {
     "coordinates": [
       49.87,
@@ -188,6 +195,13 @@
     ],
     "displayName": "Chisinau"
   },
+  "CIUDAD_DE_MEXICO": {
+    "coordinates": [
+      -99.13,
+      19.43
+    ],
+    "displayName": "Ciudad de Mexico"
+  },
   "CIUDAD_DEL_ESTE": {
     "coordinates": [
       -54.66,
@@ -286,6 +300,13 @@
     ],
     "displayName": "Excelsior"
   },
+  "FAIRFIELD_BAY": {
+    "coordinates": [
+      -92.28,
+      35.59
+    ],
+    "displayName": "Fairfield Bay"
+  },
   "FARO": {
     "coordinates": [
       -7.93,
@@ -348,6 +369,13 @@
     ],
     "displayName": "Hong Kong"
   },
+  "HOUSTON": {
+    "coordinates": [
+      -95.37,
+      29.76
+    ],
+    "displayName": "Houston"
+  },
   "IGUAZU_FALLS": {
     "coordinates": [
       -54.44,
@@ -404,6 +432,13 @@
     ],
     "displayName": "Kasane"
   },
+  "KNOXVILLE": {
+    "coordinates": [
+      -83.92,
+      35.96
+    ],
+    "displayName": "Knoxville"
+  },
   "KOH_PHI_PHI": {
     "coordinates": [
       98.78,
@@ -452,6 +487,13 @@
       45.76
     ],
     "displayName": "Lyon"
+  },
+  "MAHAHUAL": {
+    "coordinates": [
+      -87.71,
+      18.72
+    ],
+    "displayName": "Mahahual"
   },
   "MATANUSKA": {
     "coordinates": [
@@ -585,6 +627,13 @@
       -33.96
     ],
     "displayName": "Port Elizabeth"
+  },
+  "PUEBLA": {
+    "coordinates": [
+      -98.21,
+      19.04
+    ],
+    "displayName": "Puebla"
   },
   "QUEENSTOWN": {
     "coordinates": [
@@ -724,6 +773,13 @@
       45.65
     ],
     "displayName": "Trieste"
+  },
+  "TULUM": {
+    "coordinates": [
+      -87.47,
+      20.21
+    ],
+    "displayName": "Tulum"
   },
   "VENICE": {
     "coordinates": [
