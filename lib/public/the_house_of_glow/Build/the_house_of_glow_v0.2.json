@@ -1,7 +1,7 @@
 {
 "companyName": "Daniel Rigberg",
 "productName": "The House Of Glow",
-"productVersion": "0.2",
+"productVersion": "0.3",
 "dataUrl": "the_house_of_glow_v0.2.data.unityweb",
 "wasmCodeUrl": "the_house_of_glow_v0.2.wasm.code.unityweb",
 "wasmFrameworkUrl": "the_house_of_glow_v0.2.wasm.framework.unityweb",
