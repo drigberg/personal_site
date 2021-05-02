@@ -311,7 +311,8 @@
     "coordinates": [
       -7.93,
       37.02
-    ]
+    ],
+    "displayName": "Faro"
   },
   "FETHIYE": {
     "coordinates": [
@@ -653,7 +654,8 @@
     "coordinates": [
       -8.94,
       37.02
-    ]
+    ],
+    "displayName": "Sagres"
   },
   "SAINT_STEPHAN": {
     "coordinates": [
