@@ -15,4 +15,4 @@ This static site can be deployed cheaply on AWS by exposing an S3 bucket for pub
 Full documentation: https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html
 Tutorial: https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
 
-To deploy, use this command: `aws s3 sync lib s3://your-s3-bucket-name --delete`
+To deploy, use this command: `aws s3 sync lib "s3://your-s3-bucket-name" --delete`
