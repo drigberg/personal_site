@@ -906,5 +906,112 @@
         "city": "AMSTERDAM"
       }
     ]
+  },
+  {
+    "id": "vaccication_2021",
+    "name": "Vaccination Vacation 2021",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "HERSHEY"
+      },
+      {
+        "city": "CHISINAU"
+      },
+      {
+        "city": "IASI"
+      },
+      {
+        "city": "CHISINAU"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "lisbon_2021_1",
+    "name": "Lisbon 2021, #1",
+    "alan": false,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "LISBON"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "slovenia_2021",
+    "name": "Slovenia 2021",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "ZAGREB"
+      },
+      {
+        "city": "KRK"
+      },
+      {
+        "city": "BELTINCI"
+      },
+      {
+        "city": "ZAGREB"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "lisbon_2021_2",
+    "name": "Libson 2021, #2",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "LISBON"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
+  },
+  {
+    "id": "austin_2021",
+    "name": "Austin 2021",
+    "alan": true,
+    "locations": [
+      {
+        "city": "AMSTERDAM"
+      },
+      {
+        "city": "ORANJESTAD"
+      },
+      {
+        "city": "AUSTIN"
+      },
+      {
+        "city": "FORT_LAUDERDALE"
+      },
+      {
+        "city": "NYC"
+      },
+      {
+        "city": "AMSTERDAM"
+      }
+    ]
   }
 ]

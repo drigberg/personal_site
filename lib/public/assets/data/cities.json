@@ -125,6 +125,13 @@
     ],
     "displayName": "Beijing"
   },
+  "BELTINCI": {
+    "coordinates": [
+      16.24,
+      46.61
+    ],
+    "displayName": "Beltinci"
+  },
   "BERGEN": {
     "coordinates": [
       5.32,
@@ -377,6 +384,13 @@
     ],
     "displayName": "Houston"
   },
+  "IASI": {
+    "coordinates": [
+      27.6,
+      47.16
+    ],
+    "displayName": "Iași"
+  },
   "IGUAZU_FALLS": {
     "coordinates": [
       -54.44,
@@ -453,6 +467,13 @@
       8.1
     ],
     "displayName": "Krabi"
+  },
+  "KRK": {
+    "coordinates": [
+      14.59,
+      45.08
+    ],
+    "displayName": "Krk"
   },
   "LISBON": {
     "coordinates": [
@@ -572,6 +593,13 @@
       37.53
     ],
     "displayName": "Olympia"
+  },
+  "ORANJESTAD": {
+    "coordinates": [
+      -70.01,
+      12.51
+    ],
+    "displayName": "Oranjestad"
   },
   "ORLANDO": {
     "coordinates": [
@@ -831,6 +859,13 @@
       16.84
     ],
     "displayName": "Yangon"
+  },
+  "ZAGREB": {
+    "coordinates": [
+      15.98,
+      45.82
+    ],
+    "displayName": "Zagreb"
   },
   "ZAKYNTHOS": {
     "coordinates": [
