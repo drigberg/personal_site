@@ -29,37 +29,6 @@ a:hover {
   text-decoration: none;
 }
 
-.audio-div {
-  margin-bottom: 50px;
-}
-
-#title {
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 50px;
-  margin-bottom: 50px;
-}
-
-#showcase-preview {
-  width: 50%;
-}
-
-.bordered {
-  border: 2px solid black;
-}
-
-.flex-box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.project-img {
-  width: 90%;
-  max-width: 720px;
-}
-
 #resume-download-link {
   text-decoration: none;
 }
