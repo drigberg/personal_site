@@ -3,22 +3,26 @@ body {
   letter-spacing: 1.5px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
-  color: #ffffff;
 }
 
-.fish-tank-background {
-  z-index: -2;
-  position: fixed;
+p {
+  max-width: 900px;
+}
+
+i {
+  font-size: 48px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: normal;
+  letter-spacing: 1.5px;
 }
 
 h2 {
   font-size: 48px;
   font-weight: normal;
   letter-spacing: 1.5px;
-}
-
-h4 {
-  color: #ffffff;
 }
 
 a:hover {
@@ -30,13 +34,6 @@ a:hover {
 }
 
 #title {
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 50px;
-  margin-bottom: 50px;
-}
-
-#contact {
   text-align: center;
   vertical-align: middle;
   padding-top: 50px;
@@ -75,432 +72,16 @@ a:hover {
   margin: 20px auto;
 }
 
-/*--------------
-Smartphones
-----------------*/
-@media only screen and (max-width: 520px) {
-  /*--------------
-	General Styling
-	----------------*/
-  h4 {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .section {
-    width: 100%;
-    padding: 100px 5px 0px 5px;
-    font-size: 30px;
-    font-weight: 300;
-    font-family: "Nunito Sans", sans-serif;
-    transition: all 0.4s ease;
-    margin-bottom: 100px;
-    overflow-wrap: break-word;
-  }
-
-  .flex-box > div {
-    flex: 1 1 auto;
-  }
-
-  /*--------------
-	Nav Bar
-	----------------*/
-
-  nav {
-    z-index: 3;
-  }
-
-  .nav {
-    float: right;
-    margin-bottom: 0;
-    border: none;
-    border-radius: 0;
-  }
-
-  /*--------------
-	Showcase Page
-	----------------*/
-
-  .vimeo_iframe {
-    height: 360px;
-  }
-
-  /*--------------
-	Profile Page
-	----------------*/
-
-  .btn-lg {
-    color: rgb(255, 255, 255);
-  }
-
-  #header-flex-box {
-    display: block;
-    margin: 0px auto;
-  }
-
-  #profile-photo {
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #title-text {
-    vertical-align: text-bottom;
-    font-size: 17px;
-  }
-
-  #title > h4 {
-    font-size: 12px;
-  }
-
-  /*--------------
-	Music Page
-	----------------*/
-
-  .page-summary {
-    display: block;
-    font-size: 17px;
-    text-align: center;
-  }
-
-  audio {
-    width: 95%;
-    max-width: 300px;
-  }
-
-  .audio-div {
-    text-align: center;
-  }
-
-  .audio-div:first-of-type {
-    margin-top: 50px;
-  }
-
-  .audio-div h4 {
-    display: none;
-  }
-
-  #audio-flex-box hr {
-    margin: 5px auto 15px auto;
-  }
-
-  #travel-flex-box {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  #globe {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/*--------------
-Tablets
-----------------*/
-@media only screen and (min-width: 521px) and (max-width: 768px) {
-  #travel-flex-box {
-    width: 480px;
-    margin: 0 auto;
-  }
-
-  #globe {
-    width: 480px;
-    height: 480px;
-  }
-
-  /*--------------
-	Pages
-	----------------*/
-  #header-strip {
-    padding-top: 0px;
-    display: block;
-  }
-
-  /*--------------
-	Nav Bar
-	----------------*/
-
-  nav {
-    z-index: 3;
-  }
-
-  .nav {
-    float: right;
-    margin-bottom: 0;
-    border: none;
-    border-radius: 0;
-  }
-
-  /*--------------
-	General Styling
-	----------------*/
-
-  .section {
-    width: 100%;
-    padding: 100px 20px 0px 20px;
-    font-size: 30px;
-    font-weight: 300;
-    font-family: "Nunito Sans", sans-serif;
-    /* height: 800px; */
-    transition: all 0.4s ease;
-  }
-
-  .page-summary {
-    display: inline-block;
-    z-index: -1;
-    font-size: 17px;
-    margin-bottom: 50px;
-  }
-
-  .flex-box > div {
-    flex: 1 1 auto;
-  }
-
-  /*--------------
-	Showcase Page
-	----------------*/
-
-  .vimeo_iframe {
-    height: 480px;
-  }
-
-  /*--------------
-	Header Page
-	----------------*/
-
-  .btn-lg {
-    color: rgb(255, 255, 255);
-  }
-
-  #profile-photo {
-    width: 300px;
-    height: 300px;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #header-flex-box {
-    margin-bottom: 50px;
-  }
-
-  #title-text {
-    vertical-align: text-bottom;
-  }
-}
-
-/*--------------
-Laptops
-----------------*/
-@media only screen and (min-width: 769px) {
-  #travel-flex-box {
-    width: 720px;
-    margin: 0 auto;
-  }
-
-  #globe {
-    width: 720px;
-    height: 720px;
-  }
-  /*--------------
-	Pages
-	----------------*/
-  #header-strip {
-    padding-top: 150px;
-    display: block;
-  }
-
-  /*--------------
-	Nav Bar
-	----------------*/
-
-  nav {
-    z-index: 3;
-  }
-
-  .nav {
-    float: right;
-    margin-bottom: 0;
-    border: none;
-    border-radius: 0;
-  }
-
-  /*--------------
-	General Styling
-	----------------*/
-
-  .section {
-    width: 100%;
-    padding: 100px 20px 0px 20px;
-    font-size: 30px;
-    font-weight: 300;
-    font-family: "Nunito Sans", sans-serif;
-    min-height: 500px;
-    transition: all 0.4s ease;
-  }
-
-  .page-summary {
-    padding: 20px;
-    margin: 0 auto 20px auto;
-    width: 90%;
-    display: block;
-    z-index: -1;
-    font-size: 16px;
-  }
-
-  .flex-box > div {
-    flex: 1 1 auto;
-  }
-
-  /*--------------
-	Profile Page
-	----------------*/
-
-  .btn-lg {
-    color: rgb(255, 255, 255);
-  }
-
-  #profile-photo {
-    width: 300px;
-    height: 300px;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #header-flex-box {
-    padding-left: 35px;
-    margin-bottom: 50px;
-  }
-
-  #title-text {
-    vertical-align: text-bottom;
-  }
-}
-
-audio {
-  background-color: rgb(248, 248, 248);
-  box-shadow: 0 0 1em rgba(0, 100, 200, 0.7);
-}
-
-@keyframes iconSpin {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(-720deg);
-    -webkit-transform: rotate(-720deg);
-    -ms-transform: rotate(-720deg);
-  }
-  50% {
-    transform: rotate(-720deg);
-    -webkit-transform: rotate(-720deg);
-    -ms-transform: rotate(-720deg);
-  }
-  80% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-  }
-}
-
-@keyframes buttonWobble {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-7deg);
-    -webkit-transform: rotate(-7deg);
-    -ms-transform: rotate(-7deg);
-  }
-  20% {
-    transform: rotate(7deg);
-    -webkit-transform: rotate(7deg);
-    -ms-transform: rotate(7deg);
-  }
-  30% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-  }
-  80% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-  }
-}
-
-.audio-div {
+#profile-photo {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
   display: block;
-}
-
-.audio-element {
-  display: block;
-  margin: 10px auto;
-  text-align: center;
-}
-
-hr {
-  height: 2px;
-  border: none;
-  color: rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-/* ------------------------
-TRAVEL
-------------------------- */
-
-#travel-strip {
-  font-size: 18px;
-}
-
-#globe {
-  font-weight: 600;
-}
-
-#travel-flex-box {
   margin: 0 auto;
 }
 
-#globe {
-  background: rgba(0, 0, 0, 0);
-  border: medium solid black;
-}
-
-.stroke {
-  fill: none;
-  stroke: #000;
-  stroke-width: 3px;
-}
-
-.graticule {
-  fill: none;
-  stroke: #777;
-  stroke-width: 0.5px;
-  stroke-opacity: 0.5;
-}
-
-.fill {
-  fill: #118ab2;
-}
-.land {
-  fill: #06d6a0;
-}
-
-.boundary {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 0.5px;
+.fishtank-background {
+  z-index: -2;
+  position: fixed;
 }
