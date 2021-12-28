@@ -1,5 +1,12 @@
+.background-color-1 {
+  background-color: #001021;
+}
+
+.background-color-2 {
+  background-color: #cf14c6;
+}
+
 body {
-  background-color: #0d1821;
   letter-spacing: 1.5px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
@@ -34,7 +41,6 @@ a:hover {
 }
 
 .button-link {
-  background-color: #9a348e;
   color: #ffffff;
   font-weight: 600;
   display: block;
