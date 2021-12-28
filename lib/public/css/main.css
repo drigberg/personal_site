@@ -12,6 +12,10 @@ body {
   font-weight: normal;
 }
 
+img {
+  object-fit: cover;
+  width: 100%;
+}
 p {
   max-width: 900px;
 }
