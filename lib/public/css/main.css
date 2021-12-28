@@ -29,11 +29,11 @@ a:hover {
   text-decoration: none;
 }
 
-#resume-download-link {
+.button-link-anchor {
   text-decoration: none;
 }
 
-#resume-download {
+.button-link {
   background-color: #9a348e;
   color: #ffffff;
   font-weight: 600;
@@ -53,4 +53,17 @@ a:hover {
 .fishtank-background {
   z-index: -2;
   position: fixed;
+}
+
+.vimeo_iframe {
+  width: 100%;
+  position: relative;
+  height: 200px;
+  margin: 15px 0 15px 0;
+}
+
+@media (min-width: 700px) {
+  .vimeo_iframe {
+    height: 400px;
+  }
 }

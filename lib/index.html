@@ -29,19 +29,23 @@
   <body>
     <!-- PROFILE -->
     <div class="container text-center mt-5 text-light p-5">
-      <h1 class="text-center">Daniel Rigberg</h1>
-      <h3 class="text-center">Web Developer</h3>
+      <h1>Daniel Rigberg</h1>
+      <h3>Web Developer</h3>
       <img
         id="profile-photo"
         class="mb-5 mt-5"
         src="/public/assets/images/headshot.jpg"
       />
       <div id="contact" class="text-light p-3">
-        <a href="https://github.com/drigberg" class="text-light m-1"
+        <a
+          href="https://github.com/drigberg"
+          class="text-light m-1"
+          target="_blank"
           ><i class="fab fa-github-square"></i
         ></a>
         <a
           href="https://www.linkedin.com/in/daniel-rigberg"
+          target="_blank"
           class="text-light m-1"
           ><i class="fab fa-linkedin"></i
         ></a>
@@ -75,26 +79,27 @@
         serverside development, I'm often found working with React.
       </p>
       <a
-        id="resume-download-link"
+        id="button-link-anchor"
         href="/public/assets/rigberg_resume.pdf"
         download="rigberg_resume.pdf"
         class="m-5"
       >
-        <button id="resume-download" class="btn btn-lg">Download Resume</button>
+        <button class="btn btn-lg button-link">Download Resume</button>
       </a>
     </div>
     <!-- Projects -->
     <div class="album py-5 bg-light">
-      <h2 class="text-dark mb-5 text-center">Projects</h2>
+      <h2 class="text-dark mb-5 text-center">Side Projects</h2>
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <div class="col">
             <div class="card shadow-sm">
-              <img
-                class="card-img-top p-2"
-                src="/public/assets/images/go_play_go.png"
-                alt="Virtual Ocean"
-              />
+              <a href="/go-play-go.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/go_play_go.png"
+                  alt="GoPlayGo"
+              /></a>
               <div class="card-body">
                 <p class="card-text text-center">Go Play Go</p>
               </div>
@@ -103,11 +108,12 @@
 
           <div class="col">
             <div class="card shadow-sm">
-              <img
-                class="card-img-top p-2"
-                src="/public/assets/images/virtual_aquarium.png"
-                alt="Virtual Ocean"
-              />
+              <a href="/aquarium.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/virtual_aquarium.png"
+                  alt="Virtual Ocean"
+              /></a>
               <div class="card-body">
                 <p class="card-text text-center">Virtual Aquarium</p>
               </div>
@@ -116,11 +122,12 @@
 
           <div class="col">
             <div class="card shadow-sm">
-              <img
-                class="card-img-top p-2"
-                src="/public/assets/images/spongebob.png"
-                alt="Virtual Ocean"
-              />
+              <a href="/image2ascii.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/spongebob.png"
+                  alt="Image2Ascii"
+              /></a>
               <div class="card-body">
                 <p class="card-text text-center">Image2Ascii</p>
               </div>
@@ -132,12 +139,16 @@
 
     <!-- Contact -->
     <div id="contact" class="text-light p-3 text-center">
-      <a href="https://github.com/drigberg" class="text-light fs-1 m-1"
+      <a
+        href="https://github.com/drigberg"
+        class="text-light fs-1 m-1"
+        target="_blank"
         ><i class="fab fa-github-square"></i
       ></a>
       <a
         href="https://www.linkedin.com/in/daniel-rigberg"
         class="text-light fs-1 m-1"
+        target="_blank"
         ><i class="fab fa-linkedin"></i
       ></a>
     </div>
