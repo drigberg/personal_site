@@ -1,5 +1,9 @@
 # Personal Site
 
+## Design
+
+This site is intended to be lightweight, accessible, and stable! Rather than relying on React to make a flashy portfolio app, I chose to rely on plain old HTML and CSS with styling courtesy of Bootstrap. This approach is minimal, but it also comes with fewer vulnerabilities and more forward compatibility!
+
 ## Installing
 
 Just make sure that python3 is installed!

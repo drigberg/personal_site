@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<!-- Color scheme: https://coolors.co/0d1821-9a348e-087ca7-34f6f2-ffffff -->
 <html>
   <head>
     <title>Daniel Rigberg</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="/public/css/main.css" />
@@ -25,337 +26,195 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body>
-    <!-- VERSION HASH 713841 -->
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false"
-          >
-            <span class="sr-only"> Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p id="brand">Daniel Rigberg: programmer, adventurer, musician</p>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="https://github.com/drigberg" target="_blank">
-                <i class="fab fa-2x fa-github-square" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/daniel-rigberg"
-                target="_blank"
-              >
-                <i class="fab fa-2x fa-linkedin" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:daniel.rigberg@gmail.com" target="_blank">
-                <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div id="canvas-background" class="background"></div>
+  <body class="background-color-1">
     <!-- PROFILE -->
-    <div class="section-strip initially-hidden" id="profile-strip">
-      <div class="flex-box" id="profile-flex-box">
-        <div class="profile-boxes" id="title-div">
-          <h2 id="title-text">Daniel Rigberg: web developer</h2>
-          <h4><strong>email: </strong>daniel.rigberg (at) gmail.com</h4>
-          <h4>
-            <strong>linkedin: </strong
-            >https://www.linkedin.com/in/daniel-rigberg
-          </h4>
-        </div>
-        <div class="profile-boxes" id="profile-photo-div">
-          <img id="profile-photo" src="/public/assets/images/headshot.jpg" />
-          <a
-            href="/public/assets/rigberg_resume.pdf"
-            download="rigberg_resume.pdf"
-          >
-            <button id="resume-download" class="btn btn-lg">
-              Download Resume
-            </button>
-          </a>
-        </div>
+    <div class="text-center mt-5 text-light p-5 background-color-1 w-100">
+      <h1>Daniel Rigberg</h1>
+      <h3>Senior Software Developer</h3>
+      <img
+        id="profile-photo"
+        class="mb-5 mt-5"
+        src="/public/assets/images/headshot-2.jpeg"
+      />
+      <div id="contact" class="text-light p-3">
+        <a
+          href="https://github.com/drigberg"
+          class="text-light m-1"
+          target="_blank"
+          ><i class="fab fa-github-square"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/daniel-rigberg"
+          target="_blank"
+          class="text-light m-1"
+          ><i class="fab fa-linkedin"></i
+        ></a>
       </div>
     </div>
-    <!-- MUSIC -->
-    <div class="section-strip initially-hidden" id="music-strip">
-      <div id="audio-flex-box">
-        <p class="page-summary">
-          Once upon a time, I studied music composition at Yale. It wasn't the
-          career for me, but songwriting continues to be one of my primary
-          pastimes.
-        </p>
-        <div class="audio-div col-xs-12 col-sm-6">
-          <h4 class="audio-element">"Gravity Cats"</h4>
-          <h4 class="audio-element">for chamber ensemble</h4>
-          <h5 class="audio-element">"Gravity Cats" for chamber ensemble</h5>
-          <audio controls class="audio-element">
-            <source
-              src="/public/assets/audio/gravity_cats.mp3"
-              type="audio/mpeg"
-            />
-            (Your browser does not support the audio element.)
-          </audio>
-        </div>
-        <div class="audio-div col-xs-12 col-sm-6">
-          <h4 class="audio-element">"September"</h4>
-          <h4 class="audio-element">for bassoon and piano</h4>
-          <h5 class="audio-element">"September" for bassoon and piano</h5>
-          <audio controls class="audio-element">
-            <source
-              src="/public/assets/audio/september.mp3"
-              type="audio/mpeg"
-            />
-            (Your browser does not support the audio element.)
-          </audio>
-        </div>
-        <div class="audio-div col-xs-12 col-sm-6">
-          <h4 class="audio-element">"Zinkara"</h4>
-          <h4 class="audio-element">for two guitars</h4>
-          <h5 class="audio-element">"Zinkara" for two guitars</h5>
-          <audio controls class="audio-element">
-            <source src="/public/assets/audio/zinkara.mp3" type="audio/mpeg" />
-            (Your browser does not support the audio element.)
-          </audio>
-        </div>
-        <div class="audio-div col-xs-12 col-sm-6">
-          <h4 class="audio-element">"Holovarium"</h4>
-          <h4 class="audio-element">for chamber ensemble</h4>
-          <h5 class="audio-element">"Holovarium" for chamber ensemble</h5>
-          <audio controls class="audio-element">
-            <source
-              src="/public/assets/audio/holovarium.mp3"
-              type="audio/mpeg"
-            />
-            (Your browser does not support the audio element.)
-          </audio>
-        </div>
-      </div>
+
+    <!-- About -->
+    <div class="text-center bg-light p-2">
+      <h2 class="text-dark m-5">About</h2>
+      <img
+        id="profile-photo"
+        class="mb-5 mt-5"
+        src="/public/assets/images/headshot-1.jpg"
+      />
+      <p class="fs-3 mx-auto mb-5">
+        My name is Daniel, and I'm a web developer currently based in Amsterdam!
+        I strive to work for ethical companies with a positive effect on the
+        world.
+      </p>
     </div>
-    <!-- WORK -->
-    <div class="section-strip initially-hidden" id="work-strip">
-      <div id="work-content">
-        <div class="work-category">
-          <h4>Languages</h4>
-          <div class="work-category-items">
-            <div class="work-item">
-              <img src="/public/assets/images/icons/node.png" />
-              <p>Node.js</p>
+
+    <!-- Experience -->
+    <div class="text-center text-light p-2 background-color-1">
+      <h2 class="m-5">Experience</h2>
+      <img
+        id="profile-photo"
+        class="mb-5 mt-5"
+        src="/public/assets/images/simplehealth.jpeg"
+      />
+      <p class="fs-3 mx-auto">
+        I'm currently a senior software engineer at SimpleHealth, making birth
+        control more accessible in the US through online consultations and free
+        shipping, with or without insurance.
+      </p>
+      <br />
+      <p class="fs-3 mx-auto">
+        In the past, I've worked for companies which aided with solar panel
+        installation, as well as anonymous building occupancy analytics for
+        universities and facility managers.
+      </p>
+      <a
+        href="/public/assets/rigberg_resume.pdf"
+        download="rigberg_resume.pdf"
+        class="m-5 button-link-anchor"
+      >
+        <button class="btn btn-lg button-link background-color-2">
+          Download Resume
+        </button>
+      </a>
+    </div>
+
+    <!-- Technologies -->
+    <div class="text-center bg-light p-2">
+      <h2 class="text-dark m-5">Technologies</h2>
+      <img
+        id="profile-photo"
+        class="mb-5 mt-5"
+        src="/public/assets/images/tech-square-2.jpg"
+      />
+      <p class="fs-3 mx-auto">
+        My primary languages are Node.js and Python, although I enjoy working
+        with Go in my personal projects. When I'm not happily ensconced in
+        serverside development, I'm often found working with React.
+      </p>
+      <p class="fs-3 mb-5 mx-auto">
+        Whichever language or framework I'm using, I prefer to use strict
+        typing, consistent styling, and comprehensive testing.
+      </p>
+    </div>
+
+    <!-- Adventure -->
+    <div class="text-center text-light p-2 background-color-1">
+      <h2 class="m-5">Adventure</h2>
+      <img
+        id="profile-photo"
+        class="mb-5 mt-5"
+        src="/public/assets/images/ice-hair-flip-square.jpg"
+      />
+      <p class="fs-3 mx-auto">
+        My primary hobbies are scuba diving, reading, playing board games, and
+        pursuing a life of adventure!
+      </p>
+      <br />
+      <p class="fs-3 mx-auto mb-5">
+        My dream is to work four days per week and dedicate 1-2 days to
+        volunteering for marine conservation.
+      </p>
+    </div>
+
+    <!-- Projects -->
+    <div class="album py-5 bg-light text-center">
+      <h2 class="mb-5 text-center">Projects</h2>
+      <p class="fs-3 mx-auto mb-5">
+        Below are three of my favorite side projects! Click the images to see
+        more.
+      </p>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <a href="/go-play-go.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/go_play_go.png"
+                  alt="GoPlayGo"
+              /></a>
+              <div class="card-body">
+                <p class="card-text text-center">Go Play Go</p>
+              </div>
             </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/typescript.svg" />
-              <p>Typescript</p>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <a href="/aquarium.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/virtual_aquarium.png"
+                  alt="Virtual Ocean"
+              /></a>
+              <div class="card-body">
+                <p class="card-text text-center">Virtual Aquarium</p>
+              </div>
             </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/python.png" />
-              <p>Python</p>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <a href="/image2ascii.html"
+                ><img
+                  class="card-img-top p-2"
+                  src="/public/assets/images/spongebob.png"
+                  alt="Image2Ascii"
+              /></a>
+              <div class="card-body">
+                <p class="card-text text-center">Image2Ascii</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="work-category">
-          <h4>Backend</h4>
-          <div class="work-category-items">
-            <div class="work-item">
-              <img src="/public/assets/images/icons/express.png" />
-              <p>Express</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/postgres.png" />
-              <p>Postgres</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/mongo.png" />
-              <p>Mongodb</p>
-            </div>
-          </div>
-        </div>
-        <div class="work-category">
-          <h4>Frontend</h4>
-          <div class="work-category-items">
-            <div class="work-item">
-              <img src="/public/assets/images/icons/react.png" />
-              <p>React</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/html5.ico" />
-              <p>HTML5</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/css3.jpg" />
-              <p>CSS3</p>
-            </div>
-          </div>
-        </div>
-        <div class="work-category">
-          <h4>Other Technologies</h4>
-          <div class="work-category-items">
-            <div class="work-item">
-              <img src="/public/assets/images/icons/aws.png" />
-              <p>AWS</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/docker.png" />
-              <p>Docker</p>
-            </div>
-            <div class="work-item">
-              <img src="/public/assets/images/icons/git.png" />
-              <p>Git</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-    <!-- SHOWCASE -->
-    <div class="section-strip initially-hidden" id="showcase-strip">
-      <div>
-        <p class="page-summary">
-          This is my virtual aquarium! There's no goal to this game: just relax,
-          explore, and enjoy the water.
-          <br /><br />
-          Play the game by clicking
-          <a href="https://github.com/drigberg/virtual_aquarium" target="_blank"
-            >here</a
-          >
-          or on the image below (desktop or mobile)! You also can view the
-          source code on
-          <a href="https://github.com/drigberg/virtual_aquarium" target="_blank"
-            >Github</a
-          >.
-        </p>
-        <div class="showcase-container">
-          <a href="/public/virtual_aquarium/index.html" target="_blank">
-            <img
-              class="project-img"
-              src="/public/assets/images/virtual_aquarium.png"
-            />
-          </a>
-        </div>
-      </div>
-      <hr />
-      <div>
-        <p class="page-summary">
-          I enjoy playing
-          <a href="https://en.wikipedia.org/wiki/Go_(game)" target="_blank"
-            >the game Go</a
-          >, and I enjoy using
-          <a href="https://golang.org/" target="_blank">the language Go</a>...
-          so I made Go using Go! <br /><br />
-          Play the game by clicking
-          <a href="https://github.com/drigberg/go_play_go" target="_blank"
-            >here</a
-          >
-          or on the image below (desktop or mobile)! You also can view the
-          source code on
-          <a href="https://github.com/drigberg/go_play_go" target="_blank"
-            >Github</a
-          >.
-        </p>
-        <div class="showcase-container">
-          <a href="https://go-play-go.herokuapp.com/" target="_blank">
-            <img
-              class="project-img bordered"
-              src="/public/assets/images/go_play_go.png"
-            />
-          </a>
-        </div>
-      </div>
-      <hr />
-      <div>
-        <p class="page-summary">
-          In 2019 I made an image-to-ASCII-art converter written in Python,
-          compatible with both webcams and Youtube videos. Tired of HD? Try
-          ultra-low resolution!<br /><br />See a demo below, or view the source
-          code on
-          <a href="https://github.com/drigberg/image2ascii" target="_blank"
-            >Github</a
-          >.
-        </p>
-        <div class="showcase-container">
-          <div style="position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/385266015"
-              class="vimeo_iframe"
-              frameborder="0"
-              allow="fullscreen"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-        </div>
-      </div>
+
+    <!-- Footer -->
+    <div id="contact" class="text-light p-3 text-center">
+      <a
+        href="https://github.com/drigberg"
+        class="text-light fs-1 m-1"
+        target="_blank"
+        ><i class="fab fa-github-square"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/daniel-rigberg"
+        class="text-light fs-1 m-1"
+        target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
     </div>
-    <!-- TRAVEL -->
-    <div class="section-strip initially-hidden" id="travel-strip">
-      <div>
-        <p class="page-summary">
-          Check out all my trips since 2007!<br /><br />Drag the globe to look
-          around, and hover (or tap on mobile) to highlight routes.
-        </p>
-        <div class="flex-box" id="travel-flex-box">
-          <div id="globe"></div>
-        </div>
-      </div>
-      <hr />
-    </div>
-    <!-- PROGRESS -->
-    <div class="flex-box" id="progress-bar">
-      <i
-        class="fa fa-3x fa-user-circle progress-bar-top"
-        id="profile-icon"
-        aria-hidden="true"
-      ></i>
-      <i
-        class="fa fa-3x fa-building progress-bar-bottom"
-        id="work-icon"
-        aria-hidden="true"
-      ></i>
-      <i
-        class="fa fa-3x fa-laptop-code progress-bar-bottom"
-        id="showcase-icon"
-        aria-hidden="true"
-      ></i>
-      <i
-        class="fa fa-3x fa-music progress-bar-middle"
-        id="music-icon"
-        aria-hidden="true"
-      ></i>
-      <i
-        class="fa fa-3x fa-plane progress-bar-middle"
-        id="travel-icon"
-        aria-hidden="true"
-      ></i>
-    </div>
+
     <!-- JS -->
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://d3js.org/topojson.v1.min.js"></script>
-    <script src="/public/js/d3.geo.zoom.js"></script>
-    <script src="/public/js/travel-map.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
     ></script>
-    <script src="/public/js/navigation.js"></script>
   </body>
 </html>
